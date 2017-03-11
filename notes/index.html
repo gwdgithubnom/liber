@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>make</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    jax: ["input/TeX","output/HTML-CSS"],
+    extensions: [],
+    TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
+    },
+    showMathMenu: false
+  });
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+</script>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(51, 51, 51); overflow: auto; background-color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(92, 92, 92); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(92, 92, 92); border-color: rgb(214, 214, 214); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(214, 214, 214); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(0, 0, 0); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(214, 214, 214); }
+.markdown-preview:not([data-use-github-style]) pre, .markdown-preview:not([data-use-github-style]) code { color: rgb(0, 0, 0); background-color: rgb(240, 240, 240); }
+.markdown-preview:not([data-use-github-style]) pre, .markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(245, 245, 245); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(0, 0, 0); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(214, 214, 214) rgb(214, 214, 214) rgb(199, 199, 199); background-color: rgb(240, 240, 240); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { border-top: 1px solid rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] pre, .markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre, .markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview del { text-decoration: none; position: relative; }
+.markdown-preview del::after { border-bottom: 1px solid black; content: ""; left: 0px; position: absolute; right: 0px; top: 50%; }
+.markdown-preview .flash { animation: flash 1s ease-out 1; outline: rgba(255, 0, 0, 0) solid 1px; }
+.markdown-preview .flash:not(li) { display: block; }
+.markdown-preview code { text-shadow: none; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors,pre.editor-colors {
+  background-color: #ffffff;
+  color: #333333;
+}
+pre.editor-colors .line.cursor-line,pre.editor-colors .line.cursor-line {
+  background-color: #f5f5f5;
+}
+pre.editor-colors .invisible,pre.editor-colors .invisible {
+  color: #c0c0c0;
+}
+pre.editor-colors .cursor,pre.editor-colors .cursor {
+  border-left: 2px solid #000000;
+}
+pre.editor-colors .selection .region,pre.editor-colors .selection .region {
+  background-color: #c8c8fa;
+}
+pre.editor-colors .bracket-matcher .region,pre.editor-colors .bracket-matcher .region {
+  border-bottom: 1px solid #000000;
+  box-sizing: border-box;
+}
+pre.editor-colors .invisible-character,pre.editor-colors .invisible-character {
+  color: #c0c0c0;
+}
+pre.editor-colors .indent-guide,pre.editor-colors .indent-guide {
+  color: #c0c0c0;
+}
+pre.editor-colors .wrap-guide,pre.editor-colors .wrap-guide {
+  background-color: #c0c0c0;
+}
+pre.editor-colors .gutter,pre.editor-colors .gutter {
+  background-color: #ffffff;
+  color: #333333;
+}
+pre.editor-colors .gutter .line-number,pre.editor-colors .gutter .line-number {
+  color: #333333;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.cursor-line,pre.editor-colors .gutter .line-number.cursor-line {
+  color: #333333;
+  background-color: #f5f5f5;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection,pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+}
+pre.editor-colors .gutter .line-number .icon-right,pre.editor-colors .gutter .line-number .icon-right {
+  color: #333333;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before,pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed.git-line-removed::before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after,pre.editor-colors .gutter:not(.git-diff-icon) .line-number.git-line-removed::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(255, 236, 236, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.folded,pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after,pre.editor-colors .fold-marker:after {
+  color: #333333;
+}
+pre.editor-colors .search-results .syntax--marker .region,pre.editor-colors .search-results .syntax--marker .region {
+  background-color: transparent;
+  border: 1px solid #ed6a43;
+}
+pre.editor-colors .search-results .syntax--marker.current-result .region,pre.editor-colors .search-results .syntax--marker.current-result .region {
+  border: 1px solid #ffffff;
+}
+.syntax--comment,
+.syntax--punctuation.syntax--definition.syntax--comment,
+.syntax--string.syntax--comment {
+  color: #969896;
+}
+.syntax--constant,
+.syntax--entity.syntax--name.syntax--constant,
+.syntax--variable.syntax--other.syntax--constant,
+.syntax--variable.syntax--language {
+  color: #0086b3;
+}
+.syntax--entity,
+.syntax--entity.syntax--name {
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  color: #795da3;
+}
+.syntax--variable.syntax--parameter.syntax--function {
+  color: #333;
+}
+.syntax--entity.syntax--name.syntax--tag {
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  color: #63a35c;
+}
+.syntax--keyword {
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  color: #a71d5d;
+}
+.syntax--storage,
+.syntax--storage.syntax--type {
+  color: #a71d5d;
+}
+.syntax--storage.syntax--modifier.syntax--package,
+.syntax--storage.syntax--modifier.syntax--import,
+.syntax--storage.syntax--type.syntax--java {
+  color: #333;
+}
+.syntax--string,
+.syntax--punctuation.syntax--definition.syntax--string,
+.syntax--string .syntax--punctuation.syntax--section.syntax--embedded .syntax--source {
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  color: #183691;
+}
+.syntax--support {
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  color: #0086b3;
+}
+.syntax--meta.syntax--property-name {
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  color: #0086b3;
+}
+.syntax--variable {
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  color: #ed6a43;
+}
+.syntax--variable.syntax--other {
+  color: #333;
+}
+.syntax--invalid.syntax--broken {
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  color: #b52a1d;
+}
+.syntax--invalid.syntax--deprecated {
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  color: #b52a1d;
+}
+.syntax--invalid.syntax--illegal {
+  font-style: italic;
+  text-decoration: underline;
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+.carriage-return {
+  font-style: italic;
+  text-decoration: underline;
+  background-color: #b52a1d;
+  color: #f8f8f8;
+  undefined: ^M;
+}
+.syntax--invalid.syntax--unimplemented {
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  color: #b52a1d;
+}
+.syntax--message.syntax--error {
+  color: #b52a1d;
+}
+.syntax--string .syntax--source {
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  color: #333;
+}
+.syntax--string .syntax--variable {
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  color: #0086b3;
+}
+.syntax--source.syntax--regexp,
+.syntax--string.syntax--regexp {
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  color: #183691;
+}
+.syntax--string.syntax--regexp.syntax--character-class,
+.syntax--string.syntax--regexp .syntax--constant.syntax--character.syntax--escape,
+.syntax--string.syntax--regexp .syntax--source.syntax--ruby.syntax--embedded,
+.syntax--string.syntax--regexp .syntax--string.syntax--regexp.syntax--arbitrary-repitition {
+  color: #183691;
+}
+.syntax--string.syntax--regexp .syntax--constant.syntax--character.syntax--escape {
+  font-weight: bold;
+  color: #63a35c;
+}
+.syntax--support.syntax--constant {
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  color: #0086b3;
+}
+.syntax--support.syntax--variable {
+  color: #0086b3;
+}
+.syntax--meta.syntax--module-reference {
+  color: #0086b3;
+}
+.syntax--markup.syntax--list {
+  color: #693a17;
+}
+.syntax--markup.syntax--heading,
+.syntax--markup.syntax--heading .syntax--entity.syntax--name {
+  font-weight: bold;
+  color: #1d3e81;
+}
+.syntax--markup.syntax--quote {
+  color: #008080;
+}
+.syntax--markup.syntax--italic {
+  font-style: italic;
+  color: #333;
+}
+.syntax--markup.syntax--bold {
+  font-weight: bold;
+  color: #333;
+}
+.syntax--markup.syntax--raw {
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: none;
+  color: #0086b3;
+}
+.syntax--markup.syntax--deleted,
+.syntax--meta.syntax--diff.syntax--header.syntax--from-file,
+.syntax--punctuation.syntax--definition.syntax--deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+.syntax--markup.syntax--inserted,
+.syntax--meta.syntax--diff.syntax--header.syntax--to-file,
+.syntax--punctuation.syntax--definition.syntax--inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+.syntax--markup.syntax--changed,
+.syntax--punctuation.syntax--definition.syntax--changed {
+  background-color: #ffe3b4;
+  color: #ef9700;
+}
+.syntax--markup.syntax--ignored,
+.syntax--markup.untracked {
+  color: #d8d8d8;
+  background-color: #808080;
+}
+.syntax--meta.syntax--diff.syntax--range {
+  color: #795da3;
+  font-weight: bold;
+}
+.syntax--meta.syntax--diff.syntax--header {
+  color: #0086b3;
+}
+.syntax--meta.syntax--separator {
+  font-weight: bold;
+  color: #1d3e81;
+}
+.syntax--meta.syntax--output {
+  color: #1d3e81;
+}
+.brackethighlighter.syntax--tag,
+.brackethighlighter.syntax--curly,
+.brackethighlighter.syntax--round,
+.brackethighlighter.syntax--square,
+.brackethighlighter.syntax--angle,
+.brackethighlighter.syntax--quote {
+  color: #595e62;
+}
+.brackethighlighter.unmatched {
+  color: #b52a1d;
+}
+.sublimelinter.syntax--mark.syntax--error {
+  color: #b52a1d;
+}
+.sublimelinter.syntax--mark.syntax--warning {
+  color: #ed6a43;
+}
+.sublimelinter.gutter-mark {
+  color: #c0c0c0;
+}
+.syntax--constant.syntax--other.syntax--reference.syntax--link,
+.syntax--string.syntax--other.syntax--link {
+  color: #183691;
+  text-decoration: underline;
+}
+</style>
+  </head>
+  <body class='markdown-preview'><h1>基于信息熵改进的古籍图像文字聚类算法</h1>
+<p>提出一种基于信息熵评估聚类中心特征的标准，其中类簇中心被具有较低局部密度的邻居点包围，且与具有更高密度的任何点有相对较大的距离。</p>
+<h1>前言</h1>
+<h2>传统聚类算法</h2>
+<ul>
+<li>需要一些参数限制</li>
+<li>需要设定聚类的数目</li>
+<li>需要设置很多的参数</li>
+<li>聚类初始形态及参数非常敏感</li>
+<li>计算时间长</li>
+</ul>
+<h2>Clustering by fast search and find of density peaks</h2>
+<ul>
+<li>
+<p>聚类中心的密度高于周围邻居密度(类簇中心被具有较低局部密度的邻居点包围)</p>
+<ul>
+<li>存在中心点集合： <span class="math"><script type="math/tex">\{ i\mid i\subset I\}</script></span></li>
+<li>定义点i的局部密度为 <span class="math"><script type="math/tex">\rho_i</script></span></li>
+</ul>
+</li>
+<li>
+<p>与具有更高密度的任何点有相对较大的距离</p>
+<ul>
+<li>存在中心点集合： <span class="math"><script type="math/tex">\{ i \mid i\subset I\}</script></span></li>
+<li>定义点i到某点局部高密度为 <span class="math"><script type="math/tex">\delta_i</script></span></li>
+<li>i点到j点的两点距离 <span class="math"><script type="math/tex">d_{ij}</script></span></li>
+</ul>
+</li>
+</ul>
+<h1>国内研究现状</h1>
+<ul>
+<li>基于群体智能的聚类算法
+<ul>
+<li>1999, From Natural to Artificial System <a href="%E7%BE%A4%E4%BD%93%E6%99%BA%E8%83%BD">M</a></li>
+<li>1991, The dynamics of collective sorting robot-like ants and ant-like robots[J]</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h1>主要步骤</h1>
+<h2>密度聚类</h2>
+<h2>图像集初始化</h2>
+<p>//TODO</p>
+<h3>求 <span class="math"><script type="math/tex">\rho_i</script></span></h3>
+<p>局部密度公式：</p>
+<span class="math"><script type="math/tex; mode=display">\rho_i=\sum_j\chi\left(d_{ij}-d_c\right)
+</script></span>
+<p>其中，如果x&lt;0，那么 <span class="math"><script type="math/tex">\chi\left(x\right)=1</script></span> ；否则，是一个截断距离。基本上， <span class="math"><script type="math/tex">d_c</script></span> 等于与点的距离小于 <span class="math"><script type="math/tex">d_c</script></span> 的点的个数。算法只对不同点的 <span class="math"><script type="math/tex">\rho_i</script></span> 的相对大小敏感，这意味着对于大数据集，分析结果对于 <span class="math"><script type="math/tex">d_c</script></span> 的选择有很好鲁棒性。</p>
+<blockquote>
+<p><span class="math"><script type="math/tex">d_c</script></span>类似指定了最小的聚类的类密度半径，类内距离</p>
+</blockquote>
+<h3>求 <span class="math"><script type="math/tex">\delta_i</script></span></h3>
+<p>定义点i到某点j的局部密度公式：</p>
+<span class="math"><script type="math/tex; mode=display">\delta_i=min_{j:\rho_j>\rho_i}(d_{ij})
+</script></span>
+<blockquote>
+<p><span class="math"><script type="math/tex">\rho_j>\rho_i</script></span>说明类密度中，谁的密度更密集，控制调节类的合并,合并到一个类簇，类间距离</p>
+</blockquote>
+<h3>求基于 <span class="math"><script type="math/tex">\rho_i</script></span> 与 <span class="math"><script type="math/tex">\delta_i</script></span> 的决策图</h3>
+<p><img src="http://img.blog.csdn.net/20141021210152812" alt="&#x51B3;&#x7B56;&#x56FE;"></p>
+<blockquote>
+<p>图A描述的存在二维空间数据集合28个点，根据所求得的 <span class="math"><script type="math/tex">\rho_i</script></span> 与 <span class="math"><script type="math/tex">\delta_i</script></span> 的决策树，人工决策聚类的个数</p>
+</blockquote>
+<p><img src="http://img.blog.csdn.net/20141021213017742" alt="&#x6837;&#x5217;"></p>
+<blockquote>
+<p>图2.合成点分布的结果。</p>
+</blockquote>
+<blockquote>
+<p>(A)绘制的点分布的概率分布。(B和C)分别为4000和1000样本点的点分布。每个点以其颜色表示所属类簇，黑色点属于光晕类簇。(D和E) 相应的决策图，彩色的点表示类簇中心。(F)被归属到错误的类簇的点的比例作为样本维度的函数。误差线表明均值的标准差。</p>
+</blockquote>
+<blockquote>
+<p>为图2.B中数据赋予不同的值，却得到几乎一样的结果。一般来说，我们可以选择使得点的平均邻居数大概是数据集中点的总数的1-2%。对于较小的数据集，可能会被大的统计误差影响，在这种情况下，需要通过更准确的方法估计密度(例如可以采取文章中提到的指数核的方法)。</p>
+</blockquote>
+<h4>问题</h4>
+<p>无法解决聚类个数,即对于 <span class="math"><script type="math/tex">d_c</script></span> 无法处理很好</p>
+<h2>信息熵改进</h2>
+<h3>信息熵定义</h3>
+<p>假设 <span class="math"><script type="math/tex">x</script></span> 是一个随机变量，<span class="math"><script type="math/tex">X</script></span>是其可能的取值集合（连续型数据需离散化）, <span class="math"><script type="math/tex">p(x)</script></span> 是取 <span class="math"><script type="math/tex">x</script></span> 值的可能性函数，信息熵 <span class="math"><script type="math/tex">E(x)</script></span> 定义为公式如下：</p>
+<span class="math"><script type="math/tex; mode=display">E(x)=-\sum_{x \in X}{x}log{p(x)}
+</script></span>
+<span class="math"><script type="math/tex; mode=display">\Updownarrow
+</script></span>
+<span class="math"><script type="math/tex; mode=display">H=-\sum_{i=1}^n\frac{c_1}{N}log(\frac{c_i}{N})
+</script></span>
+<p>通过结合Clustering by fast search and find of density peaks，定义 <span class="math"><script type="math/tex">H</script></span> 为熵值，<span class="math"><script type="math/tex">c_i</script></span> 代表第 <span class="math"><script type="math/tex">I</script></span> 个聚类的成员数，<span class="math"><script type="math/tex">N</script></span> 代表总共的聚类数，可以给出式(3)：</p>
+<h1>备注</h1>
+<h2>信息熵</h2>
+<p>一个多变量向量 <span class="math"><script type="math/tex">x=\{x_1,x_2,....,x_n\}</script></span> 的信息熵按单变量信息熵公式计算，其中: <span class="math"><script type="math/tex">p(x)=p(x_1,x_2,...,x_n)</script></span> 是多变量可能分布函数，<span class="math"><script type="math/tex">X_1,X_2,...,X_n</script></span> 是相应向量项的可能取值集合（连续型数据需离散化）</p>
+<span class="math"><script type="math/tex; mode=display">E(x)=-\sum_{x_1 \in X_1}....\sum_{x_n \in X_n}{p(x_1,x_2,...,x_n)logp(x_1,x_2,
+...,x_n)}</script></span>
+<p>l</p>
+<h2><a href="./test.html">算法</a></h2>
+<p>聚类方法处理图像标注问题，主要承担的是对未知特征的提取，并组合成一组具有相似的集合，通过聚类算法，我们能够将未标注的样本在一定程度上区分开。首先假设：类簇中心被具有较低局部密度的邻居点包围，且与具有更高密度的任何点有相对较大的距离。简单的理解规则就是类内间距小，类间间距大。对于每一个数据点，通过计算两个量：点的局部密度 <span class="math"><script type="math/tex">\rho_{i}</script></span> 和该点到具有更高局部密度的点的距离 <span class="math"><script type="math/tex">\delta_{i}</script></span> ，而这两个值都取决于数据点间的距离 <span class="math"><script type="math/tex">d_{ij}</script></span> ，对于水书文字图像间的 <span class="math"><script type="math/tex">d_{ij}</script></span> 主要通过马氏距离等距离度量方法进行求解。
+数据点i的局部密度 <span class="math"><script type="math/tex">\rho_i</script></span> 定义为式(1)：</p>
+<span class="math"><script type="math/tex; mode=display">\rho_i=\sum_j\chi\left(d_{ij}-d_c\right)
+</script></span>
+<p>其中，如果x&lt;0，那么 <span class="math"><script type="math/tex">\chi\left(x\right)=1</script></span> ；否则，是一个截断距离。基本上， <span class="math"><script type="math/tex">d_c</script></span> 等于与点的距离小于 <span class="math"><script type="math/tex">d_c</script></span> 的点的个数。算法只对不同点的 <span class="math"><script type="math/tex">\rho_i</script></span> 的相对大小敏感，这意味着对于大数据集，分析结果对于 <span class="math"><script type="math/tex">d_c</script></span> 的选择有很好鲁棒性。数据点i的是点 <span class="math"><script type="math/tex">\delta_i</script></span> 到任何比其密度大的点的距离的最小值式(2)：</p>
+<span class="math"><script type="math/tex; mode=display">\delta_i=min_{j:p_j>p_i}(d_{ij})
+</script></span>
+<p>对于密度最大的点，我们可以得到 <span class="math"><script type="math/tex">\delta_i=max_j(d_{ij})</script></span> 。当类簇中心找到后，剩余的每个点被归属到它的有更高密度的最近邻所属类簇。类簇分配只需一步即可完成，不像其它算法要对目标函数进行迭代优化。在聚类分析中，定量的衡量分配的可信度是很重要的。在该算法中，首先为每个类簇定义一个边界区域(即分配到该类簇但于其它类簇的点的距离小于的点的集合)，然后为每个类簇的找到其边界区域中密度最高的点，并以来表示该点的密度。类簇中局部密度值比大的点被看作是类簇的核心部分(即分配到该类簇的可靠性较高)，其他点被看作是类簇的光晕部分或者称作噪声。</p>
+<p>通过引入信息熵优化的方法与结合大数定理理论，定义H为熵值，Ci代表第I个聚类的成员数，N代表总共的聚类数，可以给出式(3)：</p>
+<span class="math"><script type="math/tex; mode=display">H=-\sum_{i=1}^n\frac{c_1}{N}log(\frac{c_i}{N})
+</script></span>
+<p>在聚类的初始时刻，假设系统模型下的每个成员都为单独的类即<code>$c_i$</code>取得最大值，那么模型下的信息量就达到最大，即系统的信息熵H为最大值，随着每次聚类规则的变化，系统的信息熵也会紧密的相关变化，通过观察与分析熵的梯度变化，通过了解整个系统的模型下熵值变化情况，推导出在单位时间片内熵值下降稳定情况。当发生多个时间片内未发送熵值变化，即达到系统模型下最为优异的聚类个数，从而完成对数据的聚类划分工作，进而实现对给定的集合加上标签。</p></body>
+</html>
