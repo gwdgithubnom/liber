@@ -36,5 +36,8 @@ def load_paperdata(distance_f):
     logger.info("PROGRESS: load end")
     return distances, max_dis, min_dis, max_id
 
+def
+
 if __name__ == '__main__':
+    src="."
     load_paperdata()

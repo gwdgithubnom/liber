@@ -36,6 +36,7 @@ def load_paperdata(distance_f):
 	logger.info("PROGRESS: load end")
 	return distances, max_dis, min_dis, max_id
 
+
 def select_dc(max_id, max_dis, min_dis, distances, auto = False):
 	'''
 	Select the local density threshold, default is the method used in paper, auto is `autoselect_dc`

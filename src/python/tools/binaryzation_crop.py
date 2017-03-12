@@ -26,6 +26,7 @@ def subfilesName(directory):
         if os.path.isdir(path):
             fl.extend(subfilesName(path))
         elif os.path.isfile(path):
+
             fl.append(path)
             print("add"+path)    
     return fl

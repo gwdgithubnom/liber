@@ -1,6 +1,7 @@
 """
 操作管理文件的api
 """
+import os,random,string,shutil
 from PIL import Image
 from numpy import genfromtxt
 import gzip, cPickle
@@ -21,6 +22,8 @@ def rename_dir(url,static=True,reverse=True):
     Tip：需要判断url是否存在，是否为文件夹,对于conf目录需要注意是否已经存在，没有存在需要进行创建。另外对于directory.ini文件也需要判断是否存在。建议对这里的工作进行定义多个子函数。定义的子函数请以_开头。
     在进行一些具体的操作，需要输出相关日志操作
     """""
+
+def check_file():
 
 
 class pcolors:
@@ -61,3 +64,60 @@ def dir_to_dataset(glob_files):
     # outfile = glob_files+"out"
     # np.save(outfile, dataset)
     return np.array(dataset), np.array(clazz)
+
+
+def rename(path=".",src="./src"):
+    directorys=os.listdir(src);
+    i=0;
+    for directory in directorys:
+        print "####",directory," is doing ####";
+        path=src+"/"+directory;
+        files=subfilesName(path)
+        i=0;
+        for f in files:
+            print os.path.join(f),"...."
+            if os.path.isfile(os.path.join(path,f))==True:
+                i=i+1;
+                name='{0}_{1:0{2}d}'.format(directory,i,4);
+                print os.path.join(path,f),os.path.join(path,name);
+                os.rename(os.path.join(path,f),os.path.join(path,name));
+                print f,"-->",name
+
+# get sub dirs
+def subdirs(path):
+    dl = [];
+    for i in os.walk(path, False):
+        for d in i[1]:
+            dl.append(os.path.join(path, d))
+    return dl
+
+#get sub file
+def subfiles(path):
+    fl = [];
+    for i in os.walk(path, False):
+        for f in i[2]:
+            fl.append(os.path.join(path, f))
+    return fl
+
+def subfilesName(path):
+    fl = [];
+    for i in os.walk(path, False):
+        for f in i[2]:
+            fl.append(f)
+    return fl
+
+
+def _random_str(randomlength=8):
+    str = ''
+    chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
+    length = len(chars) - 1
+    random = Random()
+    for i in range(randomlength):
+        str+=chars[random.randint(0, length)]
+    return str
+
+def _random_string(randomlength=8):
+    a = list(string.ascii_letters)
+    random.shuffle(a)
+    return ''.join(a[:randomlength])
+
