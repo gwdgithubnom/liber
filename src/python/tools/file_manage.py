@@ -4,11 +4,13 @@
 import os,random,string,shutil
 from PIL import Image
 from numpy import genfromtxt
-import gzip, cPickle
 from glob import glob
 import numpy as np
 import pandas as pd
+import logging
 
+logging.config.fileConfig("conf/logging.conf")
+logger = logging.getLogger("root")
 def rename_dir(url,static=True,reverse=True):
     """"
     根据static的值进行文件夹自动重命名，命名规则
@@ -23,7 +25,6 @@ def rename_dir(url,static=True,reverse=True):
     在进行一些具体的操作，需要输出相关日志操作
     """""
 
-def check_file():
 
 
 class pcolors:
@@ -35,7 +36,7 @@ class pcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
-    Blue = '\34[95m'
+    BLUE = '\34[95m'
 
     def disable(self):
         self.HEADER = ''
@@ -46,42 +47,57 @@ class pcolors:
         self.ENDC = ''
 
 
-def dir_to_dataset(glob_files):
-    # print("Gonna process:\n\t %s" % glob_files)
-    dataset = []
-    clazz = []
-    for file_count, file_name in enumerate(sorted(glob(glob_files), key=len)):
-        image = Image.open(file_name)
-        # print file_name
-        img = Image.open(file_name).convert('LA')  # tograyscale
-        pixels = [f[0] for f in list(img.getdata())]
-        dataset.append(pixels)
-        classLabel = file_name.split("_")[1];
-        # print file_name, "<--->", classLabel
-        clazz.append(classLabel)
-        if file_count % 1000 == 0:
-            print("\t %s files processed" % file_count)
-    # outfile = glob_files+"out"
-    # np.save(outfile, dataset)
-    return np.array(dataset), np.array(clazz)
+"""
+    walk through a directory and get all the file in this directory.
+"""
 
 
-def rename(path=".",src="./src"):
-    directorys=os.listdir(src);
-    i=0;
+def subfilesName(directory):
+    fl = []
+    subdir=os.listdir(directory)
+    """
+    for i in os.walk(path, False):
+        for f in i[2]:
+            fl.append(f)
+    """
+    for i in subdir:
+        path=os.path.join(directory,i)
+        print(path)
+        if os.path.isdir(path):
+            fl.extend(subfilesName(path))
+        elif os.path.isfile(path):
+            fl.append(path)
+            print("add"+path)
+    return fl
+
+"""
+
+path=".";
+src="./src";
+#path=raw_input("src path:");
+directorys=os.listdir(src);
+i=0;
+
+"""
+
+
+
+def rename(path="./default_path"):
+
+    directorys=os.listdir(path);
     for directory in directorys:
-        print "####",directory," is doing ####";
-        path=src+"/"+directory;
+        logger.info("####"+directory+" is doing ####")
+        path=path+"/"+directory;
         files=subfilesName(path)
         i=0;
         for f in files:
-            print os.path.join(f),"...."
+            logger.info(os.path.join(f),"....")
             if os.path.isfile(os.path.join(path,f))==True:
                 i=i+1;
                 name='{0}_{1:0{2}d}'.format(directory,i,4);
-                print os.path.join(path,f),os.path.join(path,name);
+                logger.info(os.path.join(path,f)+" "+ os.path.join(path,name))
                 os.rename(os.path.join(path,f),os.path.join(path,name));
-                print f,"-->",name
+                logger.info(f+" --> "+name)
 
 # get sub dirs
 def subdirs(path):
@@ -106,8 +122,8 @@ def subfilesName(path):
             fl.append(f)
     return fl
 
-
-def _random_str(randomlength=8):
+"""
+def random_str(randomlength=8):
     str = ''
     chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
     length = len(chars) - 1
@@ -116,8 +132,9 @@ def _random_str(randomlength=8):
         str+=chars[random.randint(0, length)]
     return str
 
-def _random_string(randomlength=8):
+"""
+
+def random_string(randomlength=8):
     a = list(string.ascii_letters)
     random.shuffle(a)
     return ''.join(a[:randomlength])
-

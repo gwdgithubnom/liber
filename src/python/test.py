@@ -4,10 +4,25 @@
 import sys
 import math
 import logging
+import logging.config
 import numpy as np
-
-logger = logging.getLogger("dpc_cluster")
-
+from PIL import Image
+#from PIL.Image import core as image
+import os, random, string, shutil
+from scipy import *
+from scipy import misc
+#logging.basicConfig(level=logging.INFO,format="%(asctime)s %(filename)s[line:%(lineno)d\% (levelname)s %(message)s",datefmt="%Y-%m_%d %H:%M:%S",filename='logs/logger.log',filemode='a')
+logging.config.fileConfig("conf/logging.conf")
+logger = logging.getLogger("root")
+"""
+logger.info("abc")
+logger.debug("debug")
+logger.warn("warn")
+logger.debug("debug")
+logger.warning("warning")
+logger.error("error")
+logger.critical("critical")
+"""
 def load_paperdata(distance_f):
     '''
     Load distance from data
@@ -36,8 +51,43 @@ def load_paperdata(distance_f):
     logger.info("PROGRESS: load end")
     return distances, max_dis, min_dis, max_id
 
-def
+def compute_distance(node_i=[],node_j=[]):
+    """
+    npArray数据类型计算
+    :param node_i:
+    :param node_j:
+    :return:
+    """
+    logger.info("Running compute distance.")
+    if not isinstance(node_j,(np.ndarray,np.generic)):
+        raise Exception("node type error.")
+        logger.critical("node type is numpy.float64")
+    n=node_i*node_j
+    logger.debug(node_i.shape)
+
+
+def _test():
+    img = Image.open("tools/0.jpg")
+    img = img.convert("L")
+    pixdata = img.load()
+    print(img)
+    rows = img.size[0]
+    cols = img.size[1]
+    logging.debug("abc")
+    f=misc.face()
+    misc.imsave("tools/3.jpg",f)
+    s=misc.imread("tools/0.jpg")
+    from scipy import linalg
+    print(linalg.det(s))
+    print(s.shape)
+    import matplotlib.pyplot as plt
+    plt.imshow(s)
+    plt.show()
+
 
 if __name__ == '__main__':
-    src="."
-    load_paperdata()
+    #_test()
+    a=misc.imread("tools/0.jpg",mode="la")
+    b=misc.imread("tools/1.jpg",mode="la")
+    logger.debug(a)
+    compute_distance(a,b)
