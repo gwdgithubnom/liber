@@ -9,7 +9,7 @@ def pandas_view_record(object):
     pandas.set_option('display.width', None)
     pandas.set_option('display.max_rows', None)
     from tools import logger
-    logger.get_record_logger("record").debug(object)
+    logger.get_record_logger().debug(object)
 
 
 def pandas_view_debug(object,width=1000):

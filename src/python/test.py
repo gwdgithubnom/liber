@@ -9,10 +9,11 @@ from PIL import Image
 import os, random, string, shutil
 from scipy import *
 from scipy import misc
+from pandas import DataFrame as df
 #logging.basicConfig(level=logging.INFO,format="%(asctime)s %(filename)s[line:%(lineno)d\% (levelname)s %(message)s",datefmt="%Y-%m_%d %H:%M:%S",filename='logs/logger.log',filemode='a')
 
 
-
+log=logger.getLogger();
 """
 logger.info("abc")
 logger.debug("debug")
@@ -32,7 +33,7 @@ def load_paperdata(distance_f):
     Returns:
         distances dict, max distance, min distance, max continues id
     '''
-    logger.info("PROGRESS: load data")
+    log.info("PROGRESS: load data")
     distances = {}
     min_dis, max_dis = sys.float_info.max, 0.0
     max_id = 0
@@ -57,10 +58,10 @@ def compute_distance(node_i=[],node_j=[]):
     :param node_j:
     :return:
     """
-    logger.info("Running compute distance.")
+    log.info("Running compute distance.")
     if not isinstance(node_j,(np.ndarray,np.generic)):
         raise Exception("node type error.")
-        logger.critical("node type is numpy.float64")
+        log.critical("node type is numpy.float64")
     n=node_i*node_j
     logger.debug(node_i.shape)
 
@@ -104,15 +105,31 @@ def _test():
     compute_distance(a,b)
     :return:
     """
+    from tools import binaryzation_crop
+    log.debug("start running ...")
+    a=misc.imread("tools/0.jpg",mode="L")
+    b=misc.imread("tools/1.jpg",mode="L")
+    a=np.array(a,np.float64)
+    b=np.array(b,np.float64)
+    from cluster import density_cluster
+    c=density_cluster.compute_point_distance(a,b)
+    from view import shape_view
+    shape_view.numpy_view(c,state="record")
+    log.debug(np.sum(c))
 
 
 
 
 if __name__ == '__main__':
-    from tools import binaryzation_crop
-    a=misc.imread("tools/0.jpg",mode="L")
-    b=misc.imread("tools/1.jpg",mode="L")
-    from cluster import density_cluster
-    c=density_cluster.compute_point_distance(a,b)
-    from view import shape_view
-    shape_view.numpy_view(c,state="reord")
+    from context.resource_manager import Properties
+    path=os.path.join(Properties.getRootPath(),Properties.getImageXmlResource())
+    from xml.dom.minidom import parse,parseString
+    images=parse(path)
+    id=[]
+    data=[]
+    for node in images.getElementById("Image"):
+        for subNode in node.childNodes:
+            idNode=subNode.getElmentsByTagName("id")
+            dataNode=subNode.getElmentsByTagName("data")
+
+
