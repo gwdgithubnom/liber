@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-
 import sys
 import math
-import logging
-import logging.config
+from tools import logger
 import numpy as np
 from PIL import Image
 #from PIL.Image import core as image
@@ -12,8 +10,9 @@ import os, random, string, shutil
 from scipy import *
 from scipy import misc
 #logging.basicConfig(level=logging.INFO,format="%(asctime)s %(filename)s[line:%(lineno)d\% (levelname)s %(message)s",datefmt="%Y-%m_%d %H:%M:%S",filename='logs/logger.log',filemode='a')
-logging.config.fileConfig("conf/logging.conf")
-logger = logging.getLogger("root")
+
+
+
 """
 logger.info("abc")
 logger.debug("debug")
@@ -67,6 +66,8 @@ def compute_distance(node_i=[],node_j=[]):
 
 
 def _test():
+    """
+     from PIL import Image
     img = Image.open("tools/0.jpg")
     img = img.convert("L")
     pixdata = img.load()
@@ -83,11 +84,35 @@ def _test():
     import matplotlib.pyplot as plt
     plt.imshow(s)
     plt.show()
+    file="tools/0.jpg"
+    from tools.binaryzation_crop import *
+    BinAndCrop().single_bin(filename=file)
+    a=misc.imread("tools/0.jpg",mode="L")
+    b=misc.imread("tools/1.jpg",mode="L")
+    np.set_printoptions(threshold=nan)
+    logger.debug(a)
+    c=np.arange(1024)
+    from view import shape_view
+    from pandas import *
+    d=DataFrame(c)
+    f=DataFrame(a[0:60,0:50])
+    s=a
+    import matplotlib.pyplot as plt
+    plt.imshow(s)
+    plt.show()
+    shape_view.numpy_view(f,state="record")
+    compute_distance(a,b)
+    :return:
+    """
+
+
 
 
 if __name__ == '__main__':
-    #_test()
-    a=misc.imread("tools/0.jpg",mode="la")
-    b=misc.imread("tools/1.jpg",mode="la")
-    logger.debug(a)
-    compute_distance(a,b)
+    from tools import binaryzation_crop
+    a=misc.imread("tools/0.jpg",mode="L")
+    b=misc.imread("tools/1.jpg",mode="L")
+    from cluster import density_cluster
+    c=density_cluster.compute_point_distance(a,b)
+    from view import shape_view
+    shape_view.numpy_view(c,state="reord")

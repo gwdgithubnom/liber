@@ -4,7 +4,7 @@ from pandas import Series
 from numpy import genfromtxt
 # import gzip, cPickle for this is used simple
 import gzip
-#import _pickle as cPickle
+import _pickle as cPickle
 #
 # for nickname cPickle because pickle has replase cPickle in pandans
 import pickle as cPickle

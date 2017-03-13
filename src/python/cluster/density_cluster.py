@@ -11,3 +11,6 @@ import os, random, string, shutil
 
 logger = logging.getLogger("dpc_cluster")
 
+def compute_point_distance(point_i,point_j):
+    point_k=point_i*point_j+point_i*point_j
+    return point_k

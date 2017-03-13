@@ -4,10 +4,7 @@ from PIL import Image
 #from PIL.Image import core as image
 import os, random, string, shutil
 import time
-import logging
-import logging.config
-logging.config.fileConfig("conf/logging.conf")
-logger = logging.getLogger("root")
+from  tools.logger import *
 """
     walk through a directory and get all the file in this directory.
 """
@@ -16,6 +13,7 @@ class BinAndCrop():
 
     def __init__(self, path='data/pic.jpg'):
         self.path = path
+
 
     def checkPath(self,toPath="data/"):
         self.toPath = toPath
@@ -33,6 +31,16 @@ class BinAndCrop():
         new_name = self.path[:24] + '_binary'
         img.save(new_name, "JPEG")
         os.remove(self.path)
+
+
+    def single_bin(self,filename=""):
+        if filename == "":
+            logger.warning("user should define the file location.")
+            return;
+        img = Image.open(filename)
+        img = img.convert("L")
+        img.save(filename,"jpeg")
+        logger.info(filename+" has finished binary.")
 
     def bincrop(self):
         img = Image.open(self.path)

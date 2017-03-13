@@ -23,6 +23,7 @@ def rename_dir(url,static=True,reverse=True):
     :return:
     Tip：需要判断url是否存在，是否为文件夹,对于conf目录需要注意是否已经存在，没有存在需要进行创建。另外对于directory.ini文件也需要判断是否存在。建议对这里的工作进行定义多个子函数。定义的子函数请以_开头。
     在进行一些具体的操作，需要输出相关日志操作
+
     """""
 
 
