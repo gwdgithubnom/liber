@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 #-*- coding: utf-8 -*-
 
-from abc import ABCMeta, abstractmethod
+from otest import ABCMeta, abstractmethod
 from math import sqrt
 
 import numpy as np
