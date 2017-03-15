@@ -2,10 +2,12 @@
 Python module for cluster arithmetic.
 
 
+
 # 目录
 - conf 项目配置目录
 - data 项目数据目录
 - distance 求距离目录
+A cluster framework for 'Clustering by fast search and find of density peaks' in science 2014.
 A cluster framework for 'Clustering by fast search and find of density peaks' in science 2014.
 
 ## How to Use
