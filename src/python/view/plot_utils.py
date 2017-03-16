@@ -1,9 +1,23 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
-import logging
+from tools import logger
 import numpy as np
 import matplotlib.pyplot as plt
+log = logger.getLogger()
+
+def plot_rho_delta(rho, delta):
+	'''
+	Plot scatter diagram for rho-delta points
+
+	Args:
+		rho   : rho list
+		delta : delta list
+	'''
+	log.info("PLOT: rho-delta plot")
+	plot_scatter_diagram(0, rho[1:], delta[1:], x_label='rho', y_label='delta', title='rho-delta')
+
+
 
 def plot_scatter_diagram(which_fig, x, y, x_label = 'x', y_label = 'y', title = 'title', style_list = None):
 	'''
@@ -50,6 +64,7 @@ def plot_scatter_diagram(which_fig, x, y, x_label = 'x', y_label = 'y', title = 
 	plt.show()
 
 if __name__ == '__main__':
+
 	x = np.array([1, 2, 3, 4, 5, 6, 7, 8, 7, 7])
 	y = np.array([2, 3, 4, 5, 6, 2, 4, 8, 5, 6])
 	cls = np.array([1, 4, 2, 3, 5, -1, -1, 6, 6, 6])

@@ -1,22 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
-import logging
+from  tools import logger
 import numpy as np
 from cluster import *
 from sklearn import manifold
 from view.plot_utils import *
+log=logger.getLogger()
 
-def plot_rho_delta(rho, delta):
-	'''
-	Plot scatter diagram for rho-delta points
-
-	Args:
-		rho   : rho list
-		delta : delta list
-	'''
-	logger.info("PLOT: rho-delta plot")
-	plot_scatter_diagram(0, rho[1:], delta[1:], x_label='rho', y_label='delta', title='rho-delta')
 
 def plot_cluster(cluster):
 	'''
@@ -25,7 +16,7 @@ def plot_cluster(cluster):
 	Args:
 		cluster : DensityPeakCluster object
 	'''
-	logger.info("PLOT: cluster result, start multi-dimensional scaling")
+	log.info("PLOT: cluster result, start multi-dimensional scaling")
 	dp = np.zeros((cluster.max_id, cluster.max_id), dtype = np.float32)
 	cls = []
 	for i in range(1, cluster.max_id):
@@ -45,7 +36,8 @@ def plot_cluster(cluster):
 	plot_scatter_diagram(1, dp_mds[:, 0], dp_mds[:, 1], title='cluster', style_list = cls)
 
 if __name__ == '__main__':
-	logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+	"""
+	log.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 	dpcluster = DensityPeakCluster()
 	# dpcluster.local_density(load_paperdata, './example_distances.dat')
 	# plot_rho_delta(rho, delta)   #plot to choose the threthold
@@ -54,3 +46,5 @@ if __name__ == '__main__':
 	for idx, center in dpcluster.ccenter.items():
 		logger.info('%d %f %f' %(idx, rho[center], delta[center]))
 	plot_cluster(dpcluster)
+
+	"""
