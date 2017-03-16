@@ -117,19 +117,43 @@ def _test():
     shape_view.numpy_view(c,state="record")
     log.debug(np.sum(c))
 
+def conv(o):
+    x = np.array(o)
+    y = x.astype(np.float)
+    return y
 
+"""
 
+"""
 
 if __name__ == '__main__':
+
+    """
+
+    """
+    """
+
+    """
+    """
     from context.resource_manager import Properties
+    from pandas import  DataFrame,Series
     path=os.path.join(Properties.getRootPath(),Properties.getImageXmlResource())
     from xml.dom.minidom import parse,parseString
     images=parse(path)
     id=[]
     data=[]
-    for node in images.getElementById("Image"):
-        for subNode in node.childNodes:
-            idNode=subNode.getElmentsByTagName("id")
-            dataNode=subNode.getElmentsByTagName("data")
-
-
+    for node in images.getElementsByTagName("Image"):
+        idNode=node.getElementsByTagName("id")[0].childNodes[0].data
+        id.append(idNode)
+        dataNode=node.getElementsByTagName("data")[0].childNodes[0].data
+        dataNode=dataNode[1:-1].split(',')
+        data.append(dataNode)
+    id=np.asarray(id)
+    id=Series(id)
+    data=np.asarray(list(map(conv,data)),dtype=np.float)
+    np.save(Properties.getRootPath()+"/data/cache/id.npy",id)
+    np.save(Properties.getRootPath()+"/data/cache/data.npy",data)
+    """
+    a=np.zeros((10,10))
+    a=a+10
+    log.debug(a)
