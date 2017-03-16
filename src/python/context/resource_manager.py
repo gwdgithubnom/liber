@@ -1,7 +1,36 @@
 import os
+import platform
 """
 用于配置常用的初始化信息类
 """
+def getSeparator():
+    """
+    if 'Windows' in platform.system():
+        separator = '\\'
+    else:
+        separator = '/'
+    :return:
+    """
+    separator=os.path.sep
+    return separator
+
+def findPath(file):
+    """
+    to locate the root path.
+    :param file:
+    :return:
+    """
+    o_path = os.getcwd()
+    separator = getSeparator()
+    str = o_path
+    str = str.split(separator)
+    while len(str) > 0:
+        spath = separator.join(str)+separator+file
+        leng = len(str)
+        if os.path.exists(spath):
+            return spath
+        str.remove(str[leng-1])
+
 class Properties:
 
 
@@ -19,8 +48,10 @@ class Properties:
         返回根目录，路径
         :return:
         """
-        path=os.path.dirname(os.path.abspath(__file__))
-        path = os.getcwd()
+        #path=os.path.dirname(os.path.abspath(__file__))
+        #path = os.getcwd()
+        path = findPath("python")
+        os.chdir(path)
         return path
     @classmethod
     def getDefaultOperationFold(cls):
@@ -29,6 +60,16 @@ class Properties:
         :return:
         """
         file="data/default"
+        path=os.path.join(Properties.getRootPath(),file)
+        return path
+
+    @classmethod
+    def getDefaultWorkFold(cls):
+        """
+        返回默认操作目录
+        :return:
+        """
+        file="data/work"
         path=os.path.join(Properties.getRootPath(),file)
         return path
 
@@ -63,7 +104,7 @@ class Properties:
         return size
 
     @classmethod
-    def getImageDefaultLocation(cls):
+    def getImageDefaultFileLocation(cls):
         path='data/pic.jpg'
         return os.path.join(Properties.getRootPath(),path)
 
@@ -76,3 +117,4 @@ class Properties:
     def getWhiteImageLocation(cls):
         path="data/white.jpg"
         return os.path.join(Properties.getRootPath(),path)
+

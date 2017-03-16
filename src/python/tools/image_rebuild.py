@@ -1,5 +1,7 @@
 import os,random,string,shutil
 from tools import logger
+from tools import logger
+from context import resource_manager
 log=logger.getLogger()
 
 
@@ -62,55 +64,54 @@ def initDirs(path):
         		 shutil.rmtree(filepath,True)  
 			 os.makedirs(filepath);
 
-def separation_file():
+def separation_file(src=resource_manager.Properties.getDefaultOperationFold(),path=resource_manager.Properties.getDefaultWorkFold(),train=0,verify=0,test=0,state=False):
 
-	path=".";
-	src="./src";
+    log.info("starting to separtion work. rebuild the image directory. At "+src)
 	#path=raw_input("src path:");
-	train=0.0;
-	verify=0.0;
-	test=0.0;
 	#n=raw_input("input train mount decimals:");
 	#m=raw_input("input verify mount decimals:");
 	#l=raw_input("input test mout decimals:");
-	log.info("please input the train,verify,test factor:")
-	train=input();
-	verify=input();
-	test=input();
-	train=train*0.01;
-	verify=verify*0.01;
-	test=test*0.01;
+	if state:
+		log.info("please input the train,verify,test factor:")
+		train=input()
+		verify=input()
+		test=input()
+	train=train*0.01
+	verify=verify*0.01
+	test=test*0.01
 	#train=train*0.01;
 	#verify=verify*0.01;
 	#test=test*0.01;
-	log.info("this is the factor:",train,",",verify,",",test)
-	files=os.listdir(src);
+	if train>0:
+		log.info("this is the factor:",train,",",verify,",",test)
+
+	files=os.listdir(src)
 	i=0;
-	dirs=subdirs(src);
-	dpath=path+"/train";
+	dirs=subdirs(src)
+	dpath=path+"/train"
 	#print dpath;
-	initDirs(dpath);
-	dpath=path+"/verify";
-	initDirs(dpath);
-	dpath=path+"/test";
-	initDirs(dpath);
+	initDirs(dpath)
+	dpath=path+"/verify"
+	initDirs(dpath)
+	dpath=path+"/test"
+	initDirs(dpath)
 	for d in dirs:
-		files=subfilesName(d);
-		length=len(files);
+		files=subfilesName(d)
+		length=len(files)
 		#print "###########",d,"###########"
 		i=1;
 		for f in files:
-			name=random_str(8)+"_"+f;
+			name=random_str(8)+"_"+f
 			if i<=length*train:
-				p=path+"/train";
+				p=path+"/train"
 			elif i<=(length*train+length*verify):
-				p=path+"/verify";
+				p=path+"/verify"
 			else:
-				p=path+"/test";
-			shutil.copy(os.path.join(d,f),os.path.join(p+"/data100",name));
-                        shutil.copy(os.path.join(d,f),os.path.join(p+"/data28",name));
+				p=path+"/test"
+			shutil.copy(os.path.join(d,f),os.path.join(p+"/data100",name))
+                        shutil.copy(os.path.join(d,f),os.path.join(p+"/data28",name))
 #			os.rename(os.path(join(d,f),os.path.join(p+"/data100",name);
-			i=i+1;
+			i=i+1
 			#print i,":",d," file:",f,"--->",p," file:",name
 
 #separationFile();
