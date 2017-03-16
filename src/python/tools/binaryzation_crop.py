@@ -4,10 +4,13 @@ from PIL import Image
 #from PIL.Image import core as image
 import os, random, string, shutil
 import time
-from  tools.logger import *
+from  tools import logger
+from context import resource_manager
+log=logger.getLogger()
 """
     walk through a directory and get all the file in this directory.
 """
+
 
 class BinAndCrop():
 
@@ -20,9 +23,9 @@ class BinAndCrop():
         self.state = os.path.exists(toPath)
         if self.state == False:
             os.makedirs(toPath)
-            logger.info("check the bin directory is exist:" + str(self.state) + " and mkdir path:" + toPath)
+            log.info("check the bin directory is exist:" + str(self.state) + " and mkdir path:" + toPath)
         else:
-            logger.info("check the bin directory is exist:" + str(self.state))
+            log.info("check the bin directory is exist:" + str(self.state))
 
     def binary(self):
         img = Image.open(self.path)
@@ -35,20 +38,21 @@ class BinAndCrop():
 
     def single_bin(self,filename=""):
         if filename == "":
-            logger.warning("user should define the file location.")
+            log.warning("user should define the file location.")
             return;
         img = Image.open(filename)
         img = img.convert("L")
         img.save(filename,"jpeg")
-        logger.info(filename+" has finished binary.")
+        log.info(filename+" has finished binary.")
 
     def bincrop(self):
         img = Image.open(self.path)
         img = img.convert("L")
-        img = img.resize((126, 126), Image.ANTIALIAS)
+        i=resource_manager.Properties.getImageDefaultSize()
+        img = img.resize((i,i), Image.ANTIALIAS)
         new_name = self.path[:24] + '_bincrop'
         test_name= self.toPath+self.timename()
-        logger.info(" save file " + self.toPath + self.timename() + ".jpg")
+        log.info("size:"+i+"*"+i+" ,save file " + self.toPath + self.timename() + ".jpg")
         img.save(test_name+".jpg","JPEG")
         img.save(new_name, "JPEG")
         os.remove(self.path)
