@@ -1,33 +1,18 @@
 import os,random,string,shutil
-path=".";
-src="./src";
-#path=raw_input("src path:");
-train=0.0;
-verify=0.0;
-test=0.0;
-#n=raw_input("input train mount decimals:");
-#m=raw_input("input verify mount decimals:");
-#l=raw_input("input test mout decimals:");
-print "please input the train,verify,test factor:"
-train=input();
-verify=input();
-test=input();
-train=train*0.01;
-verify=verify*0.01;
-test=test*0.01;
-#train=train*0.01;
-#verify=verify*0.01;
-#test=test*0.01;
-print "this is the factor:",train,",",verify,",",test
-files=os.listdir(src);
-i=0;
+from tools import logger
+log=logger.getLogger()
+
+
+"""
 def rename():
 	for f in files:
-	    if os.path.isfile(os.path.join(path,f))==True:
-		i=i+1;
-		name='{0}_{1:0{2}d}'.format(prefix,i,4);
-		os.rename(os.path.join(path,f),os.path.join(path,name));
-		print f,"-->",name
+		if os.path.isfile(os.path.join(path,f))==True:
+			i=i+1;
+			name='{0}_{1:0{2}d}'.format(prefix,i,4);
+			os.rename(os.path.join(path,f),os.path.join(path,name));
+		# f,"-->",name
+
+"""
 
 # get sub dirs
 def subdirs(path):
@@ -77,10 +62,33 @@ def initDirs(path):
         		 shutil.rmtree(filepath,True)  
 			 os.makedirs(filepath);
 
-def separationFile():
+def separation_file():
+
+	path=".";
+	src="./src";
+	#path=raw_input("src path:");
+	train=0.0;
+	verify=0.0;
+	test=0.0;
+	#n=raw_input("input train mount decimals:");
+	#m=raw_input("input verify mount decimals:");
+	#l=raw_input("input test mout decimals:");
+	log.info("please input the train,verify,test factor:")
+	train=input();
+	verify=input();
+	test=input();
+	train=train*0.01;
+	verify=verify*0.01;
+	test=test*0.01;
+	#train=train*0.01;
+	#verify=verify*0.01;
+	#test=test*0.01;
+	log.info("this is the factor:",train,",",verify,",",test)
+	files=os.listdir(src);
+	i=0;
 	dirs=subdirs(src);
 	dpath=path+"/train";
-	print dpath;
+	#print dpath;
 	initDirs(dpath);
 	dpath=path+"/verify";
 	initDirs(dpath);
@@ -89,7 +97,7 @@ def separationFile():
 	for d in dirs:
 		files=subfilesName(d);
 		length=len(files);
-		print "###########",d,"###########"
+		#print "###########",d,"###########"
 		i=1;
 		for f in files:
 			name=random_str(8)+"_"+f;
@@ -103,6 +111,7 @@ def separationFile():
                         shutil.copy(os.path.join(d,f),os.path.join(p+"/data28",name));
 #			os.rename(os.path(join(d,f),os.path.join(p+"/data100",name);
 			i=i+1;
-			print i,":",d," file:",f,"--->",p," file:",name
-separationFile();					
+			#print i,":",d," file:",f,"--->",p," file:",name
+
+#separationFile();
  

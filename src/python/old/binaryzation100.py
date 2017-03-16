@@ -13,7 +13,7 @@ def subfilesName(path):
     return fl
 
 def cropImage(fileName):
-    print "Processing ... ", fileName
+    #print "Processing ... ", fileName
     #open the image
 
     img = Image.open(fileName)
@@ -24,7 +24,7 @@ def cropImage(fileName):
 
 
 def preOp(fileName):
-    print "Processing ... ", fileName
+    #print "Processing ... ", fileName
     if fileName == 'temp.jpg':
         return
     #only process the jpg file
@@ -36,7 +36,7 @@ def preOp(fileName):
     backGround = Image.open('./temp.jpg')
     backGround = backGround.convert('RGBA')
 
-    print fileName;
+    #print fileName;
     #open the image
     img = Image.open(fileName)
     img = img.convert("L")
@@ -45,8 +45,8 @@ def preOp(fileName):
     rows=img.size[0];
     cols=img.size[1];
     #scan by cols
-    for y in xrange(cols):
-        for x in xrange(rows):
+    for y in range(cols):
+        for x in range(rows):
 	    pixdata[x,y]=0  if pixdata[x,y]>=128 else 255
 
     #crop the image to 100 * 100
@@ -54,20 +54,20 @@ def preOp(fileName):
         box = (0,0, rows,cols)
         region = img.crop(box)
         positioin = ((100-rows)/2, (100-cols)/2, (100-rows)/2+rows, (100-cols)/2+cols )
-        print positioin
+        #print positioin
         backGround.paste(region,positioin)
         img = backGround
-    print "......#####",fileName,"######....."
+    #print "......#####",fileName,"######....."
 
     img.save(fileName, "JPEG")
 
 def binaryzationJpg(src):
         i=1;
-        print "start binaryzationJpg()"
+        #print "start binaryzationJpg()"
 
 	files=subfilesName(src+"/data100");
         length=len(files);
-        print "###########",src,"##",length,"###########"
+        #print "###########",src,"##",length,"###########"
         i=1;
         for f in files:
                 if os.path.isfile(os.path.join(src+"/data100",f)):
@@ -75,6 +75,8 @@ def binaryzationJpg(src):
                         i=i+1;
 			shutil.copy(os.path.join(src+"/data100",f),os.path.join(src+"/data28",f))
 			cropImage(os.path.join(src+"/data28",f));
+
+
 def binaryzations():
         binaryzationJpg("./train");
         binaryzationJpg("./verify");

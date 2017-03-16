@@ -17,18 +17,18 @@ i=0;
 def rename():
 
 	for directory in directorys:
-	    print "####",directory," is doing ####";
+	    #print "####",directory," is doing ####";
 	    path=src+"/"+directory;
 	    files=subfilesName(path)
 	    i=0;
 	    for f in files:
-		print os.path.join(f),"...."
+		#print os.path.join(f),"...."
 	    	if os.path.isfile(os.path.join(path,f))==True:
 			i=i+1;
 			name='{0}_{1:0{2}d}'.format(directory,i,4);
-			print os.path.join(path,f),os.path.join(path,name);
+			#print os.path.join(path,f),os.path.join(path,name);
 			os.rename(os.path.join(path,f),os.path.join(path,name));
-			print f,"-->",name
+			#print f,"-->",name
 
 # get sub dirs
 def subdirs(path):
@@ -58,9 +58,9 @@ def random_str(randomlength=8):
     str = ''
     chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
     length = len(chars) - 1
-    random = Random()
+    r = random.random()
     for i in range(randomlength):
-        str+=chars[random.randint(0, length)]
+        str+=chars[r.randint(0, length)]
     return str
 
 def random_string(randomlength=8):

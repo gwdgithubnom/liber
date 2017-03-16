@@ -1,6 +1,6 @@
 import os
 import sys
-import Image
+from PIL import Image
 import os,random,string,shutil
 path=".";
 src="./src";
@@ -13,9 +13,8 @@ def subfilesName(path):
     return fl
 
 def cropImage(fileName):
-    print "Processing ... ", fileName
+    #print "Processing ... ", fileName
     #open the image
-
     img = Image.open(fileName)
     #img=img.resize((28,28),Image.ANTIALIAS);
     img=img.resize((52,52),Image.ANTIALIAS);          
@@ -25,7 +24,7 @@ def cropImage(fileName):
 
 
 def preOp(fileName):
-    print "Processing ... ", fileName
+    #print "Processing ... ", fileName
     if fileName == 'temp.jpg':
         return
     #only process the jpg file
@@ -37,7 +36,7 @@ def preOp(fileName):
     backGround = Image.open('./temp.jpg')
     backGround = backGround.convert('RGBA')
 
-    print fileName;    
+    #print fileName;
     #open the image
     img = Image.open(fileName)
     img = img.convert("RGBA")
@@ -46,22 +45,22 @@ def preOp(fileName):
     rows=img.size[0];
     cols=img.size[1];
     #scan by cols
-    for y in xrange(cols):
-        for x in xrange(rows):
+    for y in range(cols):
+        for x in range(rows):
             if pixdata[x, y][0] < 90:
                 pixdata[x, y] = (255,255,255, 255)
 	    else:
 		pixdata[x,y]=(0,0,0,0)
  
-    for y in xrange(cols):
-        for x in xrange(rows):
+    for y in range(cols):
+        for x in range(rows):
             if pixdata[x, y][1] < 90:
                 pixdata[x, y] = (255, 255, 255, 255)
 	    else:
                 pixdata[x, y] = (0, 0, 0, 0)
 
-    for y in xrange(cols):
-        for x in xrange(rows):
+    for y in range(cols):
+        for x in range(rows):
             if pixdata[x, y][2] < 90:
 		pixdata[x,y]=(255,255,255,255)
 	    else:
@@ -72,20 +71,20 @@ def preOp(fileName):
         box = (0,0, rows,cols)
         region = img.crop(box)
         positioin = ((100-rows)/2, (100-cols)/2, (100-rows)/2+rows, (100-cols)/2+cols )
-        print positioin
+        #print positioin
         backGround.paste(region,positioin)
         img = backGround
-    print "......#####",fileName,"######....."
+    #print "......#####",fileName,"######....."
    
     img.save(fileName, "JPEG")
     
 def binaryzationJpg(src):
         i=1;
-        print "start binaryzationJpg()"
+        #print "start binaryzationJpg()"
         
 	files=subfilesName(src+"/data100");
         length=len(files);
-        print "###########",src,"##",length,"###########"
+        #print "###########",src,"##",length,"###########"
         i=1;
         for f in files:
                 if os.path.isfile(os.path.join(src+"/data100",f)):

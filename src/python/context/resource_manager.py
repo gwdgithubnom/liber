@@ -61,3 +61,18 @@ class Properties:
         """
         size=100
         return size
+
+    @classmethod
+    def getImageDefaultLocation(cls):
+        path='data/pic.jpg'
+        return os.path.join(Properties.getRootPath(),path)
+
+    @classmethod
+    def getBlackImageLocation(cls):
+        path='data/black.jpg'
+        return os.path.join(Properties.getRootPath(),path)
+
+    @classmethod
+    def getWhiteImageLocation(cls):
+        path="data/white.jpg"
+        return os.path.join(Properties.getRootPath(),path)
