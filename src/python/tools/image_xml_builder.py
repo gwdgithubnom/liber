@@ -67,7 +67,7 @@ def dir_to_dataset(path):
             filename=os.path.basename(dir)
             #print(filename[0:-4])
             #pixels.append(int(filename[0:-4]))
-            pixels.insert(0,(filename[0:-4]))
+            pixels.insert(0,filename)
             dataset.append(pixels)
     return dataset
 """
@@ -76,7 +76,7 @@ http://www.cnblogs.com/wangshide/archive/2011/10/29/2228936.html
 http://www.cnblogs.com/xiaowuyi/archive/2012/10/17/2727912.html
 http://www.cnblogs.com/coser/archive/2012/01/10/2318298.html
 """
-def initDataSet(source=resource_manager.Properties.getDefaultOperationFold(),path=resource_manager.Properties.getImageXmlResource()):
+def start_imagexml_builder(source=resource_manager.Properties.getDefaultOperationFold(),path=resource_manager.Properties.getImageXmlResource()):
     rmfile()
     log.info("starting to init dataset to running create image.xml module.")
     #path="D:\Projects\\Python\\deeplay\\src\\train\\run\\*";
@@ -101,11 +101,14 @@ def initDataSet(source=resource_manager.Properties.getDefaultOperationFold(),pat
         f.close()
     root=xml.dom.minidom.parse(path)
     imagesRoot=root.documentElement
+    c=0
     #root=xml.etree.ElementTree.parse("image.xml");
+    import sys
     for x in range(0, len(Data)):
         imageRoot=document.createElement("Image")
         id=document.createElement("id")
         data=document.createElement("data")
+        c=c+1
         aRow = Data[x]
         value=[]
         for pix in range(1, len(aRow)):
@@ -123,6 +126,7 @@ def initDataSet(source=resource_manager.Properties.getDefaultOperationFold(),pat
     f=open(path,"w")
     root.writexml(f,addindent=' '*4, newl='\n', encoding='utf-8')
     f.close()
+    log.info("build about "+str(c)+" image file.")
 
 def rmfile(xmlFile=resource_manager.Properties.getImageXmlResource()):
     try:
@@ -149,7 +153,7 @@ def imageBuildXml(data):
 
 def build_image_xml(source=resource_manager.Properties.getDefaultOperationFold(),path=resource_manager.Properties.getImageXmlResource()):
     rmfile(path)
-    initDataSet(source,path)
+    start_imagexml_builder(source,path)
 
 
 from xml.etree.ElementTree import ElementTree,Element
@@ -284,4 +288,4 @@ if __name__ == "__main__":
 if __name__=="__main__":
     log.info("starting building image xml.")
     rmfile()
-    initDataSet()
+

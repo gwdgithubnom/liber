@@ -54,21 +54,21 @@ def random_string(randomlength=8):
     return ''.join(a[:randomlength])
 
 def initDirs(path):
-	filelist=[]  
-	filelist=os.listdir(path)  
-	for f in filelist:  
-   		 filepath = os.path.join( path, f )  
-   		 if os.path.isfile(filepath):  
-       			 os.remove(filepath)  
-		 elif os.path.isdir(filepath):  
-        		 shutil.rmtree(filepath,True)  
-			 os.makedirs(filepath);
+	filelist=[]
+	filelist=os.listdir(path)
+	for f in filelist:
+		filepath = os.path.join( path, f )
+		if os.path.isfile(filepath):
+			os.remove(filepath)
+		elif os.path.isdir(filepath):
+			shutil.rmtree(filepath,True)
+		os.makedirs(filepath)
 
-def separation_file(src=resource_manager.Properties.getDefaultOperationFold(),path=resource_manager.Properties.getDefaultWorkFold(),train=0,verify=0,test=0,state=False):
+def start_image_rebuild(src=resource_manager.Properties.getDefaultOperationFold(),path=resource_manager.Properties.getDefaultWorkFold(),train=0,verify=0,test=0,state=False):
 
-    log.info("starting to separtion work. rebuild the image directory. At "+src)
-	#path=raw_input("src path:");
-	#n=raw_input("input train mount decimals:");
+	log.info("starting to separtion work. rebuild the image directory. At "+src)
+	# path=raw_input("src path:");
+	# 	#n=raw_input("input train mount decimals:");
 	#m=raw_input("input verify mount decimals:");
 	#l=raw_input("input test mout decimals:");
 	if state:
@@ -82,37 +82,35 @@ def separation_file(src=resource_manager.Properties.getDefaultOperationFold(),pa
 	#train=train*0.01;
 	#verify=verify*0.01;
 	#test=test*0.01;
-	if train>0:
+	if train>0 :
 		log.info("this is the factor:",train,",",verify,",",test)
-
-	files=os.listdir(src)
-	i=0;
-	dirs=subdirs(src)
-	dpath=path+"/train"
-	#print dpath;
-	initDirs(dpath)
-	dpath=path+"/verify"
-	initDirs(dpath)
-	dpath=path+"/test"
-	initDirs(dpath)
-	for d in dirs:
-		files=subfilesName(d)
-		length=len(files)
-		#print "###########",d,"###########"
-		i=1;
-		for f in files:
-			name=random_str(8)+"_"+f
-			if i<=length*train:
-				p=path+"/train"
-			elif i<=(length*train+length*verify):
-				p=path+"/verify"
-			else:
-				p=path+"/test"
-			shutil.copy(os.path.join(d,f),os.path.join(p+"/data100",name))
-                        shutil.copy(os.path.join(d,f),os.path.join(p+"/data28",name))
-#			os.rename(os.path(join(d,f),os.path.join(p+"/data100",name);
-			i=i+1
-			#print i,":",d," file:",f,"--->",p," file:",name
-
-#separationFile();
- 
+		files=os.listdir(src)
+		i=0;
+		dirs=subdirs(src)
+		dpath=path+"/train"
+		#print dpath;
+		initDirs(dpath)
+		dpath=path+"/verify"
+		initDirs(dpath)
+		dpath=path+"/test"
+		initDirs(dpath)
+		for d in dirs:
+			files=subfilesName(d)
+			length=len(files)
+			#print "###########",d,"###########"
+			i=1;
+			for f in files:
+				name=random_str(8)+"_"+f
+				if i<=length*train:
+					p=path+"/train"
+				elif i<=(length*train+length*verify):
+					p=path+"/verify"
+				else:
+					p=path+"/test"
+				shutil.copy(os.path.join(d,f),os.path.join(p+"/data100",name))
+				shutil.copy(os.path.join(d,f),os.path.join(p+"/data28",name))
+				#os.rename(os.path(join(d,f),os.path.join(p+"/data100",name);
+				i=i+1
+				#print i,":",d," file:",f,"--->",p," file:",name
+	else:
+		log.info("starting to rebuild file in dir.")

@@ -1,3 +1,6 @@
+"""
+
+
 def dir_to_dataset(glob_files):
     # print("Gonna process:\n\t %s" % glob_files)
     dataset = []
@@ -72,3 +75,5 @@ def _random_string(randomlength=8):
     a = list(string.ascii_letters)
     random.shuffle(a)
     return ''.join(a[:randomlength])
+
+"""
