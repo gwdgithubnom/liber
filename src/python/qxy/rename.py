@@ -26,13 +26,14 @@ def _reverse_(doc_name):
     if not os.path.exists(doc_name):
         url = os.path.abspath(doc_name)#如果路径不存在，得到绝对路径
     for option in options:
-        str_val = conf.get(doc_name,option )
-        New=os.path.join(doc_name,option);
-        old=os.path.join(doc_name,str_val);
-        print(old+"\n"+New)
-        os.rename(New,old);
-
-
+        try:
+            str_val = conf.get(doc_name,option )
+            New=os.path.join(doc_name,option);
+            old=os.path.join(doc_name,str_val);
+            os.rename(old,New);
+            _store_(doc_name,str_val,option)
+        except:
+            print(option+"  don't exist")
 
 """如果给定路径存在，更改指定文件夹下的文件名"""
 
@@ -43,13 +44,11 @@ def rename_dir(url,static=True,reverse=True):
             url = os.path.abspath(url)#如果路径不存在，得到绝对路径
         a = 0
         doc=os.listdir(url)
-        print(os.path.basename(url))
         for files in doc:
             old=os.path.join(url,files);
             filetype=os.path.splitext(files)[1];
             #filetype=os.path.splitext(files);#文件扩展名
             New=os.path.join(url,str(a)+filetype);#新的文件路径
-            print(old+"\n"+New)
             os.rename(old, New);
             _store_(url,files, a)
             a=a+1
@@ -65,8 +64,6 @@ def _exist_(url):
     s=url;
     if not os.path.exists(url):
         s = os.path.abspath(url)
-        print(s)
-    print(os.path.exists(s),os.path.isdir(s))
     if os.path.exists(s) and os.path.isdir(s):
         return True
     else:
@@ -101,7 +98,7 @@ def _store_(doc_name,files, a):
 
 
 if __name__ == "__main__":
-    rename_dir(url="otest/abccc",static=True,reverse=False)
+    rename_dir(url="otest",static=True,reverse=False)
 
 
 
