@@ -126,6 +126,12 @@ def conv(o):
 
 """
 
+def add_row(df, row):
+    colnames = list(df.columns)
+    ncol = len(colnames)
+    assert ncol == len(row), "Length of row must be the same as width of DataFrame: %s" % row
+    return df.append(DataFrame([row], columns=colnames))
+
 if __name__ == '__main__':
 
     """
@@ -154,6 +160,27 @@ if __name__ == '__main__':
     np.save(Properties.getRootPath()+"/data/cache/id.npy",id)
     np.save(Properties.getRootPath()+"/data/cache/data.npy",data)
     """
-    a=np.zeros((10,10))
-    a=a+10
-    log.debug(a)
+    from cluster import density_cluster
+    from pandas import Series,DataFrame
+    from context.resource_manager import Properties
+    from view import shape_view
+    from cluster import density_cluster
+    id=np.load(Properties.getRootPath()+"/data/cache/id.npy")
+    data=np.load(Properties.getRootPath()+"/data/cache/data.npy")
+    id_index=Series(id.tolist())
+    from cluster.density_cluster import *
+    N=id_index.count()
+    distance=compute_distance(data)
+    distance_c=init_distance_c(distance)
+    shape_view.pandas_view_record(list(distance))
+    # id.values -> 对应的key
+    index_id=Series(id_index.index,index=id_index.values)
+    log.warn("the init distance_c is: "+str(distance_c))
+    log.debug(distance_c)
+    # to creat the base index table
+    # 生成对应的索引，用于控制rho，delta，index的内容
+    log.debug(distance)
+    rho=rho_function(distance,distance_c=3021276)
+
+    rho_id=Series(rho,index=id)
+    log.critical(rho)

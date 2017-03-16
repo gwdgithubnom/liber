@@ -25,9 +25,6 @@ def rename_dir(url,static=True,reverse=True):
     在进行一些具体的操作，需要输出相关日志操作
 
     """""
-
-
-
 class pcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -102,11 +99,26 @@ def rename(path="./default_path"):
 
 # get sub dirs
 def subdirs(path):
+    """
+    得到对应路径下的所有路径
+    :param path:
+    :return:
+    """
     dl = [];
     for i in os.walk(path, False):
         for d in i[1]:
             dl.append(os.path.join(path, d))
     return dl
+
+def subfilesName(path):
+    """
+    得到对应路径下的，相关文件
+    """
+    fl = [];
+    for i in os.walk(path, False):
+        for f in i[2]:
+            fl.append(f)
+    return fl
 
 #get sub file
 def subfiles(path):
@@ -114,13 +126,6 @@ def subfiles(path):
     for i in os.walk(path, False):
         for f in i[2]:
             fl.append(os.path.join(path, f))
-    return fl
-
-def subfilesName(path):
-    fl = [];
-    for i in os.walk(path, False):
-        for f in i[2]:
-            fl.append(f)
     return fl
 
 """
