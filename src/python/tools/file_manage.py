@@ -108,7 +108,7 @@ def random_str(randomlength=8):
     length = len(chars) - 1
     r = random.random()
     for i in range(randomlength):
-        str+=chars[r.randint(0, length)]
+        str+=chars[r.randint(0 ,length)]
     return str
 
 

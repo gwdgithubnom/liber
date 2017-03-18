@@ -43,6 +43,10 @@ import os
     #写回配置文件
     conf.write(open("test.cfg", "w"))"""
 def gen_ini():
+    """
+
+    :return:
+    """
     ftest = open('directory.ini','+a')
     config_write = configparser.RawConfigParser()
     config_write.add_section('Section_a')
