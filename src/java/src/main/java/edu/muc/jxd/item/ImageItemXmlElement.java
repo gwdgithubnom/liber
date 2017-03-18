@@ -35,7 +35,7 @@ public class ImageItemXmlElement {
 	 * @return
 	 */
 	public ImageItemVector<Number> getDataToImageItemVector() {
-		if (data == null || id == 0) {
+		if (data == null || id <0) {
 			return null;
 		}
 		ImageItemVector<Number> imageItemVector = new ImageItemVector<>();

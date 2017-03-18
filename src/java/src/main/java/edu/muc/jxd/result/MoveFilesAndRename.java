@@ -10,12 +10,12 @@ import java.io.IOException;
  *
  */
 public class MoveFilesAndRename {
-	public static String rootPath = "E:\\project\\cluster\\AllDataSet";
+	public static String rootPath = "E:\\project\\cluster\\paperdataset";
 
 	public static int id = 0;
 
 	public static void main(String[] args) {
-		String baseDir = "E:\\project\\cluster\\DataSet\\全部的-未合并\\全部的";
+		String baseDir = "E:\\project\\cluster\\DataSet\\7Test";
 		File dir = new File(baseDir);
 		MoveFilesAndRename.moveFiles(dir, rootPath);
 	}

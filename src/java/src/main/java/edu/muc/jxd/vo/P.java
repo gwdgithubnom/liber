@@ -449,7 +449,9 @@ public class P {
 	 * *************************************** 计算从Itemi到Itemj之间的距离.
 	 */
 	public int diff(int i, int j) {
+		//System.out.println(itemList.get(i));
 		int dis = this.distence.getDistence(itemList.get(i), itemList.get(j));
+		//System.out.println(dis);
 		// logger.debug("disstance between "+i+" and "+j +" is "+dis);
 		return dis;
 	}
@@ -554,9 +556,13 @@ public class P {
 		System.out.println(title + ":");
 		for (Integer key : points.keySet()) {
 			List<Number> list = points.get(key);
-			System.out.print(" " + key + ": ");
+			
+			
+			
+			
+			System.out.print(" " + this.itemList.get(key).getId() + ": ");
 			for (Number number : list) {
-				System.out.print(number + " ");
+				System.out.print(this.itemList.get(number.intValue()).getId() + " ");
 			}
 			System.out.println();
 		}

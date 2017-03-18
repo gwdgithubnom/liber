@@ -129,18 +129,13 @@ def conv(o):
 def add_row(df, row):
     colnames = list(df.columns)
     ncol = len(colnames)
+    from pandas import DataFrame
     assert ncol == len(row), "Length of row must be the same as width of DataFrame: %s" % row
     return df.append(DataFrame([row], columns=colnames))
 
-if __name__ == '__main__':
 
-    """
 
-    """
-    """
-
-    """
-    """
+def save():
     from context.resource_manager import Properties
     from pandas import  DataFrame,Series
     path=os.path.join(Properties.getRootPath(),Properties.getImageXmlResource())
@@ -157,10 +152,13 @@ if __name__ == '__main__':
     id=np.asarray(id)
     id=Series(id)
     data=np.asarray(list(map(conv,data)),dtype=np.float)
+
     np.save(Properties.getRootPath()+"/data/cache/id.npy",id)
     np.save(Properties.getRootPath()+"/data/cache/data.npy",data)
+
+if __name__ == '__main__':
     """
-    from cluster import density_cluster
+from cluster import density_cluster
     from pandas import Series,DataFrame
     from context.resource_manager import Properties
     from view import shape_view
@@ -184,3 +182,32 @@ if __name__ == '__main__':
 
     rho_id=Series(rho,index=id)
     log.critical(rho)
+    """
+    from cluster import density_cluster
+    from pandas import Series
+    from pandas import Series,DataFrame
+    from context.resource_manager import Properties
+    from view import shape_view
+    from cluster import density_cluster
+    distance_c=141
+    pile=0
+    id=np.load(Properties.getRootPath()+"/data/cache/id_index.npy")
+    id_index = Series(id.tolist())
+    index_id = Series(id_index.index, index=id_index.values)
+    pile_id=DataFrame(0,columns=['state','pile'],index=index_id.index)
+    rho_id=np.load(Properties.getRootPath()+"/data/cache/rho_id.npy")
+    rho_id=Series(rho_id, index=index_id.index)
+    distance=np.load(Properties.getRootPath()+"/data/cache/distance.npy")
+    data_id = DataFrame([], columns=['j_id', 'rho', 'delta','gamma', 'i', 'j', 'pile'], index=id_index.values)
+    density_cluster.pile_function(pile_id,id_index,index_id,data_id,distance,distance_c)
+
+    """
+    rho_id = density_cluster.rho_function(index_id,distance, distance_c=distance_c)
+    data = DataFrame([], columns=['gamma','rho','delta','pile'],index=index_id.index)
+    delta_id, data_index = density_cluster.delta_function(id_index, index_id, rho_id, distance)
+    density_cluster.pile_function(pile_id,id_index,index_id,rho_id,distance)
+    #TODO
+    #id_index, index_id
+    log.critical(str(pile_id)+"\npile:"+pile)
+    """
+

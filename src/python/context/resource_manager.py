@@ -64,6 +64,16 @@ class Properties:
         return path
 
     @classmethod
+    def getDefaultDataFold(cls):
+        """
+        返回默认操作目录
+        :return:
+        """
+        file="data"
+        path=os.path.join(Properties.getRootPath(),file)
+        return path
+
+    @classmethod
     def getDefaultWorkFold(cls):
         """
         返回默认操作目录
