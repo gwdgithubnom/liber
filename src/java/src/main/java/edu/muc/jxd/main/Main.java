@@ -15,12 +15,12 @@ public class Main {
 
 		DistenceInter distance = new MixDistance();
 		// DistenceInter distance = new ImageDistence();
-		String path = "7";
+		String path = "/home/gwd/Projects/liber/src/python/data/xml/";
 		// String path = "test";
 		// String path = "all";
 		String filePath = path + File.separator;
 		List<ImageItemVector<Number>> itemList = ToImageVec.getImageVec(filePath + "image.xml");
-		Cluster cluster = new Cluster(itemList, distance, 1, -1, 1);
+		Cluster cluster = new Cluster(itemList, distance, 1, -1, 10);
 		// System.out.println("ItemList");
 
 		/*
@@ -31,9 +31,9 @@ public class Main {
 		 * 
 		 */
 		System.out.println(cluster.getP().toString());
-		cluster.getP().writetoFile(new File("E:\\project\\cluster\\" + filePath + "p.txt"));
+		cluster.getP().writetoFile(new File("/home/gwd/Projects/liber/src/java/src/main/resources/" + filePath + "p.txt"));
 		System.out.println(cluster.getDelta().toString());
-		cluster.getDelta().writetoFile(new File("E:\\project\\cluster\\" + filePath + "delta.txt"));
+		cluster.getDelta().writetoFile(new File("/home/gwd/Projects/liber/src/java/src/main/resources/" + filePath + "delta.txt"));
 		System.out.println("dc=" + cluster.getP().getDc());
 		cluster.printResult();
 		cluster.getP().printEntropy();

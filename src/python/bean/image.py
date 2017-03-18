@@ -39,6 +39,8 @@ def get_data_from_xml(path=Properties.getImageXmlResource()):
     data=np.asarray(list(map(_conv,data)),dtype=np.float)
     return id,data
 
+
+
 class Image:
     def __init__(self):
           self.id=""

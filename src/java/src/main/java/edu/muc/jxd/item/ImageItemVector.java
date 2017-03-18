@@ -1,6 +1,6 @@
 package edu.muc.jxd.item;
 
-public class ImageItemVector<T extends Number> implements ItemInter {
+public class ImageItemVector<T extends Number> implements ItemInter, Comparable<ImageItemVector> {
 	/**
 	 * serialVersionUID
 	 */
@@ -77,6 +77,11 @@ public class ImageItemVector<T extends Number> implements ItemInter {
 			}
 		}
 		return builder.toString().replace('0', ' ');
+	}
+
+	@Override
+	public int compareTo(ImageItemVector o) {
+		return (this.getId() - o.getId());
 	}
 
 }

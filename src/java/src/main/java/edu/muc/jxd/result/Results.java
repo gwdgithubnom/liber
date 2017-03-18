@@ -15,7 +15,7 @@ public class Results {
 	public static HashMap<Integer, List<Number>> initClusterMap(String path) {
 		ResultMap map = new ResultMap();
 		map.readDataToMap(path);
-		map.trimMap();
+		//map.trimMap();
 		map.printMap();
 		return map.resultMap;
 	}
@@ -43,7 +43,7 @@ public class Results {
 			for (Number aFileNum : fileNames) {
 				// 要移动的图像
 				String fileName = aFileNum + fileEnd;
-				File aImage = new File(Results.rootPath + File.separator + fileName);
+				File aImage = new File(Results.rootPath +File.separator+"images"+ File.separator + fileName);
 				File destFile = new File(dir, fileName);
 				// 移动文件
 				try {
@@ -93,7 +93,7 @@ public class Results {
 	}
 
 	public static void main(String[] args) {
-		String path = Results.rootPath + File.separator + "\\Results\\AllResult.txt";
+		String path = Results.rootPath + File.separator + "\\Results\\241.txt";
 		HashMap<Integer, List<Number>> map = Results.initClusterMap(path);
 		Results.moveToDir(map);
 	}
