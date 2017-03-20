@@ -255,68 +255,157 @@ def ent_dc_step_by_step(N, threshold, distance, distance_c):
 
 
 def find_pile_member(distance, distance_c):
-    distance_c=distance-distance_c
-    distance_c=[c>0 for c in distance_c ]
-    log.debug(np.sum(distance_c))
+    distance_c = distance - distance_c
+    """
+     def count():
+        i = 0
+        while True:
+            i += 1
+            yield i
+    a = count()
+    a.__next__()
+    """
+    #[ c.index for c in distance_c  if c > 0]
+    result=[]
+    i=0
+    for c in distance_c:
+        if c<=0 or np.isnan(c):
+            result.append(i)
+        i+=1
+    # distance_c=[c>0 for c in distance_c ]
+    # distance_c=np.sum(distance_c)
+    if len(result) >0:
+        return result
+    return None
 
-    return distance_c
+def pile_sub(pile1,pile2):
+    """
+    对类进行求减法运算
+    :param pile1:
+    :param pile2:
+    :return:
+    """
+    return list(set(pile1)^set(pile2))
+def pile_intersection(pile1,pile2):
+    """
+    对类进行求交集运算
+    :param pile1:
+    :param pile2:
+    :return:
+    """
+    return list(set(pile1)&set(pile2))
 
 
-def pile_function(pile_id, id_index, index_id, data_id,  distance, distance_c):
+def pile_union(pile1,pile2):
+    return list(set(pile1).union(set(pile2)))
 
+def rho_set_tag(id_index,rho_id,pile):
+    for p in pile:
+        index=id_index[p]
+        rho_id[index]=0
+    return rho_id
+
+def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c):
     rho_id = rho_function(index_id, distance, distance_c=distance_c)
     rho_id = rho_id.sort_values(ascending=False)
-    see = pile_id
+    log.debug(rho_id)
+    # n 多少个需要处理的元素 559
     n = rho_id.shape[0]
     if n <= 0:
+        # 不存在需要处理的类，返回空DataFrame
         return pile_id
     k = 0
+    # 标识类别号，初始化第一个类
     p_id = 1
-    i_id = rho_id.index[0]
-    rho_id[i_id] = 0
-    index = index_id[i_id]
-    pile = find_pile_member(distance[index], distance_c)
 
+    i_id = rho_id.index[0]
+    # remove the element 标志不用处理
+
+    # 第i个数据点
+    i = index_id[i_id]
+    pile = find_pile_member(distance[i], distance_c)
+    # 对data_id和pile_id表，进行处理标识
     data_id.ix[i_id, 'pile'] = p_id
-    pile_id.ix[p_id, 'pile'] = pile
-    pile_id.ix[p_id, 'size'] = len(pile)
+    # pile_id.ix[p_id,'state'] = pile
+    rho_set_tag(id_index,rho_id,pile)
+    m=len(pile)
+    # add 新行
+    #d=d.append(DataFrame([dict(a=a,b=b)],index=[1]))
+    if pile is None:
+        pile_id=pile_id.append(DataFrame([dict(pile=-1,size=1)],index=index_id.values))
+        return None
+    pile_id=pile_id.append(DataFrame([dict(pile=pile,size=len(pile),outlier=False)],index=[p_id]))
+    # log.debug(pile_id)
+    # 标记最下的类标准
+    pile_min=len(pile)
     # log.debug("i:"+ str(i))
     # delta_id, data_index = delta_function(id_index, index_id, rho_id, distance)
-    see=data_id
-    log.debug("\nsee:******************\n" + str(see))
-    assert Exception("stop")
-
-    while n > k:
-        rho_id.sort_values(ascending=False)
+    while True:
+        rho_id=rho_id.sort_values(ascending=False)
+        value = rho_id[0]
+        if value == 0:
+            # 需要处理的元素已经处理完
+            break
+        outlier=False
         i_id = rho_id.index[0]
         i = index_id[i_id]
-        value = rho_id[0]
+        pile = find_pile_member(distance[i], distance_c)
 
-        if value == 0:
-            break
+        pile_n = pile_id.shape[0]
+        next = 1
+        p_id_max=pile_id.shape[0]
+        #假设当前是新类
+        p_id=p_id_max+1
+        state=True
+        while pile_n >= next:
+            #寻找下一个可能的堆的合并
 
-        index = index_id[i_id]
-        d = distance[index]
-        d = Series(d)
+            pre = pile_id.ix[next,'pile']
+            intersection=pile_intersection(pile,pre)
+            if len(intersection)<=0:
+                # 不存在交集的情况
+                next+=1
+                continue
 
-        d = d.sort_values(ascending=False)
-        j = d.index[0]
-        j_id = id_index[j]
-
-        while distance[i][j] > 0:
-            distance[i][j]
-            d = d.sort_values(ascending=False)
-            j = d.index[0]
-            j_id = id_index[j]
-
-        rho_id[0] = 0
-        log.debug(id)
-        log.debug(value)
-        log.debug(index)
-        log.debug(d)
-        k += 1
-
-
+            elif len(intersection) >= pile_min/5:
+                # 存在交集，而且交集数量已经达到，最小的聚类数
+                state=False
+                p_id=next
+                pile=list(set(pile_union(pile,pre)))
+                # log.debug(pile_id)
+                pile_id=pile_id.drop(next)
+                pile_id=pile_id.append(DataFrame([dict(pile=pile,size=len(pile),outlier=False)],index=[next]))
+                # pile_id.ix[next, 'pile']=pile could not add list value to the pile_id
+                # 将rho表中进行标记
+                # log.warn(rho_id)
+                rho_set_tag(id_index,rho_id,pile)
+                # log.critical(rho_id)
+                next+=1
+            else:
+                # 存在交集，但数量小于最小聚类数
+                pile=list(pile_sub(pile,intersection))
+                next+=1
+                if len(pile) <=1:
+                    # 离群点的发现
+                    outlier=True
+                    break
+        if state== True:
+            # 对data_id和pile_id表，进行处理标识
+            data_id.ix[i_id, 'pile'] = p_id
+            m=m+len(pile)
+            rho_set_tag(id_index,rho_id,pile)
+            pile_id=pile_id.append(DataFrame([dict(pile=pile,size=len(pile),outlier=outlier)],index=[p_id]))
+        """
+        if pile is None:
+            pile_id.ix[p_id, 'size']=0
+        else:
+            pile_id.ix[p_id, 'size'] = len(pile)
+        """
+        if k>3000:
+            log.debug("")
+        log.debug("this is "+str(k)+" times, there has "+str(n-m)+" element has not clustering.")
+        k+=1
+    log.debug(pile_id)
     return None
 
 
@@ -330,12 +419,13 @@ def ent_dc_step_by_step(id_index, index_id, threshold, distance, distance_c):
     while max_distance_c >= distance_c:
         i = i + 0.5
         pile = 0
-        pile_id = DataFrame(0, columns=['pile', 'size'])
-        delta_id, data_id = delta_function(id_index, index_id, rho_id, distance)
+        # 设置pile的pile元素，与pile的类成员个数
+        pile_id = DataFrame([], columns=['pile', 'size','outlier'])
+        # delta_id, data_id = delta_function(id_index, index_id, rho_id, distance)
         # data = DataFrame([], columns=['gamma', 'rho', 'delta', 'pile'], index=index_id.index)
-        data_id = DataFrame([], columns=['j_id', 'rho', 'delta','gamma', 'i', 'j', 'pile'], index=id_index.values)
+        data_id = DataFrame([], columns=['j_id', 'rho', 'delta', 'gamma', 'i', 'j', 'pile'], index=id_index.values)
 
-        pile_function(pile_id, id_index, index_id, data_id,  distance, distance_c)
+        pile_function(pile_id, id_index, index_id, data_id, distance, distance_c)
 
         # TODO
         # id_index, index_id

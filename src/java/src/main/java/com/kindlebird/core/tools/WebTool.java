@@ -2,7 +2,7 @@ package com.kindlebird.core.tools;
 
 import org.apache.log4j.Logger;
 
-import javax.servlet.http.Cookie;
+import javax.servlet.ht.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Enumeration;
