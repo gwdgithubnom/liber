@@ -21,11 +21,11 @@ def get_threshold():
     import numpy
     import multiprocessing
     threshold = DataFrame([], columns=['H', 'd_c', 'cluster'])
-    N=20
+    N=1
     pool = multiprocessing.Pool(processes=N)
     result = list(range(N))
     for i in range(N):
-        pool.apply_async(density_cluster.cluster, (N,i,threshold,id,data))
+        pool.apply_async(density_cluster.multi_processing_cluster,(N,i,threshold,id,data))
         # d = numpy.concatenate([c, c], axis=0)
     pool.close()
     pool.join()

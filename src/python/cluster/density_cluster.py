@@ -523,6 +523,7 @@ def multi_processing_cluster(job,work,df,id, data):
     N = id_index.count()
     distance = compute_distance(data)
     distance_c = init_distance_c(distance)
+
     # id.values -> 对应的key
     index_id = Series(id_index.index, index=id_index.values)
     log.warn("the init distance_c is: " + str(distance_c))

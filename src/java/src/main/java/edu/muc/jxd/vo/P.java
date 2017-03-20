@@ -12,8 +12,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import edu.muc.jxd.distance.DistenceInter;
-import edu.muc.jxd.item.ImageItemVector;
+import edu.muc.core.distance.DistenceInter;
+import edu.muc.gwd.item.ImageItemVector;
 
 public class P {
 

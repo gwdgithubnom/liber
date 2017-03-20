@@ -1,19 +1,14 @@
 import java.io.*;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
-import java.nio.file.FileSystemAlreadyExistsException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 
-import com.kindlebird.core.entity.Color;
-import com.kindlebird.core.entity.Node;
-import com.kindlebird.core.entity.view.Message;
-import com.kindlebird.core.entity.view.NodeList;
-import com.kindlebird.core.tools.JSONTool;
+import edu.muc.core.entity.Color;
+import edu.muc.core.entity.Node;
+import edu.muc.core.entity.view.NodeList;
+import com.kindlebird.tools.JSONTool;
 
-import com.kindlebird.core.tools.SystemTools;
+import com.kindlebird.tools.SystemTools;
 import org.json.JSONObject;
 import org.junit.*;
 import org.mortbay.util.ajax.JSON;
