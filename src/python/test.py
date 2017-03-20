@@ -235,7 +235,7 @@ from cluster import density_cluster
     from view import shape_view
     from cluster import density_cluster
     #141
-    distance_c = 150
+    distance_c = 199
     pile = 0
     id = np.load(Properties.getRootPath() + "/data/cache/id_index.npy")
     id_index = Series(id.tolist())
@@ -247,8 +247,9 @@ from cluster import density_cluster
     #shape_view.pandas_view_record(str(distance))
     data_id = DataFrame([], columns=['j_id', 'rho', 'delta', 'gamma', 'i', 'j', 'pile'], index=id_index.values)
     # distance_view(index_id,id_index,distance)
-    density_cluster.pile_function(pile_id, id_index, index_id, data_id, distance, distance_c)
-
+    pile=density_cluster.pile_function(pile_id, id_index, index_id, data_id, distance, distance_c)
+    log.debug(pile)
+    log.warn(np.sum(pile['outlier']))
     """
     import numpy
     import multiprocessing

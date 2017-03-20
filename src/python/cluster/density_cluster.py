@@ -265,148 +265,152 @@ def find_pile_member(distance, distance_c):
     a = count()
     a.__next__()
     """
-    #[ c.index for c in distance_c  if c > 0]
-    result=[]
-    i=0
+    # [ c.index for c in distance_c  if c > 0]
+    result = []
+    i = 0
     for c in distance_c:
-        if c<=0 or np.isnan(c):
+        if c <= 0 or np.isnan(c):
             result.append(i)
-        i+=1
+        i += 1
     # distance_c=[c>0 for c in distance_c ]
     # distance_c=np.sum(distance_c)
-    if len(result) >0:
+    if len(result) > 0:
         return result
     return None
 
-def pile_sub(pile1,pile2):
+
+def pile_sub(pile1, pile2):
     """
     对类进行求减法运算
     :param pile1:
     :param pile2:
     :return:
     """
-    return list(set(pile1)^set(pile2))
-def pile_intersection(pile1,pile2):
+    return list(set(pile1) ^ set(pile2))
+
+
+def pile_intersection(pile1, pile2):
     """
     对类进行求交集运算
     :param pile1:
     :param pile2:
     :return:
     """
-    return list(set(pile1)&set(pile2))
+    return list(set(pile1) & set(pile2))
 
 
-def pile_union(pile1,pile2):
+def pile_union(pile1, pile2):
     return list(set(pile1).union(set(pile2)))
 
-def rho_set_tag(id_index,rho_id,pile):
+
+def rho_set_tag(id_index, rho_id, pile):
     for p in pile:
-        index=id_index[p]
-        rho_id[index]=0
+        index = id_index[p]
+        rho_id[index] = 0
     return rho_id
+
 
 def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c):
     rho_id = rho_function(index_id, distance, distance_c=distance_c)
     rho_id = rho_id.sort_values(ascending=False)
-    log.debug(rho_id)
     # n 多少个需要处理的元素 559
     n = rho_id.shape[0]
+    outlier_n=rho_id[(n-1)]
+    log.debug(outlier_n)
     if n <= 0:
         # 不存在需要处理的类，返回空DataFrame
         return pile_id
     k = 0
     # 标识类别号，初始化第一个类
     p_id = 1
-
     i_id = rho_id.index[0]
     # remove the element 标志不用处理
-
     # 第i个数据点
     i = index_id[i_id]
     pile = find_pile_member(distance[i], distance_c)
     # 对data_id和pile_id表，进行处理标识
     data_id.ix[i_id, 'pile'] = p_id
     # pile_id.ix[p_id,'state'] = pile
-    rho_set_tag(id_index,rho_id,pile)
-    m=len(pile)
+    rho_set_tag(id_index, rho_id, pile)
+    m = len(pile)
     # add 新行
-    #d=d.append(DataFrame([dict(a=a,b=b)],index=[1]))
+    # d=d.append(DataFrame([dict(a=a,b=b)],index=[1]))
     if pile is None:
-        pile_id=pile_id.append(DataFrame([dict(pile=-1,size=1)],index=index_id.values))
+        pile_id = pile_id.append(DataFrame([dict(pile=-1, size=1)], index=index_id.values))
         return None
-    pile_id=pile_id.append(DataFrame([dict(pile=pile,size=len(pile),outlier=False)],index=[p_id]))
+    pile_id = pile_id.append(DataFrame([dict(pile=pile, size=len(pile), outlier=False)], index=[p_id]))
     # log.debug(pile_id)
     # 标记最下的类标准
-    pile_min=len(pile)
+    pile_min = len(pile)
     # log.debug("i:"+ str(i))
     # delta_id, data_index = delta_function(id_index, index_id, rho_id, distance)
     while True:
-        rho_id=rho_id.sort_values(ascending=False)
+        rho_id = rho_id.sort_values(ascending=False)
         value = rho_id[0]
         if value == 0:
             # 需要处理的元素已经处理完
             break
-        outlier=False
+        outlier = False
         i_id = rho_id.index[0]
         i = index_id[i_id]
         pile = find_pile_member(distance[i], distance_c)
 
         pile_n = pile_id.shape[0]
         next = 1
-        p_id_max=pile_id.shape[0]
-        #假设当前是新类
-        p_id=p_id_max+1
-        state=True
+        p_id_max = pile_id.shape[0]
+        # 假设当前是新类
+        p_id = p_id_max + 1
+        state = True
         while pile_n >= next:
-            #寻找下一个可能的堆的合并
+            # 寻找下一个可能的堆的合并
 
-            pre = pile_id.ix[next,'pile']
-            intersection=pile_intersection(pile,pre)
-            if len(intersection)<=0:
+            pre = pile_id.ix[next, 'pile']
+            intersection = pile_intersection(pile, pre)
+            if len(intersection) <= 0:
                 # 不存在交集的情况
-                next+=1
+                next += 1
                 continue
 
-            elif len(intersection) >= pile_min/5:
+            elif len(intersection) >= pile_min / 5:
                 # 存在交集，而且交集数量已经达到，最小的聚类数
-                state=False
-                p_id=next
-                pile=list(set(pile_union(pile,pre)))
+                state = False
+                p_id = next
+                pile = list(set(pile_union(pile, pre)))
                 # log.debug(pile_id)
-                pile_id=pile_id.drop(next)
-                pile_id=pile_id.append(DataFrame([dict(pile=pile,size=len(pile),outlier=False)],index=[next]))
+                pile_id = pile_id.drop(next)
+                pile_id = pile_id.append(DataFrame([dict(pile=pile, size=len(pile), outlier=False)], index=[next]))
                 # pile_id.ix[next, 'pile']=pile could not add list value to the pile_id
                 # 将rho表中进行标记
                 # log.warn(rho_id)
-                rho_set_tag(id_index,rho_id,pile)
+                rho_set_tag(id_index, rho_id, pile)
                 # log.critical(rho_id)
-                next+=1
+                next += 1
             else:
                 # 存在交集，但数量小于最小聚类数
-                pile=list(pile_sub(pile,intersection))
-                next+=1
-                if len(pile) <=1:
+                pile = list(pile_sub(pile, intersection))
+                next += 1
+                #设置离群点
+                #if len(pile) <= 1:
+                if len(pile) <= outlier_n:
                     # 离群点的发现
-                    outlier=True
+                    outlier = True
                     break
-        if state== True:
+        if state == True:
             # 对data_id和pile_id表，进行处理标识
             data_id.ix[i_id, 'pile'] = p_id
-            m=m+len(pile)
-            rho_set_tag(id_index,rho_id,pile)
-            pile_id=pile_id.append(DataFrame([dict(pile=pile,size=len(pile),outlier=outlier)],index=[p_id]))
+            m = m + len(pile)
+            rho_set_tag(id_index, rho_id, pile)
+            pile_id = pile_id.append(DataFrame([dict(pile=pile, size=len(pile), outlier=outlier)], index=[p_id]))
         """
         if pile is None:
             pile_id.ix[p_id, 'size']=0
         else:
             pile_id.ix[p_id, 'size'] = len(pile)
         """
-        if k>3000:
-            log.debug("")
-        log.debug("this is "+str(k)+" times, there has "+str(n-m)+" element has not clustering.")
-        k+=1
-    log.debug(pile_id)
-    return None
+        # log.debug("this is "+str(k)+" times, there has "+str(n-m)+" element has not clustering.")
+        k += 1
+    log.info("staring computing pile, in distance_c:"+str(distance_c)+". pile count about:"+str(pile_id.shape[0]))
+    return pile_id
 
 
 def ent_dc_step_by_step(id_index, index_id, threshold, distance, distance_c):
@@ -415,26 +419,22 @@ def ent_dc_step_by_step(id_index, index_id, threshold, distance, distance_c):
     # next_distance_c=get_next_distance_c(distance,distance_c)
     max_distance_c = last_distance_c(distance, distance_c)
     distance_c = distance_c + 1
-    log.debug("max:" + str(max_distance_c))
+    log.debug("init the first max distance_c:" + str(max_distance_c))
     while max_distance_c >= distance_c:
         i = i + 0.5
         pile = 0
         # 设置pile的pile元素，与pile的类成员个数
-        pile_id = DataFrame([], columns=['pile', 'size','outlier'])
+        pile_id = DataFrame([], columns=['pile', 'size', 'outlier'])
         # delta_id, data_id = delta_function(id_index, index_id, rho_id, distance)
         # data = DataFrame([], columns=['gamma', 'rho', 'delta', 'pile'], index=index_id.index)
         data_id = DataFrame([], columns=['j_id', 'rho', 'delta', 'gamma', 'i', 'j', 'pile'], index=id_index.values)
-
-        pile_function(pile_id, id_index, index_id, data_id, distance, distance_c)
-
-        # TODO
+        pile_id = pile_function(pile_id, id_index, index_id, data_id, distance, distance_c)
+        pile_size = pile_id['size']
+        pile=np.sum(pile_id['outlier'])
         # id_index, index_id
-        log.critical(str(pile_id) + "\npile:" + pile)
-
-        return "TODO"
-        e = _calc_ent("")
-        merge = list([e, distance_c])
-        threshold = add_row(threshold, merge, pile)
+        e = _calc_ent(pile_size.values/N)
+        merge = list([e, distance_c,pile])
+        threshold = add_row(threshold, merge )
         # distance_c = distance_c + next_distance_c +1
         distance_c = distance_c + 0.5
         next_distance_c = get_next_distance_c(distance, distance_c)
@@ -509,6 +509,35 @@ def cluster(id, data):
     # log.debug("rho:\n" + str(rho))
     log.debug("threshold\n" + str(DataFrame(threshold)))
     return r
+
+def avery_task(max,min,piece):
+    distance=(max-min)/piece
+    return distance
+
+
+def multi_processing_cluster(job,work,df,id, data):
+    #threshold = DataFrame([], columns=['H', 'd_c', 'cluster'])
+    from pandas import Series, DataFrame
+    id_index = Series(id.tolist())
+    from cluster import density_cluster
+    N = id_index.count()
+    distance = compute_distance(data)
+    distance_c = init_distance_c(distance)
+    # id.values -> 对应的key
+    index_id = Series(id_index.index, index=id_index.values)
+    log.warn("the init distance_c is: " + str(distance_c))
+    # to creat the base index table
+    # 生成对应的索引，用于控制rho，delta，index的内容
+    rho_id = rho_function(index_id, distance, distance_c=distance_c)
+    delta_id, data_id = delta_function(id_index, index_id, rho_id, distance)
+    # gamma=rho*delta
+    threshold = df
+    threshold = ent_dc_step_by_step(id_index, index_id, threshold=threshold, distance=distance, distance_c=distance_c)
+    r = threshold
+    # log.debug("rho:\n" + str(rho))
+    log.debug("worker "+str(work)+" has finished. threshold\n" + str(DataFrame(threshold)))
+
+
 
 
 class BinaryTree:
