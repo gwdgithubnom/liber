@@ -14,23 +14,22 @@ public class TestOtherDataSet {
 	public static void main(String[] args) {
 
 		DistenceInter distance = new SimpleDistance();
+		String rootPath="E:\\project\\cluster\\";
 		String path = "unbance";
 		String filePath = path + File.separator;
 		List<ImageItemVector<Number>> result = DataFormat
-				.getDataSetFromTxt("E:\\project\\cluster\\" + path + "\\data.txt", " ", "double");
+				.getDataSetFromTxt(rootPath +filePath+"data.txt", " ", "double");
 		for (ImageItemVector<Number> imageItemVector : result) {
 			System.out.println(imageItemVector);
-
 		}
 		Cluster cluster = new Cluster(result, distance, 0, -1, 5);
 
 		System.out.println(cluster.getP().toString());
-		cluster.getP().writetoFile(new File("E:\\project\\cluster\\" + filePath + "p.txt"));
+		cluster.getP().writetoFile(new File(rootPath + filePath + "p.txt"));
 		System.out.println(cluster.getDelta().toString());
-		cluster.getDelta().writetoFile(new File("E:\\project\\cluster\\" + filePath + "delta.txt"));
+		cluster.getDelta().writetoFile(new File(rootPath + filePath + "delta.txt"));
 		System.out.println("dc=" + cluster.getP().getDc());
 		cluster.printResult();
-
 		cluster.getP().printEntropy();
 
 	}
