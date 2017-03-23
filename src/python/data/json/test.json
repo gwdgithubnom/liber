@@ -1,0 +1,42 @@
+[
+  {
+    "data": [
+      {
+        "x": 1,
+        "y": 1
+      },
+      {
+        "x": 2,
+        "y": 2
+      },
+      {
+        "x": 3,
+        "y": 4
+      }
+    ],
+    "large": "true",
+    "name": "undefine",
+    "symbolSize": 12,
+    "type": "cluster"
+  },
+  {
+    "data": [
+      {
+        "x": 3,
+        "y": 2
+      },
+      {
+        "x": 3,
+        "y": 2
+      },
+      {
+        "x": 3,
+        "y": 2
+      }
+    ],
+    "large": "true",
+    "name": "undefine",
+    "symbolSize": 12,
+    "type": "cluster"
+  }
+]

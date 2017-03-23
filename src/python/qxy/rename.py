@@ -182,8 +182,8 @@ def _random_name(url,type):
 
 
 if __name__ == "__main__":
-    rename_file(url='test',reverse=True)
-    rename_dir(url='test',reverse=True)
+    rename_file(url='qxy/otest',reverse=True)
+    rename_dir(url='qxy/otest',reverse=True)
 
 
 
