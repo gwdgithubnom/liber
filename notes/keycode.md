@@ -23,4 +23,21 @@ np.row_stack((data,row))
 np.column_stack((data,row))
 
 
+index = index_id[i_id]
+        d = distance[index]
+        d = Series(d)
+
+        d = d.sort_values(ascending=False)
+        j = d.index[0]
+        j_id = id_index[j]
+
+        see = pile_id
+        log.debug("\nsee:******************\n" + str(see))
+        assert Exception("stop")
+        while distance[i][j] > 0:
+            distance[i][j]
+            d = d.sort_values(ascending=False)
+            j = d.index[0]
+            j_id = id_index[j]
+
 ```

@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import edu.muc.jxd.distance.DistenceInter;
-import edu.muc.jxd.item.ImageItemVector;
+import edu.muc.core.distance.DistenceInter;
+import edu.muc.gwd.item.ImageItemVector;
 import edu.muc.jxd.vo.Delta;
 import edu.muc.jxd.vo.P;
 import edu.muc.jxd.vo.Result;
