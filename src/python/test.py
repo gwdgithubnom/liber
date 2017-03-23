@@ -9,6 +9,7 @@ from PIL import Image
 import os, random, string, shutil
 from scipy import *
 from scipy import misc
+from pandas import DataFrame
 from pandas import DataFrame as df
 
 # logging.basicConfig(level=logging.INFO,format="%(asctime)s %(filename)s[line:%(lineno)d\% (levelname)s %(message)s",datefmt="%Y-%m_%d %H:%M:%S",filename='logs/logger.log',filemode='a')
@@ -158,8 +159,12 @@ def save():
     id = np.asarray(id)
     id = Series(id)
     data = np.asarray(list(map(conv, data)), dtype=np.float)
-    np.save(Properties.getRootPath() + "/data/cache/id.npy", id)
-    np.save(Properties.getRootPath() + "/data/cache/data.npy", data)
+    if not os.path.exists(Properties.getDefaultDataFold()+"/cache/image7"):
+        #f=open(Properties.getDefaultDataFold()+"/csv/threshold.csv","w")
+        #f.close()
+        os.makedirs(Properties.getDefaultDataFold()+"/cache/image7")
+    np.save(Properties.getRootPath() + "/data/cache/image7/id.npy", id)
+    np.save(Properties.getRootPath() + "/data/cache/image7/data.npy", data)
 
 
 def add_row(df, row):
@@ -201,33 +206,33 @@ def distance_view(d,m, index_id, id_index, distance):
     return d
 
 
-if __name__ == '__main__':
+def cluster():
     """
-from cluster import density_cluster
-    from pandas import Series,DataFrame
-    from context.resource_manager import Properties
-    from view import shape_view
     from cluster import density_cluster
-    id=np.load(Properties.getRootPath()+"/data/cache/id.npy")
-    data=np.load(Properties.getRootPath()+"/data/cache/data.npy")
-    id_index=Series(id.tolist())
-    from cluster.density_cluster import *
-    N=id_index.count()
-    distance=compute_distance(data)
-    distance_c=init_distance_c(distance)
-    shape_view.pandas_view_record(list(distance))
-    # id.values -> 对应的key
-    index_id=Series(id_index.index,index=id_index.values)
-    log.warn("the init distance_c is: "+str(distance_c))
-    log.debug(distance_c)
-    # to creat the base index table
-    # 生成对应的索引，用于控制rho，delta，index的内容
-    log.debug(distance)
-    rho=rho_function(distance,distance_c=3021276)
+   from pandas import Series,DataFrame
+   from context.resource_manager import Properties
+   from view import shape_view
+   from cluster import density_cluster
+   id=np.load(Properties.getRootPath()+"/data/cache/id.npy")
+   data=np.load(Properties.getRootPath()+"/data/cache/data.npy")
+   id_index=Series(id.tolist())
+   from cluster.density_cluster import *
+   N=id_index.count()
+   distance=compute_distance(data)
+   distance_c=init_distance_c(distance)
+   shape_view.pandas_view_record(list(distance))
+   # id.values -> 对应的key
+   index_id=Series(id_index.index,index=id_index.values)
+   log.warn("the init distance_c is: "+str(distance_c))
+   log.debug(distance_c)
+   # to creat the base index table
+   # 生成对应的索引，用于控制rho，delta，index的内容
+   log.debug(distance)
+   rho=rho_function(distance,distance_c=3021276)
 
-    rho_id=Series(rho,index=id)
-    log.critical(rho)
-    """
+   rho_id=Series(rho,index=id)
+   log.critical(rho)
+   """
     from cluster import density_cluster
     from pandas import Series
     from pandas import Series, DataFrame
@@ -235,8 +240,9 @@ from cluster import density_cluster
     from view import shape_view
     from cluster import density_cluster
     #141
-    distance_c = 199
+    distance_c = 57.5
     pile = 0
+
     id = np.load(Properties.getRootPath() + "/data/cache/id_index.npy")
     id_index = Series(id.tolist())
     index_id = Series(id_index.index, index=id_index.values)
@@ -273,3 +279,8 @@ from cluster import density_cluster
     #id_index, index_id
     log.critical(str(pile_id)+"\npile:"+pile)
     """
+
+
+
+if __name__ == '__main__':
+    cluster()

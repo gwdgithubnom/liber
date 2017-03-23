@@ -28,8 +28,11 @@ d=c
 import  numpy
 
 a=DataFrame([[0,1,2],[3,4,5]],columns=['a','b','c'])
-d=numpy.concatenate([a,a],axis=0)
-log.debug(d)
+d.reindex()
+d=a
+
+
+log.debug(a.ix[0,'a'])
 
 #log.debug(((d.ix[1,'a']&set(b))))
 

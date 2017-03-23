@@ -21,14 +21,16 @@ def get_threshold():
     import numpy
     import multiprocessing
     threshold = DataFrame([], columns=['H', 'd_c', 'cluster'])
-    N=1
+    N=20
     pool = multiprocessing.Pool(processes=N)
     result = list(range(N))
+    log.info("init "+str(N)+" workers")
     for i in range(N):
         pool.apply_async(density_cluster.multi_processing_cluster,(N,i,threshold,id,data))
         # d = numpy.concatenate([c, c], axis=0)
     pool.close()
     pool.join()
+    log.debug(threshold)
     if not os.path.exists(Properties.getDefaultDataFold()+"/csv"):
         #f=open(Properties.getDefaultDataFold()+"/csv/threshold.csv","w")
         #f.close()

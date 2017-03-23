@@ -310,4 +310,4 @@ if __name__ == "__main__":
 if __name__ == "__main__":
     log.info("starting building image xml.")
     rmfile()
-    build_image_xml(source=resource_manager.Properties.getDefaultOperationFold()+"/data28")
+    build_image_xml(source=resource_manager.Properties.getDefaultOperationFold()+"/10000/data28")
