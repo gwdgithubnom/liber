@@ -1,0 +1,534 @@
+/usr/bin/python3.5 /home/gwd/Projects/liber/src/main/python/main.py
+[2017-04-01 11:07:07] density_cluster.py [line:83] INFO 31118 start running compute distance. data count:240 point has to computing.
+[2017-04-01 11:07:07] density_cluster.py [line:688] WARNING 31118 the init distance_c is: 0.1625
+[2017-04-01 11:07:09] density_cluster.py [line:511] DEBUG 31118 init the first max distance_c:217.65
+[2017-04-01 11:07:10] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:0.2625. pile count about:197 pile_min:2
+[2017-04-01 11:07:10] density_cluster.py [line:667] DEBUG 31118     outlier   p_id                                        pile  size
+1     False    2.0  [1_237, 1_216, 1_229, 1_215, 1_236, 1_219]   6.0
+5     False    6.0        [2_67, 2_71, 2_61, 2_58, 2_59, 2_69]   6.0
+0     False    1.0              [2_74, 2_72, 2_81, 2_70, 2_82]   5.0
+3     False    4.0         [1_187, 1_218, 1_220, 1_180, 1_186]   5.0
+4     False    5.0                    [2_84, 2_65, 2_66, 2_83]   4.0
+2     False    3.0                       [1_156, 1_160, 1_159]   3.0
+6     False    7.0                       [1_233, 1_231, 1_232]   3.0
+20    False   21.0                                [2_85, 2_86]   2.0
+24    False   25.0                              [1_208, 1_206]   2.0
+8     False    9.0                              [1_184, 1_222]   2.0
+15    False   16.0                              [2_146, 2_141]   2.0
+17    False   18.0                              [2_133, 2_138]   2.0
+10    False   11.0                              [1_228, 1_230]   2.0
+18    False   19.0                                [2_45, 2_49]   2.0
+14    False   15.0                                [2_77, 2_75]   2.0
+7     False    8.0                                [2_44, 2_37]   2.0
+12    False   13.0                                [2_30, 2_34]   2.0
+22    False   23.0                                [2_29, 2_28]   2.0
+19    False   20.0                              [2_143, 2_142]   2.0
+23    False   24.0                              [2_117, 2_113]   2.0
+9     False   10.0                              [1_234, 1_235]   2.0
+13    False   14.0                                [2_88, 2_87]   2.0
+16    False   17.0                                [2_42, 2_41]   2.0
+21    False   22.0                              [2_147, 2_148]   2.0
+11    False   12.0                              [2_103, 2_104]   2.0
+135    True  135.0                                      [2_60]   1.0
+143    True  143.0                                     [1_223]   1.0
+137    True  137.0                                     [1_172]   1.0
+138    True  138.0                                      [2_26]   1.0
+139    True  139.0                                     [1_197]   1.0
+..      ...    ...                                         ...   ...
+102    True  102.0                                     [1_191]   1.0
+103    True  103.0                                      [2_18]   1.0
+104    True  104.0                                      [2_31]   1.0
+105    True  105.0                                      [2_25]   1.0
+106    True  106.0                                      [2_40]   1.0
+107    True  107.0                                      [2_91]   1.0
+108    True  108.0                                      [2_55]   1.0
+109    True  109.0                                     [1_190]   1.0
+90     True   90.0                                       [1_1]   1.0
+89     True   89.0                                      [2_51]   1.0
+88     True   88.0                                     [2_139]   1.0
+87     True   87.0                                     [1_158]   1.0
+70     True   70.0                                     [2_145]   1.0
+71     True   71.0                                     [1_214]   1.0
+72     True   72.0                                     [2_120]   1.0
+73     True   73.0                                     [1_238]   1.0
+74     True   74.0                                      [2_92]   1.0
+75     True   75.0                                     [2_110]   1.0
+76     True   76.0                                     [2_135]   1.0
+77     True   77.0                                      [2_21]   1.0
+78     True   78.0                                     [1_188]   1.0
+79     True   79.0                                     [2_151]   1.0
+80     True   80.0                                      [2_39]   1.0
+81     True   81.0                                     [1_224]   1.0
+82     True   82.0                                     [1_204]   1.0
+83     True   83.0                                     [1_164]   1.0
+84     True   84.0                                      [2_56]   1.0
+85     True   85.0                                      [2_48]   1.0
+86     True   86.0                                      [2_79]   1.0
+197    True  197.0                                      [2_80]   1.0
+
+[197 rows x 4 columns]
+/home/gwd/Projects/liber/src/main/python/cluster/density_cluster.py:212: RuntimeWarning: invalid value encountered in greater
+  distance = np.extract(distance > 0, distance)
+[2017-04-01 11:07:10] density_cluster.py [line:543] INFO 31118 1 time, finished the data about: (240, 240) distance_c:0.365 next learning_rate:0.1 H:7.45793807077
+[2017-04-01 11:07:11] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:0.365. pile count about:117 pile_min:2
+[2017-04-01 11:07:11] density_cluster.py [line:667] DEBUG 31118     outlier   p_id                                               pile  size
+0     False    1.0  [1_184, 1_216, 1_206, 1_180, 1_235, 1_234, 1_2...  32.0
+1     False    2.0  [2_73, 2_74, 2_58, 2_59, 2_68, 2_66, 2_90, 2_8...  26.0
+4     False    5.0  [2_118, 2_117, 2_113, 2_120, 2_119, 2_109, 2_112]   7.0
+2     False    3.0         [2_128, 2_123, 2_127, 2_129, 2_130, 2_131]   6.0
+6     False    7.0         [2_136, 2_146, 2_143, 2_142, 2_135, 2_141]   6.0
+7     False    8.0                     [2_33, 2_30, 2_35, 2_34, 2_24]   5.0
+5     False    6.0                     [2_45, 2_49, 2_44, 2_50, 2_37]   5.0
+11    False   12.0                [2_134, 2_137, 2_132, 2_133, 2_138]   5.0
+8     False    9.0                     [2_17, 2_14, 2_13, 2_16, 2_15]   5.0
+10    False   11.0                           [2_29, 2_25, 2_26, 2_28]   4.0
+3     False    4.0                       [1_156, 1_159, 1_160, 1_172]   4.0
+13    False   14.0                       [1_171, 1_178, 1_189, 1_177]   4.0
+12    False   13.0                        [2_97, 2_108, 2_101, 2_100]   4.0
+9     False   10.0                              [1_167, 1_166, 1_164]   3.0
+14    False   15.0                              [2_102, 2_103, 2_104]   3.0
+15    False   16.0                                    [2_7, 2_3, 2_2]   3.0
+23    False   24.0                                       [2_19, 2_12]   2.0
+32    False   33.0                                     [2_114, 2_110]   2.0
+17    False   18.0                                       [2_55, 2_56]   2.0
+18    False   19.0                                       [2_95, 2_98]   2.0
+19    False   20.0                                       [2_42, 2_41]   2.0
+20    False   21.0                                         [2_8, 2_9]   2.0
+21    False   22.0                                     [2_107, 2_106]   2.0
+24    False   25.0                                     [1_210, 1_203]   2.0
+22    False   23.0                                     [1_238, 1_199]   2.0
+25    False   26.0                                     [2_145, 2_144]   2.0
+26    False   27.0                                     [1_212, 1_209]   2.0
+27    False   28.0                                     [2_122, 2_121]   2.0
+28    False   29.0                                       [2_31, 2_27]   2.0
+29    False   30.0                                     [2_147, 2_148]   2.0
+..      ...    ...                                                ...   ...
+41     True   41.0                                            [1_174]   1.0
+40     True   40.0                                             [2_94]   1.0
+39     True   39.0                                             [2_46]   1.0
+38     True   38.0                                            [2_150]   1.0
+37     True   37.0                                            [1_162]   1.0
+36     True   36.0                                            [1_198]   1.0
+35     True   35.0                                            [2_140]   1.0
+34     True   34.0                                             [2_23]   1.0
+52     True   52.0                                             [2_57]   1.0
+53     True   53.0                                            [2_115]   1.0
+54     True   54.0                                             [2_36]   1.0
+55     True   55.0                                            [1_225]   1.0
+73     True   73.0                                            [1_204]   1.0
+72     True   72.0                                             [2_10]   1.0
+71     True   71.0                                             [2_62]   1.0
+70     True   70.0                                            [1_197]   1.0
+69     True   69.0                                            [2_139]   1.0
+68     True   68.0                                            [1_201]   1.0
+67     True   67.0                                            [1_191]   1.0
+66     True   66.0                                            [1_155]   1.0
+65     True   65.0                                            [2_105]   1.0
+64     True   64.0                                              [1_1]   1.0
+63     True   63.0                                            [1_205]   1.0
+62     True   62.0                                             [2_39]   1.0
+61     True   61.0                                            [1_202]   1.0
+60     True   60.0                                             [2_92]   1.0
+58     True   58.0                                            [1_195]   1.0
+57     True   57.0                                             [2_18]   1.0
+56     True   56.0                                            [1_194]   1.0
+117    True  117.0                                            [2_163]   1.0
+
+[117 rows x 4 columns]
+[2017-04-01 11:07:11] density_cluster.py [line:543] INFO 31118 2 time, finished the data about: (240, 240) distance_c:0.465 next learning_rate:0.1 H:5.9919502142
+[2017-04-01 11:07:12] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:0.465. pile count about:53 pile_min:2
+[2017-04-01 11:07:12] density_cluster.py [line:667] DEBUG 31118    outlier  p_id                                               pile  size
+0    False   1.0  [1_199, 1_184, 1_216, 1_206, 1_191, 1_171, 1_1...  59.0
+1    False   2.0  [2_44, 2_42, 2_73, 2_74, 2_49, 2_37, 2_58, 2_5...  43.0
+4    False   5.0  [2_11, 2_14, 2_6, 2_7, 2_34, 2_26, 2_31, 2_2, ...  33.0
+3    False   4.0  [2_128, 2_146, 2_137, 2_126, 2_124, 2_125, 2_1...  26.0
+2    False   3.0  [2_95, 2_118, 2_111, 2_113, 2_120, 2_97, 2_117...  16.0
+7    False   8.0                           [2_77, 2_76, 2_78, 2_75]   4.0
+5    False   6.0                              [2_140, 2_147, 2_148]   3.0
+6    False   7.0                              [1_162, 1_155, 1_161]   3.0
+8    False   9.0                                 [2_55, 2_54, 2_56]   3.0
+12   False  13.0                                     [1_202, 1_211]   2.0
+14   False  15.0                                     [1_183, 1_194]   2.0
+13   False  14.0                                     [2_149, 2_150]   2.0
+11   False  12.0                                     [1_210, 1_203]   2.0
+10   False  11.0                                     [2_107, 2_106]   2.0
+9    False  10.0                                     [2_145, 2_144]   2.0
+44    True  44.0                                              [1_1]   1.0
+37    True  37.0                                            [1_157]   1.0
+38    True  38.0                                             [2_57]   1.0
+39    True  39.0                                            [1_192]   1.0
+40    True  40.0                                             [2_40]   1.0
+41    True  41.0                                             [2_10]   1.0
+42    True  42.0                                            [1_175]   1.0
+43    True  43.0                                            [1_205]   1.0
+51    True  51.0                                             [2_47]   1.0
+45    True  45.0                                            [1_196]   1.0
+46    True  46.0                                            [2_163]   1.0
+47    True  47.0                                            [1_201]   1.0
+48    True  48.0                                             [2_92]   1.0
+49    True  49.0                                            [1_173]   1.0
+50    True  50.0                                            [1_168]   1.0
+35    True  35.0                                            [1_198]   1.0
+52    True  52.0                                             [2_94]   1.0
+36    True  36.0                                            [1_200]   1.0
+27    True  27.0                                            [1_154]   1.0
+34    True  34.0                                             [2_20]   1.0
+23    True  23.0                                            [2_115]   1.0
+16    True  16.0                                            [2_151]   1.0
+17    True  17.0                                            [1_174]   1.0
+18    True  18.0                                            [1_169]   1.0
+19    True  19.0                                            [1_197]   1.0
+20    True  20.0                                            [2_105]   1.0
+21    True  21.0                                             [2_53]   1.0
+22    True  22.0                                             [2_79]   1.0
+24    True  24.0                                            [1_204]   1.0
+33    True  33.0                                            [1_158]   1.0
+25    True  25.0                                              [2_5]   1.0
+26    True  26.0                                              [1_0]   1.0
+28    True  28.0                                            [2_153]   1.0
+29    True  29.0                                             [2_39]   1.0
+30    True  30.0                                            [1_195]   1.0
+31    True  31.0                                             [2_52]   1.0
+32    True  32.0                                            [2_152]   1.0
+53    True  53.0                                             [2_93]   1.0
+[2017-04-01 11:07:12] density_cluster.py [line:543] INFO 31118 3 time, finished the data about: (240, 240) distance_c:0.5825 next learning_rate:0.1 H:3.87628048944
+[2017-04-01 11:07:13] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:0.5825. pile count about:24 pile_min:2
+[2017-04-01 11:07:13] density_cluster.py [line:667] DEBUG 31118    outlier  p_id                                               pile   size
+0    False   1.0  [2_44, 2_128, 2_137, 2_144, 2_56, 2_49, 2_122,...  141.0
+1    False   2.0  [1_162, 1_216, 1_199, 1_180, 1_206, 1_191, 1_1...   68.0
+2    False   3.0                       [1_210, 1_203, 1_202, 1_211]    4.0
+3    False   4.0                              [2_149, 2_150, 2_151]    3.0
+4    False   5.0                                     [2_107, 2_106]    2.0
+5    False   6.0                                     [1_196, 1_195]    2.0
+6    False   7.0                                     [1_183, 1_194]    2.0
+7    False   8.0                                     [2_153, 2_163]    2.0
+17    True  17.0                                             [2_20]    1.0
+23    True  23.0                                            [1_201]    1.0
+22    True  22.0                                            [1_205]    1.0
+21    True  21.0                                            [1_169]    1.0
+20    True  20.0                                             [2_94]    1.0
+19    True  19.0                                            [1_157]    1.0
+18    True  18.0                                              [1_0]    1.0
+13    True  13.0                                            [1_158]    1.0
+16    True  16.0                                            [1_174]    1.0
+15    True  15.0                                             [2_40]    1.0
+14    True  14.0                                            [2_152]    1.0
+12    True  12.0                                            [1_192]    1.0
+11    True  11.0                                            [1_154]    1.0
+10    True  10.0                                            [1_204]    1.0
+9     True   9.0                                             [2_47]    1.0
+24    True  24.0                                              [1_1]    1.0
+[2017-04-01 11:07:13] density_cluster.py [line:543] INFO 31118 4 time, finished the data about: (240, 240) distance_c:0.6825 next learning_rate:0.1 H:1.90114433979
+[2017-04-01 11:07:14] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:0.6825. pile count about:13 pile_min:2
+[2017-04-01 11:07:14] density_cluster.py [line:667] DEBUG 31118    outlier  p_id                                               pile   size
+0    False   1.0  [2_44, 2_128, 2_137, 2_144, 2_56, 2_49, 2_122,...  150.0
+1    False   2.0  [1_162, 1_216, 1_184, 1_206, 1_191, 1_180, 1_1...   76.0
+2    False   3.0                                     [1_196, 1_195]    2.0
+3    False   4.0                                     [2_153, 2_163]    2.0
+4    False   5.0                                     [1_158, 1_157]    2.0
+6     True   6.0                                            [1_174]    1.0
+7     True   7.0                                            [1_204]    1.0
+8     True   8.0                                            [1_201]    1.0
+9     True   9.0                                            [1_192]    1.0
+10    True  10.0                                              [1_1]    1.0
+11    True  11.0                                             [2_40]    1.0
+12    True  12.0                                            [1_169]    1.0
+13    True  13.0                                              [1_0]    1.0
+[2017-04-01 11:07:14] density_cluster.py [line:543] INFO 31118 5 time, finished the data about: (240, 240) distance_c:0.785 next learning_rate:0.1 H:1.38536853479
+[2017-04-01 11:07:15] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:0.785. pile count about:8 pile_min:2
+[2017-04-01 11:07:16] density_cluster.py [line:667] DEBUG 31118   outlier  p_id                                               pile   size
+0   False   1.0  [1_158, 1_162, 2_44, 2_128, 1_216, 1_206, 2_13...  232.0
+1   False   2.0                                     [2_153, 2_163]    2.0
+3    True   3.0                                              [1_1]    1.0
+4    True   4.0                                            [1_201]    1.0
+5    True   5.0                                              [1_0]    1.0
+6    True   6.0                                            [1_204]    1.0
+7    True   7.0                                             [2_40]    1.0
+8    True   8.0                                            [1_192]    1.0
+[2017-04-01 11:07:16] density_cluster.py [line:543] INFO 31118 6 time, finished the data about: (240, 240) distance_c:0.885 next learning_rate:0.1 H:0.302508966985
+[2017-04-01 11:07:17] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:0.885. pile count about:3 pile_min:2
+[2017-04-01 11:07:17] density_cluster.py [line:667] DEBUG 31118   outlier  p_id                                               pile   size
+0   False   1.0  [1_158, 1_162, 2_44, 2_128, 1_216, 1_206, 2_13...  238.0
+2    True   2.0                                              [1_0]    1.0
+3    True   3.0                                              [1_1]    1.0
+[2017-04-01 11:07:17] density_cluster.py [line:543] INFO 31118 7 time, finished the data about: (240, 240) distance_c:0.99 next learning_rate:0.1 H:0.0778629803281
+[2017-04-01 11:07:18] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:0.99. pile count about:3 pile_min:2
+[2017-04-01 11:07:18] density_cluster.py [line:543] INFO 31118 8 time, finished the data about: (240, 240) distance_c:1.1 next learning_rate:0.1 H:0.0778629803281
+[2017-04-01 11:07:19] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:1.1. pile count about:3 pile_min:2
+[2017-04-01 11:07:19] density_cluster.py [line:543] INFO 31118 9 time, finished the data about: (240, 240) distance_c:1.2025 next learning_rate:0.1 H:0.0778629803281
+[2017-04-01 11:07:20] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:1.2025. pile count about:3 pile_min:3
+[2017-04-01 11:07:20] density_cluster.py [line:543] INFO 31118 10 time, finished the data about: (240, 240) distance_c:1.3025 next learning_rate:0.1 H:0.0778629803281
+[2017-04-01 11:07:20] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:1.3025. pile count about:3 pile_min:3
+[2017-04-01 11:07:20] density_cluster.py [line:543] INFO 31118 11 time, finished the data about: (240, 240) distance_c:1.4025 next learning_rate:0.1 H:0.0778629803281
+[2017-04-01 11:07:21] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:1.4025. pile count about:3 pile_min:3
+[2017-04-01 11:07:21] density_cluster.py [line:543] INFO 31118 12 time, finished the data about: (240, 240) distance_c:1.505 next learning_rate:0.1 H:0.0778629803281
+[2017-04-01 11:07:22] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:1.505. pile count about:3 pile_min:4
+[2017-04-01 11:07:22] density_cluster.py [line:543] INFO 31118 13 time, finished the data about: (240, 240) distance_c:1.6125 next learning_rate:0.1 H:0.0778629803281
+[2017-04-01 11:07:23] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:1.6125. pile count about:2 pile_min:2
+[2017-04-01 11:07:23] density_cluster.py [line:667] DEBUG 31118   outlier  p_id                                               pile   size
+0   False   1.0  [1_158, 1_162, 2_44, 2_128, 1_216, 1_206, 2_13...  238.0
+1   False   2.0                                         [1_1, 1_0]    2.0
+[2017-04-01 11:07:23] density_cluster.py [line:543] INFO 31118 14 time, finished the data about: (240, 240) distance_c:1.72 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:24] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:1.72. pile count about:2 pile_min:2
+[2017-04-01 11:07:24] density_cluster.py [line:543] INFO 31118 15 time, finished the data about: (240, 240) distance_c:1.8225 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:25] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:1.8225. pile count about:2 pile_min:2
+[2017-04-01 11:07:25] density_cluster.py [line:543] INFO 31118 16 time, finished the data about: (240, 240) distance_c:1.9225 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:25] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:1.9225. pile count about:2 pile_min:2
+[2017-04-01 11:07:25] density_cluster.py [line:543] INFO 31118 17 time, finished the data about: (240, 240) distance_c:2.0225 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:26] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:2.0225. pile count about:2 pile_min:2
+[2017-04-01 11:07:26] density_cluster.py [line:543] INFO 31118 18 time, finished the data about: (240, 240) distance_c:2.1225 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:27] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:2.1225. pile count about:2 pile_min:2
+[2017-04-01 11:07:27] density_cluster.py [line:543] INFO 31118 19 time, finished the data about: (240, 240) distance_c:2.225 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:27] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:2.225. pile count about:2 pile_min:2
+[2017-04-01 11:07:27] density_cluster.py [line:543] INFO 31118 20 time, finished the data about: (240, 240) distance_c:2.325 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:28] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:2.325. pile count about:2 pile_min:2
+[2017-04-01 11:07:28] density_cluster.py [line:543] INFO 31118 21 time, finished the data about: (240, 240) distance_c:2.43 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:29] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:2.43. pile count about:2 pile_min:2
+[2017-04-01 11:07:29] density_cluster.py [line:543] INFO 31118 22 time, finished the data about: (240, 240) distance_c:2.54 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:29] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:2.54. pile count about:2 pile_min:2
+[2017-04-01 11:07:29] density_cluster.py [line:543] INFO 31118 23 time, finished the data about: (240, 240) distance_c:2.6425 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:30] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:2.6425. pile count about:2 pile_min:2
+[2017-04-01 11:07:30] density_cluster.py [line:543] INFO 31118 24 time, finished the data about: (240, 240) distance_c:2.75 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:31] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:2.75. pile count about:2 pile_min:2
+[2017-04-01 11:07:31] density_cluster.py [line:543] INFO 31118 25 time, finished the data about: (240, 240) distance_c:2.8625 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:31] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:2.8625. pile count about:2 pile_min:2
+[2017-04-01 11:07:31] density_cluster.py [line:543] INFO 31118 26 time, finished the data about: (240, 240) distance_c:2.9625 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:32] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:2.9625. pile count about:2 pile_min:2
+[2017-04-01 11:07:32] density_cluster.py [line:543] INFO 31118 27 time, finished the data about: (240, 240) distance_c:3.065 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:32] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:3.065. pile count about:2 pile_min:2
+[2017-04-01 11:07:32] density_cluster.py [line:543] INFO 31118 28 time, finished the data about: (240, 240) distance_c:3.165 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:33] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:3.165. pile count about:2 pile_min:2
+[2017-04-01 11:07:33] density_cluster.py [line:543] INFO 31118 29 time, finished the data about: (240, 240) distance_c:3.27 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:34] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:3.27. pile count about:2 pile_min:2
+[2017-04-01 11:07:34] density_cluster.py [line:543] INFO 31118 30 time, finished the data about: (240, 240) distance_c:3.38 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:34] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:3.38. pile count about:2 pile_min:2
+[2017-04-01 11:07:34] density_cluster.py [line:543] INFO 31118 31 time, finished the data about: (240, 240) distance_c:3.48 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:35] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:3.48. pile count about:2 pile_min:2
+[2017-04-01 11:07:35] density_cluster.py [line:543] INFO 31118 32 time, finished the data about: (240, 240) distance_c:3.585 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:35] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:3.585. pile count about:2 pile_min:2
+[2017-04-01 11:07:35] density_cluster.py [line:543] INFO 31118 33 time, finished the data about: (240, 240) distance_c:3.7 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:36] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:3.7. pile count about:2 pile_min:2
+[2017-04-01 11:07:36] density_cluster.py [line:543] INFO 31118 34 time, finished the data about: (240, 240) distance_c:3.8 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:37] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:3.8. pile count about:2 pile_min:2
+[2017-04-01 11:07:37] density_cluster.py [line:543] INFO 31118 35 time, finished the data about: (240, 240) distance_c:3.9025 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:37] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:3.9025. pile count about:2 pile_min:2
+[2017-04-01 11:07:37] density_cluster.py [line:543] INFO 31118 36 time, finished the data about: (240, 240) distance_c:4.0125 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:38] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:4.0125. pile count about:2 pile_min:2
+[2017-04-01 11:07:38] density_cluster.py [line:543] INFO 31118 37 time, finished the data about: (240, 240) distance_c:4.1225 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:38] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:4.1225. pile count about:2 pile_min:2
+[2017-04-01 11:07:38] density_cluster.py [line:543] INFO 31118 38 time, finished the data about: (240, 240) distance_c:4.2225 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:39] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:4.2225. pile count about:2 pile_min:2
+[2017-04-01 11:07:39] density_cluster.py [line:543] INFO 31118 39 time, finished the data about: (240, 240) distance_c:4.325 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:40] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:4.325. pile count about:2 pile_min:2
+[2017-04-01 11:07:40] density_cluster.py [line:543] INFO 31118 40 time, finished the data about: (240, 240) distance_c:4.425 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:40] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:4.425. pile count about:2 pile_min:2
+[2017-04-01 11:07:40] density_cluster.py [line:543] INFO 31118 41 time, finished the data about: (240, 240) distance_c:4.5325 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:41] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:4.5325. pile count about:2 pile_min:2
+[2017-04-01 11:07:41] density_cluster.py [line:543] INFO 31118 42 time, finished the data about: (240, 240) distance_c:4.6325 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:42] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:4.6325. pile count about:2 pile_min:2
+[2017-04-01 11:07:42] density_cluster.py [line:543] INFO 31118 43 time, finished the data about: (240, 240) distance_c:4.7325 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:42] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:4.7325. pile count about:2 pile_min:2
+[2017-04-01 11:07:42] density_cluster.py [line:543] INFO 31118 44 time, finished the data about: (240, 240) distance_c:4.845 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:43] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:4.845. pile count about:2 pile_min:2
+[2017-04-01 11:07:43] density_cluster.py [line:543] INFO 31118 45 time, finished the data about: (240, 240) distance_c:4.95 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:43] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:4.95. pile count about:2 pile_min:2
+[2017-04-01 11:07:43] density_cluster.py [line:543] INFO 31118 46 time, finished the data about: (240, 240) distance_c:5.0625 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:44] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:5.0625. pile count about:2 pile_min:2
+[2017-04-01 11:07:44] density_cluster.py [line:543] INFO 31118 47 time, finished the data about: (240, 240) distance_c:5.1625 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:45] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:5.1625. pile count about:2 pile_min:2
+[2017-04-01 11:07:45] density_cluster.py [line:543] INFO 31118 48 time, finished the data about: (240, 240) distance_c:5.265 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:45] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:5.265. pile count about:2 pile_min:2
+[2017-04-01 11:07:45] density_cluster.py [line:543] INFO 31118 49 time, finished the data about: (240, 240) distance_c:5.3825 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:46] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:5.3825. pile count about:2 pile_min:2
+[2017-04-01 11:07:46] density_cluster.py [line:543] INFO 31118 50 time, finished the data about: (240, 240) distance_c:5.5025 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:46] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:5.5025. pile count about:2 pile_min:2
+[2017-04-01 11:07:46] density_cluster.py [line:543] INFO 31118 51 time, finished the data about: (240, 240) distance_c:5.6125 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:47] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:5.6125. pile count about:2 pile_min:2
+[2017-04-01 11:07:47] density_cluster.py [line:543] INFO 31118 52 time, finished the data about: (240, 240) distance_c:5.7225 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:47] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:5.7225. pile count about:2 pile_min:2
+[2017-04-01 11:07:48] density_cluster.py [line:543] INFO 31118 53 time, finished the data about: (240, 240) distance_c:5.825 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:48] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:5.825. pile count about:2 pile_min:2
+[2017-04-01 11:07:48] density_cluster.py [line:543] INFO 31118 54 time, finished the data about: (240, 240) distance_c:5.925 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:49] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:5.925. pile count about:2 pile_min:2
+[2017-04-01 11:07:49] density_cluster.py [line:543] INFO 31118 55 time, finished the data about: (240, 240) distance_c:6.03 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:49] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:6.03. pile count about:2 pile_min:2
+[2017-04-01 11:07:49] density_cluster.py [line:543] INFO 31118 56 time, finished the data about: (240, 240) distance_c:6.1425 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:50] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:6.1425. pile count about:2 pile_min:2
+[2017-04-01 11:07:50] density_cluster.py [line:543] INFO 31118 57 time, finished the data about: (240, 240) distance_c:6.245 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:50] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:6.245. pile count about:2 pile_min:2
+[2017-04-01 11:07:50] density_cluster.py [line:543] INFO 31118 58 time, finished the data about: (240, 240) distance_c:6.345 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:51] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:6.345. pile count about:2 pile_min:2
+[2017-04-01 11:07:51] density_cluster.py [line:543] INFO 31118 59 time, finished the data about: (240, 240) distance_c:6.4625 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:52] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:6.4625. pile count about:2 pile_min:2
+[2017-04-01 11:07:52] density_cluster.py [line:543] INFO 31118 60 time, finished the data about: (240, 240) distance_c:6.58 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:52] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:6.58. pile count about:2 pile_min:2
+[2017-04-01 11:07:52] density_cluster.py [line:543] INFO 31118 61 time, finished the data about: (240, 240) distance_c:6.6825 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:53] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:6.6825. pile count about:2 pile_min:2
+[2017-04-01 11:07:53] density_cluster.py [line:543] INFO 31118 62 time, finished the data about: (240, 240) distance_c:6.7925 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:53] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:6.7925. pile count about:2 pile_min:2
+[2017-04-01 11:07:53] density_cluster.py [line:543] INFO 31118 63 time, finished the data about: (240, 240) distance_c:6.9 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:54] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:6.9. pile count about:2 pile_min:2
+[2017-04-01 11:07:54] density_cluster.py [line:543] INFO 31118 64 time, finished the data about: (240, 240) distance_c:7.005 next learning_rate:0.1 H:0.0695296469948
+[2017-04-01 11:07:54] density_cluster.py [line:497] INFO 31118 staring computing pile, in distance_c:7.005. pile count about:1 pile_min:2
+[2017-04-01 11:07:55] density_cluster.py [line:667] DEBUG 31118   outlier  p_id                                               pile   size
+0   False   1.0  [1_158, 1_162, 2_44, 2_128, 1_216, 1_206, 2_13...  240.0
+[2017-04-01 11:07:55] density_cluster.py [line:538] DEBUG 31118 e is 0.
+[2017-04-01 11:07:55] density_cluster.py [line:699] DEBUG 31118 threshold
+           H     d_c  cluster
+0   7.457938  0.2625     25.0
+0   5.991950  0.3650     33.0
+0   3.876280  0.4650     15.0
+0   1.901144  0.5825      8.0
+0   1.385369  0.6825      5.0
+0   0.302509  0.7850      2.0
+0   0.077863  0.8850      1.0
+0   0.077863  0.9900      1.0
+0   0.077863  1.1000      1.0
+0   0.077863  1.2025      1.0
+0   0.077863  1.3025      1.0
+0   0.077863  1.4025      1.0
+0   0.077863  1.5050      1.0
+0   0.069530  1.6125      2.0
+0   0.069530  1.7200      2.0
+0   0.069530  1.8225      2.0
+0   0.069530  1.9225      2.0
+0   0.069530  2.0225      2.0
+0   0.069530  2.1225      2.0
+0   0.069530  2.2250      2.0
+0   0.069530  2.3250      2.0
+0   0.069530  2.4300      2.0
+0   0.069530  2.5400      2.0
+0   0.069530  2.6425      2.0
+0   0.069530  2.7500      2.0
+0   0.069530  2.8625      2.0
+0   0.069530  2.9625      2.0
+0   0.069530  3.0650      2.0
+0   0.069530  3.1650      2.0
+0   0.069530  3.2700      2.0
+..       ...     ...      ...
+0   0.069530  3.9025      2.0
+0   0.069530  4.0125      2.0
+0   0.069530  4.1225      2.0
+0   0.069530  4.2225      2.0
+0   0.069530  4.3250      2.0
+0   0.069530  4.4250      2.0
+0   0.069530  4.5325      2.0
+0   0.069530  4.6325      2.0
+0   0.069530  4.7325      2.0
+0   0.069530  4.8450      2.0
+0   0.069530  4.9500      2.0
+0   0.069530  5.0625      2.0
+0   0.069530  5.1625      2.0
+0   0.069530  5.2650      2.0
+0   0.069530  5.3825      2.0
+0   0.069530  5.5025      2.0
+0   0.069530  5.6125      2.0
+0   0.069530  5.7225      2.0
+0   0.069530  5.8250      2.0
+0   0.069530  5.9250      2.0
+0   0.069530  6.0300      2.0
+0   0.069530  6.1425      2.0
+0   0.069530  6.2450      2.0
+0   0.069530  6.3450      2.0
+0   0.069530  6.4625      2.0
+0   0.069530  6.5800      2.0
+0   0.069530  6.6825      2.0
+0   0.069530  6.7925      2.0
+0   0.069530  6.9000      2.0
+0  -0.000000  7.0050      1.0
+
+[65 rows x 3 columns]
+[2017-04-01 11:07:55] main.py [line:81] DEBUG 31118 1     33.0
+0     25.0
+2     15.0
+3      8.0
+4      5.0
+23     2.0
+33     2.0
+63     2.0
+31     2.0
+30     2.0
+29     2.0
+28     2.0
+27     2.0
+26     2.0
+25     2.0
+24     2.0
+20     2.0
+22     2.0
+21     2.0
+35     2.0
+19     2.0
+18     2.0
+17     2.0
+16     2.0
+15     2.0
+14     2.0
+13     2.0
+5      2.0
+34     2.0
+32     2.0
+      ...
+59     2.0
+58     2.0
+57     2.0
+56     2.0
+55     2.0
+54     2.0
+37     2.0
+52     2.0
+51     2.0
+53     2.0
+49     2.0
+47     2.0
+46     2.0
+45     2.0
+44     2.0
+43     2.0
+38     2.0
+39     2.0
+40     2.0
+48     2.0
+41     2.0
+42     2.0
+6      1.0
+9      1.0
+7      1.0
+8      1.0
+10     1.0
+11     1.0
+12     1.0
+64     1.0
+Name: cluster, dtype: float64
+can't invoke "event" command: application has been destroyed
+    while executing
+"event generate $w <<ThemeChanged>>"
+    (procedure "ttk::ThemeChanged" line 6)
+    invoked from within
+"ttk::ThemeChanged"
+can't invoke "event" command: application has been destroyed
+    while executing
+"event generate $w <<ThemeChanged>>"
+    (procedure "ttk::ThemeChanged" line 6)
+    invoked from within
+"ttk::ThemeChanged"
+can't invoke "event" command: application has been destroyed
+    while executing
+"event generate $w <<ThemeChanged>>"
+    (procedure "ttk::ThemeChanged" line 6)
+    invoked from within
+"ttk::ThemeChanged"
+can't invoke "event" command: application has been destroyed
+    while executing
+"event generate $w <<ThemeChanged>>"
+    (procedure "ttk::ThemeChanged" line 6)
+    invoked from within
+"ttk::ThemeChanged"
+can't invoke "event" command: application has been destroyed
+    while executing
+"event generate $w <<ThemeChanged>>"
+    (procedure "ttk::ThemeChanged" line 6)
+    invoked from within
+"ttk::ThemeChanged"
+
+Process finished with exit code 0

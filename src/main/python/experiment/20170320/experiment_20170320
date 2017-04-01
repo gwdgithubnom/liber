@@ -1,0 +1,854 @@
+/usr/bin/python3 /home/gwd/Projects/liber/src/python/main.py
+[2017-03-20 15:09:40] density_cluster.py [line:83] INFO 6108 start running compute distance. data count:559 point has to computing.
+[2017-03-20 15:09:43] density_cluster.py [line:496] WARNING 6108 the init distance_c is: 104.0
+[2017-03-20 15:09:47] density_cluster.py [line:418] DEBUG 6108 init the first max distance_c:291.0
+[2017-03-20 15:10:18] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:105.0. pile count about:558
+[2017-03-20 15:10:18] density_cluster.py [line:438] INFO 6108 0.5time, finished the data about: (559, 559) distance_c:105.5 next increase:1
+[2017-03-20 15:10:49] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:105.5. pile count about:558
+[2017-03-20 15:10:49] density_cluster.py [line:438] INFO 6108 1.0time, finished the data about: (559, 559) distance_c:106.0 next increase:1
+[2017-03-20 15:11:19] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:106.0. pile count about:558
+[2017-03-20 15:11:19] density_cluster.py [line:438] INFO 6108 1.5time, finished the data about: (559, 559) distance_c:106.5 next increase:1
+[2017-03-20 15:11:52] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:106.5. pile count about:558
+[2017-03-20 15:11:52] density_cluster.py [line:438] INFO 6108 2.0time, finished the data about: (559, 559) distance_c:107.0 next increase:1
+[2017-03-20 15:12:21] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:107.0. pile count about:557
+[2017-03-20 15:12:21] density_cluster.py [line:438] INFO 6108 2.5time, finished the data about: (559, 559) distance_c:107.5 next increase:1
+[2017-03-20 15:12:51] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:107.5. pile count about:557
+[2017-03-20 15:12:51] density_cluster.py [line:438] INFO 6108 3.0time, finished the data about: (559, 559) distance_c:108.0 next increase:1
+[2017-03-20 15:13:21] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:108.0. pile count about:557
+[2017-03-20 15:13:21] density_cluster.py [line:438] INFO 6108 3.5time, finished the data about: (559, 559) distance_c:108.5 next increase:1
+[2017-03-20 15:13:51] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:108.5. pile count about:557
+[2017-03-20 15:13:51] density_cluster.py [line:438] INFO 6108 4.0time, finished the data about: (559, 559) distance_c:109.0 next increase:1
+[2017-03-20 15:14:22] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:109.0. pile count about:557
+[2017-03-20 15:14:22] density_cluster.py [line:438] INFO 6108 4.5time, finished the data about: (559, 559) distance_c:109.5 next increase:1
+[2017-03-20 15:14:52] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:109.5. pile count about:557
+[2017-03-20 15:14:52] density_cluster.py [line:438] INFO 6108 5.0time, finished the data about: (559, 559) distance_c:110.0 next increase:1
+[2017-03-20 15:15:22] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:110.0. pile count about:557
+[2017-03-20 15:15:22] density_cluster.py [line:438] INFO 6108 5.5time, finished the data about: (559, 559) distance_c:110.5 next increase:1
+[2017-03-20 15:15:53] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:110.5. pile count about:557
+[2017-03-20 15:15:53] density_cluster.py [line:438] INFO 6108 6.0time, finished the data about: (559, 559) distance_c:111.0 next increase:1
+[2017-03-20 15:16:24] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:111.0. pile count about:557
+[2017-03-20 15:16:24] density_cluster.py [line:438] INFO 6108 6.5time, finished the data about: (559, 559) distance_c:111.5 next increase:1
+[2017-03-20 15:16:55] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:111.5. pile count about:557
+[2017-03-20 15:16:55] density_cluster.py [line:438] INFO 6108 7.0time, finished the data about: (559, 559) distance_c:112.0 next increase:1
+[2017-03-20 15:17:25] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:112.0. pile count about:557
+[2017-03-20 15:17:25] density_cluster.py [line:438] INFO 6108 7.5time, finished the data about: (559, 559) distance_c:112.5 next increase:1
+[2017-03-20 15:17:55] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:112.5. pile count about:557
+[2017-03-20 15:17:55] density_cluster.py [line:438] INFO 6108 8.0time, finished the data about: (559, 559) distance_c:113.0 next increase:1
+[2017-03-20 15:18:25] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:113.0. pile count about:557
+[2017-03-20 15:18:25] density_cluster.py [line:438] INFO 6108 8.5time, finished the data about: (559, 559) distance_c:113.5 next increase:1
+[2017-03-20 15:18:57] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:113.5. pile count about:557
+[2017-03-20 15:18:57] density_cluster.py [line:438] INFO 6108 9.0time, finished the data about: (559, 559) distance_c:114.0 next increase:1
+[2017-03-20 15:19:27] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:114.0. pile count about:557
+[2017-03-20 15:19:27] density_cluster.py [line:438] INFO 6108 9.5time, finished the data about: (559, 559) distance_c:114.5 next increase:1
+[2017-03-20 15:19:58] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:114.5. pile count about:557
+[2017-03-20 15:19:58] density_cluster.py [line:438] INFO 6108 10.0time, finished the data about: (559, 559) distance_c:115.0 next increase:1
+[2017-03-20 15:20:28] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:115.0. pile count about:557
+[2017-03-20 15:20:28] density_cluster.py [line:438] INFO 6108 10.5time, finished the data about: (559, 559) distance_c:115.5 next increase:1
+[2017-03-20 15:20:59] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:115.5. pile count about:557
+[2017-03-20 15:20:59] density_cluster.py [line:438] INFO 6108 11.0time, finished the data about: (559, 559) distance_c:116.0 next increase:1
+[2017-03-20 15:21:29] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:116.0. pile count about:557
+[2017-03-20 15:21:29] density_cluster.py [line:438] INFO 6108 11.5time, finished the data about: (559, 559) distance_c:116.5 next increase:1
+[2017-03-20 15:22:00] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:116.5. pile count about:557
+[2017-03-20 15:22:00] density_cluster.py [line:438] INFO 6108 12.0time, finished the data about: (559, 559) distance_c:117.0 next increase:1
+[2017-03-20 15:22:30] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:117.0. pile count about:557
+[2017-03-20 15:22:30] density_cluster.py [line:438] INFO 6108 12.5time, finished the data about: (559, 559) distance_c:117.5 next increase:1
+[2017-03-20 15:23:00] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:117.5. pile count about:557
+[2017-03-20 15:23:00] density_cluster.py [line:438] INFO 6108 13.0time, finished the data about: (559, 559) distance_c:118.0 next increase:1
+[2017-03-20 15:23:30] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:118.0. pile count about:557
+[2017-03-20 15:23:30] density_cluster.py [line:438] INFO 6108 13.5time, finished the data about: (559, 559) distance_c:118.5 next increase:1
+[2017-03-20 15:24:00] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:118.5. pile count about:557
+[2017-03-20 15:24:00] density_cluster.py [line:438] INFO 6108 14.0time, finished the data about: (559, 559) distance_c:119.0 next increase:1
+[2017-03-20 15:24:30] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:119.0. pile count about:556
+[2017-03-20 15:24:30] density_cluster.py [line:438] INFO 6108 14.5time, finished the data about: (559, 559) distance_c:119.5 next increase:1
+[2017-03-20 15:25:00] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:119.5. pile count about:556
+[2017-03-20 15:25:00] density_cluster.py [line:438] INFO 6108 15.0time, finished the data about: (559, 559) distance_c:120.0 next increase:1
+[2017-03-20 15:25:30] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:120.0. pile count about:554
+[2017-03-20 15:25:30] density_cluster.py [line:438] INFO 6108 15.5time, finished the data about: (559, 559) distance_c:120.5 next increase:1
+[2017-03-20 15:25:59] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:120.5. pile count about:554
+[2017-03-20 15:25:59] density_cluster.py [line:438] INFO 6108 16.0time, finished the data about: (559, 559) distance_c:121.0 next increase:1
+[2017-03-20 15:26:29] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:121.0. pile count about:554
+[2017-03-20 15:26:29] density_cluster.py [line:438] INFO 6108 16.5time, finished the data about: (559, 559) distance_c:121.5 next increase:1
+[2017-03-20 15:26:59] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:121.5. pile count about:554
+[2017-03-20 15:26:59] density_cluster.py [line:438] INFO 6108 17.0time, finished the data about: (559, 559) distance_c:122.0 next increase:1
+[2017-03-20 15:27:29] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:122.0. pile count about:554
+[2017-03-20 15:27:29] density_cluster.py [line:438] INFO 6108 17.5time, finished the data about: (559, 559) distance_c:122.5 next increase:1
+[2017-03-20 15:27:59] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:122.5. pile count about:554
+[2017-03-20 15:27:59] density_cluster.py [line:438] INFO 6108 18.0time, finished the data about: (559, 559) distance_c:123.0 next increase:1
+[2017-03-20 15:28:29] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:123.0. pile count about:554
+[2017-03-20 15:28:29] density_cluster.py [line:438] INFO 6108 18.5time, finished the data about: (559, 559) distance_c:123.5 next increase:1
+[2017-03-20 15:28:58] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:123.5. pile count about:554
+[2017-03-20 15:28:58] density_cluster.py [line:438] INFO 6108 19.0time, finished the data about: (559, 559) distance_c:124.0 next increase:1
+[2017-03-20 15:29:27] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:124.0. pile count about:551
+[2017-03-20 15:29:27] density_cluster.py [line:438] INFO 6108 19.5time, finished the data about: (559, 559) distance_c:124.5 next increase:1
+[2017-03-20 15:29:57] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:124.5. pile count about:551
+[2017-03-20 15:29:57] density_cluster.py [line:438] INFO 6108 20.0time, finished the data about: (559, 559) distance_c:125.0 next increase:1
+[2017-03-20 15:30:26] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:125.0. pile count about:551
+[2017-03-20 15:30:26] density_cluster.py [line:438] INFO 6108 20.5time, finished the data about: (559, 559) distance_c:125.5 next increase:1
+[2017-03-20 15:30:55] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:125.5. pile count about:551
+[2017-03-20 15:30:55] density_cluster.py [line:438] INFO 6108 21.0time, finished the data about: (559, 559) distance_c:126.0 next increase:1
+[2017-03-20 15:31:24] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:126.0. pile count about:548
+[2017-03-20 15:31:24] density_cluster.py [line:438] INFO 6108 21.5time, finished the data about: (559, 559) distance_c:126.5 next increase:1
+[2017-03-20 15:31:53] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:126.5. pile count about:548
+[2017-03-20 15:31:53] density_cluster.py [line:438] INFO 6108 22.0time, finished the data about: (559, 559) distance_c:127.0 next increase:1
+[2017-03-20 15:32:22] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:127.0. pile count about:548
+[2017-03-20 15:32:22] density_cluster.py [line:438] INFO 6108 22.5time, finished the data about: (559, 559) distance_c:127.5 next increase:1
+[2017-03-20 15:32:51] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:127.5. pile count about:548
+[2017-03-20 15:32:51] density_cluster.py [line:438] INFO 6108 23.0time, finished the data about: (559, 559) distance_c:128.0 next increase:1
+[2017-03-20 15:33:20] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:128.0. pile count about:546
+[2017-03-20 15:33:20] density_cluster.py [line:438] INFO 6108 23.5time, finished the data about: (559, 559) distance_c:128.5 next increase:1
+[2017-03-20 15:33:49] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:128.5. pile count about:546
+[2017-03-20 15:33:49] density_cluster.py [line:438] INFO 6108 24.0time, finished the data about: (559, 559) distance_c:129.0 next increase:1
+[2017-03-20 15:34:18] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:129.0. pile count about:544
+[2017-03-20 15:34:18] density_cluster.py [line:438] INFO 6108 24.5time, finished the data about: (559, 559) distance_c:129.5 next increase:1
+[2017-03-20 15:34:46] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:129.5. pile count about:544
+[2017-03-20 15:34:46] density_cluster.py [line:438] INFO 6108 25.0time, finished the data about: (559, 559) distance_c:130.0 next increase:1
+[2017-03-20 15:35:15] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:130.0. pile count about:542
+[2017-03-20 15:35:15] density_cluster.py [line:438] INFO 6108 25.5time, finished the data about: (559, 559) distance_c:130.5 next increase:1
+[2017-03-20 15:35:43] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:130.5. pile count about:541
+[2017-03-20 15:35:43] density_cluster.py [line:438] INFO 6108 26.0time, finished the data about: (559, 559) distance_c:131.0 next increase:1
+[2017-03-20 15:36:11] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:131.0. pile count about:538
+[2017-03-20 15:36:12] density_cluster.py [line:438] INFO 6108 26.5time, finished the data about: (559, 559) distance_c:131.5 next increase:1
+[2017-03-20 15:36:39] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:131.5. pile count about:537
+[2017-03-20 15:36:39] density_cluster.py [line:438] INFO 6108 27.0time, finished the data about: (559, 559) distance_c:132.0 next increase:1
+[2017-03-20 15:37:07] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:132.0. pile count about:536
+[2017-03-20 15:37:07] density_cluster.py [line:438] INFO 6108 27.5time, finished the data about: (559, 559) distance_c:132.5 next increase:1
+[2017-03-20 15:37:35] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:132.5. pile count about:536
+[2017-03-20 15:37:35] density_cluster.py [line:438] INFO 6108 28.0time, finished the data about: (559, 559) distance_c:133.0 next increase:1
+[2017-03-20 15:38:03] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:133.0. pile count about:536
+[2017-03-20 15:38:03] density_cluster.py [line:438] INFO 6108 28.5time, finished the data about: (559, 559) distance_c:133.5 next increase:1
+[2017-03-20 15:38:31] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:133.5. pile count about:536
+[2017-03-20 15:38:31] density_cluster.py [line:438] INFO 6108 29.0time, finished the data about: (559, 559) distance_c:134.0 next increase:1
+[2017-03-20 15:38:59] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:134.0. pile count about:535
+[2017-03-20 15:38:59] density_cluster.py [line:438] INFO 6108 29.5time, finished the data about: (559, 559) distance_c:134.5 next increase:1
+[2017-03-20 15:39:26] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:134.5. pile count about:534
+[2017-03-20 15:39:26] density_cluster.py [line:438] INFO 6108 30.0time, finished the data about: (559, 559) distance_c:135.0 next increase:1
+[2017-03-20 15:39:54] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:135.0. pile count about:533
+[2017-03-20 15:39:54] density_cluster.py [line:438] INFO 6108 30.5time, finished the data about: (559, 559) distance_c:135.5 next increase:1
+[2017-03-20 15:40:22] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:135.5. pile count about:532
+[2017-03-20 15:40:22] density_cluster.py [line:438] INFO 6108 31.0time, finished the data about: (559, 559) distance_c:136.0 next increase:1
+[2017-03-20 15:40:48] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:136.0. pile count about:530
+[2017-03-20 15:40:48] density_cluster.py [line:438] INFO 6108 31.5time, finished the data about: (559, 559) distance_c:136.5 next increase:1
+[2017-03-20 15:41:15] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:136.5. pile count about:530
+[2017-03-20 15:41:15] density_cluster.py [line:438] INFO 6108 32.0time, finished the data about: (559, 559) distance_c:137.0 next increase:1
+[2017-03-20 15:41:42] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:137.0. pile count about:524
+[2017-03-20 15:41:42] density_cluster.py [line:438] INFO 6108 32.5time, finished the data about: (559, 559) distance_c:137.5 next increase:1
+[2017-03-20 15:42:08] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:137.5. pile count about:523
+[2017-03-20 15:42:08] density_cluster.py [line:438] INFO 6108 33.0time, finished the data about: (559, 559) distance_c:138.0 next increase:1
+[2017-03-20 15:42:34] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:138.0. pile count about:521
+[2017-03-20 15:42:34] density_cluster.py [line:438] INFO 6108 33.5time, finished the data about: (559, 559) distance_c:138.5 next increase:1
+[2017-03-20 15:43:00] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:138.5. pile count about:521
+[2017-03-20 15:43:00] density_cluster.py [line:438] INFO 6108 34.0time, finished the data about: (559, 559) distance_c:139.0 next increase:1
+[2017-03-20 15:43:26] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:139.0. pile count about:520
+[2017-03-20 15:43:26] density_cluster.py [line:438] INFO 6108 34.5time, finished the data about: (559, 559) distance_c:139.5 next increase:1
+[2017-03-20 15:43:52] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:139.5. pile count about:519
+[2017-03-20 15:43:52] density_cluster.py [line:438] INFO 6108 35.0time, finished the data about: (559, 559) distance_c:140.0 next increase:1
+[2017-03-20 15:44:18] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:140.0. pile count about:515
+[2017-03-20 15:44:18] density_cluster.py [line:438] INFO 6108 35.5time, finished the data about: (559, 559) distance_c:140.5 next increase:1
+[2017-03-20 15:44:43] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:140.5. pile count about:515
+[2017-03-20 15:44:43] density_cluster.py [line:438] INFO 6108 36.0time, finished the data about: (559, 559) distance_c:141.0 next increase:1
+[2017-03-20 15:45:08] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:141.0. pile count about:514
+[2017-03-20 15:45:08] density_cluster.py [line:438] INFO 6108 36.5time, finished the data about: (559, 559) distance_c:141.5 next increase:1
+[2017-03-20 15:45:34] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:141.5. pile count about:513
+[2017-03-20 15:45:34] density_cluster.py [line:438] INFO 6108 37.0time, finished the data about: (559, 559) distance_c:142.0 next increase:1
+[2017-03-20 15:45:59] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:142.0. pile count about:512
+[2017-03-20 15:45:59] density_cluster.py [line:438] INFO 6108 37.5time, finished the data about: (559, 559) distance_c:142.5 next increase:1
+[2017-03-20 15:46:24] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:142.5. pile count about:511
+[2017-03-20 15:46:24] density_cluster.py [line:438] INFO 6108 38.0time, finished the data about: (559, 559) distance_c:143.0 next increase:1
+[2017-03-20 15:46:49] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:143.0. pile count about:508
+[2017-03-20 15:46:49] density_cluster.py [line:438] INFO 6108 38.5time, finished the data about: (559, 559) distance_c:143.5 next increase:1
+[2017-03-20 15:47:14] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:143.5. pile count about:508
+[2017-03-20 15:47:14] density_cluster.py [line:438] INFO 6108 39.0time, finished the data about: (559, 559) distance_c:144.0 next increase:1
+[2017-03-20 15:47:38] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:144.0. pile count about:506
+[2017-03-20 15:47:38] density_cluster.py [line:438] INFO 6108 39.5time, finished the data about: (559, 559) distance_c:144.5 next increase:1
+[2017-03-20 15:48:03] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:144.5. pile count about:506
+[2017-03-20 15:48:03] density_cluster.py [line:438] INFO 6108 40.0time, finished the data about: (559, 559) distance_c:145.0 next increase:1
+[2017-03-20 15:48:27] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:145.0. pile count about:503
+[2017-03-20 15:48:27] density_cluster.py [line:438] INFO 6108 40.5time, finished the data about: (559, 559) distance_c:145.5 next increase:1
+[2017-03-20 15:48:52] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:145.5. pile count about:503
+[2017-03-20 15:48:52] density_cluster.py [line:438] INFO 6108 41.0time, finished the data about: (559, 559) distance_c:146.0 next increase:1
+[2017-03-20 15:49:16] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:146.0. pile count about:501
+[2017-03-20 15:49:16] density_cluster.py [line:438] INFO 6108 41.5time, finished the data about: (559, 559) distance_c:146.5 next increase:1
+[2017-03-20 15:49:40] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:146.5. pile count about:501
+[2017-03-20 15:49:40] density_cluster.py [line:438] INFO 6108 42.0time, finished the data about: (559, 559) distance_c:147.0 next increase:1
+[2017-03-20 15:50:04] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:147.0. pile count about:497
+[2017-03-20 15:50:04] density_cluster.py [line:438] INFO 6108 42.5time, finished the data about: (559, 559) distance_c:147.5 next increase:1
+[2017-03-20 15:50:28] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:147.5. pile count about:495
+[2017-03-20 15:50:28] density_cluster.py [line:438] INFO 6108 43.0time, finished the data about: (559, 559) distance_c:148.0 next increase:1
+[2017-03-20 15:50:52] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:148.0. pile count about:491
+[2017-03-20 15:50:52] density_cluster.py [line:438] INFO 6108 43.5time, finished the data about: (559, 559) distance_c:148.5 next increase:1
+[2017-03-20 15:51:16] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:148.5. pile count about:491
+[2017-03-20 15:51:16] density_cluster.py [line:438] INFO 6108 44.0time, finished the data about: (559, 559) distance_c:149.0 next increase:1
+[2017-03-20 15:51:40] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:149.0. pile count about:490
+[2017-03-20 15:51:40] density_cluster.py [line:438] INFO 6108 44.5time, finished the data about: (559, 559) distance_c:149.5 next increase:1
+[2017-03-20 15:52:04] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:149.5. pile count about:490
+[2017-03-20 15:52:04] density_cluster.py [line:438] INFO 6108 45.0time, finished the data about: (559, 559) distance_c:150.0 next increase:1
+[2017-03-20 15:52:29] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:150.0. pile count about:494
+[2017-03-20 15:52:29] density_cluster.py [line:438] INFO 6108 45.5time, finished the data about: (559, 559) distance_c:150.5 next increase:1
+[2017-03-20 15:52:54] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:150.5. pile count about:494
+[2017-03-20 15:52:54] density_cluster.py [line:438] INFO 6108 46.0time, finished the data about: (559, 559) distance_c:151.0 next increase:1
+[2017-03-20 15:53:18] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:151.0. pile count about:491
+[2017-03-20 15:53:18] density_cluster.py [line:438] INFO 6108 46.5time, finished the data about: (559, 559) distance_c:151.5 next increase:1
+[2017-03-20 15:53:42] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:151.5. pile count about:491
+[2017-03-20 15:53:42] density_cluster.py [line:438] INFO 6108 47.0time, finished the data about: (559, 559) distance_c:152.0 next increase:1
+[2017-03-20 15:54:06] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:152.0. pile count about:488
+[2017-03-20 15:54:06] density_cluster.py [line:438] INFO 6108 47.5time, finished the data about: (559, 559) distance_c:152.5 next increase:1
+[2017-03-20 15:54:30] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:152.5. pile count about:488
+[2017-03-20 15:54:30] density_cluster.py [line:438] INFO 6108 48.0time, finished the data about: (559, 559) distance_c:153.0 next increase:1
+[2017-03-20 15:54:54] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:153.0. pile count about:484
+[2017-03-20 15:54:54] density_cluster.py [line:438] INFO 6108 48.5time, finished the data about: (559, 559) distance_c:153.5 next increase:1
+[2017-03-20 15:55:17] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:153.5. pile count about:484
+[2017-03-20 15:55:17] density_cluster.py [line:438] INFO 6108 49.0time, finished the data about: (559, 559) distance_c:154.0 next increase:1
+[2017-03-20 15:55:40] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:154.0. pile count about:482
+[2017-03-20 15:55:40] density_cluster.py [line:438] INFO 6108 49.5time, finished the data about: (559, 559) distance_c:154.5 next increase:1
+[2017-03-20 15:56:02] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:154.5. pile count about:478
+[2017-03-20 15:56:02] density_cluster.py [line:438] INFO 6108 50.0time, finished the data about: (559, 559) distance_c:155.0 next increase:1
+[2017-03-20 15:56:24] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:155.0. pile count about:471
+[2017-03-20 15:56:24] density_cluster.py [line:438] INFO 6108 50.5time, finished the data about: (559, 559) distance_c:155.5 next increase:1
+[2017-03-20 15:56:47] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:155.5. pile count about:474
+[2017-03-20 15:56:47] density_cluster.py [line:438] INFO 6108 51.0time, finished the data about: (559, 559) distance_c:156.0 next increase:1
+[2017-03-20 15:57:08] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:156.0. pile count about:466
+[2017-03-20 15:57:08] density_cluster.py [line:438] INFO 6108 51.5time, finished the data about: (559, 559) distance_c:156.5 next increase:1
+[2017-03-20 15:57:30] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:156.5. pile count about:465
+[2017-03-20 15:57:30] density_cluster.py [line:438] INFO 6108 52.0time, finished the data about: (559, 559) distance_c:157.0 next increase:1
+[2017-03-20 15:57:51] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:157.0. pile count about:459
+[2017-03-20 15:57:51] density_cluster.py [line:438] INFO 6108 52.5time, finished the data about: (559, 559) distance_c:157.5 next increase:1
+[2017-03-20 15:58:12] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:157.5. pile count about:457
+[2017-03-20 15:58:12] density_cluster.py [line:438] INFO 6108 53.0time, finished the data about: (559, 559) distance_c:158.0 next increase:1
+[2017-03-20 15:58:33] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:158.0. pile count about:456
+[2017-03-20 15:58:33] density_cluster.py [line:438] INFO 6108 53.5time, finished the data about: (559, 559) distance_c:158.5 next increase:1
+[2017-03-20 15:58:54] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:158.5. pile count about:456
+[2017-03-20 15:58:54] density_cluster.py [line:438] INFO 6108 54.0time, finished the data about: (559, 559) distance_c:159.0 next increase:1
+[2017-03-20 15:59:14] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:159.0. pile count about:454
+[2017-03-20 15:59:14] density_cluster.py [line:438] INFO 6108 54.5time, finished the data about: (559, 559) distance_c:159.5 next increase:1
+[2017-03-20 15:59:35] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:159.5. pile count about:454
+[2017-03-20 15:59:35] density_cluster.py [line:438] INFO 6108 55.0time, finished the data about: (559, 559) distance_c:160.0 next increase:1
+[2017-03-20 15:59:55] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:160.0. pile count about:452
+[2017-03-20 15:59:55] density_cluster.py [line:438] INFO 6108 55.5time, finished the data about: (559, 559) distance_c:160.5 next increase:1
+[2017-03-20 16:00:16] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:160.5. pile count about:450
+[2017-03-20 16:00:16] density_cluster.py [line:438] INFO 6108 56.0time, finished the data about: (559, 559) distance_c:161.0 next increase:1
+[2017-03-20 16:00:35] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:161.0. pile count about:448
+[2017-03-20 16:00:35] density_cluster.py [line:438] INFO 6108 56.5time, finished the data about: (559, 559) distance_c:161.5 next increase:1
+[2017-03-20 16:00:55] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:161.5. pile count about:449
+[2017-03-20 16:00:55] density_cluster.py [line:438] INFO 6108 57.0time, finished the data about: (559, 559) distance_c:162.0 next increase:1
+[2017-03-20 16:01:15] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:162.0. pile count about:444
+[2017-03-20 16:01:15] density_cluster.py [line:438] INFO 6108 57.5time, finished the data about: (559, 559) distance_c:162.5 next increase:1
+[2017-03-20 16:01:35] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:162.5. pile count about:445
+[2017-03-20 16:01:35] density_cluster.py [line:438] INFO 6108 58.0time, finished the data about: (559, 559) distance_c:163.0 next increase:1
+[2017-03-20 16:01:54] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:163.0. pile count about:440
+[2017-03-20 16:01:54] density_cluster.py [line:438] INFO 6108 58.5time, finished the data about: (559, 559) distance_c:163.5 next increase:1
+[2017-03-20 16:02:13] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:163.5. pile count about:440
+[2017-03-20 16:02:13] density_cluster.py [line:438] INFO 6108 59.0time, finished the data about: (559, 559) distance_c:164.0 next increase:1
+[2017-03-20 16:02:32] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:164.0. pile count about:434
+[2017-03-20 16:02:32] density_cluster.py [line:438] INFO 6108 59.5time, finished the data about: (559, 559) distance_c:164.5 next increase:1
+[2017-03-20 16:02:51] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:164.5. pile count about:434
+[2017-03-20 16:02:51] density_cluster.py [line:438] INFO 6108 60.0time, finished the data about: (559, 559) distance_c:165.0 next increase:1
+[2017-03-20 16:03:10] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:165.0. pile count about:431
+[2017-03-20 16:03:10] density_cluster.py [line:438] INFO 6108 60.5time, finished the data about: (559, 559) distance_c:165.5 next increase:1
+[2017-03-20 16:03:28] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:165.5. pile count about:429
+[2017-03-20 16:03:28] density_cluster.py [line:438] INFO 6108 61.0time, finished the data about: (559, 559) distance_c:166.0 next increase:1
+[2017-03-20 16:03:46] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:166.0. pile count about:424
+[2017-03-20 16:03:46] density_cluster.py [line:438] INFO 6108 61.5time, finished the data about: (559, 559) distance_c:166.5 next increase:1
+[2017-03-20 16:04:05] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:166.5. pile count about:423
+[2017-03-20 16:04:05] density_cluster.py [line:438] INFO 6108 62.0time, finished the data about: (559, 559) distance_c:167.0 next increase:1
+[2017-03-20 16:04:23] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:167.0. pile count about:421
+[2017-03-20 16:04:23] density_cluster.py [line:438] INFO 6108 62.5time, finished the data about: (559, 559) distance_c:167.5 next increase:1
+[2017-03-20 16:04:41] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:167.5. pile count about:421
+[2017-03-20 16:04:41] density_cluster.py [line:438] INFO 6108 63.0time, finished the data about: (559, 559) distance_c:168.0 next increase:1
+[2017-03-20 16:04:58] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:168.0. pile count about:419
+[2017-03-20 16:04:58] density_cluster.py [line:438] INFO 6108 63.5time, finished the data about: (559, 559) distance_c:168.5 next increase:1
+[2017-03-20 16:05:16] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:168.5. pile count about:418
+[2017-03-20 16:05:16] density_cluster.py [line:438] INFO 6108 64.0time, finished the data about: (559, 559) distance_c:169.0 next increase:1
+[2017-03-20 16:05:33] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:169.0. pile count about:415
+[2017-03-20 16:05:33] density_cluster.py [line:438] INFO 6108 64.5time, finished the data about: (559, 559) distance_c:169.5 next increase:1
+[2017-03-20 16:05:51] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:169.5. pile count about:412
+[2017-03-20 16:05:51] density_cluster.py [line:438] INFO 6108 65.0time, finished the data about: (559, 559) distance_c:170.0 next increase:1
+[2017-03-20 16:06:08] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:170.0. pile count about:408
+[2017-03-20 16:06:08] density_cluster.py [line:438] INFO 6108 65.5time, finished the data about: (559, 559) distance_c:170.5 next increase:1
+[2017-03-20 16:06:24] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:170.5. pile count about:405
+[2017-03-20 16:06:24] density_cluster.py [line:438] INFO 6108 66.0time, finished the data about: (559, 559) distance_c:171.0 next increase:1
+[2017-03-20 16:06:41] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:171.0. pile count about:399
+[2017-03-20 16:06:41] density_cluster.py [line:438] INFO 6108 66.5time, finished the data about: (559, 559) distance_c:171.5 next increase:1
+[2017-03-20 16:06:57] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:171.5. pile count about:402
+[2017-03-20 16:06:57] density_cluster.py [line:438] INFO 6108 67.0time, finished the data about: (559, 559) distance_c:172.0 next increase:1
+[2017-03-20 16:07:13] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:172.0. pile count about:400
+[2017-03-20 16:07:13] density_cluster.py [line:438] INFO 6108 67.5time, finished the data about: (559, 559) distance_c:172.5 next increase:1
+[2017-03-20 16:07:30] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:172.5. pile count about:399
+[2017-03-20 16:07:30] density_cluster.py [line:438] INFO 6108 68.0time, finished the data about: (559, 559) distance_c:173.0 next increase:1
+[2017-03-20 16:07:46] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:173.0. pile count about:398
+[2017-03-20 16:07:46] density_cluster.py [line:438] INFO 6108 68.5time, finished the data about: (559, 559) distance_c:173.5 next increase:1
+[2017-03-20 16:08:02] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:173.5. pile count about:396
+[2017-03-20 16:08:02] density_cluster.py [line:438] INFO 6108 69.0time, finished the data about: (559, 559) distance_c:174.0 next increase:1
+[2017-03-20 16:08:18] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:174.0. pile count about:394
+[2017-03-20 16:08:18] density_cluster.py [line:438] INFO 6108 69.5time, finished the data about: (559, 559) distance_c:174.5 next increase:1
+[2017-03-20 16:08:34] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:174.5. pile count about:394
+[2017-03-20 16:08:34] density_cluster.py [line:438] INFO 6108 70.0time, finished the data about: (559, 559) distance_c:175.0 next increase:1
+[2017-03-20 16:08:49] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:175.0. pile count about:389
+[2017-03-20 16:08:49] density_cluster.py [line:438] INFO 6108 70.5time, finished the data about: (559, 559) distance_c:175.5 next increase:1
+[2017-03-20 16:09:05] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:175.5. pile count about:388
+[2017-03-20 16:09:05] density_cluster.py [line:438] INFO 6108 71.0time, finished the data about: (559, 559) distance_c:176.0 next increase:1
+[2017-03-20 16:09:20] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:176.0. pile count about:385
+[2017-03-20 16:09:20] density_cluster.py [line:438] INFO 6108 71.5time, finished the data about: (559, 559) distance_c:176.5 next increase:1
+[2017-03-20 16:09:35] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:176.5. pile count about:383
+[2017-03-20 16:09:35] density_cluster.py [line:438] INFO 6108 72.0time, finished the data about: (559, 559) distance_c:177.0 next increase:1
+[2017-03-20 16:09:50] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:177.0. pile count about:379
+[2017-03-20 16:09:50] density_cluster.py [line:438] INFO 6108 72.5time, finished the data about: (559, 559) distance_c:177.5 next increase:1
+[2017-03-20 16:10:04] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:177.5. pile count about:382
+[2017-03-20 16:10:04] density_cluster.py [line:438] INFO 6108 73.0time, finished the data about: (559, 559) distance_c:178.0 next increase:1
+[2017-03-20 16:10:19] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:178.0. pile count about:379
+[2017-03-20 16:10:19] density_cluster.py [line:438] INFO 6108 73.5time, finished the data about: (559, 559) distance_c:178.5 next increase:1
+[2017-03-20 16:10:33] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:178.5. pile count about:375
+[2017-03-20 16:10:33] density_cluster.py [line:438] INFO 6108 74.0time, finished the data about: (559, 559) distance_c:179.0 next increase:1
+[2017-03-20 16:10:48] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:179.0. pile count about:373
+[2017-03-20 16:10:48] density_cluster.py [line:438] INFO 6108 74.5time, finished the data about: (559, 559) distance_c:179.5 next increase:1
+[2017-03-20 16:11:02] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:179.5. pile count about:372
+[2017-03-20 16:11:02] density_cluster.py [line:438] INFO 6108 75.0time, finished the data about: (559, 559) distance_c:180.0 next increase:1
+[2017-03-20 16:11:16] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:180.0. pile count about:370
+[2017-03-20 16:11:16] density_cluster.py [line:438] INFO 6108 75.5time, finished the data about: (559, 559) distance_c:180.5 next increase:1
+[2017-03-20 16:11:30] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:180.5. pile count about:367
+[2017-03-20 16:11:30] density_cluster.py [line:438] INFO 6108 76.0time, finished the data about: (559, 559) distance_c:181.0 next increase:1
+[2017-03-20 16:11:43] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:181.0. pile count about:364
+[2017-03-20 16:11:43] density_cluster.py [line:438] INFO 6108 76.5time, finished the data about: (559, 559) distance_c:181.5 next increase:1
+[2017-03-20 16:11:57] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:181.5. pile count about:365
+[2017-03-20 16:11:57] density_cluster.py [line:438] INFO 6108 77.0time, finished the data about: (559, 559) distance_c:182.0 next increase:1
+[2017-03-20 16:12:10] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:182.0. pile count about:359
+[2017-03-20 16:12:10] density_cluster.py [line:438] INFO 6108 77.5time, finished the data about: (559, 559) distance_c:182.5 next increase:1
+[2017-03-20 16:12:23] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:182.5. pile count about:357
+[2017-03-20 16:12:23] density_cluster.py [line:438] INFO 6108 78.0time, finished the data about: (559, 559) distance_c:183.0 next increase:1
+[2017-03-20 16:12:36] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:183.0. pile count about:352
+[2017-03-20 16:12:36] density_cluster.py [line:438] INFO 6108 78.5time, finished the data about: (559, 559) distance_c:183.5 next increase:1
+[2017-03-20 16:12:48] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:183.5. pile count about:350
+[2017-03-20 16:12:48] density_cluster.py [line:438] INFO 6108 79.0time, finished the data about: (559, 559) distance_c:184.0 next increase:1
+[2017-03-20 16:13:01] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:184.0. pile count about:348
+[2017-03-20 16:13:01] density_cluster.py [line:438] INFO 6108 79.5time, finished the data about: (559, 559) distance_c:184.5 next increase:1
+[2017-03-20 16:13:13] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:184.5. pile count about:347
+[2017-03-20 16:13:13] density_cluster.py [line:438] INFO 6108 80.0time, finished the data about: (559, 559) distance_c:185.0 next increase:1
+[2017-03-20 16:13:25] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:185.0. pile count about:341
+[2017-03-20 16:13:25] density_cluster.py [line:438] INFO 6108 80.5time, finished the data about: (559, 559) distance_c:185.5 next increase:1
+[2017-03-20 16:13:37] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:185.5. pile count about:341
+[2017-03-20 16:13:37] density_cluster.py [line:438] INFO 6108 81.0time, finished the data about: (559, 559) distance_c:186.0 next increase:1
+[2017-03-20 16:13:49] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:186.0. pile count about:338
+[2017-03-20 16:13:49] density_cluster.py [line:438] INFO 6108 81.5time, finished the data about: (559, 559) distance_c:186.5 next increase:1
+[2017-03-20 16:14:00] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:186.5. pile count about:337
+[2017-03-20 16:14:00] density_cluster.py [line:438] INFO 6108 82.0time, finished the data about: (559, 559) distance_c:187.0 next increase:1
+[2017-03-20 16:14:12] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:187.0. pile count about:337
+[2017-03-20 16:14:12] density_cluster.py [line:438] INFO 6108 82.5time, finished the data about: (559, 559) distance_c:187.5 next increase:1
+[2017-03-20 16:14:23] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:187.5. pile count about:334
+[2017-03-20 16:14:23] density_cluster.py [line:438] INFO 6108 83.0time, finished the data about: (559, 559) distance_c:188.0 next increase:1
+[2017-03-20 16:14:34] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:188.0. pile count about:333
+[2017-03-20 16:14:34] density_cluster.py [line:438] INFO 6108 83.5time, finished the data about: (559, 559) distance_c:188.5 next increase:1
+[2017-03-20 16:14:46] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:188.5. pile count about:331
+[2017-03-20 16:14:46] density_cluster.py [line:438] INFO 6108 84.0time, finished the data about: (559, 559) distance_c:189.0 next increase:1
+[2017-03-20 16:14:57] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:189.0. pile count about:330
+[2017-03-20 16:14:57] density_cluster.py [line:438] INFO 6108 84.5time, finished the data about: (559, 559) distance_c:189.5 next increase:1
+[2017-03-20 16:15:08] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:189.5. pile count about:328
+[2017-03-20 16:15:08] density_cluster.py [line:438] INFO 6108 85.0time, finished the data about: (559, 559) distance_c:190.0 next increase:1
+[2017-03-20 16:15:18] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:190.0. pile count about:322
+[2017-03-20 16:15:18] density_cluster.py [line:438] INFO 6108 85.5time, finished the data about: (559, 559) distance_c:190.5 next increase:1
+[2017-03-20 16:15:29] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:190.5. pile count about:322
+[2017-03-20 16:15:29] density_cluster.py [line:438] INFO 6108 86.0time, finished the data about: (559, 559) distance_c:191.0 next increase:1
+[2017-03-20 16:15:39] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:191.0. pile count about:315
+[2017-03-20 16:15:39] density_cluster.py [line:438] INFO 6108 86.5time, finished the data about: (559, 559) distance_c:191.5 next increase:1
+[2017-03-20 16:15:50] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:191.5. pile count about:322
+[2017-03-20 16:15:50] density_cluster.py [line:438] INFO 6108 87.0time, finished the data about: (559, 559) distance_c:192.0 next increase:1
+[2017-03-20 16:16:01] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:192.0. pile count about:317
+[2017-03-20 16:16:01] density_cluster.py [line:438] INFO 6108 87.5time, finished the data about: (559, 559) distance_c:192.5 next increase:1
+[2017-03-20 16:16:11] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:192.5. pile count about:317
+[2017-03-20 16:16:11] density_cluster.py [line:438] INFO 6108 88.0time, finished the data about: (559, 559) distance_c:193.0 next increase:1
+[2017-03-20 16:16:21] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:193.0. pile count about:318
+[2017-03-20 16:16:21] density_cluster.py [line:438] INFO 6108 88.5time, finished the data about: (559, 559) distance_c:193.5 next increase:1
+[2017-03-20 16:16:31] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:193.5. pile count about:317
+[2017-03-20 16:16:32] density_cluster.py [line:438] INFO 6108 89.0time, finished the data about: (559, 559) distance_c:194.0 next increase:1
+[2017-03-20 16:16:41] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:194.0. pile count about:314
+[2017-03-20 16:16:42] density_cluster.py [line:438] INFO 6108 89.5time, finished the data about: (559, 559) distance_c:194.5 next increase:1
+[2017-03-20 16:16:51] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:194.5. pile count about:312
+[2017-03-20 16:16:51] density_cluster.py [line:438] INFO 6108 90.0time, finished the data about: (559, 559) distance_c:195.0 next increase:1
+[2017-03-20 16:17:01] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:195.0. pile count about:305
+[2017-03-20 16:17:01] density_cluster.py [line:438] INFO 6108 90.5time, finished the data about: (559, 559) distance_c:195.5 next increase:1
+[2017-03-20 16:17:11] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:195.5. pile count about:307
+[2017-03-20 16:17:11] density_cluster.py [line:438] INFO 6108 91.0time, finished the data about: (559, 559) distance_c:196.0 next increase:1
+[2017-03-20 16:17:20] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:196.0. pile count about:304
+[2017-03-20 16:17:20] density_cluster.py [line:438] INFO 6108 91.5time, finished the data about: (559, 559) distance_c:196.5 next increase:1
+[2017-03-20 16:17:29] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:196.5. pile count about:303
+[2017-03-20 16:17:29] density_cluster.py [line:438] INFO 6108 92.0time, finished the data about: (559, 559) distance_c:197.0 next increase:1
+[2017-03-20 16:17:39] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:197.0. pile count about:299
+[2017-03-20 16:17:39] density_cluster.py [line:438] INFO 6108 92.5time, finished the data about: (559, 559) distance_c:197.5 next increase:1
+[2017-03-20 16:17:48] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:197.5. pile count about:304
+[2017-03-20 16:17:48] density_cluster.py [line:438] INFO 6108 93.0time, finished the data about: (559, 559) distance_c:198.0 next increase:1
+[2017-03-20 16:17:57] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:198.0. pile count about:300
+[2017-03-20 16:17:57] density_cluster.py [line:438] INFO 6108 93.5time, finished the data about: (559, 559) distance_c:198.5 next increase:1
+[2017-03-20 16:18:06] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:198.5. pile count about:302
+[2017-03-20 16:18:06] density_cluster.py [line:438] INFO 6108 94.0time, finished the data about: (559, 559) distance_c:199.0 next increase:1
+[2017-03-20 16:18:14] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:199.0. pile count about:289
+[2017-03-20 16:18:14] density_cluster.py [line:438] INFO 6108 94.5time, finished the data about: (559, 559) distance_c:199.5 next increase:1
+[2017-03-20 16:18:23] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:199.5. pile count about:289
+[2017-03-20 16:18:23] density_cluster.py [line:438] INFO 6108 95.0time, finished the data about: (559, 559) distance_c:200.0 next increase:1
+[2017-03-20 16:18:31] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:200.0. pile count about:284
+[2017-03-20 16:18:31] density_cluster.py [line:438] INFO 6108 95.5time, finished the data about: (559, 559) distance_c:200.5 next increase:1
+[2017-03-20 16:18:39] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:200.5. pile count about:284
+[2017-03-20 16:18:39] density_cluster.py [line:438] INFO 6108 96.0time, finished the data about: (559, 559) distance_c:201.0 next increase:1
+[2017-03-20 16:18:47] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:201.0. pile count about:280
+[2017-03-20 16:18:47] density_cluster.py [line:438] INFO 6108 96.5time, finished the data about: (559, 559) distance_c:201.5 next increase:1
+[2017-03-20 16:18:54] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:201.5. pile count about:276
+[2017-03-20 16:18:54] density_cluster.py [line:438] INFO 6108 97.0time, finished the data about: (559, 559) distance_c:202.0 next increase:1
+[2017-03-20 16:19:02] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:202.0. pile count about:272
+[2017-03-20 16:19:02] density_cluster.py [line:438] INFO 6108 97.5time, finished the data about: (559, 559) distance_c:202.5 next increase:1
+[2017-03-20 16:19:10] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:202.5. pile count about:274
+[2017-03-20 16:19:10] density_cluster.py [line:438] INFO 6108 98.0time, finished the data about: (559, 559) distance_c:203.0 next increase:1
+[2017-03-20 16:19:17] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:203.0. pile count about:270
+[2017-03-20 16:19:17] density_cluster.py [line:438] INFO 6108 98.5time, finished the data about: (559, 559) distance_c:203.5 next increase:1
+[2017-03-20 16:19:24] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:203.5. pile count about:269
+[2017-03-20 16:19:24] density_cluster.py [line:438] INFO 6108 99.0time, finished the data about: (559, 559) distance_c:204.0 next increase:1
+[2017-03-20 16:19:32] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:204.0. pile count about:271
+[2017-03-20 16:19:32] density_cluster.py [line:438] INFO 6108 99.5time, finished the data about: (559, 559) distance_c:204.5 next increase:1
+[2017-03-20 16:19:39] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:204.5. pile count about:271
+[2017-03-20 16:19:39] density_cluster.py [line:438] INFO 6108 100.0time, finished the data about: (559, 559) distance_c:205.0 next increase:1
+[2017-03-20 16:19:46] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:205.0. pile count about:267
+[2017-03-20 16:19:46] density_cluster.py [line:438] INFO 6108 100.5time, finished the data about: (559, 559) distance_c:205.5 next increase:1
+[2017-03-20 16:19:53] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:205.5. pile count about:265
+[2017-03-20 16:19:53] density_cluster.py [line:438] INFO 6108 101.0time, finished the data about: (559, 559) distance_c:206.0 next increase:1
+[2017-03-20 16:20:00] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:206.0. pile count about:261
+[2017-03-20 16:20:00] density_cluster.py [line:438] INFO 6108 101.5time, finished the data about: (559, 559) distance_c:206.5 next increase:1
+[2017-03-20 16:20:07] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:206.5. pile count about:265
+[2017-03-20 16:20:07] density_cluster.py [line:438] INFO 6108 102.0time, finished the data about: (559, 559) distance_c:207.0 next increase:1
+[2017-03-20 16:20:14] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:207.0. pile count about:262
+[2017-03-20 16:20:14] density_cluster.py [line:438] INFO 6108 102.5time, finished the data about: (559, 559) distance_c:207.5 next increase:1
+[2017-03-20 16:20:21] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:207.5. pile count about:264
+[2017-03-20 16:20:21] density_cluster.py [line:438] INFO 6108 103.0time, finished the data about: (559, 559) distance_c:208.0 next increase:1
+[2017-03-20 16:20:27] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:208.0. pile count about:253
+[2017-03-20 16:20:27] density_cluster.py [line:438] INFO 6108 103.5time, finished the data about: (559, 559) distance_c:208.5 next increase:1
+[2017-03-20 16:20:33] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:208.5. pile count about:249
+[2017-03-20 16:20:33] density_cluster.py [line:438] INFO 6108 104.0time, finished the data about: (559, 559) distance_c:209.0 next increase:1
+[2017-03-20 16:20:40] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:209.0. pile count about:252
+[2017-03-20 16:20:40] density_cluster.py [line:438] INFO 6108 104.5time, finished the data about: (559, 559) distance_c:209.5 next increase:1
+[2017-03-20 16:20:46] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:209.5. pile count about:258
+[2017-03-20 16:20:46] density_cluster.py [line:438] INFO 6108 105.0time, finished the data about: (559, 559) distance_c:210.0 next increase:1
+[2017-03-20 16:20:52] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:210.0. pile count about:246
+[2017-03-20 16:20:52] density_cluster.py [line:438] INFO 6108 105.5time, finished the data about: (559, 559) distance_c:210.5 next increase:1
+[2017-03-20 16:20:58] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:210.5. pile count about:244
+[2017-03-20 16:20:58] density_cluster.py [line:438] INFO 6108 106.0time, finished the data about: (559, 559) distance_c:211.0 next increase:1
+[2017-03-20 16:21:03] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:211.0. pile count about:241
+[2017-03-20 16:21:03] density_cluster.py [line:438] INFO 6108 106.5time, finished the data about: (559, 559) distance_c:211.5 next increase:1
+[2017-03-20 16:21:09] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:211.5. pile count about:243
+[2017-03-20 16:21:09] density_cluster.py [line:438] INFO 6108 107.0time, finished the data about: (559, 559) distance_c:212.0 next increase:1
+[2017-03-20 16:21:14] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:212.0. pile count about:240
+[2017-03-20 16:21:14] density_cluster.py [line:438] INFO 6108 107.5time, finished the data about: (559, 559) distance_c:212.5 next increase:1
+[2017-03-20 16:21:20] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:212.5. pile count about:240
+[2017-03-20 16:21:20] density_cluster.py [line:438] INFO 6108 108.0time, finished the data about: (559, 559) distance_c:213.0 next increase:1
+[2017-03-20 16:21:25] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:213.0. pile count about:236
+[2017-03-20 16:21:25] density_cluster.py [line:438] INFO 6108 108.5time, finished the data about: (559, 559) distance_c:213.5 next increase:1
+[2017-03-20 16:21:30] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:213.5. pile count about:235
+[2017-03-20 16:21:30] density_cluster.py [line:438] INFO 6108 109.0time, finished the data about: (559, 559) distance_c:214.0 next increase:1
+[2017-03-20 16:21:35] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:214.0. pile count about:237
+[2017-03-20 16:21:35] density_cluster.py [line:438] INFO 6108 109.5time, finished the data about: (559, 559) distance_c:214.5 next increase:1
+[2017-03-20 16:21:41] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:214.5. pile count about:236
+[2017-03-20 16:21:41] density_cluster.py [line:438] INFO 6108 110.0time, finished the data about: (559, 559) distance_c:215.0 next increase:1
+[2017-03-20 16:21:45] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:215.0. pile count about:231
+[2017-03-20 16:21:45] density_cluster.py [line:438] INFO 6108 110.5time, finished the data about: (559, 559) distance_c:215.5 next increase:1
+[2017-03-20 16:21:50] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:215.5. pile count about:232
+[2017-03-20 16:21:50] density_cluster.py [line:438] INFO 6108 111.0time, finished the data about: (559, 559) distance_c:216.0 next increase:1
+[2017-03-20 16:21:55] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:216.0. pile count about:233
+[2017-03-20 16:21:55] density_cluster.py [line:438] INFO 6108 111.5time, finished the data about: (559, 559) distance_c:216.5 next increase:1
+[2017-03-20 16:22:00] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:216.5. pile count about:231
+[2017-03-20 16:22:00] density_cluster.py [line:438] INFO 6108 112.0time, finished the data about: (559, 559) distance_c:217.0 next increase:1
+[2017-03-20 16:22:05] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:217.0. pile count about:219
+[2017-03-20 16:22:05] density_cluster.py [line:438] INFO 6108 112.5time, finished the data about: (559, 559) distance_c:217.5 next increase:1
+[2017-03-20 16:22:10] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:217.5. pile count about:218
+[2017-03-20 16:22:10] density_cluster.py [line:438] INFO 6108 113.0time, finished the data about: (559, 559) distance_c:218.0 next increase:1
+[2017-03-20 16:22:15] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:218.0. pile count about:216
+[2017-03-20 16:22:15] density_cluster.py [line:438] INFO 6108 113.5time, finished the data about: (559, 559) distance_c:218.5 next increase:1
+[2017-03-20 16:22:19] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:218.5. pile count about:215
+[2017-03-20 16:22:19] density_cluster.py [line:438] INFO 6108 114.0time, finished the data about: (559, 559) distance_c:219.0 next increase:1
+[2017-03-20 16:22:23] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:219.0. pile count about:211
+[2017-03-20 16:22:23] density_cluster.py [line:438] INFO 6108 114.5time, finished the data about: (559, 559) distance_c:219.5 next increase:1
+[2017-03-20 16:22:28] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:219.5. pile count about:213
+[2017-03-20 16:22:28] density_cluster.py [line:438] INFO 6108 115.0time, finished the data about: (559, 559) distance_c:220.0 next increase:1
+[2017-03-20 16:22:32] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:220.0. pile count about:213
+[2017-03-20 16:22:32] density_cluster.py [line:438] INFO 6108 115.5time, finished the data about: (559, 559) distance_c:220.5 next increase:1
+[2017-03-20 16:22:36] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:220.5. pile count about:216
+[2017-03-20 16:22:36] density_cluster.py [line:438] INFO 6108 116.0time, finished the data about: (559, 559) distance_c:221.0 next increase:1
+[2017-03-20 16:22:41] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:221.0. pile count about:206
+[2017-03-20 16:22:41] density_cluster.py [line:438] INFO 6108 116.5time, finished the data about: (559, 559) distance_c:221.5 next increase:1
+[2017-03-20 16:22:45] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:221.5. pile count about:207
+[2017-03-20 16:22:45] density_cluster.py [line:438] INFO 6108 117.0time, finished the data about: (559, 559) distance_c:222.0 next increase:1
+[2017-03-20 16:22:49] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:222.0. pile count about:202
+[2017-03-20 16:22:49] density_cluster.py [line:438] INFO 6108 117.5time, finished the data about: (559, 559) distance_c:222.5 next increase:1
+[2017-03-20 16:22:53] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:222.5. pile count about:205
+[2017-03-20 16:22:53] density_cluster.py [line:438] INFO 6108 118.0time, finished the data about: (559, 559) distance_c:223.0 next increase:1
+[2017-03-20 16:22:57] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:223.0. pile count about:198
+[2017-03-20 16:22:57] density_cluster.py [line:438] INFO 6108 118.5time, finished the data about: (559, 559) distance_c:223.5 next increase:1
+[2017-03-20 16:23:01] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:223.5. pile count about:197
+[2017-03-20 16:23:01] density_cluster.py [line:438] INFO 6108 119.0time, finished the data about: (559, 559) distance_c:224.0 next increase:1
+[2017-03-20 16:23:04] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:224.0. pile count about:190
+[2017-03-20 16:23:04] density_cluster.py [line:438] INFO 6108 119.5time, finished the data about: (559, 559) distance_c:224.5 next increase:1
+[2017-03-20 16:23:07] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:224.5. pile count about:190
+[2017-03-20 16:23:07] density_cluster.py [line:438] INFO 6108 120.0time, finished the data about: (559, 559) distance_c:225.0 next increase:1
+[2017-03-20 16:23:11] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:225.0. pile count about:190
+[2017-03-20 16:23:11] density_cluster.py [line:438] INFO 6108 120.5time, finished the data about: (559, 559) distance_c:225.5 next increase:1
+[2017-03-20 16:23:14] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:225.5. pile count about:189
+[2017-03-20 16:23:14] density_cluster.py [line:438] INFO 6108 121.0time, finished the data about: (559, 559) distance_c:226.0 next increase:1
+[2017-03-20 16:23:17] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:226.0. pile count about:185
+[2017-03-20 16:23:17] density_cluster.py [line:438] INFO 6108 121.5time, finished the data about: (559, 559) distance_c:226.5 next increase:1
+[2017-03-20 16:23:20] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:226.5. pile count about:186
+[2017-03-20 16:23:20] density_cluster.py [line:438] INFO 6108 122.0time, finished the data about: (559, 559) distance_c:227.0 next increase:1
+[2017-03-20 16:23:23] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:227.0. pile count about:183
+[2017-03-20 16:23:23] density_cluster.py [line:438] INFO 6108 122.5time, finished the data about: (559, 559) distance_c:227.5 next increase:1
+[2017-03-20 16:23:26] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:227.5. pile count about:183
+[2017-03-20 16:23:26] density_cluster.py [line:438] INFO 6108 123.0time, finished the data about: (559, 559) distance_c:228.0 next increase:1
+[2017-03-20 16:23:28] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:228.0. pile count about:167
+[2017-03-20 16:23:28] density_cluster.py [line:438] INFO 6108 123.5time, finished the data about: (559, 559) distance_c:228.5 next increase:1
+[2017-03-20 16:23:31] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:228.5. pile count about:168
+[2017-03-20 16:23:31] density_cluster.py [line:438] INFO 6108 124.0time, finished the data about: (559, 559) distance_c:229.0 next increase:1
+[2017-03-20 16:23:33] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:229.0. pile count about:158
+[2017-03-20 16:23:33] density_cluster.py [line:438] INFO 6108 124.5time, finished the data about: (559, 559) distance_c:229.5 next increase:1
+[2017-03-20 16:23:36] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:229.5. pile count about:159
+[2017-03-20 16:23:36] density_cluster.py [line:438] INFO 6108 125.0time, finished the data about: (559, 559) distance_c:230.0 next increase:1
+[2017-03-20 16:23:38] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:230.0. pile count about:158
+[2017-03-20 16:23:38] density_cluster.py [line:438] INFO 6108 125.5time, finished the data about: (559, 559) distance_c:230.5 next increase:1
+[2017-03-20 16:23:41] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:230.5. pile count about:157
+[2017-03-20 16:23:41] density_cluster.py [line:438] INFO 6108 126.0time, finished the data about: (559, 559) distance_c:231.0 next increase:1
+[2017-03-20 16:23:43] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:231.0. pile count about:154
+[2017-03-20 16:23:43] density_cluster.py [line:438] INFO 6108 126.5time, finished the data about: (559, 559) distance_c:231.5 next increase:1
+[2017-03-20 16:23:45] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:231.5. pile count about:152
+[2017-03-20 16:23:45] density_cluster.py [line:438] INFO 6108 127.0time, finished the data about: (559, 559) distance_c:232.0 next increase:1
+[2017-03-20 16:23:47] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:232.0. pile count about:151
+[2017-03-20 16:23:47] density_cluster.py [line:438] INFO 6108 127.5time, finished the data about: (559, 559) distance_c:232.5 next increase:1
+[2017-03-20 16:23:49] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:232.5. pile count about:150
+[2017-03-20 16:23:49] density_cluster.py [line:438] INFO 6108 128.0time, finished the data about: (559, 559) distance_c:233.0 next increase:1
+[2017-03-20 16:23:51] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:233.0. pile count about:141
+[2017-03-20 16:23:51] density_cluster.py [line:438] INFO 6108 128.5time, finished the data about: (559, 559) distance_c:233.5 next increase:1
+[2017-03-20 16:23:53] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:233.5. pile count about:143
+[2017-03-20 16:23:53] density_cluster.py [line:438] INFO 6108 129.0time, finished the data about: (559, 559) distance_c:234.0 next increase:1
+[2017-03-20 16:23:55] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:234.0. pile count about:140
+[2017-03-20 16:23:55] density_cluster.py [line:438] INFO 6108 129.5time, finished the data about: (559, 559) distance_c:234.5 next increase:1
+[2017-03-20 16:23:57] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:234.5. pile count about:141
+[2017-03-20 16:23:57] density_cluster.py [line:438] INFO 6108 130.0time, finished the data about: (559, 559) distance_c:235.0 next increase:1
+[2017-03-20 16:23:58] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:235.0. pile count about:135
+[2017-03-20 16:23:58] density_cluster.py [line:438] INFO 6108 130.5time, finished the data about: (559, 559) distance_c:235.5 next increase:1
+[2017-03-20 16:24:00] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:235.5. pile count about:134
+[2017-03-20 16:24:00] density_cluster.py [line:438] INFO 6108 131.0time, finished the data about: (559, 559) distance_c:236.0 next increase:1
+[2017-03-20 16:24:02] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:236.0. pile count about:125
+[2017-03-20 16:24:02] density_cluster.py [line:438] INFO 6108 131.5time, finished the data about: (559, 559) distance_c:236.5 next increase:1
+[2017-03-20 16:24:03] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:236.5. pile count about:125
+[2017-03-20 16:24:03] density_cluster.py [line:438] INFO 6108 132.0time, finished the data about: (559, 559) distance_c:237.0 next increase:1
+[2017-03-20 16:24:05] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:237.0. pile count about:124
+[2017-03-20 16:24:05] density_cluster.py [line:438] INFO 6108 132.5time, finished the data about: (559, 559) distance_c:237.5 next increase:1
+[2017-03-20 16:24:07] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:237.5. pile count about:124
+[2017-03-20 16:24:07] density_cluster.py [line:438] INFO 6108 133.0time, finished the data about: (559, 559) distance_c:238.0 next increase:1
+[2017-03-20 16:24:08] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:238.0. pile count about:119
+[2017-03-20 16:24:08] density_cluster.py [line:438] INFO 6108 133.5time, finished the data about: (559, 559) distance_c:238.5 next increase:1
+[2017-03-20 16:24:09] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:238.5. pile count about:117
+[2017-03-20 16:24:09] density_cluster.py [line:438] INFO 6108 134.0time, finished the data about: (559, 559) distance_c:239.0 next increase:1
+[2017-03-20 16:24:11] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:239.0. pile count about:120
+[2017-03-20 16:24:11] density_cluster.py [line:438] INFO 6108 134.5time, finished the data about: (559, 559) distance_c:239.5 next increase:1
+[2017-03-20 16:24:12] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:239.5. pile count about:119
+[2017-03-20 16:24:12] density_cluster.py [line:438] INFO 6108 135.0time, finished the data about: (559, 559) distance_c:240.0 next increase:1
+[2017-03-20 16:24:14] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:240.0. pile count about:118
+[2017-03-20 16:24:14] density_cluster.py [line:438] INFO 6108 135.5time, finished the data about: (559, 559) distance_c:240.5 next increase:1
+[2017-03-20 16:24:15] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:240.5. pile count about:118
+[2017-03-20 16:24:15] density_cluster.py [line:438] INFO 6108 136.0time, finished the data about: (559, 559) distance_c:241.0 next increase:1
+[2017-03-20 16:24:16] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:241.0. pile count about:115
+[2017-03-20 16:24:16] density_cluster.py [line:438] INFO 6108 136.5time, finished the data about: (559, 559) distance_c:241.5 next increase:1
+[2017-03-20 16:24:18] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:241.5. pile count about:116
+[2017-03-20 16:24:18] density_cluster.py [line:438] INFO 6108 137.0time, finished the data about: (559, 559) distance_c:242.0 next increase:1
+[2017-03-20 16:24:19] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:242.0. pile count about:105
+[2017-03-20 16:24:19] density_cluster.py [line:438] INFO 6108 137.5time, finished the data about: (559, 559) distance_c:242.5 next increase:1
+[2017-03-20 16:24:20] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:242.5. pile count about:105
+[2017-03-20 16:24:20] density_cluster.py [line:438] INFO 6108 138.0time, finished the data about: (559, 559) distance_c:243.0 next increase:1
+[2017-03-20 16:24:21] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:243.0. pile count about:101
+[2017-03-20 16:24:21] density_cluster.py [line:438] INFO 6108 138.5time, finished the data about: (559, 559) distance_c:243.5 next increase:1
+[2017-03-20 16:24:22] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:243.5. pile count about:101
+[2017-03-20 16:24:22] density_cluster.py [line:438] INFO 6108 139.0time, finished the data about: (559, 559) distance_c:244.0 next increase:1
+[2017-03-20 16:24:23] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:244.0. pile count about:95
+[2017-03-20 16:24:23] density_cluster.py [line:438] INFO 6108 139.5time, finished the data about: (559, 559) distance_c:244.5 next increase:1
+[2017-03-20 16:24:24] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:244.5. pile count about:104
+[2017-03-20 16:24:24] density_cluster.py [line:438] INFO 6108 140.0time, finished the data about: (559, 559) distance_c:245.0 next increase:1
+[2017-03-20 16:24:25] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:245.0. pile count about:102
+[2017-03-20 16:24:25] density_cluster.py [line:438] INFO 6108 140.5time, finished the data about: (559, 559) distance_c:245.5 next increase:1
+[2017-03-20 16:24:26] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:245.5. pile count about:102
+[2017-03-20 16:24:27] density_cluster.py [line:438] INFO 6108 141.0time, finished the data about: (559, 559) distance_c:246.0 next increase:1
+[2017-03-20 16:24:28] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:246.0. pile count about:98
+[2017-03-20 16:24:28] density_cluster.py [line:438] INFO 6108 141.5time, finished the data about: (559, 559) distance_c:246.5 next increase:1
+[2017-03-20 16:24:29] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:246.5. pile count about:106
+[2017-03-20 16:24:29] density_cluster.py [line:438] INFO 6108 142.0time, finished the data about: (559, 559) distance_c:247.0 next increase:1
+[2017-03-20 16:24:30] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:247.0. pile count about:100
+[2017-03-20 16:24:30] density_cluster.py [line:438] INFO 6108 142.5time, finished the data about: (559, 559) distance_c:247.5 next increase:1
+[2017-03-20 16:24:31] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:247.5. pile count about:101
+[2017-03-20 16:24:31] density_cluster.py [line:438] INFO 6108 143.0time, finished the data about: (559, 559) distance_c:248.0 next increase:1
+[2017-03-20 16:24:32] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:248.0. pile count about:97
+[2017-03-20 16:24:32] density_cluster.py [line:438] INFO 6108 143.5time, finished the data about: (559, 559) distance_c:248.5 next increase:1
+[2017-03-20 16:24:33] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:248.5. pile count about:97
+[2017-03-20 16:24:33] density_cluster.py [line:438] INFO 6108 144.0time, finished the data about: (559, 559) distance_c:249.0 next increase:1
+[2017-03-20 16:24:34] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:249.0. pile count about:91
+[2017-03-20 16:24:34] density_cluster.py [line:438] INFO 6108 144.5time, finished the data about: (559, 559) distance_c:249.5 next increase:1
+[2017-03-20 16:24:34] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:249.5. pile count about:90
+[2017-03-20 16:24:34] density_cluster.py [line:438] INFO 6108 145.0time, finished the data about: (559, 559) distance_c:250.0 next increase:1
+[2017-03-20 16:24:35] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:250.0. pile count about:86
+[2017-03-20 16:24:35] density_cluster.py [line:438] INFO 6108 145.5time, finished the data about: (559, 559) distance_c:250.5 next increase:1
+[2017-03-20 16:24:36] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:250.5. pile count about:86
+[2017-03-20 16:24:36] density_cluster.py [line:438] INFO 6108 146.0time, finished the data about: (559, 559) distance_c:251.0 next increase:1
+[2017-03-20 16:24:37] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:251.0. pile count about:86
+[2017-03-20 16:24:37] density_cluster.py [line:438] INFO 6108 146.5time, finished the data about: (559, 559) distance_c:251.5 next increase:1
+[2017-03-20 16:24:38] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:251.5. pile count about:83
+[2017-03-20 16:24:38] density_cluster.py [line:438] INFO 6108 147.0time, finished the data about: (559, 559) distance_c:252.0 next increase:1
+[2017-03-20 16:24:39] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:252.0. pile count about:81
+[2017-03-20 16:24:39] density_cluster.py [line:438] INFO 6108 147.5time, finished the data about: (559, 559) distance_c:252.5 next increase:1
+[2017-03-20 16:24:39] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:252.5. pile count about:83
+[2017-03-20 16:24:39] density_cluster.py [line:438] INFO 6108 148.0time, finished the data about: (559, 559) distance_c:253.0 next increase:1
+[2017-03-20 16:24:40] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:253.0. pile count about:79
+[2017-03-20 16:24:40] density_cluster.py [line:438] INFO 6108 148.5time, finished the data about: (559, 559) distance_c:253.5 next increase:1
+[2017-03-20 16:24:41] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:253.5. pile count about:79
+[2017-03-20 16:24:41] density_cluster.py [line:438] INFO 6108 149.0time, finished the data about: (559, 559) distance_c:254.0 next increase:1
+[2017-03-20 16:24:42] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:254.0. pile count about:74
+[2017-03-20 16:24:42] density_cluster.py [line:438] INFO 6108 149.5time, finished the data about: (559, 559) distance_c:254.5 next increase:1
+[2017-03-20 16:24:42] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:254.5. pile count about:73
+[2017-03-20 16:24:42] density_cluster.py [line:438] INFO 6108 150.0time, finished the data about: (559, 559) distance_c:255.0 next increase:1
+[2017-03-20 16:24:43] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:255.0. pile count about:71
+[2017-03-20 16:24:43] density_cluster.py [line:438] INFO 6108 150.5time, finished the data about: (559, 559) distance_c:255.5 next increase:1
+[2017-03-20 16:24:44] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:255.5. pile count about:71
+[2017-03-20 16:24:44] density_cluster.py [line:438] INFO 6108 151.0time, finished the data about: (559, 559) distance_c:256.0 next increase:1
+[2017-03-20 16:24:44] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:256.0. pile count about:68
+[2017-03-20 16:24:44] density_cluster.py [line:438] INFO 6108 151.5time, finished the data about: (559, 559) distance_c:256.5 next increase:1
+[2017-03-20 16:24:45] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:256.5. pile count about:76
+[2017-03-20 16:24:45] density_cluster.py [line:438] INFO 6108 152.0time, finished the data about: (559, 559) distance_c:257.0 next increase:1
+[2017-03-20 16:24:46] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:257.0. pile count about:72
+[2017-03-20 16:24:46] density_cluster.py [line:438] INFO 6108 152.5time, finished the data about: (559, 559) distance_c:257.5 next increase:1
+[2017-03-20 16:24:46] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:257.5. pile count about:65
+[2017-03-20 16:24:46] density_cluster.py [line:438] INFO 6108 153.0time, finished the data about: (559, 559) distance_c:258.0 next increase:1
+[2017-03-20 16:24:47] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:258.0. pile count about:64
+[2017-03-20 16:24:47] density_cluster.py [line:438] INFO 6108 153.5time, finished the data about: (559, 559) distance_c:258.5 next increase:1
+[2017-03-20 16:24:47] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:258.5. pile count about:64
+[2017-03-20 16:24:47] density_cluster.py [line:438] INFO 6108 154.0time, finished the data about: (559, 559) distance_c:259.0 next increase:1
+[2017-03-20 16:24:48] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:259.0. pile count about:59
+[2017-03-20 16:24:48] density_cluster.py [line:438] INFO 6108 154.5time, finished the data about: (559, 559) distance_c:259.5 next increase:1
+[2017-03-20 16:24:48] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:259.5. pile count about:59
+[2017-03-20 16:24:48] density_cluster.py [line:438] INFO 6108 155.0time, finished the data about: (559, 559) distance_c:260.0 next increase:1
+[2017-03-20 16:24:49] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:260.0. pile count about:56
+[2017-03-20 16:24:49] density_cluster.py [line:438] INFO 6108 155.5time, finished the data about: (559, 559) distance_c:260.5 next increase:1
+[2017-03-20 16:24:49] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:260.5. pile count about:56
+[2017-03-20 16:24:49] density_cluster.py [line:438] INFO 6108 156.0time, finished the data about: (559, 559) distance_c:261.0 next increase:1
+[2017-03-20 16:24:50] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:261.0. pile count about:52
+[2017-03-20 16:24:50] density_cluster.py [line:438] INFO 6108 156.5time, finished the data about: (559, 559) distance_c:261.5 next increase:1
+[2017-03-20 16:24:50] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:261.5. pile count about:52
+[2017-03-20 16:24:50] density_cluster.py [line:438] INFO 6108 157.0time, finished the data about: (559, 559) distance_c:262.0 next increase:1
+[2017-03-20 16:24:51] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:262.0. pile count about:50
+[2017-03-20 16:24:51] density_cluster.py [line:438] INFO 6108 157.5time, finished the data about: (559, 559) distance_c:262.5 next increase:1
+[2017-03-20 16:24:51] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:262.5. pile count about:50
+[2017-03-20 16:24:51] density_cluster.py [line:438] INFO 6108 158.0time, finished the data about: (559, 559) distance_c:263.0 next increase:1
+[2017-03-20 16:24:52] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:263.0. pile count about:51
+[2017-03-20 16:24:52] density_cluster.py [line:438] INFO 6108 158.5time, finished the data about: (559, 559) distance_c:263.5 next increase:1
+[2017-03-20 16:24:52] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:263.5. pile count about:51
+[2017-03-20 16:24:52] density_cluster.py [line:438] INFO 6108 159.0time, finished the data about: (559, 559) distance_c:264.0 next increase:1
+[2017-03-20 16:24:53] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:264.0. pile count about:47
+[2017-03-20 16:24:53] density_cluster.py [line:438] INFO 6108 159.5time, finished the data about: (559, 559) distance_c:264.5 next increase:1
+[2017-03-20 16:24:53] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:264.5. pile count about:48
+[2017-03-20 16:24:53] density_cluster.py [line:438] INFO 6108 160.0time, finished the data about: (559, 559) distance_c:265.0 next increase:1
+[2017-03-20 16:24:53] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:265.0. pile count about:47
+[2017-03-20 16:24:53] density_cluster.py [line:438] INFO 6108 160.5time, finished the data about: (559, 559) distance_c:265.5 next increase:1
+[2017-03-20 16:24:54] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:265.5. pile count about:47
+[2017-03-20 16:24:54] density_cluster.py [line:438] INFO 6108 161.0time, finished the data about: (559, 559) distance_c:266.0 next increase:1
+[2017-03-20 16:24:54] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:266.0. pile count about:41
+[2017-03-20 16:24:54] density_cluster.py [line:438] INFO 6108 161.5time, finished the data about: (559, 559) distance_c:266.5 next increase:1
+[2017-03-20 16:24:55] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:266.5. pile count about:41
+[2017-03-20 16:24:55] density_cluster.py [line:438] INFO 6108 162.0time, finished the data about: (559, 559) distance_c:267.0 next increase:1
+[2017-03-20 16:24:55] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:267.0. pile count about:40
+[2017-03-20 16:24:55] density_cluster.py [line:438] INFO 6108 162.5time, finished the data about: (559, 559) distance_c:267.5 next increase:1
+[2017-03-20 16:24:55] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:267.5. pile count about:40
+[2017-03-20 16:24:55] density_cluster.py [line:438] INFO 6108 163.0time, finished the data about: (559, 559) distance_c:268.0 next increase:1
+[2017-03-20 16:24:56] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:268.0. pile count about:40
+[2017-03-20 16:24:56] density_cluster.py [line:438] INFO 6108 163.5time, finished the data about: (559, 559) distance_c:268.5 next increase:1
+[2017-03-20 16:24:56] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:268.5. pile count about:45
+[2017-03-20 16:24:56] density_cluster.py [line:438] INFO 6108 164.0time, finished the data about: (559, 559) distance_c:269.0 next increase:1
+[2017-03-20 16:24:56] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:269.0. pile count about:40
+[2017-03-20 16:24:56] density_cluster.py [line:438] INFO 6108 164.5time, finished the data about: (559, 559) distance_c:269.5 next increase:1
+[2017-03-20 16:24:57] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:269.5. pile count about:40
+[2017-03-20 16:24:57] density_cluster.py [line:438] INFO 6108 165.0time, finished the data about: (559, 559) distance_c:270.0 next increase:1
+[2017-03-20 16:24:57] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:270.0. pile count about:42
+[2017-03-20 16:24:57] density_cluster.py [line:438] INFO 6108 165.5time, finished the data about: (559, 559) distance_c:270.5 next increase:1
+[2017-03-20 16:24:58] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:270.5. pile count about:43
+[2017-03-20 16:24:58] density_cluster.py [line:438] INFO 6108 166.0time, finished the data about: (559, 559) distance_c:271.0 next increase:1
+[2017-03-20 16:24:58] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:271.0. pile count about:39
+[2017-03-20 16:24:58] density_cluster.py [line:438] INFO 6108 166.5time, finished the data about: (559, 559) distance_c:271.5 next increase:1
+[2017-03-20 16:24:58] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:271.5. pile count about:39
+[2017-03-20 16:24:58] density_cluster.py [line:438] INFO 6108 167.0time, finished the data about: (559, 559) distance_c:272.0 next increase:1
+[2017-03-20 16:24:59] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:272.0. pile count about:37
+[2017-03-20 16:24:59] density_cluster.py [line:438] INFO 6108 167.5time, finished the data about: (559, 559) distance_c:272.5 next increase:1
+[2017-03-20 16:24:59] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:272.5. pile count about:34
+[2017-03-20 16:24:59] density_cluster.py [line:438] INFO 6108 168.0time, finished the data about: (559, 559) distance_c:273.0 next increase:1
+[2017-03-20 16:24:59] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:273.0. pile count about:37
+[2017-03-20 16:24:59] density_cluster.py [line:438] INFO 6108 168.5time, finished the data about: (559, 559) distance_c:273.5 next increase:1
+[2017-03-20 16:25:00] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:273.5. pile count about:37
+[2017-03-20 16:25:00] density_cluster.py [line:438] INFO 6108 169.0time, finished the data about: (559, 559) distance_c:274.0 next increase:1
+[2017-03-20 16:25:00] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:274.0. pile count about:35
+[2017-03-20 16:25:00] density_cluster.py [line:438] INFO 6108 169.5time, finished the data about: (559, 559) distance_c:274.5 next increase:1
+[2017-03-20 16:25:01] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:274.5. pile count about:30
+[2017-03-20 16:25:01] density_cluster.py [line:438] INFO 6108 170.0time, finished the data about: (559, 559) distance_c:275.0 next increase:1
+[2017-03-20 16:25:01] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:275.0. pile count about:30
+[2017-03-20 16:25:01] density_cluster.py [line:438] INFO 6108 170.5time, finished the data about: (559, 559) distance_c:275.5 next increase:1
+[2017-03-20 16:25:01] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:275.5. pile count about:30
+[2017-03-20 16:25:01] density_cluster.py [line:438] INFO 6108 171.0time, finished the data about: (559, 559) distance_c:276.0 next increase:1
+[2017-03-20 16:25:02] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:276.0. pile count about:25
+[2017-03-20 16:25:02] density_cluster.py [line:438] INFO 6108 171.5time, finished the data about: (559, 559) distance_c:276.5 next increase:1
+[2017-03-20 16:25:02] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:276.5. pile count about:25
+[2017-03-20 16:25:02] density_cluster.py [line:438] INFO 6108 172.0time, finished the data about: (559, 559) distance_c:277.0 next increase:1
+[2017-03-20 16:25:02] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:277.0. pile count about:23
+[2017-03-20 16:25:02] density_cluster.py [line:438] INFO 6108 172.5time, finished the data about: (559, 559) distance_c:277.5 next increase:1
+[2017-03-20 16:25:02] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:277.5. pile count about:28
+[2017-03-20 16:25:02] density_cluster.py [line:438] INFO 6108 173.0time, finished the data about: (559, 559) distance_c:278.0 next increase:1
+[2017-03-20 16:25:03] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:278.0. pile count about:26
+[2017-03-20 16:25:03] density_cluster.py [line:438] INFO 6108 173.5time, finished the data about: (559, 559) distance_c:278.5 next increase:1
+[2017-03-20 16:25:03] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:278.5. pile count about:26
+[2017-03-20 16:25:03] density_cluster.py [line:438] INFO 6108 174.0time, finished the data about: (559, 559) distance_c:279.0 next increase:1
+[2017-03-20 16:25:03] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:279.0. pile count about:24
+[2017-03-20 16:25:03] density_cluster.py [line:438] INFO 6108 174.5time, finished the data about: (559, 559) distance_c:279.5 next increase:1
+[2017-03-20 16:25:04] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:279.5. pile count about:23
+[2017-03-20 16:25:04] density_cluster.py [line:438] INFO 6108 175.0time, finished the data about: (559, 559) distance_c:280.0 next increase:1
+[2017-03-20 16:25:04] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:280.0. pile count about:22
+[2017-03-20 16:25:04] density_cluster.py [line:438] INFO 6108 175.5time, finished the data about: (559, 559) distance_c:280.5 next increase:1
+[2017-03-20 16:25:04] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:280.5. pile count about:22
+[2017-03-20 16:25:04] density_cluster.py [line:438] INFO 6108 176.0time, finished the data about: (559, 559) distance_c:281.0 next increase:1
+[2017-03-20 16:25:05] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:281.0. pile count about:21
+[2017-03-20 16:25:05] density_cluster.py [line:438] INFO 6108 176.5time, finished the data about: (559, 559) distance_c:281.5 next increase:1
+[2017-03-20 16:25:05] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:281.5. pile count about:21
+[2017-03-20 16:25:05] density_cluster.py [line:438] INFO 6108 177.0time, finished the data about: (559, 559) distance_c:282.0 next increase:1
+[2017-03-20 16:25:05] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:282.0. pile count about:22
+[2017-03-20 16:25:05] density_cluster.py [line:438] INFO 6108 177.5time, finished the data about: (559, 559) distance_c:282.5 next increase:1
+[2017-03-20 16:25:05] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:282.5. pile count about:22
+[2017-03-20 16:25:05] density_cluster.py [line:438] INFO 6108 178.0time, finished the data about: (559, 559) distance_c:283.0 next increase:1
+[2017-03-20 16:25:06] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:283.0. pile count about:20
+[2017-03-20 16:25:06] density_cluster.py [line:438] INFO 6108 178.5time, finished the data about: (559, 559) distance_c:283.5 next increase:1
+[2017-03-20 16:25:06] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:283.5. pile count about:20
+[2017-03-20 16:25:06] density_cluster.py [line:438] INFO 6108 179.0time, finished the data about: (559, 559) distance_c:284.0 next increase:1
+[2017-03-20 16:25:06] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:284.0. pile count about:18
+[2017-03-20 16:25:06] density_cluster.py [line:438] INFO 6108 179.5time, finished the data about: (559, 559) distance_c:284.5 next increase:1
+[2017-03-20 16:25:07] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:284.5. pile count about:18
+[2017-03-20 16:25:07] density_cluster.py [line:438] INFO 6108 180.0time, finished the data about: (559, 559) distance_c:285.0 next increase:1
+[2017-03-20 16:25:07] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:285.0. pile count about:17
+[2017-03-20 16:25:07] density_cluster.py [line:438] INFO 6108 180.5time, finished the data about: (559, 559) distance_c:285.5 next increase:1
+[2017-03-20 16:25:07] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:285.5. pile count about:17
+[2017-03-20 16:25:07] density_cluster.py [line:438] INFO 6108 181.0time, finished the data about: (559, 559) distance_c:286.0 next increase:1
+[2017-03-20 16:25:07] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:286.0. pile count about:16
+[2017-03-20 16:25:07] density_cluster.py [line:438] INFO 6108 181.5time, finished the data about: (559, 559) distance_c:286.5 next increase:1
+[2017-03-20 16:25:08] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:286.5. pile count about:12
+[2017-03-20 16:25:08] density_cluster.py [line:438] INFO 6108 182.0time, finished the data about: (559, 559) distance_c:287.0 next increase:1
+[2017-03-20 16:25:08] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:287.0. pile count about:13
+[2017-03-20 16:25:08] density_cluster.py [line:438] INFO 6108 182.5time, finished the data about: (559, 559) distance_c:287.5 next increase:1
+[2017-03-20 16:25:08] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:287.5. pile count about:14
+[2017-03-20 16:25:08] density_cluster.py [line:438] INFO 6108 183.0time, finished the data about: (559, 559) distance_c:288.0 next increase:1
+[2017-03-20 16:25:08] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:288.0. pile count about:13
+[2017-03-20 16:25:08] density_cluster.py [line:438] INFO 6108 183.5time, finished the data about: (559, 559) distance_c:288.5 next increase:1
+[2017-03-20 16:25:09] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:288.5. pile count about:13
+[2017-03-20 16:25:09] density_cluster.py [line:438] INFO 6108 184.0time, finished the data about: (559, 559) distance_c:289.0 next increase:1
+[2017-03-20 16:25:09] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:289.0. pile count about:14
+[2017-03-20 16:25:09] density_cluster.py [line:438] INFO 6108 184.5time, finished the data about: (559, 559) distance_c:289.5 next increase:1
+[2017-03-20 16:25:09] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:289.5. pile count about:15
+[2017-03-20 16:25:09] density_cluster.py [line:438] INFO 6108 185.0time, finished the data about: (559, 559) distance_c:290.0 next increase:1
+[2017-03-20 16:25:10] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:290.0. pile count about:12
+[2017-03-20 16:25:10] density_cluster.py [line:438] INFO 6108 185.5time, finished the data about: (559, 559) distance_c:290.5 next increase:1
+[2017-03-20 16:25:10] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:290.5. pile count about:12
+[2017-03-20 16:25:10] density_cluster.py [line:438] INFO 6108 186.0time, finished the data about: (559, 559) distance_c:291.0 next increase:1
+[2017-03-20 16:25:10] density_cluster.py [line:408] INFO 6108 staring computing pile, in distance_c:291.0. pile count about:11
+[2017-03-20 16:25:10] density_cluster.py [line:438] INFO 6108 186.5time, finished the data about: (559, 559) distance_c:291.5 next increase:1
+[2017-03-20 16:25:10] density_cluster.py [line:506] DEBUG 6108 threshold
+           H    d_c  cluster
+0   9.123127  105.0      0.0
+0   9.123127  105.5      0.0
+0   9.123127  106.0      0.0
+0   9.123127  106.5      0.0
+0   9.119549  107.0      0.0
+0   9.119549  107.5      0.0
+0   9.119549  108.0      0.0
+0   9.119549  108.5      0.0
+0   9.119549  109.0      0.0
+0   9.119549  109.5      0.0
+0   9.119549  110.0      0.0
+0   9.119549  110.5      0.0
+0   9.119549  111.0      0.0
+0   9.119549  111.5      0.0
+0   9.119549  112.0      0.0
+0   9.119549  112.5      0.0
+0   9.119549  113.0      0.0
+0   9.119549  113.5      0.0
+0   9.119549  114.0      0.0
+0   9.119549  114.5      0.0
+0   9.119549  115.0      0.0
+0   9.119549  115.5      0.0
+0   9.119549  116.0      0.0
+0   9.119549  116.5      0.0
+0   9.119549  117.0      0.0
+0   9.119549  117.5      0.0
+0   9.119549  118.0      0.0
+0   9.119549  118.5      0.0
+0   9.114621  119.0      0.0
+0   9.114621  119.5      0.0
+..       ...    ...      ...
+0   0.643562  276.5     15.0
+0   0.622128  277.0     12.0
+0   0.727120  277.5     17.0
+0   0.701434  278.0     15.0
+0   0.701434  278.5     15.0
+0   0.657362  279.0     11.0
+0   0.652434  279.5     10.0
+0   0.603389  280.0     11.0
+0   0.603389  280.5     11.0
+0   0.525285  281.0     13.0
+0   0.525285  281.5     13.0
+0   0.516374  282.0     14.0
+0   0.516374  282.5     14.0
+0   0.478824  283.0     12.0
+0   0.478824  283.5     12.0
+0   0.439027  284.0     11.0
+0   0.439027  284.5     11.0
+0   0.421112  285.0     10.0
+0   0.421112  285.5     10.0
+0   0.415307  286.0      9.0
+0   0.353097  286.5      5.0
+0   0.371903  287.0      6.0
+0   0.364707  287.5      7.0
+0   0.316765  288.0      7.0
+0   0.316765  288.5      7.0
+0   0.335586  289.0      8.0
+0   0.376358  289.5     10.0
+0   0.318574  290.0      8.0
+0   0.318574  290.5      8.0
+0   0.299753  291.0      7.0
+
+[373 rows x 3 columns]
+[2017-03-20 16:25:10] main.py [line:37] DEBUG 6108 [ 105.   105.5  106.   106.5  107.   107.5  108.   108.5  109.   109.5
+  110.   110.5  111.   111.5  112.   112.5  113.   113.5  114.   114.5
+  115.   115.5  116.   116.5  117.   117.5  118.   118.5  119.   119.5
+  120.   120.5  121.   121.5  122.   122.5  123.   123.5  124.   124.5
+  125.   125.5  126.   126.5  127.   127.5  128.   128.5  129.   129.5
+  130.   130.5  131.   131.5  132.   132.5  133.   133.5  134.   134.5
+  135.   135.5  136.   136.5  137.   137.5  138.   138.5  139.   139.5
+  140.   140.5  141.   141.5  142.   142.5  143.   143.5  144.   144.5
+  145.   145.5  146.   146.5  147.   147.5  148.   148.5  149.   149.5
+  150.   150.5  151.   151.5  152.   152.5  153.   153.5  154.   154.5
+  155.   155.5  156.   156.5  157.   157.5  158.   158.5  159.   159.5
+  160.   160.5  161.   161.5  162.   162.5  163.   163.5  164.   164.5
+  165.   165.5  166.   166.5  167.   167.5  168.   168.5  169.   169.5
+  170.   170.5  171.   171.5  172.   172.5  173.   173.5  174.   174.5
+  175.   175.5  176.   176.5  177.   177.5  178.   178.5  179.   179.5
+  180.   180.5  181.   181.5  182.   182.5  183.   183.5  184.   184.5
+  185.   185.5  186.   186.5  187.   187.5  188.   188.5  189.   189.5
+  190.   190.5  191.   191.5  192.   192.5  193.   193.5  194.   194.5
+  195.   195.5  196.   196.5  197.   197.5  198.   198.5  199.   199.5
+  200.   200.5  201.   201.5  202.   202.5  203.   203.5  204.   204.5
+  205.   205.5  206.   206.5  207.   207.5  208.   208.5  209.   209.5
+  210.   210.5  211.   211.5  212.   212.5  213.   213.5  214.   214.5
+  215.   215.5  216.   216.5  217.   217.5  218.   218.5  219.   219.5
+  220.   220.5  221.   221.5  222.   222.5  223.   223.5  224.   224.5
+  225.   225.5  226.   226.5  227.   227.5  228.   228.5  229.   229.5
+  230.   230.5  231.   231.5  232.   232.5  233.   233.5  234.   234.5
+  235.   235.5  236.   236.5  237.   237.5  238.   238.5  239.   239.5
+  240.   240.5  241.   241.5  242.   242.5  243.   243.5  244.   244.5
+  245.   245.5  246.   246.5  247.   247.5  248.   248.5  249.   249.5
+  250.   250.5  251.   251.5  252.   252.5  253.   253.5  254.   254.5
+  255.   255.5  256.   256.5  257.   257.5  258.   258.5  259.   259.5
+  260.   260.5  261.   261.5  262.   262.5  263.   263.5  264.   264.5
+  265.   265.5  266.   266.5  267.   267.5  268.   268.5  269.   269.5
+  270.   270.5  271.   271.5  272.   272.5  273.   273.5  274.   274.5
+  275.   275.5  276.   276.5  277.   277.5  278.   278.5  279.   279.5
+  280.   280.5  281.   281.5  282.   282.5  283.   283.5  284.   284.5
+  285.   285.5  286.   286.5  287.   287.5  288.   288.5  289.   289.5
+  290.   290.5  291. ]
+[2017-03-20 16:25:10] main.py [line:38] CRITICAL 6108 <class 'numpy.ndarray'>

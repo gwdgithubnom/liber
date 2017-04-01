@@ -40,7 +40,15 @@ class Properties:
         返回图像xml文件
         :return:
         """
-        return "data/xml/image-b.xml"
+        return "data/xml/image.xml"
+
+    @classmethod
+    def getXmlLocation(cls):
+        """
+        返回图像xml文件
+        :return:
+        """
+        return "data/xml/"
 
     @classmethod
     def getRootPath(cls):
