@@ -58,6 +58,17 @@ def compute_distance(data=np.array([])):
         result[i][i] = np.nan
 
     return result
+def build_distance_txt(distance,sep,path):
+    """
+    写入文件，具体格式如下：
+    行下标 分隔符 列下标 分隔符 distance中行下标和列下标对应的值
+    :param distance:
+    :param path:
+    :param sep:分隔符
+    :return:
+    """
+
+
 
 if __name__=="__main__":
     from context.resource_manager import Properties
@@ -65,9 +76,11 @@ if __name__=="__main__":
     from view import shape_view
     from view import plot_utils
     from cluster import density_cluster
+    distance_c=0.69
     name='flame'
     id = np.load(Properties.getRootPath() + "/data/cache/" + name + "/id.npy")
     data = np.load(Properties.getRootPath() + "/data/cache/" + name + "/data.npy")
+    path =resource_manager.Properties.getDefaultDataFold()+"txt"+resource_manager.getSeparator()+"build.txt"
     id_index = Series(id.tolist())
     from cluster import density_cluster
     N = id_index.count()
