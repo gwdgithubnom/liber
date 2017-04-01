@@ -9,21 +9,23 @@ import java.util.List;
  */
 @XmlRootElement(name="Images")
 public class ImageItemXml {
+
     @XmlElement(name="Image")
-    private List<ImageItemXmlElement> images;
+    private List<ImageItemXmlElement> image;
     /**
      * init the entity
      */
     public ImageItemXml(){
-        images=new ArrayList<>();
+        image=new ArrayList<>();
     }
 
     public List<ImageItemXmlElement> getImagesData() {
-        return images;
+        return image;
     }
 
-    public void setImagesData(List<ImageItemXmlElement> images) {
-        this.images = images;
+
+    public void setImage(List<ImageItemXmlElement> image) {
+        this.image = image;
     }
 
 
