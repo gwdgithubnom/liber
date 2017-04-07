@@ -16,9 +16,7 @@ def readFile(file="input.txt"):
 
 if __name__ == '__main__':
     # main.save()
-    from context import resource_manager
 
-    from cluster.dbscan import dbscan_chrisjmccormick
     f=input()
     r=f.split(' ')
     filename=''
