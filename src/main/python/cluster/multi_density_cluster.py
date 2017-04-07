@@ -113,3 +113,7 @@ class BinaryTree:
 
     def getRootVal(self):
         return self.key
+
+def average_task(max, piece):
+    distance = max / piece
+    return math.floor(distance)
