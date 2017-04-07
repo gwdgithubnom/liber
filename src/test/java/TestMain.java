@@ -21,8 +21,13 @@ public class TestMain {
 
 	private static Logger logger = Logger.getLogger(TestMain.class.getName());
 
-	//@Test
+	@Test
 	public void test() {
+		System.out.print("ja"+"va"=="java");
+		//TestMain.testBuildNormalXml();
+	}
+
+	public void cache(){
 		logger.debug(PathKit.getRootClassPath() + "\\image.xml");
 
 		ImageItemXml object = (ImageItemXml) XmlUtil.convertXmlFileToObject(ImageItemXml.class,
@@ -32,16 +37,16 @@ public class TestMain {
 		CommonsBetwixt.persistObjectToFile(images);
 
 	}
-
 	/**
 	 * 测试使用txt转xml，进行评估算法性能
 	 */
 
 
 
-	@Test
-	public void testBuildFlameXml(){
-		File file= new File(PathKit.getCanonicalPath()+"src/main/python/data/txt/Aggregation.txt");
+
+	public static void testBuildNormalXml(){
+		String name="pathbased";
+		File file= new File(PathKit.getCanonicalPath()+"src/main/python/data/txt/"+name+".txt");
 		Scanner scanner=null;
 		ImageItemXml imageItemXml=new ImageItemXml();
 		List<ImageItemXmlElement> imageItemXmlElementList=new ArrayList<>();
@@ -67,13 +72,13 @@ public class TestMain {
 			e.printStackTrace();
 		}
 		imageItemXml.setImage(imageItemXmlElementList);
-		XmlUtil.convertToXml(imageItemXml,PathKit.getCanonicalPath()+"src/main/python/data/xml/Aggregation.xml");
+		XmlUtil.convertToXml(imageItemXml,PathKit.getCanonicalPath()+"src/main/python/data/xml/"+name+".xml");
 
 	}
 
 
-	//@Test
-	public void testBuildUnbalanceXml(){
+
+	public static void testBuildUnbalanceXml(){
 		File file= new File(PathKit.getCanonicalPath()+"src/main/python/data/txt/unbalance.txt");
 		Scanner scanner=null;
 		ImageItemXml imageItemXml=new ImageItemXml();

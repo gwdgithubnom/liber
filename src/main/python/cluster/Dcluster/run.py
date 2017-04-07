@@ -77,7 +77,7 @@ if __name__=="__main__":
     from view import plot_utils
     from cluster import density_cluster
     distance_c=0.69
-    name='flame'
+    name='Aggregation'
     id = np.load(Properties.getRootPath() + "/data/cache/" + name + "/id.npy")
     data = np.load(Properties.getRootPath() + "/data/cache/" + name + "/data.npy")
     path =resource_manager.Properties.getDefaultDataFold()+"txt"+resource_manager.getSeparator()+"build.txt"

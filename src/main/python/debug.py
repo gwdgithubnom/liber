@@ -172,8 +172,8 @@ def add_row(df, row):
 def distance_view(m, index_id, id_index, distance):
     max = distance.shape[0]
     d = DataFrame([], columns=['i_id', 'j_id', 'i', 'j', 'value'])
-    m=index_id[m]
-    for i in range(m, m+1):
+    m = index_id[m]
+    for i in range(m, m + 1):
         for j in range(i, max):
             l = []
             l.append(id_index[i])
@@ -186,13 +186,13 @@ def distance_view(m, index_id, id_index, distance):
     return d
 
 
-def cluster_distance_view(m, index_id, id_index, distance,distance_c):
+def cluster_distance_view(m, index_id, id_index, distance, distance_c):
     max = distance.shape[0]
     d = DataFrame([], columns=['i_id', 'j_id', 'i', 'j', 'value'])
-    m=index_id[m]
-    for i in range(m, m+1):
-        for j in range(0, max):               
-            if distance[i][j]<=distance_c:
+    m = index_id[m]
+    for i in range(m, m + 1):
+        for j in range(0, max):
+            if distance[i][j] <= distance_c:
                 l = []
                 l.append(id_index[i])
                 l.append(id_index[j])
@@ -237,7 +237,8 @@ from cluster import density_cluster
     from context.resource_manager import Properties
     from view import shape_view
     from cluster import density_cluster
-    name='flame'
+
+    name = 'Aggregation'
     distance_c = 0.6825
     m = '2_153'
     pile = 0
@@ -245,18 +246,18 @@ from cluster import density_cluster
     data = np.load(Properties.getRootPath() + "/data/cache/" + name + "/data.npy")
     id_index = Series(id.tolist())
     from cluster import density_cluster
+
     index_id = Series(id_index.index, index=id_index.values)
     distance = density_cluster.compute_distance(data)
-
     pile_id = DataFrame([], columns=['pile', 'size'])
-
-    rho_id=density_cluster.rho_function(index_id, distance, distance_c=distance_c)
+    rho_id = density_cluster.rho_function(index_id, distance, distance_c=distance_c)
     rho_id = Series(rho_id, index=index_id.index)
-    rho_id=rho_id.sort_values(ascending=False)
-    log.debug(rho_id)     
+    rho_id = rho_id.sort_values(ascending=False)
+    delta_id, data_id = density_cluster.delta_function(id_index, index_id, rho_id, distance)
+    log.debug(rho_id)
     distance_view(m, index_id, id_index, distance)
-    log.debug("cluster_view: "+str(rho_id[index_id[m]]))
-    cluster_distance_view(m, index_id, id_index, distance,distance_c)
+    log.debug("cluster_view: " + str(rho_id[index_id[m]]))
+    cluster_distance_view(m, index_id, id_index, distance, distance_c)
 
     """
     import numpy
