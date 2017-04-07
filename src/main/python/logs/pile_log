@@ -1,0 +1,472 @@
+/usr/bin/python3.5 /home/gwd/Projects/liber/src/main/python/main.py
+[2017-04-07 15:59:07] density_cluster.py [line:91] INFO 678 start running compute distance. data count:240 point has to computing.
+[2017-04-07 15:59:07] density_cluster.py [line:797] WARNING 678 the init distance_c is: 0.1625
+[2017-04-07 15:59:09] density_cluster.py [line:602] DEBUG 678 init the first max distance_c:217.65 distance shape:(240, 240)
+[2017-04-07 15:59:09] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:10] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:0.1625. pile count about:240 pile_max:1 pile_min:1
+[2017-04-07 15:59:10] density_cluster.py [line:745] DEBUG 678     outlier   p_id     pile  size
+0     False    1.0  [1_239]   1.0
+1      True    2.0    [1_0]   1.0
+152    True  153.0   [2_50]   1.0
+153    True  154.0   [2_65]   1.0
+154    True  155.0   [2_48]   1.0
+155    True  156.0   [2_25]   1.0
+156    True  157.0  [1_185]   1.0
+157    True  158.0  [1_207]   1.0
+158    True  159.0  [1_199]   1.0
+159    True  160.0  [2_152]   1.0
+160    True  161.0    [2_9]   1.0
+161    True  162.0   [2_37]   1.0
+162    True  163.0   [2_93]   1.0
+163    True  164.0   [2_75]   1.0
+164    True  165.0  [2_137]   1.0
+165    True  166.0   [2_28]   1.0
+166    True  167.0  [2_138]   1.0
+167    True  168.0   [2_97]   1.0
+168    True  169.0   [2_51]   1.0
+169    True  170.0  [2_134]   1.0
+170    True  171.0   [2_43]   1.0
+171    True  172.0  [2_103]   1.0
+172    True  173.0   [2_42]   1.0
+173    True  174.0  [1_220]   1.0
+174    True  175.0  [1_212]   1.0
+175    True  176.0   [2_71]   1.0
+176    True  177.0  [1_169]   1.0
+177    True  178.0  [2_112]   1.0
+178    True  179.0   [2_66]   1.0
+151    True  152.0  [1_155]   1.0
+..      ...    ...      ...   ...
+89     True   90.0  [1_186]   1.0
+61     True   62.0  [1_162]   1.0
+74     True   75.0  [1_170]   1.0
+62     True   63.0  [1_228]   1.0
+63     True   64.0   [2_36]   1.0
+64     True   65.0   [2_11]   1.0
+65     True   66.0   [2_58]   1.0
+66     True   67.0  [1_154]   1.0
+67     True   68.0    [2_2]   1.0
+68     True   69.0    [2_8]   1.0
+69     True   70.0   [2_46]   1.0
+70     True   71.0   [2_70]   1.0
+71     True   72.0  [2_127]   1.0
+72     True   73.0  [1_178]   1.0
+73     True   74.0  [2_133]   1.0
+75     True   76.0  [2_122]   1.0
+88     True   89.0   [2_29]   1.0
+76     True   77.0  [1_188]   1.0
+77     True   78.0   [2_27]   1.0
+78     True   79.0   [2_24]   1.0
+79     True   80.0   [2_79]   1.0
+80     True   81.0  [1_203]   1.0
+81     True   82.0    [2_3]   1.0
+82     True   83.0  [1_165]   1.0
+83     True   84.0   [2_91]   1.0
+84     True   85.0   [2_88]   1.0
+85     True   86.0  [2_151]   1.0
+86     True   87.0  [1_215]   1.0
+87     True   88.0   [2_69]   1.0
+239    True  240.0  [2_105]   1.0
+
+[240 rows x 4 columns]
+[2017-04-07 15:59:10] density_cluster.py [line:648] INFO 678 1 time, finished the next_distance_c about: 0.171875752524 distance_c:0.334375752524 next-learning_rate:0 H:7.90689059561
+[2017-04-07 15:59:10] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:11] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:0.334375752524. pile count about:149 pile_max:2 pile_min:1
+[2017-04-07 15:59:11] density_cluster.py [line:648] INFO 678 2 time, finished the next_distance_c about: 0.171875752524 distance_c:0.506251505047 next-learning_rate:0 H:9.46532753408
+[2017-04-07 15:59:11] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:12] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:0.506251505047. pile count about:47 pile_max:4 pile_min:2
+[2017-04-07 15:59:12] density_cluster.py [line:745] DEBUG 678    outlier  p_id                                               pile   size
+0    False   1.0  [2_65, 2_119, 2_50, 2_29, 2_49, 2_43, 2_62, 2_...  100.0
+1    False   2.0  [1_238, 1_234, 1_225, 1_162, 1_231, 1_161, 1_2...   63.0
+2    False   3.0  [2_137, 2_139, 2_131, 2_132, 2_130, 2_116, 2_1...   30.0
+45    True  46.0                                            [1_158]    4.0
+26    True  27.0                                            [2_152]    4.0
+27    True  28.0                                            [2_153]    4.0
+28    True  29.0                                            [1_154]    4.0
+29    True  30.0                                            [1_196]    4.0
+30    True  31.0                                            [1_192]    4.0
+31    True  32.0                                            [1_169]    4.0
+32    True  33.0                                            [2_151]    4.0
+33    True  34.0                                              [1_1]    4.0
+34    True  35.0                                            [2_163]    4.0
+35    True  36.0                                            [1_174]    4.0
+25    True  26.0                                            [1_173]    4.0
+37    True  38.0                                             [2_40]    4.0
+38    True  39.0                                             [2_20]    4.0
+39    True  40.0                                            [1_168]    4.0
+40    True  41.0                                            [1_201]    4.0
+41    True  42.0                                            [1_195]    4.0
+42    True  43.0                                             [2_47]    4.0
+43    True  44.0                                            [1_157]    4.0
+44    True  45.0                                             [2_92]    4.0
+36    True  37.0                                             [2_79]    4.0
+23    True  24.0                                             [2_94]    4.0
+24    True  25.0                                            [1_205]    4.0
+22    True  23.0                                            [1_175]    4.0
+3    False   4.0                           [2_56, 2_57, 2_54, 2_55]    4.0
+4     True   5.0                                            [1_183]    4.0
+5     True   6.0                                            [2_107]    4.0
+6     True   7.0                                            [1_198]    4.0
+7     True   8.0                                            [2_145]    4.0
+8     True   9.0                                            [1_194]    4.0
+9     True  10.0                                            [1_211]    4.0
+10    True  11.0                                             [2_53]    4.0
+11    True  12.0                                            [2_149]    4.0
+12    True  13.0                                            [2_106]    4.0
+13    True  14.0                                             [2_52]    4.0
+14    True  15.0                                            [1_203]    4.0
+15    True  16.0                                            [2_144]    4.0
+16    True  17.0                                            [1_210]    4.0
+17    True  18.0                                            [1_197]    4.0
+18    True  19.0                                            [2_150]    4.0
+19    True  20.0                                            [1_202]    4.0
+20    True  21.0                                             [2_39]    4.0
+21    True  22.0                                            [1_204]    4.0
+46    True  47.0                                              [1_0]    4.0
+[2017-04-07 15:59:12] density_cluster.py [line:648] INFO 678 3 time, finished the next_distance_c about: 0.171875752524 distance_c:0.678127257571 next-learning_rate:0 H:5.73950690731
+[2017-04-07 15:59:12] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:13] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:0.678127257571. pile count about:23 pile_max:5 pile_min:2
+[2017-04-07 15:59:13] density_cluster.py [line:745] DEBUG 678    outlier  p_id                                               pile   size
+0    False   1.0  [2_65, 2_119, 2_50, 2_144, 2_29, 2_55, 2_148, ...  146.0
+1    False   2.0  [1_238, 1_234, 1_162, 1_225, 1_231, 1_205, 1_2...   72.0
+2     True   3.0                                      [2_152, 2_47]    2.0
+13    True  14.0                                            [1_194]    1.0
+21    True  22.0                                              [1_0]    1.0
+20    True  21.0                                            [1_192]    1.0
+19    True  20.0                                              [1_1]    1.0
+18    True  19.0                                            [1_169]    1.0
+17    True  18.0                                            [1_204]    1.0
+16    True  17.0                                             [2_40]    1.0
+15    True  16.0                                            [1_174]    1.0
+14    True  15.0                                            [1_175]    1.0
+11    True  12.0                                            [1_157]    1.0
+12    True  13.0                                            [1_197]    1.0
+10    True  11.0                                            [2_163]    1.0
+9     True  10.0                                             [2_94]    1.0
+8     True   9.0                                            [1_158]    1.0
+7     True   8.0                                            [1_196]    1.0
+6     True   7.0                                            [2_153]    1.0
+5     True   6.0                                            [1_195]    1.0
+4     True   5.0                                            [1_202]    1.0
+3     True   4.0                                             [2_77]    1.0
+22    True  23.0                                            [1_201]    1.0
+[2017-04-07 15:59:13] density_cluster.py [line:648] INFO 678 4 time, finished the next_distance_c about: 0.171875752524 distance_c:0.850003010094 next-learning_rate:0 H:1.67376982186
+[2017-04-07 15:59:13] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:14] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:0.850003010094. pile count about:7 pile_max:6 pile_min:2
+[2017-04-07 15:59:14] density_cluster.py [line:648] INFO 678 5 time, finished the next_distance_c about: 0.171875752524 distance_c:1.02187876262 next-learning_rate:0 H:3.59593445121
+[2017-04-07 15:59:14] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:15] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:1.02187876262. pile count about:5 pile_max:7 pile_min:2
+[2017-04-07 15:59:16] density_cluster.py [line:745] DEBUG 678   outlier  p_id                                               pile   size
+0   False   1.0  [2_65, 1_157, 1_234, 1_192, 1_161, 1_169, 1_18...  235.0
+1    True   2.0                                     [1_197, 1_196]    2.0
+2    True   3.0                                            [2_163]    2.0
+3    True   4.0                                              [1_0]    2.0
+4    True   5.0                                              [1_1]    2.0
+[2017-04-07 15:59:16] density_cluster.py [line:648] INFO 678 6 time, finished the next_distance_c about: 0.171875752524 distance_c:1.19375451514 next-learning_rate:0 H:0.259970551209
+[2017-04-07 15:59:16] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:17] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:1.19375451514. pile count about:6 pile_max:8 pile_min:3
+[2017-04-07 15:59:17] density_cluster.py [line:745] DEBUG 678   outlier  p_id                                               pile   size
+0   False   1.0  [2_65, 1_157, 1_234, 1_192, 1_161, 1_169, 1_18...  235.0
+1    True   2.0                                            [1_197]  235.0
+2    True   3.0                                            [1_196]  235.0
+3    True   4.0                                            [1_204]  235.0
+4    True   5.0                                              [1_0]  235.0
+5    True   6.0                                              [1_1]  235.0
+[2017-04-07 15:59:17] density_cluster.py [line:648] INFO 678 7 time, finished the next_distance_c about: 0.171875752524 distance_c:1.36563026767 next-learning_rate:0 H:0.178445188131
+[2017-04-07 15:59:17] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:18] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:1.36563026767. pile count about:3 pile_max:9 pile_min:3
+[2017-04-07 15:59:18] density_cluster.py [line:745] DEBUG 678   outlier  p_id                                               pile   size
+0   False   1.0  [2_65, 1_157, 1_192, 1_234, 1_161, 1_169, 1_18...  238.0
+1    True   2.0                                              [1_0]  238.0
+2    True   3.0                                              [1_1]  238.0
+[2017-04-07 15:59:18] density_cluster.py [line:648] INFO 678 8 time, finished the next_distance_c about: 0.171875752524 distance_c:1.53750602019 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:18] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:19] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:1.53750602019. pile count about:3 pile_max:10 pile_min:4
+[2017-04-07 15:59:19] density_cluster.py [line:648] INFO 678 9 time, finished the next_distance_c about: 0.171875752524 distance_c:1.70938177271 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:19] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:20] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:1.70938177271. pile count about:3 pile_max:11 pile_min:2
+[2017-04-07 15:59:20] density_cluster.py [line:648] INFO 678 10 time, finished the next_distance_c about: 0.171875752524 distance_c:1.88125752524 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:20] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:21] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:1.88125752524. pile count about:3 pile_max:12 pile_min:2
+[2017-04-07 15:59:21] density_cluster.py [line:648] INFO 678 11 time, finished the next_distance_c about: 0.171875752524 distance_c:2.05313327776 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:21] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:22] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:2.05313327776. pile count about:3 pile_max:13 pile_min:2
+[2017-04-07 15:59:22] density_cluster.py [line:648] INFO 678 12 time, finished the next_distance_c about: 0.171875752524 distance_c:2.22500903028 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:22] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:22] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:2.22500903028. pile count about:3 pile_max:14 pile_min:2
+[2017-04-07 15:59:22] density_cluster.py [line:648] INFO 678 13 time, finished the next_distance_c about: 0.171875752524 distance_c:2.39688478281 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:22] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:23] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:2.39688478281. pile count about:3 pile_max:15 pile_min:2
+[2017-04-07 15:59:23] density_cluster.py [line:648] INFO 678 14 time, finished the next_distance_c about: 0.171875752524 distance_c:2.56876053533 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:23] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:24] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:2.56876053533. pile count about:3 pile_max:16 pile_min:2
+[2017-04-07 15:59:24] density_cluster.py [line:648] INFO 678 15 time, finished the next_distance_c about: 0.171875752524 distance_c:2.74063628785 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:24] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:24] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:2.74063628785. pile count about:3 pile_max:17 pile_min:2
+[2017-04-07 15:59:24] density_cluster.py [line:648] INFO 678 16 time, finished the next_distance_c about: 0.171875752524 distance_c:2.91251204038 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:24] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:25] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:2.91251204038. pile count about:3 pile_max:18 pile_min:2
+[2017-04-07 15:59:25] density_cluster.py [line:648] INFO 678 17 time, finished the next_distance_c about: 0.171875752524 distance_c:3.0843877929 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:25] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:26] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:3.0843877929. pile count about:3 pile_max:18 pile_min:2
+[2017-04-07 15:59:26] density_cluster.py [line:648] INFO 678 18 time, finished the next_distance_c about: 0.171875752524 distance_c:3.25626354542 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:26] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:27] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:3.25626354542. pile count about:3 pile_max:19 pile_min:2
+[2017-04-07 15:59:27] density_cluster.py [line:648] INFO 678 19 time, finished the next_distance_c about: 0.171875752524 distance_c:3.42813929795 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:27] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:27] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:3.42813929795. pile count about:3 pile_max:20 pile_min:2
+[2017-04-07 15:59:27] density_cluster.py [line:648] INFO 678 20 time, finished the next_distance_c about: 0.171875752524 distance_c:3.60001505047 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:27] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:28] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:3.60001505047. pile count about:3 pile_max:21 pile_min:2
+[2017-04-07 15:59:28] density_cluster.py [line:648] INFO 678 21 time, finished the next_distance_c about: 0.171875752524 distance_c:3.771890803 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:28] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:29] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:3.771890803. pile count about:3 pile_max:22 pile_min:2
+[2017-04-07 15:59:29] density_cluster.py [line:648] INFO 678 22 time, finished the next_distance_c about: 0.171875752524 distance_c:3.94376655552 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:29] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:30] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:3.94376655552. pile count about:3 pile_max:23 pile_min:2
+[2017-04-07 15:59:30] density_cluster.py [line:648] INFO 678 23 time, finished the next_distance_c about: 0.171875752524 distance_c:4.11564230804 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:30] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:30] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:4.11564230804. pile count about:3 pile_max:24 pile_min:2
+[2017-04-07 15:59:30] density_cluster.py [line:648] INFO 678 24 time, finished the next_distance_c about: 0.171875752524 distance_c:4.28751806057 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:30] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:31] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:4.28751806057. pile count about:3 pile_max:25 pile_min:2
+[2017-04-07 15:59:31] density_cluster.py [line:648] INFO 678 25 time, finished the next_distance_c about: 0.171875752524 distance_c:4.45939381309 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:31] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:32] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:4.45939381309. pile count about:3 pile_max:25 pile_min:2
+[2017-04-07 15:59:32] density_cluster.py [line:648] INFO 678 26 time, finished the next_distance_c about: 0.171875752524 distance_c:4.63126956561 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:32] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:32] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:4.63126956561. pile count about:3 pile_max:26 pile_min:2
+[2017-04-07 15:59:32] density_cluster.py [line:648] INFO 678 27 time, finished the next_distance_c about: 0.171875752524 distance_c:4.80314531814 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:32] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:33] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:4.80314531814. pile count about:3 pile_max:27 pile_min:2
+[2017-04-07 15:59:33] density_cluster.py [line:648] INFO 678 28 time, finished the next_distance_c about: 0.171875752524 distance_c:4.97502107066 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:33] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:34] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:4.97502107066. pile count about:3 pile_max:27 pile_min:2
+[2017-04-07 15:59:34] density_cluster.py [line:648] INFO 678 29 time, finished the next_distance_c about: 0.171875752524 distance_c:5.14689682318 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:34] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:34] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:5.14689682318. pile count about:3 pile_max:28 pile_min:2
+[2017-04-07 15:59:34] density_cluster.py [line:648] INFO 678 30 time, finished the next_distance_c about: 0.171875752524 distance_c:5.31877257571 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:34] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:35] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:5.31877257571. pile count about:3 pile_max:29 pile_min:2
+[2017-04-07 15:59:35] density_cluster.py [line:648] INFO 678 31 time, finished the next_distance_c about: 0.171875752524 distance_c:5.49064832823 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:35] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:36] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:5.49064832823. pile count about:3 pile_max:30 pile_min:2
+[2017-04-07 15:59:36] density_cluster.py [line:648] INFO 678 32 time, finished the next_distance_c about: 0.171875752524 distance_c:5.66252408076 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:36] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:36] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:5.66252408076. pile count about:3 pile_max:31 pile_min:2
+[2017-04-07 15:59:36] density_cluster.py [line:648] INFO 678 33 time, finished the next_distance_c about: 0.171875752524 distance_c:5.83439983328 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:36] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:37] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:5.83439983328. pile count about:3 pile_max:31 pile_min:2
+[2017-04-07 15:59:37] density_cluster.py [line:648] INFO 678 34 time, finished the next_distance_c about: 0.171875752524 distance_c:6.0062755858 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:37] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:38] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:6.0062755858. pile count about:3 pile_max:32 pile_min:2
+[2017-04-07 15:59:38] density_cluster.py [line:648] INFO 678 35 time, finished the next_distance_c about: 0.171875752524 distance_c:6.17815133833 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:38] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:38] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:6.17815133833. pile count about:3 pile_max:33 pile_min:2
+[2017-04-07 15:59:38] density_cluster.py [line:648] INFO 678 36 time, finished the next_distance_c about: 0.171875752524 distance_c:6.35002709085 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:38] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:39] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:6.35002709085. pile count about:3 pile_max:34 pile_min:2
+[2017-04-07 15:59:39] density_cluster.py [line:648] INFO 678 37 time, finished the next_distance_c about: 0.171875752524 distance_c:6.52190284337 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:39] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:40] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:6.52190284337. pile count about:3 pile_max:34 pile_min:2
+[2017-04-07 15:59:40] density_cluster.py [line:648] INFO 678 38 time, finished the next_distance_c about: 0.171875752524 distance_c:6.6937785959 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:40] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:40] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:6.6937785959. pile count about:3 pile_max:35 pile_min:2
+[2017-04-07 15:59:40] density_cluster.py [line:648] INFO 678 39 time, finished the next_distance_c about: 0.171875752524 distance_c:6.86565434842 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:40] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:41] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:6.86565434842. pile count about:3 pile_max:36 pile_min:2
+[2017-04-07 15:59:41] density_cluster.py [line:648] INFO 678 40 time, finished the next_distance_c about: 0.171875752524 distance_c:7.03753010094 next-learning_rate:0 H:0.0359166760942
+[2017-04-07 15:59:41] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:42] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:7.03753010094. pile count about:2 pile_max:36 pile_min:2
+[2017-04-07 15:59:42] density_cluster.py [line:648] INFO 678 41 time, finished the next_distance_c about: 0.171875752524 distance_c:7.20940585347 next-learning_rate:0 H:0.0695296469948
+[2017-04-07 15:59:42] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:42] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:7.20940585347. pile count about:2 pile_max:37 pile_min:2
+[2017-04-07 15:59:42] density_cluster.py [line:648] INFO 678 42 time, finished the next_distance_c about: 0.171875752524 distance_c:7.38128160599 next-learning_rate:0 H:0.0695296469948
+[2017-04-07 15:59:42] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:43] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:7.38128160599. pile count about:2 pile_max:38 pile_min:2
+[2017-04-07 15:59:43] density_cluster.py [line:745] DEBUG 678   outlier  p_id                                               pile   size
+0   False   1.0  [2_65, 1_157, 1_234, 1_192, 1_161, 1_169, 1_18...  239.0
+1    True   2.0                                              [1_0]  239.0
+[2017-04-07 15:59:43] density_cluster.py [line:648] INFO 678 43 time, finished the next_distance_c about: 0.171875752524 distance_c:7.55315735852 next-learning_rate:0 H:0.0119973770253
+[2017-04-07 15:59:43] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:43] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:7.55315735852. pile count about:2 pile_max:38 pile_min:2
+[2017-04-07 15:59:43] density_cluster.py [line:648] INFO 678 44 time, finished the next_distance_c about: 0.171875752524 distance_c:7.72503311104 next-learning_rate:0 H:0.0119973770253
+[2017-04-07 15:59:43] density_cluster.py [line:428] INFO 678 staring running pile_function
+[2017-04-07 15:59:44] density_cluster.py [line:565] INFO 678 staring computing pile, in distance_c:7.72503311104. pile count about:1 pile_max:39 pile_min:3
+[2017-04-07 15:59:44] density_cluster.py [line:745] DEBUG 678   outlier  p_id                                               pile   size
+0   False   1.0  [2_65, 1_157, 1_234, 1_192, 1_161, 1_169, 1_18...  240.0
+[2017-04-07 15:59:44] density_cluster.py [line:643] DEBUG 678 e is 0.
+[2017-04-07 15:59:44] density_cluster.py [line:649] DEBUG 678           H       d_c  cluster
+0  7.906891  0.162500      1.0
+0  9.465328  0.334376     33.0
+0  5.739507  0.506252      4.0
+0  1.673770  0.678127      2.0
+0  3.595934  0.850003      2.0
+0  0.259971  1.021879      1.0
+0  0.178445  1.193755      1.0
+0  0.035917  1.365630      1.0
+0  0.035917  1.537506      1.0
+0  0.035917  1.709382      1.0
+0  0.035917  1.881258      1.0
+0  0.035917  2.053133      1.0
+0  0.035917  2.225009      1.0
+0  0.035917  2.396885      1.0
+0  0.035917  2.568761      1.0
+0  0.035917  2.740636      1.0
+0  0.035917  2.912512      1.0
+0  0.035917  3.084388      1.0
+0  0.035917  3.256264      1.0
+0  0.035917  3.428139      1.0
+0  0.035917  3.600015      1.0
+0  0.035917  3.771891      1.0
+0  0.035917  3.943767      1.0
+0  0.035917  4.115642      1.0
+0  0.035917  4.287518      1.0
+0  0.035917  4.459394      1.0
+0  0.035917  4.631270      1.0
+0  0.035917  4.803145      1.0
+0  0.035917  4.975021      1.0
+0  0.035917  5.146897      1.0
+0  0.035917  5.318773      1.0
+0  0.035917  5.490648      1.0
+0  0.035917  5.662524      1.0
+0  0.035917  5.834400      1.0
+0  0.035917  6.006276      1.0
+0  0.035917  6.178151      1.0
+0  0.035917  6.350027      1.0
+0  0.035917  6.521903      1.0
+0  0.035917  6.693779      1.0
+0  0.035917  6.865654      1.0
+0  0.069530  7.037530      1.0
+0  0.069530  7.209406      1.0
+0  0.011997  7.381282      1.0
+0  0.011997  7.553157      1.0
+0 -0.000000  7.725033      1.0
+[2017-04-07 15:59:44] density_cluster.py [line:808] DEBUG 678 threshold
+          H       d_c  cluster
+0  7.906891  0.162500      1.0
+0  9.465328  0.334376     33.0
+0  5.739507  0.506252      4.0
+0  1.673770  0.678127      2.0
+0  3.595934  0.850003      2.0
+0  0.259971  1.021879      1.0
+0  0.178445  1.193755      1.0
+0  0.035917  1.365630      1.0
+0  0.035917  1.537506      1.0
+0  0.035917  1.709382      1.0
+0  0.035917  1.881258      1.0
+0  0.035917  2.053133      1.0
+0  0.035917  2.225009      1.0
+0  0.035917  2.396885      1.0
+0  0.035917  2.568761      1.0
+0  0.035917  2.740636      1.0
+0  0.035917  2.912512      1.0
+0  0.035917  3.084388      1.0
+0  0.035917  3.256264      1.0
+0  0.035917  3.428139      1.0
+0  0.035917  3.600015      1.0
+0  0.035917  3.771891      1.0
+0  0.035917  3.943767      1.0
+0  0.035917  4.115642      1.0
+0  0.035917  4.287518      1.0
+0  0.035917  4.459394      1.0
+0  0.035917  4.631270      1.0
+0  0.035917  4.803145      1.0
+0  0.035917  4.975021      1.0
+0  0.035917  5.146897      1.0
+0  0.035917  5.318773      1.0
+0  0.035917  5.490648      1.0
+0  0.035917  5.662524      1.0
+0  0.035917  5.834400      1.0
+0  0.035917  6.006276      1.0
+0  0.035917  6.178151      1.0
+0  0.035917  6.350027      1.0
+0  0.035917  6.521903      1.0
+0  0.035917  6.693779      1.0
+0  0.035917  6.865654      1.0
+0  0.069530  7.037530      1.0
+0  0.069530  7.209406      1.0
+0  0.011997  7.381282      1.0
+0  0.011997  7.553157      1.0
+0 -0.000000  7.725033      1.0
+[2017-04-07 15:59:44] main.py [line:85] DEBUG 678 1     33.0
+2      4.0
+3      2.0
+4      2.0
+44     1.0
+12     1.0
+19     1.0
+18     1.0
+17     1.0
+16     1.0
+15     1.0
+14     1.0
+13     1.0
+10     1.0
+11     1.0
+21     1.0
+9      1.0
+8      1.0
+7      1.0
+6      1.0
+5      1.0
+20     1.0
+22     1.0
+43     1.0
+23     1.0
+42     1.0
+41     1.0
+40     1.0
+39     1.0
+38     1.0
+37     1.0
+36     1.0
+35     1.0
+34     1.0
+33     1.0
+32     1.0
+31     1.0
+30     1.0
+29     1.0
+28     1.0
+27     1.0
+26     1.0
+25     1.0
+24     1.0
+0      1.0
+Name: cluster, dtype: float64
+can't invoke "event" command: application has been destroyed
+    while executing
+"event generate $w <<ThemeChanged>>"
+    (procedure "ttk::ThemeChanged" line 6)
+    invoked from within
+"ttk::ThemeChanged"
+can't invoke "event" command: application has been destroyed
+    while executing
+"event generate $w <<ThemeChanged>>"
+    (procedure "ttk::ThemeChanged" line 6)
+    invoked from within
+"ttk::ThemeChanged"
+can't invoke "event" command: application has been destroyed
+    while executing
+"event generate $w <<ThemeChanged>>"
+    (procedure "ttk::ThemeChanged" line 6)
+    invoked from within
+"ttk::ThemeChanged"
+can't invoke "event" command: application has been destroyed
+    while executing
+"event generate $w <<ThemeChanged>>"
+    (procedure "ttk::ThemeChanged" line 6)
+    invoked from within
+"ttk::ThemeChanged"
+can't invoke "event" command: application has been destroyed
+    while executing
+"event generate $w <<ThemeChanged>>"
+    (procedure "ttk::ThemeChanged" line 6)
+    invoked from within
+"ttk::ThemeChanged"
+can't invoke "event" command: application has been destroyed
+    while executing
+"event generate $w <<ThemeChanged>>"
+    (procedure "ttk::ThemeChanged" line 6)
+    invoked from within
+"ttk::ThemeChanged"

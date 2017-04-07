@@ -69,9 +69,9 @@ def get_threshold(name='default'):
 
 
 if __name__ == '__main__':
-    name='flame'
-    if os.path.exists(resource_manager.Properties.getDefaultDataFold()+"result/temp"):
-        shutil.rmtree(resource_manager.Properties.getDefaultDataFold()+"result/temp")
+    name='Aggregation'
+    if os.path.exists(resource_manager.Properties.getDefaultDataFold()+"result/temp"+resource_manager.Properties.name_str_static() + resource_manager.getSeparator()):
+        shutil.rmtree(resource_manager.Properties.getDefaultDataFold()+"result/temp"+resource_manager.Properties.name_str_static() + resource_manager.getSeparator())
     save(name=name)
     get_threshold(name=name)
     from context.resource_manager import Properties
@@ -81,15 +81,16 @@ if __name__ == '__main__':
     from cluster import density_cluster
     threshold=pandas.read_csv(Properties.getDefaultDataFold()+"/csv/threshold.csv")
     d_c=np.asarray(threshold['d_c'].values)
-    path=resource_manager.Properties.getDefaultDataFold()+resource_manager.getSeparator()+"result"+resource_manager.getSeparator()+name+resource_manager.getSeparator()+"test.png"
+    path=resource_manager.Properties.getDefaultDataFold()+resource_manager.getSeparator()+"result/temp"+resource_manager.getSeparator()+resource_manager.Properties.name_str_static() + resource_manager.getSeparator()+"test.png"
     log.debug(threshold['cluster'].sort_values(ascending=False))
     plot_utils.save_scatter_diagram(None,x=threshold['d_c'].values,y=threshold['H'].values,x_label='delta',y_label='H',title='threshold scatter figure',path=path)
     plot_utils.plot_scatter_diagram(None,x=threshold['d_c'].values,y=threshold['H'].values,x_label='delta',y_label='H',title='threshold scatter figure')
     plot_utils.plot_scatter_diagram(None, x=threshold['H'].values, y=threshold['d_c'].values, x_label='delta',
                                     y_label='H', title='threshold scatter figure')
     path = resource_manager.Properties.getDefaultDataFold() + resource_manager.getSeparator() + "result" + resource_manager.getSeparator() + name
-    shutil.copy(resource_manager.Properties.getDefaultDataFold()+"result/temp",path)
+    shutil.copy(resource_manager.Properties.getDefaultDataFold()+"result/temp"+resource_manager.Properties.name_str_static() + resource_manager.getSeparator(),path)
     shutil.copy(Properties.getDefaultDataFold()+"/csv", path)
+    log.warn("finished")
 
     """
     delta_index=Series(id,index=id,dtype=np.float)
