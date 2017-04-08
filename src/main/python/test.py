@@ -214,7 +214,7 @@ if __name__ == '__main__':
     from context.resource_manager import Properties
     from view import shape_view
     from cluster import density_cluster
-    distance_c =40.1114568127 #4.5155
+    distance_c =0.769084090805 #4.5155
     from context.resource_manager import Properties
     from context import resource_manager
     from view import shape_view
@@ -231,7 +231,16 @@ if __name__ == '__main__':
     distance = density_cluster.compute_distance(data)
     #np.save(Properties.getRootPath() + "/data/cache/distance/data.npy", distance)
     path=resource_manager.Properties.getDefaultDataFold()+resource_manager.getSeparator()+"result"+resource_manager.getSeparator()+"name"+resource_manager.getSeparator()+str(distance_c)+".png"
-    pile_id=density_cluster.show_threshold(id_index, index_id, distance, distance_c)
+
+
+    temp = distance.copy()
+    temp[np.isnan(temp)] = 0
+    stand = np.std(temp)
+    temp = distance.copy()
+    temp[np.isnan(temp)] = stand
+    temp = temp.min(axis=0)
+    next_distance_c = np.std(temp)
+    pile_id = density_cluster.show_threshold(id_index, index_id, distance, distance_c, next_distance_c)
     density_cluster.show_cluster(index_id, data, distance_c, pile_id)
     rho_id = density_cluster.rho_function(index_id, distance, distance_c=distance_c)
     rho_id = Series(rho_id, index=index_id.index)
@@ -239,6 +248,8 @@ if __name__ == '__main__':
     # delta_id, data_id = density_cluster.delta_function(id_index, index_id, rho_id, distance)
     # plot_utils.plot_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label)
     log.debug(pile_id)
+    for ii in range(len(pile_id)):
+       log.debug(pile_id.loc[ii, 'pile'])
 
     """
     import numpy

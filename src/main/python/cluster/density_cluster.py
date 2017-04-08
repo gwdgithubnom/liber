@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-
+# python -m cProfile -s cumulative main.py
 import sys
 import os
 import math
@@ -287,7 +287,7 @@ def rho_set_tag(rho_id, pile):
     return rho_id
 
 
-def pile_brother(index_id, id_index, distance, distance_c, pile,pile_max, pile_min):
+def pile_brother(index_id, id_index, distance, distance_c, pile,pile_max):
     pre = 0
     while (len(pile) != pre):
         pre = len(pile)
@@ -295,37 +295,36 @@ def pile_brother(index_id, id_index, distance, distance_c, pile,pile_max, pile_m
             l = index_id[l]
             p = find_pile_member(id_index, distance[l], distance_c)
             b = pile_union(pile, p)
-            if len(p) >= (pile_min+pile_max)/2:
+            if len(p) >= (pile_max):
                 pile = pile_union(pile, p)
         pile = list(set(pile))
     return pile
 
 
-def pile_to_pile(outlier, index_id, id_index, distance, distance_c, pile_id,pile_max,pile_min):
+def pile_to_pile(outlier, index_id, id_index, distance, distance_c,next_distance_c,border,pile_id,pile_max,pile_min):
     # TODO to merge pile
     pile_id = pile_id.reset_index(drop=True)
     pile_id_size = len(pile_id)
     c = 2
     state=False
+    temp=next_distance_c
     while True:
-        temp = distance_c * c
-        pile = pile_brother(index_id, id_index, distance, temp, outlier, pile_max,pile_min)
+        temp = temp +next_distance_c
+        pile = pile_brother(index_id, id_index, distance, temp, outlier, pile_max)
         # if len(pile)>pile_min:
-        jarge_point=[0]
-        jarge_size=-1
+        jarge_point=[]
+        jarge_size= pile_max
         for ii in range(pile_id_size):
             jarge_pile=pile_id.ix[ii, 'pile']
             jarge=pile_intersection(jarge_pile,pile)
-            if len(jarge)>jarge_size:
-                jarge_point[0]=ii
-                state=True
-            elif len(jarge)==jarge_size:
-                state=True
+            if len(jarge)>=jarge_size:
                 jarge_point.append(ii)
+                jarge_size = len(jarge)
+                state=True
             else:
                 continue
         if state:
-            max=0
+            max=jarge_point[0]
             for ii in jarge_point:
                 if len(pile_id.ix[ii,'pile'])>len(pile_id.ix[max,'pile']):
                     max=ii
@@ -335,7 +334,10 @@ def pile_to_pile(outlier, index_id, id_index, distance, distance_c, pile_id,pile
             pile_id.set_value(max,'size',len(pile))
             break
         c = c + 1
-
+        # log.debug(str(c)+" "+str(temp+border)+"/"+str(temp))
+        if temp>=border:
+            pile_id = pile_id.append(DataFrame([dict(pile=pile, p_id=-1, size=len(pile), outlier=True)], index=[len(pile_id)]))
+            break
     return pile_id
 
 
@@ -424,10 +426,23 @@ def delta_function(id_index, index_id, rho_id, distance):
     return delta_id, data_id
 
 
-def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c):
+def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c,next_distance_c):
     # 初始化队列
     log.info("staring running pile_function")
     rho_id = rho_function(index_id, distance, distance_c=distance_c)
+
+    # 局部边界，用于设置视角
+
+    temp=distance.copy()
+    temp[np.isnan(temp)] = 0
+    stand = np.std(temp)
+    temp=distance.copy()
+    temp[np.isnan(temp)] = stand
+    #temp=temp.mid(axis=0)
+    #next_distance_c=np.std(temp)
+    temp=np.min(temp,axis=0)
+    border = np.max(temp)
+
     # delta_id, data_id = delta_function(id_index, index_id, rho_id, distance)
     # 队列进行重排续
     rho_id = rho_id.sort_values(ascending=False)
@@ -458,7 +473,7 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c):
     # 第i个数据点
     i = index_id[i_id]
     pile = find_pile_member(id_index, distance[i], distance_c)
-    pile = pile_brother(index_id, id_index, distance, distance_c, pile, pile_max,pile_min)
+    pile = pile_brother(index_id, id_index, distance, distance_c, pile, pile_max)
     # 对data_id和pile_id表，进行处理标识
     data_id.ix[i_id, 'pile'] = p_id
     # pile_id.ix[p_id,'state'] = pile
@@ -480,12 +495,12 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c):
         if value == 0:
             # 控制是否进行无离群点考虑
             # pile_id=pile_to_pile(outlier_list,index_id, id_index, distance, distance_c, pile_id, pile_min)
+            log.info("do job on outliers")
             pile_id = pile_id.reset_index(drop=True)
             outlier_list = []
             pile_id_size = len(pile_id)
             for ii in range(pile_id_size):
                 if pile_id.loc[ii,'size']>=pile_max or not pile_id.loc[ii, 'outlier']:
-
                     continue
                 elif pile_id.loc[ii, 'outlier']:
                     pile_id_pile = pile_id.ix[ii, 'pile']
@@ -493,8 +508,12 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c):
                     outlier_list.append(pile_id_pile)
 
             pile_id = pile_id.reset_index(drop=True)
+            #i=0
             for ll in outlier_list:
-                pile_id = pile_to_pile(ll, index_id, id_index, distance, distance_c, pile_id, pile_max, pile_min)
+                # 以pile_min进行评估收敛性
+                pile_id = pile_to_pile(ll, index_id, id_index, distance, distance_c, next_distance_c,border,pile_id, pile_max,pile_min)
+                #log.debug(str(len(outlier_list))+"/"+str(i))
+                i=i+1
             break
         elif value <= pile_min:
             # rho_set_tag( rho_id, pile)
@@ -509,7 +528,7 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c):
         i_id = rho_id.index[0]
         i = index_id[i_id]
         pile = find_pile_member(id_index, distance[i], distance_c)
-        pile = pile_brother(index_id, id_index, distance, distance_c, pile, pile_max,pile_min)
+        pile = pile_brother(index_id, id_index, distance, distance_c, pile, pile_max)
         rho_set_tag(rho_id, pile)
 
         next = 0
@@ -627,7 +646,7 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
         # data = DataFrame([], columns=['gamma', 'rho', 'delta', 'pile'], index=index_id.index)
         data_id = DataFrame([], columns=['i_id', 'j_id', 'rho', 'delta', 'gamma', 'i', 'j', 'pile'],
                             index=id_index.values)
-        pile_id = pile_function(pile_id, id_index, index_id, data_id, distance, distance_c)
+        pile_id = pile_function(pile_id, id_index, index_id, data_id, distance, distance_c,next_distance_c)
         pile_size = pile_id['size']
         pile = pile_id.shape[0] - np.sum(pile_id['outlier'])
         # id_index, index_id
@@ -668,7 +687,7 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
     return threshold
 
 
-def show_threshold(id_index, index_id, distance, distance_c):
+def show_threshold(id_index, index_id, distance, distance_c,next_distance_c):
     i = 0
     N = int(index_id.shape[0])
     log.debug("init the distance_c:" + str(distance_c))
@@ -677,9 +696,9 @@ def show_threshold(id_index, index_id, distance, distance_c):
     # delta_id, data_id = delta_function(id_index, index_id, rho_id, distance)
     # data = DataFrame([], columns=['gamma', 'rho', 'delta', 'pile'], index=index_id.index)
     data_id = DataFrame([], columns=['j_id', 'rho', 'delta', 'gamma', 'i', 'j', 'pile'], index=id_index.values)
-    pile_id = pile_function(pile_id, id_index, index_id, data_id, distance, distance_c)
+    pile_id = pile_function(pile_id, id_index, index_id, data_id, distance, distance_c,next_distance_c)
     pile_size = pile_id['size']
-    pile = pile_id.shape[0] - np.sum(pile_id['outlier'])
+    # pile = pile_id.shape[0] - np.sum(pile_id['outlier'])
     # id_index, index_id
     e = _calc_ent(pile_size.values / N)
     log.warn(" record the data status: " + str(distance.shape) + " distance_c:" + str(

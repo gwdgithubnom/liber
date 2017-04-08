@@ -87,8 +87,9 @@ if __name__ == '__main__':
     plot_utils.plot_scatter_diagram(None,x=threshold['d_c'].values,y=threshold['H'].values,x_label='delta',y_label='H',title='threshold scatter figure')
     plot_utils.plot_scatter_diagram(None, x=threshold['H'].values, y=threshold['d_c'].values, x_label='delta',
                                     y_label='H', title='threshold scatter figure')
+    plot_utils.plot_scatter_diagram(None,x=threshold['d_c'].values,y=threshold['H'].values,x_label='delta',y_label='H',title='threshold scatter figure',path=path)
     path = resource_manager.Properties.getDefaultDataFold() + resource_manager.getSeparator() + "result" + resource_manager.getSeparator() + name
-    shutil.copy(resource_manager.Properties.getDefaultDataFold()+"result/temp"+resource_manager.Properties.name_str_static() + resource_manager.getSeparator(),path)
+    shutil.copy(resource_manager.Properties.getDefaultDataFold()+"result/temp"+resource_manager.getSeparator()+resource_manager.Properties.name_str_static() + resource_manager.getSeparator(),path)
     shutil.copy(Properties.getDefaultDataFold()+"/csv", path)
     log.warn("finished")
 
