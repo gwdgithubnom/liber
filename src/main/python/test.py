@@ -214,7 +214,7 @@ if __name__ == '__main__':
     from context.resource_manager import Properties
     from view import shape_view
     from cluster import density_cluster
-    distance_c = 73.2808058686 #12.3972318748 #4.5155
+    distance_c =5.369084090805 #4.45939381309 #12.3972318748 #4.5155
     from context.resource_manager import Properties
     from context import resource_manager
     from view import shape_view
