@@ -372,7 +372,7 @@ def rho_set_tag(rho_id, pile):
     return rho_id
 
 
-def pile_brother(index_id, id_index, distance, distance_c, pile, threshold):
+def pile_brother(index_id, id_index, distance, distance_c, pile, threshold,state=False):
     pre = 0
     while (len(pile) != pre):
         pre = len(pile)
@@ -380,10 +380,22 @@ def pile_brother(index_id, id_index, distance, distance_c, pile, threshold):
             l = index_id[l]
             p = find_pile_member(id_index, distance[l], distance_c)
             b = pile_union(pile, p)
-            if len(p) >= (threshold):
-                pile = pile_union(pile, p)
+            if len(b) >= (threshold):
+                if state==True:
+                    break
         pile = list(set(pile))
     return pile
+
+def numpy_find_min(data,base):
+    """
+    求解的编号，所以需要减去一
+    :param data:
+    :param base:
+    :return:
+    """
+    data[np.isnan(data)]=base+np.max(data)
+    base=np.argmin(data)
+    return  base-1
 
 
 def pile_to_pile(outlier, index_id, id_index, distance, distance_c, next_distance_c, border, pile_id, threshold,
@@ -391,15 +403,15 @@ def pile_to_pile(outlier, index_id, id_index, distance, distance_c, next_distanc
     # TODO to merge pile
     pile_id = pile_id.reset_index(drop=True)
     pile_id_size = len(pile_id)
-
     state = False
     temp = distance_c
     while True:
-        temp = temp + next_distance_c
-        pile = pile_brother(index_id, id_index, distance, temp, outlier, threshold)
+        pile = pile_brother(index_id, id_index, distance, temp, outlier, threshold,state=True)
         # if len(pile)>pile_min:
         jarge_point = []
+        jarge_point_next=[]
         jarge_size = threshold
+        jarge_state=True
         for ii in range(pile_id_size):
             jarge_pile = pile_id.ix[ii, 'pile']
             jarge = pile_intersection(jarge_pile, pile)
@@ -407,8 +419,14 @@ def pile_to_pile(outlier, index_id, id_index, distance, distance_c, next_distanc
                 jarge_point.append(ii)
                 jarge_size = len(jarge)
                 state = True
+            elif len(jarge)>0 and jarge_state==True and state==False:
+                jarge_point_next.append(ii)
             else:
                 continue
+
+        if len(jarge_point_next)>0:
+            jarge_state=False
+
         if state:
             max = jarge_point[0]
             for ii in jarge_point:
@@ -420,12 +438,36 @@ def pile_to_pile(outlier, index_id, id_index, distance, distance_c, next_distanc
             pile_id.set_value(max, 'size', len(pile))
             pile=[]
             break
-
         # log.debug(str(c)+" "+str(temp+border)+"/"+str(temp))
-        if temp >= border:
-            pile_id = pile_id.append(
-                DataFrame([dict(pile=pile, p_id=-1, size=len(pile), outlier=True)], index=[len(pile_id)]))
+        elif temp >= border:
+            #pile_id = pile_id.append(DataFrame([dict(pile=pile, p_id=-1, size=len(pile), outlier=True)], index=[len(pile_id)]))
+            """
+            while  len(outlier) != 0:
+
+                item=outlier.pop()
+                index_item=index_id[item]
+                d=distance[index_item]
+                log.debug(d)
+                j=numpy_find_min(d,distance_c)
+                jj=d[j]
+                jjjj=id_index[j]
+                jjjjj=distance[index_item,index_id[jjjj]]
+
+            """
+            if len(jarge_point_next)>0:
+                max = jarge_point_next[0]
+                for ii in jarge_point_next:
+                    if len(pile_id.ix[ii, 'pile']) > len(pile_id.ix[max, 'pile']):
+                        max = ii
+                pile = pile_union(outlier, pile_id.loc[max, 'pile'])
+                # pile_id.ix[max,'pile']=pile
+                pile_id.set_value(max, 'pile', pile)
+                pile_id.set_value(max, 'size', len(pile))
+                pile=[]
+            else:
+                pile_id = pile_id.append(DataFrame([dict(pile=outlier, p_id=-1, size=len(outlier), outlier=True)], index=[len(pile_id)]))
             break
+        temp = temp + next_distance_c
     return pile_id
 
 
@@ -458,7 +500,7 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
     # 取得最小的聚类聚类标准，通过求非1的最小值
     pile_max = rho_id.mean()
     # pile_max = stats.gmean(rho_id.values)
-    pile_min = get_next_distance_c(rho_id, 1) + 1
+    pile_min = get_next_distance_c(rho_id, 2) + 1
     if pile_min > pile_max:
         pile_min = math.floor(pile_max)
     pile_max = math.ceil(pile_max)
@@ -474,7 +516,7 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
     # 第i个数据点
     i = index_id[i_id]
     pile = find_pile_member(id_index, distance[i], distance_c)
-    pile = pile_brother(index_id, id_index, distance, distance_c, pile, pile_max)
+    #pile = pile_brother(index_id, id_index, distance, distance_c, pile, pile_max)
     # 对data_id和pile_id表，进行处理标识
     data_id.ix[i_id, 'pile'] = p_id
     # pile_id.ix[p_id,'state'] = pile
@@ -496,7 +538,6 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
         pile_id = pile_id.reset_index(drop=True)
         value = rho_id[0]
         if value == 0:
-            log.debug(p_id)
             # 控制是否进行无离群点考虑
             # pile_id=pile_to_pile(outlier_list,index_id, id_index, distance, distance_c, pile_id, pile_min)
             log.info("do job on outliers")
@@ -534,7 +575,7 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
         i_id = rho_id.index[0]
         i = index_id[i_id]
         pile = find_pile_member(id_index, distance[i], distance_c)
-        pile = pile_brother(index_id, id_index, distance, distance_c, pile, pile_max)
+        #pile = pile_brother(index_id, id_index, distance, distance_c, pile, pile_max)
         rho_set_tag(rho_id, pile)
         next = 0
         # 假设当前是新类
@@ -550,7 +591,9 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
                 # 不存在交集的情况
                 next += 1
                 continue
-            elif len(pile_brother(index_id, id_index, distance, distance_c, intersection, pile_max)) >= pile_max:
+            elif len(intersection)>pile_min:
+                #inter=pile_intersection(pile,pre)
+                #if len(pile_brother(index_id, id_index, distance, distance_c, inter, pile_max)) < pile_max:
                 # 存在交集，而且交集数量已经达到，聚类数
                 state = False
                 p_id = pile_id.loc[next, 'p_id']
@@ -856,3 +899,21 @@ def cluster(id, data):
     # log.debug("rho:\n" + str(rho))
     log.debug("threshold\n" + str(DataFrame(threshold)))
     return r
+
+
+class Queue:
+    """模拟队列"""
+    def __init__(self):
+        self.items = []
+
+    def isEmpty(self):
+        return self.items == []
+
+    def enqueue(self, item):
+        self.items.insert(0,item)
+
+    def dequeue(self):
+        return self.items.pop()
+
+    def size(self):
+        return len(self.items)

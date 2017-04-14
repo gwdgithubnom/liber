@@ -1,0 +1,11 @@
+pandas
+numpy
+scipy
+sklearn
+matplotlib
+ipython
+#this is test
+# PIL
+pyqtgraph
+mypy
+nose
