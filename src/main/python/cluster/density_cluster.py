@@ -4,6 +4,7 @@
 import sys
 import os
 import math
+import pandas
 from tools import logger
 import numpy as np
 from pandas import Series, DataFrame
@@ -58,6 +59,90 @@ def map_chi_function(x):
     y = map(chi_function, x)
     y = list(y)
     return y
+
+def delta_function(id_index, index_id, rho_id, distance):
+    """
+    评估类之间距离，主要根据rho_id
+    center_id
+    :param id_index:
+    :param index_id:
+    :param rho_id:
+    :param distance:
+    :return:
+    """
+    if not isinstance(rho_id, (np.ndarray, np.generic)) and not isinstance(distance, (np.ndarray, np.generic)):
+        raise Exception("rho or distance type error.")
+        log.critical("rho distance type is numpy.float64")
+
+    delta_id = Series(id_index.index, index=id_index.values)
+    data_id = DataFrame([], columns=['i_id', 'j_id', 'rho', 'delta', 'gamma', 'i', 'j', 'pile'],
+                        index=id_index.values)
+    data_id['rho'] = rho_id.values
+    data_id['i'] = id_index.index
+    rho_id = rho_id.sort_values()
+
+    """
+    from view import shape_view
+    shape_view.pandas_view_record(distance)
+    shape_view.pandas_view_record(rho_id)
+    shape_view.pandas_view_record(id_index)
+    return
+    """
+
+    for i in id_index.index:
+        # 构建delta的内容
+        # to found the best rho_j>rho_i, we may think the k is the i's id value
+        i_id = str(id_index[i])
+        rho_i = rho_id[i_id]
+        order_id = Series(distance[:, i], index=id_index.values)
+        # 初始化列表
+        # log.debug(order_id.index)
+        for j_id in id_index.values:
+            j_id = str(j_id)
+            # this is log is to record the view the rho_i and rho_j change.
+            # s=j+": "+str(rho_index[j])+"  -  " +k+": "+str(rho_i)
+
+            if rho_id[j_id] > rho_i:
+                if j_id not in order_id.index:
+                    # j=int(index_id[j_id])
+                    # log.info(str(j_id)+"  "+str(rho_id[j_id])+" d_ij "+str(distance[i][j]))
+                    continue
+                # log.warn(str(i_id)+" "+str(rho_i))
+                # j=int(index_id[j_id])
+                # log.debug(str(j_id)+"  "+str(rho_id[j_id])+" d_ij "+str(distance[i][j]))
+                order_id = order_id[order_id <= order_id[j_id]]
+                # log.debug(order_id.count())
+                # log.debug(order_id)
+        try:
+            order_id = order_id.sort_values()
+        except:
+            log.error("search result has something wrong.")
+            log.critical(order_id)
+
+        # log.critical(order_id)
+        j_id = (order_id.index)[0]
+        j = int(index_id[j_id])
+        # 构建id  j_id  rho  delta  i  j
+        delta_id[i_id] = j_id
+        data_id.ix[[i_id], ['j_id']] = j_id
+        data_id.ix[[i_id], ['j']] = j
+        data_id.ix[[i_id], ['i']] = i
+        data_id.ix[[i_id], ['i_id']] = i_id
+        data_id.ix[[i_id], ['delta']] = distance[i][j]
+        data_id.ix[[i_id], ['rho']] = rho_id[i_id]
+        data_id.ix[[i_id], ['gamma']] = rho_id[i_id] * distance[i][j]
+        # log.debug(str(type(index_id.order_id.index[1])))
+        # log.info("i index:"+str(i) +
+
+        # log.debug(str(i)+" time computing,"+" rho_i:"+str(rho_i)+" delta:"+i_id+" j:"+str(order_id.index[1])+" rho_j:"+str(rho_id[j_id])+" distance_ij:"+str(distance[i][j]))
+
+    # this is for the ssdfdssdf
+    # sys.stdout.write(". ")
+    # log.debug("\n"+str(delta_id))
+    # data_index['delta']=delta_id.values
+    # log.debug("\n"+str(data_index))
+
+    return delta_id, data_id
 
 
 def rho_function(index_id, distance_ij=np.array([]), distance_c=0):
@@ -287,7 +372,7 @@ def rho_set_tag(rho_id, pile):
     return rho_id
 
 
-def pile_brother(index_id, id_index, distance, distance_c, pile,pile_max):
+def pile_brother(index_id, id_index, distance, distance_c, pile, threshold):
     pre = 0
     while (len(pile) != pre):
         pre = len(pile)
@@ -295,152 +380,69 @@ def pile_brother(index_id, id_index, distance, distance_c, pile,pile_max):
             l = index_id[l]
             p = find_pile_member(id_index, distance[l], distance_c)
             b = pile_union(pile, p)
-            if len(p) >= (pile_max):
+            if len(p) >= (threshold):
                 pile = pile_union(pile, p)
         pile = list(set(pile))
     return pile
 
 
-def pile_to_pile(outlier, index_id, id_index, distance, distance_c,next_distance_c,border,pile_id,pile_max,pile_min):
+def pile_to_pile(outlier, index_id, id_index, distance, distance_c, next_distance_c, border, pile_id, threshold,
+                 pile_min):
     # TODO to merge pile
     pile_id = pile_id.reset_index(drop=True)
     pile_id_size = len(pile_id)
-    c = 2
-    state=False
-    temp=next_distance_c
+
+    state = False
+    temp = distance_c
     while True:
-        temp = temp +next_distance_c
-        pile = pile_brother(index_id, id_index, distance, temp, outlier, pile_max)
+        temp = temp + next_distance_c
+        pile = pile_brother(index_id, id_index, distance, temp, outlier, threshold)
         # if len(pile)>pile_min:
-        jarge_point=[]
-        jarge_size= pile_max
+        jarge_point = []
+        jarge_size = threshold
         for ii in range(pile_id_size):
-            jarge_pile=pile_id.ix[ii, 'pile']
-            jarge=pile_intersection(jarge_pile,pile)
-            if len(jarge)>=jarge_size:
+            jarge_pile = pile_id.ix[ii, 'pile']
+            jarge = pile_intersection(jarge_pile, pile)
+            if len(jarge) >= jarge_size:
                 jarge_point.append(ii)
                 jarge_size = len(jarge)
-                state=True
+                state = True
             else:
                 continue
         if state:
-            max=jarge_point[0]
+            max = jarge_point[0]
             for ii in jarge_point:
-                if len(pile_id.ix[ii,'pile'])>len(pile_id.ix[max,'pile']):
-                    max=ii
-            pile=pile_union(outlier,pile_id.loc[max,'pile'])
-            #pile_id.ix[max,'pile']=pile
-            pile_id.set_value(max,'pile',pile)
-            pile_id.set_value(max,'size',len(pile))
+                if len(pile_id.ix[ii, 'pile']) > len(pile_id.ix[max, 'pile']):
+                    max = ii
+            pile = pile_union(outlier, pile_id.loc[max, 'pile'])
+            # pile_id.ix[max,'pile']=pile
+            pile_id.set_value(max, 'pile', pile)
+            pile_id.set_value(max, 'size', len(pile))
+            pile=[]
             break
-        c = c + 1
+
         # log.debug(str(c)+" "+str(temp+border)+"/"+str(temp))
-        if temp>=border:
-            pile_id = pile_id.append(DataFrame([dict(pile=pile, p_id=-1, size=len(pile), outlier=True)], index=[len(pile_id)]))
+        if temp >= border:
+            pile_id = pile_id.append(
+                DataFrame([dict(pile=pile, p_id=-1, size=len(pile), outlier=True)], index=[len(pile_id)]))
             break
     return pile_id
 
 
-def delta_function(id_index, index_id, rho_id, distance):
-    """
-    评估类之间距离，主要根据rho_id
-    center_id
-    :param id_index:
-    :param index_id:
-    :param rho_id:
-    :param distance:
-    :return:
-    """
-    if not isinstance(rho_id, (np.ndarray, np.generic)) and not isinstance(distance, (np.ndarray, np.generic)):
-        raise Exception("rho or distance type error.")
-        log.critical("rho distance type is numpy.float64")
 
-    delta_id = Series(id_index.index, index=id_index.values)
-    data_id = DataFrame([], columns=['i_id', 'j_id', 'rho', 'delta', 'gamma', 'i', 'j', 'pile'],
-                        index=id_index.values)
-    data_id['rho'] = rho_id.values
-    data_id['i'] = id_index.index
-    rho_id = rho_id.sort_values()
-
-    """
-    from view import shape_view
-    shape_view.pandas_view_record(distance)
-    shape_view.pandas_view_record(rho_id)
-    shape_view.pandas_view_record(id_index)
-    return
-    """
-
-    for i in id_index.index:
-        # 构建delta的内容
-        # to found the best rho_j>rho_i, we may think the k is the i's id value
-        i_id = str(id_index[i])
-        rho_i = rho_id[i_id]
-        order_id = Series(distance[:, i], index=id_index.values)
-        # 初始化列表
-        # log.debug(order_id.index)
-        for j_id in id_index.values:
-            j_id = str(j_id)
-            # this is log is to record the view the rho_i and rho_j change.
-            # s=j+": "+str(rho_index[j])+"  -  " +k+": "+str(rho_i)
-
-            if rho_id[j_id] > rho_i:
-                if j_id not in order_id.index:
-                    # j=int(index_id[j_id])
-                    # log.info(str(j_id)+"  "+str(rho_id[j_id])+" d_ij "+str(distance[i][j]))
-                    continue
-                # log.warn(str(i_id)+" "+str(rho_i))
-                # j=int(index_id[j_id])
-                # log.debug(str(j_id)+"  "+str(rho_id[j_id])+" d_ij "+str(distance[i][j]))
-                order_id = order_id[order_id <= order_id[j_id]]
-                # log.debug(order_id.count())
-                # log.debug(order_id)
-        try:
-            order_id = order_id.sort_values()
-        except:
-            log.error("search result has something wrong.")
-            log.critical(order_id)
-
-        # log.critical(order_id)
-        j_id = (order_id.index)[0]
-        j = int(index_id[j_id])
-        # 构建id  j_id  rho  delta  i  j
-        delta_id[i_id] = j_id
-        data_id.ix[[i_id], ['j_id']] = j_id
-        data_id.ix[[i_id], ['j']] = j
-        data_id.ix[[i_id], ['i']] = i
-        data_id.ix[[i_id], ['i_id']] = i_id
-        data_id.ix[[i_id], ['delta']] = distance[i][j]
-        data_id.ix[[i_id], ['rho']] = rho_id[i_id]
-        data_id.ix[[i_id], ['gamma']] = rho_id[i_id] * distance[i][j]
-        # log.debug(str(type(index_id.order_id.index[1])))
-        # log.info("i index:"+str(i) +
-
-        # log.debug(str(i)+" time computing,"+" rho_i:"+str(rho_i)+" delta:"+i_id+" j:"+str(order_id.index[1])+" rho_j:"+str(rho_id[j_id])+" distance_ij:"+str(distance[i][j]))
-
-    # this is for the ssdfdssdf
-    # sys.stdout.write(". ")
-    # log.debug("\n"+str(delta_id))
-    # data_index['delta']=delta_id.values
-    # log.debug("\n"+str(data_index))
-
-    return delta_id, data_id
-
-
-def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c,next_distance_c):
+def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, next_distance_c):
     # 初始化队列
     log.info("staring running pile_function")
     rho_id = rho_function(index_id, distance, distance_c=distance_c)
-
     # 局部边界，用于设置视角
-
-    temp=distance.copy()
+    temp = distance.copy()
     temp[np.isnan(temp)] = 0
     stand = np.std(temp)
-    temp=distance.copy()
+    temp = distance.copy()
     temp[np.isnan(temp)] = stand
-    #temp=temp.mid(axis=0)
-    #next_distance_c=np.std(temp)
-    temp=np.min(temp,axis=0)
+    # temp=temp.mid(axis=0)
+    # next_distance_c=np.std(temp)
+    temp = np.min(temp, axis=0)
     border = np.max(temp)
 
     # delta_id, data_id = delta_function(id_index, index_id, rho_id, distance)
@@ -455,18 +457,17 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c,nex
     # 标记最下的类标准
     # 取得最小的聚类聚类标准，通过求非1的最小值
     pile_max = rho_id.mean()
-    #pile_max = stats.gmean(rho_id.values)
+    # pile_max = stats.gmean(rho_id.values)
     pile_min = get_next_distance_c(rho_id, 1) + 1
-    if pile_min>pile_max:
-        pile_min=math.floor(pile_max)
-    pile_max=math.ceil(pile_max)
+    if pile_min > pile_max:
+        pile_min = math.floor(pile_max)
+    pile_max = math.ceil(pile_max)
     # pile_min = 3
     # 初始化二级队列
     inlier_list = []
     outlier_list = []
     k = 0
     # 标识类别号，初始化第一个类
-    p_index = 0
     p_id = 1
     i_id = rho_id.index[0]
     # remove the element 标志不用处理
@@ -484,23 +485,25 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c,nex
     if pile is None:
         # pile_id = pile_id.append(DataFrame([dict(pile=-1, size=1)], index=index_id.values))
         return None
-    pile_id = pile_id.append(DataFrame([dict(p_id=p_id, pile=pile, size=len(pile), outlier=False)], index=[p_index]))
+    pile_id = pile_id.append(DataFrame([dict(p_id=p_id, pile=pile, size=len(pile), outlier=False)], index=[p_id]))
     # log.debug(pile_id)
     # log.debug("i:"+ str(i))
     # delta_id, data_index = delta_function(id_index, index_id, rho_id, distance)
     static_distance_c = distance_c
     while True:
+        p_id=p_id+1
         rho_id = rho_id.sort_values(ascending=False)
+        pile_id = pile_id.reset_index(drop=True)
         value = rho_id[0]
         if value == 0:
+            log.debug(p_id)
             # 控制是否进行无离群点考虑
             # pile_id=pile_to_pile(outlier_list,index_id, id_index, distance, distance_c, pile_id, pile_min)
             log.info("do job on outliers")
-            pile_id = pile_id.reset_index(drop=True)
             outlier_list = []
             pile_id_size = len(pile_id)
             for ii in range(pile_id_size):
-                if pile_id.loc[ii,'size']>=pile_max or not pile_id.loc[ii, 'outlier']:
+                if pile_id.loc[ii, 'size'] >= pile_max or not pile_id.loc[ii, 'outlier']:
                     continue
                 elif pile_id.loc[ii, 'outlier']:
                     pile_id_pile = pile_id.ix[ii, 'pile']
@@ -508,49 +511,49 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c,nex
                     outlier_list.append(pile_id_pile)
 
             pile_id = pile_id.reset_index(drop=True)
-            #i=0
+            # i=0
+            o_o=[]
             for ll in outlier_list:
                 # 以pile_min进行评估收敛性
-                pile_id = pile_to_pile(ll, index_id, id_index, distance, distance_c, next_distance_c,border,pile_id, pile_max,pile_min)
-                #log.debug(str(len(outlier_list))+"/"+str(i))
-                i=i+1
+                pile_id = pile_to_pile(ll, index_id, id_index, distance, distance_c, next_distance_c, border, pile_id,
+                                       pile_max, pile_min)
+
+                # log.debug(str(len(outlier_list))+"/"+str(i))
+                i = i + 1
+            # pile_id = pile_id.append(DataFrame([dict(pile=pile, p_id=-1, size=len(pile), outlier=True)], index=[p_id]))
             break
         elif value <= pile_min:
             # rho_set_tag( rho_id, pile)
-                i_id = rho_id.index[0]
-                p_id_max = pile_id.shape[0]
-                rho_id[i_id] = 0
-                # 当前是噪声
-                p_id = p_id_max + 1
-                pile_id = pile_id.append(DataFrame([dict(pile=[i_id], p_id=p_id, size=len(pile), outlier=True)], index=[len(pile_id)]))
-                continue
+            i_id = rho_id.index[0]
+            rho_id[i_id] = 0
+            # 当前是噪声
+            pile_id = pile_id.append(
+                DataFrame([dict(pile=[i_id], p_id=p_id, size=1, outlier=True)], index=[p_id]))
+            continue
 
         i_id = rho_id.index[0]
         i = index_id[i_id]
         pile = find_pile_member(id_index, distance[i], distance_c)
         pile = pile_brother(index_id, id_index, distance, distance_c, pile, pile_max)
         rho_set_tag(rho_id, pile)
-
         next = 0
-        p_id_max = pile_id.shape[0]
         # 假设当前是新类
-        p_id = p_id_max + 1
         state = True
         outlier = False
         pile_id = pile_id.sort_values(by='size', ascending=False)
 
         while len(pile_id) > next:
             # 寻找下一个可能的堆的合并
-            pre = pile_id.ix[next, 'pile']
+            pre = pile_id.loc[next, 'pile']
             intersection = pile_intersection(pile, pre)
             if len(intersection) <= 0:
                 # 不存在交集的情况
                 next += 1
                 continue
-            elif len(intersection) >= pile_max:
+            elif len(pile_brother(index_id, id_index, distance, distance_c, intersection, pile_max)) >= pile_max:
                 # 存在交集，而且交集数量已经达到，聚类数
                 state = False
-                p_id = pile_id.ix[next, 'p_id']
+                p_id = pile_id.loc[next, 'p_id']
                 pile = list(set(pile_union(pile, pre)))
                 # log.debug(pile_id)
                 pile_id = pile_id.drop(next)
@@ -578,13 +581,13 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c,nex
             # m = m + len(pile)
             rho_set_tag(rho_id, pile)
             pile_id = pile_id.append(
-                DataFrame([dict(pile=pile, p_id=p_id, size=len(pile), outlier=outlier)], index=[len(pile_id)]))
+                DataFrame([dict(pile=pile, p_id=p_id, size=len(pile), outlier=outlier)], index=[p_id]))
         else:
             rho_set_tag(rho_id, pile)
             pile_id = pile_id.append(
-                DataFrame([dict(p_id=p_id, pile=pile, size=len(pile), outlier=False)], index=[len(pile_id)]))
+                DataFrame([dict(p_id=p_id, pile=pile, size=len(pile), outlier=False)], index=[p_id]))
         pile_id = pile_id.sort_values('size', ascending=False)
-
+        pile_id = pile_id.reset_index(drop=True)
         """
         if pile is None:
             pile_id.ix[p_id, 'size']=0
@@ -626,17 +629,17 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
     pre = 65535
 
     # 方差步长
-    temp=distance.copy()
+    temp = distance.copy()
     temp[np.isnan(temp)] = 0
     stand = np.std(temp)
-    temp=distance.copy()
+    temp = distance.copy()
     temp[np.isnan(temp)] = stand
-    temp=temp.min(axis=0)
-    next_distance_c=np.std(temp)
+    temp = temp.min(axis=0)
+    next_distance_c = np.std(temp)
 
     if learning_rate != 0:
         distance_c = distance_c + learning_rate
-    log.debug("init the first max distance_c:" + str(max_distance_c)+" distance shape:"+str(distance.shape))
+    log.debug("init the first max distance_c:" + str(max_distance_c) + " distance shape:" + str(distance.shape))
     while max_distance_c >= distance_c:
         i = i + 1
         # pile = 0
@@ -646,7 +649,7 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
         # data = DataFrame([], columns=['gamma', 'rho', 'delta', 'pile'], index=index_id.index)
         data_id = DataFrame([], columns=['i_id', 'j_id', 'rho', 'delta', 'gamma', 'i', 'j', 'pile'],
                             index=id_index.values)
-        pile_id = pile_function(pile_id, id_index, index_id, data_id, distance, distance_c,next_distance_c)
+        pile_id = pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, next_distance_c)
         pile_size = pile_id['size']
         pile = pile_id.shape[0] - np.sum(pile_id['outlier'])
         # id_index, index_id
@@ -687,7 +690,7 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
     return threshold
 
 
-def show_threshold(id_index, index_id, distance, distance_c,next_distance_c):
+def show_threshold(id_index, index_id, distance, distance_c, next_distance_c):
     i = 0
     N = int(index_id.shape[0])
     log.debug("init the distance_c:" + str(distance_c))
@@ -696,7 +699,7 @@ def show_threshold(id_index, index_id, distance, distance_c,next_distance_c):
     # delta_id, data_id = delta_function(id_index, index_id, rho_id, distance)
     # data = DataFrame([], columns=['gamma', 'rho', 'delta', 'pile'], index=index_id.index)
     data_id = DataFrame([], columns=['j_id', 'rho', 'delta', 'gamma', 'i', 'j', 'pile'], index=id_index.values)
-    pile_id = pile_function(pile_id, id_index, index_id, data_id, distance, distance_c,next_distance_c)
+    pile_id = pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, next_distance_c)
     pile_size = pile_id['size']
     # pile = pile_id.shape[0] - np.sum(pile_id['outlier'])
     # id_index, index_id
@@ -746,12 +749,12 @@ def _calc_ent(probs):
 def save_show_cluster(index_id, data, distance_c, pile_id):
     from view import plot_utils
     from context import resource_manager
-    path = resource_manager.Properties.getDefaultDataFold() + "result" + resource_manager.getSeparator() + "temp"+resource_manager.getSeparator()+resource_manager.Properties.name_str_static() + resource_manager.getSeparator() + str(
+    path = resource_manager.Properties.getDefaultDataFold() + "result" + resource_manager.getSeparator() + "temp" + resource_manager.getSeparator() + resource_manager.Properties.name_str_static() + resource_manager.getSeparator() + str(
         distance_c) + ".png"
     if not os.path.exists(
-                                            resource_manager.Properties.getDefaultDataFold() + "result" + resource_manager.getSeparator() + "temp" + resource_manager.getSeparator()+resource_manager.Properties.name_str_static() + resource_manager.getSeparator()):
+                                                            resource_manager.Properties.getDefaultDataFold() + "result" + resource_manager.getSeparator() + "temp" + resource_manager.getSeparator() + resource_manager.Properties.name_str_static() + resource_manager.getSeparator()):
         os.makedirs(
-            resource_manager.Properties.getDefaultDataFold() + "result" + resource_manager.getSeparator() + "temp" + resource_manager.getSeparator()+resource_manager.Properties.name_str_static() + resource_manager.getSeparator())
+            resource_manager.Properties.getDefaultDataFold() + "result" + resource_manager.getSeparator() + "temp" + resource_manager.getSeparator() + resource_manager.Properties.name_str_static() + resource_manager.getSeparator())
     pile_id = pile_id.sort_values('size', ascending=False)
     x = []
     y = []
@@ -778,8 +781,17 @@ def save_show_cluster(index_id, data, distance_c, pile_id):
     plot_utils.save_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label,
                                     path=path)
     # plot_utils.plot_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label)
-
     log.debug(pile_id)
+    try:
+        p=Properties.getDefaultDataFold() + "/csv/" + resource_manager.Properties.name_str_static() + "/"+str(distance_c)+".csv"
+        pile_id.to_csv(p)
+    except:
+        if not os.path.exists(p):
+            pp=p.rfind('/')
+            os.makedirs(p[:pp])
+        os.mknod(p)
+        pile_id.to_csv(p)
+
 
 
 def show_cluster(index_id, data, distance_c, pile_id):
@@ -844,4 +856,3 @@ def cluster(id, data):
     # log.debug("rho:\n" + str(rho))
     log.debug("threshold\n" + str(DataFrame(threshold)))
     return r
-

@@ -34,7 +34,7 @@ def findPath(file):
 
 class Properties:
 
-    timename=time.strftime("%Y-%m-%d-%H-%m", time.localtime())
+    timename=time.strftime("%Y-%m-%d-%H-%M", time.localtime())
 
     @classmethod
     def name_str_YMD(self):

@@ -10,7 +10,7 @@ import re
 from context import resource_manager
 
 configPath = resource_manager.Properties.getRootPath()+"cluster/dbscan/config"
-dataPath = resource_manager.Properties.getRootPath()+"cluster/dbscan/Aggregation.txt"
+dataPath = resource_manager.Properties.getRootPath()+"cluster/dbscan/aggregation.txt"
 
 def main():
     [Data,eps,MinPts]= getData()
