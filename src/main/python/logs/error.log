@@ -44096,3 +44096,94 @@ Index: []
 [2017-03-31 10:56:10] density_cluster.py [line:635] CRITICAL 6781 240
 [2017-03-31 10:56:12] density_cluster.py [line:635] CRITICAL 6781 240
 [2017-03-31 10:56:12] density_cluster.py [line:635] CRITICAL 6781 240
+[2017-04-09 14:22:11] density_cluster.py [line:449] CRITICAL 28833 1_1
+[2017-04-09 14:22:11] density_cluster.py [line:449] CRITICAL 28833 1_0
+[2017-04-09 14:22:11] density_cluster.py [line:449] CRITICAL 28833 2_7
+[2017-04-09 14:22:11] density_cluster.py [line:449] CRITICAL 28833 2_2
+[2017-04-09 14:22:11] density_cluster.py [line:449] CRITICAL 28833 4
+[2017-04-09 14:22:27] density_cluster.py [line:449] CRITICAL 29019 1_1
+[2017-04-09 14:22:27] density_cluster.py [line:449] CRITICAL 29019 1_0
+[2017-04-09 14:22:27] density_cluster.py [line:449] CRITICAL 29019 2_7
+[2017-04-09 14:22:27] density_cluster.py [line:449] CRITICAL 29019 2_2
+[2017-04-09 14:22:27] density_cluster.py [line:449] CRITICAL 29019 4
+[2017-04-09 14:23:06] density_cluster.py [line:449] CRITICAL 29218 1_1
+[2017-04-09 14:23:06] density_cluster.py [line:449] CRITICAL 29218 1_0
+[2017-04-09 14:23:06] density_cluster.py [line:449] CRITICAL 29218 2_7
+[2017-04-09 14:23:06] density_cluster.py [line:449] CRITICAL 29218 2_2
+[2017-04-09 14:23:06] density_cluster.py [line:449] CRITICAL 29218 4
+[2017-04-09 14:24:33] density_cluster.py [line:450] CRITICAL 29715 1_1
+[2017-04-09 14:24:33] density_cluster.py [line:450] CRITICAL 29715 1_0
+[2017-04-09 14:24:33] density_cluster.py [line:450] CRITICAL 29715 2_7
+[2017-04-09 14:24:33] density_cluster.py [line:450] CRITICAL 29715 2_2
+[2017-04-09 14:24:33] density_cluster.py [line:450] CRITICAL 29715 4
+[2017-04-09 14:24:52] density_cluster.py [line:450] CRITICAL 29817 1_1
+[2017-04-09 14:24:52] density_cluster.py [line:450] CRITICAL 29817 1_0
+[2017-04-09 14:24:52] density_cluster.py [line:450] CRITICAL 29817 2_7
+[2017-04-09 14:24:52] density_cluster.py [line:450] CRITICAL 29817 2_2
+[2017-04-09 14:24:52] density_cluster.py [line:450] CRITICAL 29817 4
+[2017-04-09 14:25:44] density_cluster.py [line:450] CRITICAL 30067 1_1
+[2017-04-09 14:25:44] density_cluster.py [line:450] CRITICAL 30067 1_0
+[2017-04-09 14:25:44] density_cluster.py [line:450] CRITICAL 30067 2_7
+[2017-04-09 14:25:44] density_cluster.py [line:450] CRITICAL 30067 2_2
+[2017-04-09 14:36:00] density_cluster.py [line:451] CRITICAL 591 2_10
+[2017-04-09 14:36:33] density_cluster.py [line:452] CRITICAL 777 2_10
+[2017-04-09 14:37:02] density_cluster.py [line:452] CRITICAL 946 2_10
+[2017-04-09 14:37:53] density_cluster.py [line:452] CRITICAL 1236 2_10
+[2017-04-09 14:39:26] density_cluster.py [line:452] CRITICAL 1710       i_id j_id  rho   delta   gamma   i  j pile parent  son
+2_10  2_10  2_4    1  1.8125  1.8125  10  4  NaN    NaN  NaN
+2_10  2_10  2_4    1  1.8125  1.8125  10  4  NaN    NaN  NaN
+[2017-04-09 14:41:42] density_cluster.py [line:453] CRITICAL 2470       i_id j_id  rho   delta   gamma   i  j pile parent  son
+2_10  2_10  2_4    1  1.8125  1.8125  10  4  NaN    NaN  NaN
+2_10  2_10  2_4    1  1.8125  1.8125  10  4  NaN    NaN  NaN
+[2017-04-09 14:42:14] density_cluster.py [line:453] CRITICAL 2689       i_id j_id  rho   delta   gamma   i  j pile parent  son
+2_10  2_10  2_4    1  1.8125  1.8125  10  4  NaN    NaN  NaN
+2_10  2_10  2_4    1  1.8125  1.8125  10  4  NaN    NaN  NaN
+[2017-04-09 14:50:15] density_cluster.py [line:453] CRITICAL 3536 i_id        2_10
+j_id         2_4
+rho            1
+delta     1.8125
+gamma     1.8125
+i             10
+j              4
+pile         NaN
+parent       NaN
+son          NaN
+Name: 2_10, dtype: object
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null

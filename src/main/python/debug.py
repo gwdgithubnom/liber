@@ -238,23 +238,27 @@ from cluster import density_cluster
     from view import shape_view
     from cluster import density_cluster
 
-    name = 'Aggregation'
-    distance_c = 0.6825
-    m = '2_153'
+    name = 'path'
+    distance_c = 12.3972318748
+    m = '3_44'
     pile = 0
     id = np.load(Properties.getRootPath() + "/data/cache/" + name + "/id.npy")
     data = np.load(Properties.getRootPath() + "/data/cache/" + name + "/data.npy")
     id_index = Series(id.tolist())
     from cluster import density_cluster
-
     index_id = Series(id_index.index, index=id_index.values)
     distance = density_cluster.compute_distance(data)
     pile_id = DataFrame([], columns=['pile', 'size'])
     rho_id = density_cluster.rho_function(index_id, distance, distance_c=distance_c)
     rho_id = Series(rho_id, index=index_id.index)
     rho_id = rho_id.sort_values(ascending=False)
-    delta_id, data_id = density_cluster.delta_function(id_index, index_id, rho_id, distance)
+    #delta_id, data_id = density_cluster.delta_function(id_index, index_id, rho_id, distance)
     log.debug(rho_id)
+    pile=['3_44']
+    pile_max=14
+    pile = density_cluster.pile_brother(index_id, id_index, distance, distance_c, pile,pile_max)
+    log.debug("pile info:")
+    log.debug(pile)
     distance_view(m, index_id, id_index, distance)
     log.debug("cluster_view: " + str(rho_id[index_id[m]]))
     cluster_distance_view(m, index_id, id_index, distance, distance_c)

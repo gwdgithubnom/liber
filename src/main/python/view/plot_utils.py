@@ -117,6 +117,7 @@ def plot_dataframe_scatter_diagram(which_fig, data, x_label='x', y_label='y', ti
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     plt.ylim(bottom=0)
+    plt.legend(loc='upper left')
     plt.show()
 
 
@@ -161,12 +162,13 @@ def plot_scatter_diagram(which_fig, x, y, x_label='x', y_label='y', title='title
                     xs.append(x[j])
                     ys.append(y[j])
             k = k + 1
-            plt.scatter(xs, ys, c=stylesColors[k].strip(), marker=stylesMarker[k])
+            plt.scatter(xs, ys, c=stylesColors[k].strip(), marker=stylesMarker[k],label=i)
 
     plt.title(title)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     plt.ylim(bottom=0)
+    plt.legend(loc='upper left')
     plt.show()
 
 
@@ -213,12 +215,14 @@ def save_scatter_diagram(which_fig, x, y, x_label='x', y_label='y', title='title
                     xs.append(x[j])
                     ys.append(y[j])
             k = k + 1
-            plt.scatter(xs, ys, c=stylesColors[k].strip(), marker=stylesMarker[k].strip())
+            plt.scatter(xs, ys, c=stylesColors[k].strip(), marker=stylesMarker[k].strip(),label=i)
     plt.title(title)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     plt.ylim(bottom=0)
     plt.savefig(path)
+    plt.legend(loc='upper left')
+    plt.savefig(path+".jpg")
     plt.close()
 
 
