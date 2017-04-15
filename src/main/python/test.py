@@ -207,14 +207,14 @@ def distance_view(d,m, index_id, id_index, distance):
 
 
 if __name__ == '__main__':
-    name='path'
+    name='aggregation'
     from cluster import density_cluster
     from pandas import Series
     from pandas import Series, DataFrame
     from context.resource_manager import Properties
     from view import shape_view
     from cluster import density_cluster
-    distance_c =5.369084090805 #4.45939381309 #12.3972318748 #4.5155
+    distance_c =1.299084090805 #4.45939381309 #12.3972318748 #4.5155
     from context.resource_manager import Properties
     from context import resource_manager
     from view import shape_view
