@@ -41,7 +41,7 @@ def save(name='default'):
         os.makedirs(Properties.getDefaultDataFold()+"/cache/"+name)
     np.save(Properties.getRootPath() + "/data/cache/"+name+"/id.npy", id)
     np.save(Properties.getRootPath() + "/data/cache/"+name+"/data.npy", data)
-
+    # encoding='ascii'
 
 
 
@@ -60,7 +60,7 @@ def get_threshold(name='default'):
     #plot_utils.plot_image( data[551], w, w)
     # data=density_cluster.binary_array(data)
     # shape_view.pandas_view_record((data))
-    threshold=density_cluster.cluster(id,data)
+    threshold=density_cluster.cluster(id,data,dataset=name)
     if not os.path.exists(Properties.getDefaultDataFold()+"/csv/"+name):
         #f=open(Properties.getDefaultDataFold()+"/csv/threshold.csv","w")
         #f.close()
@@ -69,36 +69,60 @@ def get_threshold(name='default'):
 
 
 
-if __name__ == '__main__':
+def experiment(name="path"):
     try:
         opts,args=getopt.getopt(sys.argv[1:], "f:")
         name=opts[0][1]
+        log.warn("using value:"+str(name))
     except:
-        name='path'
-    log.warn(name)
+        log.warn("using defualt value:"+str(name))
     log.warn(resource_manager.Properties.name_str_static())
-    if os.path.exists(resource_manager.Properties.getDefaultDataFold()+"result/temp"+resource_manager.Properties.name_str_static() + resource_manager.getSeparator()):
-        shutil.rmtree(resource_manager.Properties.getDefaultDataFold()+"result/temp"+resource_manager.Properties.name_str_static() + resource_manager.getSeparator())
     save(name=name)
     get_threshold(name=name)
+
+
+
+def record_expriment(name='path'):
     from context.resource_manager import Properties
     from context import resource_manager
     from view import shape_view
-    from view import plot_utils
+
     from cluster import density_cluster
-    threshold=pandas.read_csv(Properties.getDefaultDataFold()+"/csv/"+name+"/threshold.csv")
+    if os.path.exists(resource_manager.Properties.getDefaultDataFold()+"result/temp"+resource_manager.Properties.name_str_static() + resource_manager.getSeparator()):
+        shutil.rmtree(resource_manager.Properties.getDefaultDataFold()+"result/temp"+resource_manager.Properties.name_str_static() + resource_manager.getSeparator())
+    threshold=pandas.read_csv(Properties.getDefaultDataFold()+"/csv/"+name+"/"+resource_manager.Properties.name_str_static()+"/threshold.csv")
+    save_plot(threshold)
     d_c=np.asarray(threshold['d_c'].values)
-    path=resource_manager.Properties.getDefaultDataFold()+resource_manager.getSeparator()+"result/temp"+resource_manager.getSeparator()+resource_manager.Properties.name_str_static() + resource_manager.getSeparator()+"test.png"
+    path = resource_manager.Properties.getDefaultDataFold() + resource_manager.getSeparator() + "result" + resource_manager.getSeparator() + name+"/"+resource_manager.Properties.name_str_static()
     log.debug(threshold['cluster'].sort_values(ascending=False))
+    shutil.copytree(resource_manager.Properties.getDefaultDataFold()+"result/temp"+resource_manager.getSeparator()+resource_manager.Properties.name_str_static() + resource_manager.getSeparator(),path)
+    shutil.copy(Properties.getDefaultDataFold()+"/csv/"+name+"/"+resource_manager.Properties.name_str_static()+"/threshold.csv", path)
+    log.warn("finished")
+
+
+def save_plot(threshold):
+    from view import plot_utils
+    path=resource_manager.Properties.getDefaultDataFold()+resource_manager.getSeparator()+"result/temp"+resource_manager.getSeparator()+resource_manager.Properties.name_str_static() + resource_manager.getSeparator()+"threshold.png"
     plot_utils.save_scatter_diagram(None,x=threshold['d_c'].values,y=threshold['H'].values,x_label='delta',y_label='H',title='threshold scatter figure',path=path)
     plot_utils.plot_scatter_diagram(None,x=threshold['d_c'].values,y=threshold['H'].values,x_label='delta',y_label='H',title='threshold scatter figure')
     plot_utils.plot_scatter_diagram(None, x=threshold['H'].values, y=threshold['d_c'].values, x_label='delta',
                                     y_label='H', title='threshold scatter figure')
     plot_utils.save_scatter_diagram(None,x=threshold['d_c'].values,y=threshold['H'].values,x_label='delta',y_label='H',title='threshold scatter figure',path=path)
-    path = resource_manager.Properties.getDefaultDataFold() + resource_manager.getSeparator() + "result" + resource_manager.getSeparator() + name+"/"+resource_manager.Properties.name_str_static()
-    shutil.copytree(resource_manager.Properties.getDefaultDataFold()+"result/temp"+resource_manager.getSeparator()+resource_manager.Properties.name_str_static() + resource_manager.getSeparator(),path)
-    shutil.copy(Properties.getDefaultDataFold()+"/csv/"+name+"/threshold.csv", path)
-    log.warn("finished")
+
+if __name__ == '__main__':
+    experiment('path')
+
+
+
+
+
+
+
+
+
+
+
+
 
     """
     delta_index=Series(id,index=id,dtype=np.float)
