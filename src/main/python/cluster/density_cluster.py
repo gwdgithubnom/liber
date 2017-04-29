@@ -75,9 +75,9 @@ def delta_function(id_index, rho_id, distance):
         raise Exception("rho or distance type error.")
         log.critical("rho distance type is numpy.float64")
     delta_id = Series(id_index.index.copy(True), index=id_index.values)
-    #data_id = DataFrame([], columns=['i_id', 'j_id', 'rho', 'delta', 'gamma', 'i', 'j', 'pile'],                        index=id_index.values)
-    #data_id['rho'] = rho_id.values
-    #data_id['i'] = id_index.index
+    # data_id = DataFrame([], columns=['i_id', 'j_id', 'rho', 'delta', 'gamma', 'i', 'j', 'pile'],                        index=id_index.values)
+    # data_id['rho'] = rho_id.values
+    # data_id['i'] = id_index.index
     rho_id = rho_id.sort_values()
     """
     from view import shape_view
@@ -143,12 +143,12 @@ def delta_function(id_index, rho_id, distance):
     return delta_id
 
 
-def delta_random_function(rho_id,delta_id, pile, i_id):
+def delta_random_function(rho_id, delta_id, pile, i_id):
     for i in pile:
         if i == i_id:
-            #log.debug("delta parent:" + str(i))
+            # log.debug("delta parent:" + str(i))
             continue
-        elif rho_id[delta_id[i]]>rho_id[delta_id[i_id]]:
+        elif rho_id[delta_id[i]] > rho_id[delta_id[i_id]]:
             delta_id[i] = i_id
     return delta_id
 
@@ -400,42 +400,42 @@ def rho_set_tag(rho_id, pile):
 
 def pile_brother(index_id, id_index, distance, distance_c, pile, threshold, state=False):
     pre = 0
-    next = pile
-    while (len(pile) != pre):
+    next_pile = pile
+    while len(pile) != pre:
         pre = len(pile)
         pile_next = []
-        for l in next:
+        for l in next_pile:
             l = index_id[l]
             p = find_pile_member(id_index, distance[l], distance_c)
             b = pile_union(pile, p)
-            if len(b) >= (threshold):
-                pile_next.extend(pile_sub(p,pile))
-                if state == True:
+            if len(b) >= threshold:
+                pile_next.extend(pile_sub(p, pile))
+                if state:
                     break
-        next = pile_next
+        next_pile = pile_next
         pile = list(set(pile_union(pile, pile_next)))
     return pile
 
 
 def pile_children(index_id, id_index, distance, distance_c, pile, rho_id, delta_id, state=False):
     pre = 0
-    next=pile
-    while (len(pile) != pre):
+    next_pile = pile
+    while len(pile) != pre:
         pre = len(pile)
         pile_next = []
 
-        for l in next:
+        for l in next_pile:
             ll = index_id[l]
             p = find_pile_member(id_index, distance[ll], distance_c)
-            delta_id = delta_random_function(rho_id,delta_id, p, l)
-            s = str(rho_id[delta_id[l]]) + "/" + delta_id[l]
+            delta_id = delta_random_function(rho_id, delta_id, p, l)
+            #s = str(rho_id[delta_id[l]]) + "/" + delta_id[l]
             if len(p) <= (rho_id[delta_id[l]]):
-                lll=pile_sub(p,pile)
+                lll = pile_sub(p, pile)
                 pile_next.extend(lll)
-                if state == True:
+                if state:
                     break
 
-        next = pile_next
+        next_pile = pile_next
         pile = list(set(pile_union(pile, pile_next)))
     return pile, delta_id
 
@@ -452,8 +452,7 @@ def numpy_find_min(data, base):
     return base - 1
 
 
-def outlier_to_pile(outlier, index_id, id_index, distance, distance_c, next_distance_c, border, pile_id, threshold,
-                    pile_min):
+def outlier_to_pile(outlier, index_id, id_index, distance, distance_c, next_distance_c, border, pile_id, threshold,pile_min):
     # TODO to merge pile
     pile_id = pile_id.reset_index(drop=True)
     pile_id_size = len(pile_id)
@@ -473,7 +472,7 @@ def outlier_to_pile(outlier, index_id, id_index, distance, distance_c, next_dist
                 jarge_point.append(ii)
                 jarge_size = len(jarge)
                 state = True
-            elif len(jarge) > 0 and jarge_state == True and state == False:
+            elif len(jarge) > 0 and jarge_state and not state:
                 jarge_point_next.append(ii)
             else:
                 continue
@@ -580,6 +579,7 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
     # 第i个数据点
     i = index_id[i_id]
     pile = find_pile_member(id_index, distance[i], distance_c)
+
     delta_id = delta_random_function(rho_id,delta_id, pile, i_id)
     pile, delta_id = pile_children(index_id, id_index, distance, distance_c, pile, rho_id, delta_id)
     # 对data_id和pile_id表，进行处理标识
@@ -606,6 +606,7 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
             # 控制是否进行无离群点考虑
             # pile_id=pile_to_pile(outlier_list,index_id, id_index, distance, distance_c, pile_id, pile_min)
             log.info("do job on outliers")
+            log.debug(pile_id)
             outlier_list = []
             pile_id_size = len(pile_id)
             for ii in range(pile_id_size):
@@ -715,8 +716,7 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
         pile_id.shape[0]) + " pile_max:" + str(pile_max) + " pile_min:" + str(pile_min))
     return pile_id
 
-
-def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_c,dataset='none'):
+def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_c, dataset='none'):
     """
     :param id_index:
     :param index_id:
@@ -747,26 +747,26 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
     next_distance_c = np.std(temp)
 
     clusterRecorder = ClusterRecorder(dataset)
-    cr_i=str(Properties.name_str_static()+"#"+str(i))
+    cr_i = str(Properties.name_str_static() + "#" + str(i))
 
-    #DataFrame([], columns=['id', 'start', 'end', 'd_c', 'max_distance_c', 'dataset', 'pile_size', 'H','note'])
+    # DataFrame([], columns=['id', 'start', 'end', 'd_c', 'max_distance_c', 'dataset', 'pile_size', 'H','note'])
 
-    clusterRecorder.setValue(str(cr_i),'id',Properties.name_str_static())
-    clusterRecorder.setValue(str(cr_i),'start',Properties.name_str_HMS())
-    clusterRecorder.setValue(str(cr_i),'d_c',distance_c)
-    clusterRecorder.setValue(str(cr_i),'max_distance_c',max_distance_c)
-    clusterRecorder.setValue(str(cr_i),'dataset',dataset)
-    clusterRecorder.setValue(str(cr_i),'pile_size',N)
-    clusterRecorder.setValue(str(cr_i),'H',65535)
-    clusterRecorder.setValue(str(cr_i),'note','整个算法运行时间')
+    clusterRecorder.setValue(str(cr_i), 'id', Properties.name_str_static())
+    clusterRecorder.setValue(str(cr_i), 'start', Properties.name_str_HMS())
+    clusterRecorder.setValue(str(cr_i), 'd_c', distance_c)
+    clusterRecorder.setValue(str(cr_i), 'max_distance_c', max_distance_c)
+    clusterRecorder.setValue(str(cr_i), 'dataset', dataset)
+    clusterRecorder.setValue(str(cr_i), 'pile_size', N)
+    clusterRecorder.setValue(str(cr_i), 'H', 65535)
+    clusterRecorder.setValue(str(cr_i), 'note', '整个算法运行时间')
     if learning_rate != 0:
         distance_c = distance_c + learning_rate
     log.debug("init the first max distance_c:" + str(max_distance_c) + " distance shape:" + str(distance.shape))
-    start_time=Properties.name_str_HMS()
+    start_time = Properties.name_str_HMS()
 
     while max_distance_c >= distance_c:
         i = i + 1
-        last_time=Properties.name_str_HMS()
+        last_time = Properties.name_str_HMS()
         # pile = 0
         # 设置pile的pile元素，与pile的类成员个数
         pile_id = DataFrame([], columns=['p_id', 'pile', 'size', 'outlier'])
@@ -784,33 +784,33 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
         jarge_now = pre - e
         # if jarge_now > jarge_pre:
         if jarge_now > 0:
-            cr_j=str(Properties.name_str_static()+"#"+str(i))
-            #DataFrame([], columns=['id', 'start', 'end', 'd_c', 'max_distanc', 'dataset', 'pile_size', 'H','note'])
-            clusterRecorder.setValue(str(cr_j),'id',Properties.name_str_static())
-            clusterRecorder.setValue(str(cr_j),'start',last_time)
-            clusterRecorder.setValue(str(cr_j),'d_c',distance_c)
-            clusterRecorder.setValue(str(cr_j),'max_distance_c',max_distance_c)
-            clusterRecorder.setValue(str(cr_j),'dataset',dataset)
-            clusterRecorder.setValue(str(cr_j),'pile_size',len(pile_id))
-            clusterRecorder.setValue(str(cr_j),'H',e)
-            clusterRecorder.setValue(str(cr_j),'note','发现新下降时间')
-            clusterRecorder.setValue(str(cr_j),'end',Properties.name_str_HMS())
+            cr_j = str(Properties.name_str_static() + "#" + str(i))
+            # DataFrame([], columns=['id', 'start', 'end', 'd_c', 'max_distanc', 'dataset', 'pile_size', 'H','note'])
+            clusterRecorder.setValue(str(cr_j), 'id', Properties.name_str_static())
+            clusterRecorder.setValue(str(cr_j), 'start', last_time)
+            clusterRecorder.setValue(str(cr_j), 'd_c', distance_c)
+            clusterRecorder.setValue(str(cr_j), 'max_distance_c', max_distance_c)
+            clusterRecorder.setValue(str(cr_j), 'dataset', dataset)
+            clusterRecorder.setValue(str(cr_j), 'pile_size', len(pile_id))
+            clusterRecorder.setValue(str(cr_j), 'H', e)
+            clusterRecorder.setValue(str(cr_j), 'note', '发现新下降时间')
+            clusterRecorder.setValue(str(cr_j), 'end', Properties.name_str_HMS())
 
             save_show_cluster(index_id, data, distance_c, pile_id)
 
-            cr_j=str(Properties.name_str_static()+"#"+str(i))
-            #DataFrame([], columns=['id', 'start', 'end', 'd_c', 'max_distanc', 'dataset', 'pile_size', 'H','note'])
-            clusterRecorder.setValue(str(cr_j),'id',Properties.name_str_static())
-            clusterRecorder.setValue(str(cr_j),'start',start_time)
-            clusterRecorder.setValue(str(cr_j),'d_c',distance_c)
-            clusterRecorder.setValue(str(cr_j),'max_distance_c',max_distance_c)
-            clusterRecorder.setValue(str(cr_j),'dataset',dataset)
-            clusterRecorder.setValue(str(cr_j),'pile_size',len(pile_id))
-            clusterRecorder.setValue(str(cr_j),'H',e)
-            clusterRecorder.setValue(str(cr_j),'note','发现新下降时间')
-            clusterRecorder.setValue(str(cr_j),'end',Properties.name_str_HMS())
+            cr_j = str(Properties.name_str_static() + "#" + str(i))
+            # DataFrame([], columns=['id', 'start', 'end', 'd_c', 'max_distanc', 'dataset', 'pile_size', 'H','note'])
+            clusterRecorder.setValue(str(cr_j), 'id', Properties.name_str_static())
+            clusterRecorder.setValue(str(cr_j), 'start', start_time)
+            clusterRecorder.setValue(str(cr_j), 'd_c', distance_c)
+            clusterRecorder.setValue(str(cr_j), 'max_distance_c', max_distance_c)
+            clusterRecorder.setValue(str(cr_j), 'dataset', dataset)
+            clusterRecorder.setValue(str(cr_j), 'pile_size', len(pile_id))
+            clusterRecorder.setValue(str(cr_j), 'H', e)
+            clusterRecorder.setValue(str(cr_j), 'note', '发现新下降时间')
+            clusterRecorder.setValue(str(cr_j), 'end', Properties.name_str_HMS())
             save_show_cluster(index_id, data, distance_c, pile_id)
-            start_time=Properties.name_str_HMS()
+            start_time = Properties.name_str_HMS()
 
         pre = e
         # jarge_now = jarge_now + 1
@@ -838,13 +838,13 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
         log.info(
             str(i) + " time, finished the next_distance_c about: " + str(next_distance_c) + " distance_c:" + str(
                 distance_c) + " next-learning_rate:" + str(learning_rate) + " H:" + str(e))
-    clusterRecorder.setValue(str(cr_i),'end',Properties.name_str_HMS())
+    clusterRecorder.setValue(str(cr_i), 'end', Properties.name_str_HMS())
     clusterRecorder.save()
     log.debug(threshold)
     return threshold
 
 
-def show_threshold(id_index, index_id, distance, distance_c, next_distance_c):
+def show_threshold(id_index, index_id, distance, distance_c, next_distance_c, dataset='none'):
     i = 0
     N = int(index_id.shape[0])
     log.debug("init the distance_c:" + str(distance_c))
@@ -988,7 +988,7 @@ def binary_array(data):
     return data
 
 
-def cluster(id, data,dataset):
+def cluster(id, data, dataset):
     from pandas import Series, DataFrame
     id_index = Series(id.tolist())
     from cluster import density_cluster
@@ -1001,11 +1001,11 @@ def cluster(id, data,dataset):
     # to creat the base index table
     # 生成对应的索引，用于控制rho，delta，index的内容
     rho_id = rho_function(index_id, distance, distance_c=distance_c)
-    #delta_id, data_id = delta_function(id_index, index_id, rho_id, distance)
+    # delta_id, data_id = delta_function(id_index, index_id, rho_id, distance)
     # gamma=rho*delta
     threshold = DataFrame([], columns=['H', 'd_c', 'cluster'])
     threshold = ent_dc_step_by_step(id_index, index_id, data, threshold=threshold, distance=distance,
-                                    distance_c=distance_c,dataset=dataset)
+                                    distance_c=distance_c, dataset=dataset)
     r = threshold
     # log.debug("rho:\n" + str(rho))
     log.debug("threshold\n" + str(DataFrame(threshold)))
@@ -1017,19 +1017,23 @@ class ClusterRecorder:
     设置记录类
     :return:
     """
-    def __init__(self,dataset):
-        self.dataset=dataset
-        try:
-            self.recorder_csv=pandas.read_csv(Properties.getDefaultDataFold()+"/csv/recorder_csv_"+self.dataset+".csv")
-        except:
-            self.recorder_csv=DataFrame([], columns=['id', 'start', 'end', 'd_c', 'max_distance_c', 'dataset', 'pile_size', 'H','note'])
 
-    def setValue(self,row,columns,value):
+    def __init__(self, dataset):
+        self.dataset = dataset
+        try:
+            self.recorder_csv = pandas.read_csv(
+                Properties.getDefaultDataFold() + "/csv/recorder_csv_" + self.dataset + ".csv")
+        except:
+            self.recorder_csv = DataFrame([], columns=['id', 'start', 'end', 'd_c', 'max_distance_c', 'dataset',
+                                                       'pile_size', 'H', 'note'])
+
+    def setValue(self, row, columns, value):
         self.recorder_csv.set_value(row, columns, value)
         self.recorder_csv.set_value(row, 'end', Properties.name_str_FULL())
 
     def save(self):
-        self.recorder_csv.to_csv(Properties.getDefaultDataFold()+"/csv/recorder_csv_"+self.dataset+".csv")
+        self.recorder_csv.to_csv(Properties.getDefaultDataFold() + "/csv/recorder_csv_" + self.dataset + ".csv")
+
 
 class Queue:
     """模拟队列"""

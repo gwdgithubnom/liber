@@ -207,19 +207,20 @@ def distance_view(d,m, index_id, id_index, distance):
 
 
 if __name__ == '__main__':
-    name='aggregation'
+    name='flame'
     from cluster import density_cluster
     from pandas import Series
     from pandas import Series, DataFrame
     from context.resource_manager import Properties
     from view import shape_view
     from cluster import density_cluster
-    distance_c =1.299084090805 #4.45939381309 #12.3972318748 #4.5155
+    distance_c =0.97884090805 #4.45939381309 #12.3972318748 #4.5155
     from context.resource_manager import Properties
     from context import resource_manager
     from view import shape_view
     from view import plot_utils
     from cluster import density_cluster
+    from cluster import  density_cluster_dpc
     if os.path.exists(resource_manager.Properties.getDefaultDataFold()+"result/test"):
         shutil.rmtree(resource_manager.Properties.getDefaultDataFold()+"result/test")
     id = np.load(Properties.getRootPath() + "/data/cache/"+name+"/id.npy")
@@ -238,7 +239,7 @@ if __name__ == '__main__':
     temp[np.isnan(temp)] = stand
     temp = temp.min(axis=0)
     next_distance_c = np.std(temp)
-    pile_id = density_cluster.show_threshold(id_index, index_id, distance, distance_c, next_distance_c)
+    pile_id = density_cluster.show_threshold(id_index, index_id, distance, distance_c, next_distance_c,dataset=name)
     log.debug(pile_id)
     density_cluster.show_cluster(index_id, data, distance_c, pile_id)
     rho_id = density_cluster.rho_function(index_id, distance, distance_c=distance_c)
