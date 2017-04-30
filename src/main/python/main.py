@@ -61,11 +61,11 @@ def get_threshold(name='default'):
     # data=density_cluster.binary_array(data)
     # shape_view.pandas_view_record((data))
     threshold=density_cluster.cluster(id,data,dataset=name)
-    if not os.path.exists(Properties.getDefaultDataFold()+"/csv/"+name):
+    if not os.path.exists(Properties.getDefaultDataFold()+"/csv/"+name+"/"+resource_manager.Properties.name_str_static()):
         #f=open(Properties.getDefaultDataFold()+"/csv/threshold.csv","w")
         #f.close()
-        os.makedirs(Properties.getDefaultDataFold()+"/csv/"+name)
-    threshold.to_csv(Properties.getDefaultDataFold()+"/csv/"+name+"/threshold.csv")
+        os.makedirs(Properties.getDefaultDataFold()+"/csv/"+name+"/"+resource_manager.Properties.name_str_static())
+    threshold.to_csv(Properties.getDefaultDataFold()+"/csv/"+name+"/"+resource_manager.Properties.name_str_static()+"/threshold.csv")
 
 
 
@@ -76,22 +76,23 @@ def experiment(name="path"):
         log.warn("using value:"+str(name))
     except:
         log.warn("using defualt value:"+str(name))
+    save_name=resource_manager.Properties.name_str_static()
     log.warn(resource_manager.Properties.name_str_static())
     save(name=name)
     get_threshold(name=name)
+    record_expriment(name,save_name)
 
 
-
-def record_expriment(name='path'):
+def record_expriment(name='path',save_name='default'):
     from context.resource_manager import Properties
     from context import resource_manager
     from view import shape_view
 
     from cluster import density_cluster
-    if os.path.exists(resource_manager.Properties.getDefaultDataFold()+"result/temp"+resource_manager.Properties.name_str_static() + resource_manager.getSeparator()):
-        shutil.rmtree(resource_manager.Properties.getDefaultDataFold()+"result/temp"+resource_manager.Properties.name_str_static() + resource_manager.getSeparator())
+    if os.path.exists(resource_manager.Properties.getDefaultDataFold()+"result/temp/"+resource_manager.Properties.name_str_static() + resource_manager.getSeparator()):
+        shutil.rmtree(resource_manager.Properties.getDefaultDataFold()+"result/temp/"+resource_manager.Properties.name_str_static() + resource_manager.getSeparator())
     threshold=pandas.read_csv(Properties.getDefaultDataFold()+"/csv/"+name+"/"+resource_manager.Properties.name_str_static()+"/threshold.csv")
-    save_plot(threshold)
+    save_plot(threshold,save_name)
     d_c=np.asarray(threshold['d_c'].values)
     path = resource_manager.Properties.getDefaultDataFold() + resource_manager.getSeparator() + "result" + resource_manager.getSeparator() + name+"/"+resource_manager.Properties.name_str_static()
     log.debug(threshold['cluster'].sort_values(ascending=False))
@@ -100,9 +101,9 @@ def record_expriment(name='path'):
     log.warn("finished")
 
 
-def save_plot(threshold):
+def save_plot(threshold,name='default'):
     from view import plot_utils
-    path=resource_manager.Properties.getDefaultDataFold()+resource_manager.getSeparator()+"result/temp"+resource_manager.getSeparator()+resource_manager.Properties.name_str_static() + resource_manager.getSeparator()+"threshold.png"
+    path=resource_manager.Properties.getDefaultDataFold()+"result/temp/"+  name + resource_manager.getSeparator()+"threshold.png"
     plot_utils.save_scatter_diagram(None,x=threshold['d_c'].values,y=threshold['H'].values,x_label='delta',y_label='H',title='threshold scatter figure',path=path)
     plot_utils.plot_scatter_diagram(None,x=threshold['d_c'].values,y=threshold['H'].values,x_label='delta',y_label='H',title='threshold scatter figure')
     plot_utils.plot_scatter_diagram(None, x=threshold['H'].values, y=threshold['d_c'].values, x_label='delta',
@@ -126,7 +127,6 @@ if __name__ == '__main__':
 
     """
     delta_index=Series(id,index=id,dtype=np.float)
-
     i=0
     order_id=Series(result[:,0],index=id_index.values)
     # to find the rho_j>rho_i
@@ -136,9 +136,7 @@ if __name__ == '__main__':
     j=int(index_id[j])
     # to find the i'key
     k=str(id_index[i])
-
     delta_index[k]=int(result[i][j])
     print(delta_index)
-
     """
     # 构建delta的内容

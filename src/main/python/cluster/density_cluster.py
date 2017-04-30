@@ -414,6 +414,7 @@ def pile_brother(index_id, id_index, distance, distance_c, pile, threshold, stat
                     break
         next_pile = pile_next
         pile = list(set(pile_union(pile, pile_next)))
+
     return pile
 
 
@@ -423,13 +424,15 @@ def pile_children(index_id, id_index, distance, distance_c, pile, rho_id, delta_
     while len(pile) != pre:
         pre = len(pile)
         pile_next = []
-
+        next_pile.sort(key=lambda v:rho_id[v],reverse=True)
+        last=0
         for l in next_pile:
             ll = index_id[l]
             p = find_pile_member(id_index, distance[ll], distance_c)
             delta_id = delta_random_function(rho_id, delta_id, p, l)
-            #s = str(rho_id[delta_id[l]]) + "/" + delta_id[l]
-            if len(p) <= (rho_id[delta_id[l]]):
+            last=(rho_id[delta_id[l]]+last)/2
+            s = str(rho_id[delta_id[l]]) + "/" + delta_id[l]
+            if len(p) <= rho_id[delta_id[l]]:
                 lll = pile_sub(p, pile)
                 pile_next.extend(lll)
                 if state:
@@ -437,6 +440,7 @@ def pile_children(index_id, id_index, distance, distance_c, pile, rho_id, delta_
 
         next_pile = pile_next
         pile = list(set(pile_union(pile, pile_next)))
+
     return pile, delta_id
 
 
@@ -563,7 +567,7 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
     # 取得最小的聚类聚类标准，通过求非1的最小值
     pile_max = rho_id.mean()
     # pile_max = stats.gmean(rho_id.values)
-    pile_min = get_next_distance_c(rho_id, 2) + 1
+    pile_min = get_next_distance_c(rho_id, 1) + 1
     if pile_min > pile_max:
         pile_min = math.floor(pile_max)
     pile_max = math.ceil(pile_max)
@@ -578,10 +582,14 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
     # remove the element 标志不用处理
     # 第i个数据点
     i = index_id[i_id]
+    # bug，pile的顺序
     pile = find_pile_member(id_index, distance[i], distance_c)
-
+    #log.debug((str(len(pile))+"   %%%%%   "+str(pile)))
+    pile.sort(key=lambda v:rho_id[v],reverse=True)
     delta_id = delta_random_function(rho_id,delta_id, pile, i_id)
     pile, delta_id = pile_children(index_id, id_index, distance, distance_c, pile, rho_id, delta_id)
+    pile.sort(key=lambda v:rho_id[v],reverse=True)
+    #log.debug((str(len(pile))+"   %%%%%   "+str(pile)))
     # 对data_id和pile_id表，进行处理标识
     data_id.ix[i_id, 'pile'] = p_id
     # pile_id.ix[p_id,'state'] = pile
@@ -598,6 +606,7 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
     # delta_id, data_index = delta_function(id_index, index_id, rho_id, distance)
     static_distance_c = distance_c
     while True:
+        #log.debug(pile_id)
         p_id = p_id + 1
         rho_id_tag = rho_id_tag.sort_values(ascending=False)
         pile_id = pile_id.reset_index(drop=True)
@@ -606,7 +615,6 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
             # 控制是否进行无离群点考虑
             # pile_id=pile_to_pile(outlier_list,index_id, id_index, distance, distance_c, pile_id, pile_min)
             log.info("do job on outliers")
-            log.debug(pile_id)
             outlier_list = []
             pile_id_size = len(pile_id)
             for ii in range(pile_id_size):
@@ -642,8 +650,10 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
         i_id = rho_id_tag.index[0]
         i = index_id[i_id]
         pile = find_pile_member(id_index, distance[i], distance_c)
+        pile.sort(key=lambda v:rho_id[v],reverse=True)
         delta_id = delta_random_function(rho_id,delta_id, pile, i_id)
         pile, delta_id = pile_children(index_id, id_index, distance, distance_c, pile, rho_id, delta_id)
+        pile.sort(key=lambda v:rho_id[v],reverse=True)
         rho_set_tag(rho_id_tag, pile)
         next = 0
         # 假设当前是新类
@@ -658,10 +668,22 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
                 # 不存在交集的情况
                 next += 1
                 continue
-            elif len(intersection) > pile_min:
+            elif len(intersection) > 0:
                 # inter=pile_intersection(pile,pre)
                 # if len(pile_brother(index_id, id_index, distance, distance_c, inter, pile_max)) < pile_max:
                 # 存在交集，而且交集数量已经达到，聚类数
+                #log.warning(pile_brother(index_id, id_index, distance, distance_c, intersection, pile_min, state=True))
+                #log.fatal(str(len(pile_brother(index_id, id_index, distance, distance_c, intersection, pile_min, state=True)))+"\t"+str(len(intersection)))
+                if(len(pile_brother(index_id, id_index, distance, distance_c, intersection, pile_min, state=True))>len(intersection)):
+                    pile = list(set(pile_sub(pile, intersection)))
+                    next += 1
+                    # 设置离群点
+                    # if len(pile) <= 1:
+                    if len(pile) <= pile_min:
+                        # 离群点的发现
+                        outlier = True
+                        break
+                    continue
                 state = False
                 p_id = pile_id.loc[next, 'p_id']
                 pile = list(set(pile_union(pile, pre)))
@@ -811,7 +833,7 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
             clusterRecorder.setValue(str(cr_j), 'end', Properties.name_str_HMS())
             save_show_cluster(index_id, data, distance_c, pile_id)
             start_time = Properties.name_str_HMS()
-
+            clusterRecorder.save()
         pre = e
         # jarge_now = jarge_now + 1
         # jarge_pre = jarge_now
@@ -919,7 +941,7 @@ def save_show_cluster(index_id, data, distance_c, pile_id):
         l = pile_id.iloc[m]['pile']
         # size=pile_id.irow(m)['size']
         size = pile_id.iloc[m]['size']
-        if size >= 1 and i < 15:
+        if size > 1:
             for node in l:
                 index = index_id[node]
                 x.append(data[index][0])
@@ -934,6 +956,9 @@ def save_show_cluster(index_id, data, distance_c, pile_id):
                 label.append(0)
     plot_utils.save_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label,
                                     path=path)
+    plot_utils.save_all_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label,
+                                    path=path)
+
     # plot_utils.plot_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label)
     log.debug(pile_id)
     try:
@@ -960,7 +985,7 @@ def show_cluster(index_id, data, distance_c, pile_id):
         l = pile_id.iloc[m]['pile']
         # size=pile_id.irow(m)['size']
         size = pile_id.iloc[m]['size']
-        if size >= 1 and i < 15:
+        if size > 1:
             for node in l:
                 index = index_id[node]
                 x.append(data[index][0])
@@ -976,7 +1001,7 @@ def show_cluster(index_id, data, distance_c, pile_id):
 
     plot_utils.plot_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label)
 
-    log.debug(pile_id)
+    log.debug(label)
 
 
 def binary_array(data):
@@ -1004,8 +1029,7 @@ def cluster(id, data, dataset):
     # delta_id, data_id = delta_function(id_index, index_id, rho_id, distance)
     # gamma=rho*delta
     threshold = DataFrame([], columns=['H', 'd_c', 'cluster'])
-    threshold = ent_dc_step_by_step(id_index, index_id, data, threshold=threshold, distance=distance,
-                                    distance_c=distance_c, dataset=dataset)
+    threshold = ent_dc_step_by_step(id_index, index_id, data, threshold=threshold, distance=distance, distance_c=distance_c, dataset=dataset)
     r = threshold
     # log.debug("rho:\n" + str(rho))
     log.debug("threshold\n" + str(DataFrame(threshold)))
@@ -1022,7 +1046,7 @@ class ClusterRecorder:
         self.dataset = dataset
         try:
             self.recorder_csv = pandas.read_csv(
-                Properties.getDefaultDataFold() + "/csv/recorder_csv_" + self.dataset + ".csv")
+                Properties.getDefaultDataFold() + "/csv/recorder_csv_" + self.dataset + ".csv",index_col=0)
         except:
             self.recorder_csv = DataFrame([], columns=['id', 'start', 'end', 'd_c', 'max_distance_c', 'dataset',
                                                        'pile_size', 'H', 'note'])

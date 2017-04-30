@@ -1,4 +1,7 @@
 package edu.muc.util;
+/**
+ * source refer:https://github.com/alibaba/yugong/blob/master/src/main/java/com/taobao/yugong/common/utils/LikeUtil.java
+ */
 
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -13,23 +16,28 @@ import com.google.common.collect.MigrateMap;
 
 public class LikeUtil {
 
-    public static String[]              regexSpecialChars = { "<", ">", "^", "$", "\\", "/", ";", "(", ")", "?", ".",
-            "*", "[", "]", "+", "|"                      };
-    public static String                escapse           = "\\";
+    public static String[] regexSpecialChars = {"<", ">", "^", "$", "\\", "/", ";", "(", ")", "?", ".",
+            "*", "[", "]", "+", "|"};
+    public static String escapse = "\\";
 
-    private static Map<String, Pattern> patterns          = MigrateMap.makeComputingMap(new MapMaker(),
-                                                              new Function<String, Pattern>() {
+    private static Map<String, Pattern> patterns = MigrateMap.makeComputingMap(new MapMaker(),
+            new Function<String, Pattern>() {
 
-                                                                  public Pattern apply(String pattern) {
-                                                                      try {
-                                                                          return Pattern.compile(buildPattern(pattern,
-                                                                              escapse),
-                                                                              Pattern.CASE_INSENSITIVE);
-                                                                      } catch (Throwable e) {
-                                                                          throw new Exception(e);
-                                                                      }
-                                                                  }
-                                                              });
+                public Pattern apply(String pattern) {
+                    try {
+                        return Pattern.compile(buildPattern(pattern,
+                                escapse),
+                                Pattern.CASE_INSENSITIVE);
+                    } catch (Throwable e) {
+                        //TODO
+                        e.printStackTrace();
+                        //throw new Exception(e);
+                    }
+                    //TODO
+                    //refer:https://github.com/alibaba/yugong/blob/master/src/main/java/com/taobao/yugong/common/utils/LikeUtil.java
+                    return null;
+                }
+            });
 
     public static boolean isMatch(String pattern, String value) {
         if (StringUtils.equalsIgnoreCase(pattern, value)) {

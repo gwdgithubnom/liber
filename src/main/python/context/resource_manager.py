@@ -43,9 +43,10 @@ class Properties:
     @classmethod
     def name_str_FULL(cls):
         return time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
+
     @classmethod
-    def name_str_static(self):
-        return Properties.timename
+    def name_str_static(cls):
+        return cls.timename
 
     @classmethod
     def name_str_HMS(cls):
