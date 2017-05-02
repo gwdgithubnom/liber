@@ -46,7 +46,7 @@ public class CsvFilePrinter{
     }
 
     public static void main(String[] args) throws Exception {
-        String csvFile = "C:\\Users\\齐析屿\\Desktop\\gwd-accuracy rate\\0.005.csv";
+        String csvFile = "0.005.csv";
         CsvFilePrinter print = new CsvFilePrinter(csvFile,true);
 
         for(int i=0;i<10;i++){

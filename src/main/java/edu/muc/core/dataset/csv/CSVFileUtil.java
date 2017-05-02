@@ -8,18 +8,12 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.NotActiveException;
-import java.lang.reflect.Array;
-import java.nio.charset.Charset;
 
-import com.Ostermiller.*;
+
+
 
 import com.csvreader.CsvReader;
-import com.csvreader.CsvWriter;
 
-import org.apache.commons.lang.time.DateFormatUtils;
-
-import com.Ostermiller.util.CSVPrint;
 import com.Ostermiller.util.CSVPrinter;
 
 public class CSVFileUtil {
@@ -30,7 +24,7 @@ public class CSVFileUtil {
 		// size
 		HashMap<String, String> typeSizes = new HashMap<>();
 		// HashMap<Integer, String> map_line_num=new HashMap<>();
-		String filePath = "C:\\Users\\齐析屿\\Desktop\\gwd-accuracy rate\\2017-04-13-16-28\\0.005.csv";
+		String filePath = "0.005.csv";
 
 		try {
 			// 创建CSV读对象
@@ -42,7 +36,7 @@ public class CSVFileUtil {
 			// String[] head=csvReader.getHeaders();
 			int n = 0;
 			CSVPrinter csvPrint = new CSVPrinter(new FileWriter(
-					"C:\\Users\\齐析屿\\Desktop\\gwd-accuracy rate\\2017-04-13-16-28\\0.005-解析.csv", false));
+					"0.005-解析.csv", false));
 			while (csvReader.readRecord()) {
 
 				// 读一整行

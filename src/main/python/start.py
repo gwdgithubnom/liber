@@ -1,4 +1,7 @@
 import collections
+from scipy.stats import norm
+import matplotlib.pyplot as plt
+import numpy as np
 
 def readFile(file="input.txt"):
     try:
@@ -29,17 +32,54 @@ def readFile(file="input.txt"):
         else:
             print(k + " " + str(result[k]))
     return r
+    # main.save()
+    import numpy as np
 
+    a = np.random.normal(size=1000)
+
+    bins = np.arange(-8, 9)
+    # bins = np.array([-1.2,2.3,3.1,3.3,4.2,4.5,4.7,5])
+    print(a)
+    print(bins)
+
+    histogram = np.histogram(a, bins=bins, normed=True)[0]
+
+    bins = 0.5*(bins[1:] + bins[:-1])
+
+    from scipy import stats
+
+    b = stats.norm.pdf(bins)  # norm是正态分布
+    import matplotlib.pyplot as plt
+    plt.plot(bins, b)
+    plt.show()
+    print(b)
+    #plt.plot(bins, histogram)
+    plt.plot(bins, b)
+    plt.show()
+def _calc_ent(probs):
+    """
+    计算信息熵
+    :param probs: numpy结构
+    :return: 返回probs的信息熵
+    """
+    ent = - probs.dot(np.log2(probs))
+    return ent
+
+def gauss_function(data=np.array([1,2,3,4,5,6,7,8])):
+    random_sample=data
+
+    # Generate an array of 200 random sample from a normal dist with
+    # mean 0 and stdv 1
+    #random_sample = norm.rvs(loc=0,scale=1,size=200)
+    sample=data
+    from scipy import stats
+    import numpy as np
+    from scipy.stats import norm
+    mu, std = norm.fit(data)
+    print(mu)
+    print(std)
 
 if __name__ == '__main__':
-    # main.save()
-    from pandas import Series
-    index_id=Series(['1','2','3','4'],index=['1','2','3','4'])
-    ll=index_id.values
-    id_index=Series(ll,index=index_id.index)
-    print(id_index)
-    index_id[1]=333
-
-    id_index.drop(labels=['1'],axis=0)
-    print(index_id)
-    print(id_index)
+    t=np.array([1,2,3,4,5])
+    for i in range(0,3):
+        print(i)

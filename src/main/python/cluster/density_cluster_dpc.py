@@ -210,7 +210,7 @@ def compute_distance(data=np.array([])):
             result[i][j] = k;
             result[j][i] = k;
         result[i][i] = np.nan
-    np.save(Properties.getRootPath() + "/data/cache/distance/data.npy", result)
+    # np.save(Properties.getRootPath() + "/data/cache/distance/data.npy", result)
     return result
 
 

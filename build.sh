@@ -5,6 +5,7 @@ echo "starting to running clustering module"
 #`python  __init__.py`
 #dataset=("flame" "path" "aggregation"  "unblance"  "path_integer" "compound" "d31" "r15" "spiral" "pathbased" "jain")
 dataset=("flame" "path" "aggregation"  "unblance"  "path_integer" "compound"  "spiral" "pathbased" )
+dataset=("path" "flame" "unblance" "aggregation")
 for element in ${dataset[@]}
 do
     echo "running clustring about dataset '$element' "

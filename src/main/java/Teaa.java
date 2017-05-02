@@ -1,37 +1,41 @@
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
 
-public class Teaa {
-    public static void main(String[] args) throws IOException {
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        for (;;) {
-            String s = in.readLine();
-            if (s==null) break;
-            Stack<String> tks = new Stack<String>();
-            tks.addAll(Arrays.asList(s.trim().split("[ \t]+")));
-            if (tks.peek().equals("")) continue;
-            try {
-                double r = evalrpn(tks);
-                if (!tks.empty()) throw new Exception();
-                System.out.println(r);
-            }
-            catch (Exception e) {System.out.println("error");}
-        }
+public class CShape {
+    public double GetArea(double x,double y){
+        double s;
+        s=x*y;
+        System.out.println(s);
+        return 0;
     }
 
-    private static double evalrpn(Stack<String> tks) throws Exception {
-        String tk = tks.pop();
-        double x,y;
-        try {x = Double.parseDouble(tk);}
-        catch (Exception e) {
-            y = evalrpn(tks);  x = evalrpn(tks);
-            if      (tk.equals("+"))  x += y;
-            else if (tk.equals("-"))  x -= y;
-            else if (tk.equals("*"))  x *= y;
-            else if (tk.equals("/"))  x /= y;
-            else throw new Exception();
-        }
-        return x;
-    }
 }
 
+
+public class CRectangle extends CShape{
+    public static void main(String arg[]){
+        CRectangle i=new CRectangle();
+        System.out.println("请输入长和宽");
+        Scanner sc=new Scanner(System.in);
+        double a=sc.nextDouble();
+        double b=sc.nextDouble();
+        i.GetArea(a, b);
+    }
+
+}
+
+public class Teaa extends CShape{
+    public double GetArea(double x){
+        double s;
+        s=3.14*x*x;
+        System.out.println(s);
+        return 0;
+    }
+    public static void main(String arg[]){
+        System.out.println("请输入半径");
+        Scanner cs=new Scanner(System.in);
+        double r=cs.nextDouble();
+        Teaa b=new Teaa();
+        b.GetArea(r);
+    }
+
+}

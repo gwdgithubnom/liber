@@ -385,8 +385,8 @@ def pile_intersection(pile1, pile2):
     :param pile2:
     :return:
     """
-    return list(set(pile1) & set(pile2))
-
+    #return list(set(pile1) & set(pile2))
+    return list(set(pile1).intersection(set(pile2)))
 
 def pile_union(pile1, pile2):
     return list(set(pile1).union(set(pile2)))
@@ -398,12 +398,13 @@ def rho_set_tag(rho_id, pile):
     return rho_id
 
 
-def pile_brother(index_id, id_index, distance, distance_c, pile, threshold, state=False):
+def pile_brother(index_id, id_index, distance, distance_c, pile, rho_id, threshold, state=False):
     pre = 0
     next_pile = pile
     while len(pile) != pre:
         pre = len(pile)
         pile_next = []
+        next_pile = sorted(next_pile, key=lambda v: rho_id[v], reverse=True)
         for l in next_pile:
             l = index_id[l]
             p = find_pile_member(id_index, distance[l], distance_c)
@@ -414,7 +415,7 @@ def pile_brother(index_id, id_index, distance, distance_c, pile, threshold, stat
                     break
         next_pile = pile_next
         pile = list(set(pile_union(pile, pile_next)))
-
+    pile = sorted(pile, key=lambda v: rho_id[v], reverse=True)
     return pile
 
 
@@ -424,13 +425,14 @@ def pile_children(index_id, id_index, distance, distance_c, pile, rho_id, delta_
     while len(pile) != pre:
         pre = len(pile)
         pile_next = []
-        next_pile.sort(key=lambda v:rho_id[v],reverse=True)
-        last=0
+        # next_pile.sort(key=lambda v:rho_id[v],reverse=True)
+        next_pile = sorted(next_pile, key=lambda v: rho_id[v], reverse=True)
+        last = 0
         for l in next_pile:
             ll = index_id[l]
             p = find_pile_member(id_index, distance[ll], distance_c)
             delta_id = delta_random_function(rho_id, delta_id, p, l)
-            last=(rho_id[delta_id[l]]+last)/2
+            last = (rho_id[delta_id[l]] + last) / 2
             s = str(rho_id[delta_id[l]]) + "/" + delta_id[l]
             if len(p) <= rho_id[delta_id[l]]:
                 lll = pile_sub(p, pile)
@@ -440,7 +442,7 @@ def pile_children(index_id, id_index, distance, distance_c, pile, rho_id, delta_
 
         next_pile = pile_next
         pile = list(set(pile_union(pile, pile_next)))
-
+    pile = sorted(pile, key=lambda v: rho_id[v], reverse=True)
     return pile, delta_id
 
 
@@ -456,23 +458,26 @@ def numpy_find_min(data, base):
     return base - 1
 
 
-def outlier_to_pile(outlier, index_id, id_index, distance, distance_c, next_distance_c, border, pile_id, threshold,pile_min):
+def outlier_to_pile(outlier, index_id, id_index, distance, distance_c, next_distance_c, border, pile_id, rho_id,
+                    threshold):
     # TODO to merge pile
+    pile_id = pile_id.sort_values('size', ascending=False)
     pile_id = pile_id.reset_index(drop=True)
     pile_id_size = len(pile_id)
     state = False
     temp = distance_c
+    jarge_state = True
     while True:
-        pile = pile_brother(index_id, id_index, distance, temp, outlier, threshold, state=True)
+        pile = pile_brother(index_id, id_index, distance, temp, outlier, rho_id, threshold, state=True)
         # if len(pile)>pile_min:
         jarge_point = []
         jarge_point_next = []
         jarge_size = threshold
-        jarge_state = True
+
         for ii in range(pile_id_size):
             jarge_pile = pile_id.ix[ii, 'pile']
             jarge = pile_intersection(jarge_pile, pile)
-            if len(jarge) >= jarge_size:
+            if len(jarge) >= jarge_size :
                 jarge_point.append(ii)
                 jarge_size = len(jarge)
                 state = True
@@ -538,7 +543,104 @@ def pile_to_pile(pile1, pile2, rho_id):
         return pile1, False
 
 
-def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, next_distance_c):
+def pile_check(data, dataset, level, index_id, id_index, distance, distance_c,rho_id, delta_id, pile_id, threshold):
+    pile_id = pile_id.sort_values('size', ascending=False)
+    pile_id = pile_id.reset_index(drop=True)
+    log.info("running pile debug check..")
+    state=False
+    i=0
+    while len(pile_id)>i:
+        check = pile_id.loc[i, 'pile']
+        pile_id = pile_id.drop(i)
+        pile_id = pile_id.sort_values('size', ascending=False)
+        pile_id = pile_id.reset_index(drop=True)
+        #p1, delta_id = pile_children(index_id, id_index, distance, distance_c, check, rho_id, delta_id)
+        p1=pile_brother(index_id, id_index, distance, distance_c, check, rho_id, threshold, state=False)
+        j=0
+        while len(pile_id)>j:
+            pre = pile_id.loc[j, 'pile']
+            p2=pile_brother(index_id, id_index, distance, distance_c, pre, rho_id, threshold, state=False)
+            intersection = pile_intersection(p1, p2)
+
+            if len(intersection) > threshold or len(intersection)>=len(check) or len(intersection)>=len(pre):
+                check = list(set(pile_union(check, pre)))
+                p1=pile_brother(index_id, id_index, distance, distance_c, check, rho_id, threshold, state=False)
+                pile_id = pile_id.drop(j)
+                pile_id = pile_id.reset_index(drop=True)
+                i=0
+                j=0
+                state=True
+            j+=1
+
+
+        pile_id = pile_id.append(
+            DataFrame([dict(pile=check, p_id=len(pile_id), size=len(check), outlier=False)]),ignore_index=True)
+        pile_id = pile_id.sort_values('size', ascending=False)
+        pile_id = pile_id.reset_index(drop=True)
+        i+=1
+
+    save_show_cluster(index_id, data, distance_c, pile_id, dataset=dataset, level="DEBUG",
+                      level_info="final merge pile")
+    return pile_id, delta_id
+
+
+def debug_pile_check(data, dataset, level, index_id, id_index, distance, distance_c, rho_id, delta_id, pile_id,
+                     threshold):
+    pile_id = pile_id.sort_values('size', ascending=False)
+    pile_id = pile_id.reset_index(drop=True)
+    log.info("running pile debug check..")
+    state=False
+    i=0
+    import time
+    while len(pile_id)>i:
+        check = pile_id.loc[i, 'pile']
+        pile_id = pile_id.drop(i)
+        pile_id = pile_id.sort_values('size', ascending=False)
+        pile_id = pile_id.reset_index(drop=True)
+        #p1, delta_id = pile_children(index_id, id_index, distance, distance_c, check, rho_id, delta_id)
+        p1=pile_brother(index_id, id_index, distance, distance_c, check, rho_id, threshold, state=False)
+        j=0
+        while len(pile_id)>j:
+            pre = pile_id.loc[j, 'pile']
+            log.debug(time.time())
+            log.warn("---- aaa --- "+str(j)+"\t"+str(len(p1)))
+            p2=pile_brother(index_id, id_index, distance, distance_c, pre, rho_id, threshold, state=False)
+            log.warn("bbb "+str(len(p2)))
+            intersection = pile_intersection(p1, p2)
+            log.warn("ccc "+str(len(pile_id))+"\t"+str(len(intersection)))
+            if len(intersection) > threshold or len(intersection)>=len(check) or len(intersection)>=len(pre):
+                check = list(set(pile_union(check, pre)))
+                p1=pile_brother(index_id, id_index, distance, distance_c, check, rho_id, threshold, state=False)
+                pile_id = pile_id.drop(j)
+                pile_id = pile_id.reset_index(drop=True)
+                i=0
+                j=0
+                state=True
+            j+=1
+            log.warn("ddd "+str(i)+"\t"+str(len(p1)))
+            log.debug(time.time())
+        pile_id = pile_id.append(
+            DataFrame([dict(pile=check, p_id=len(pile_id), size=len(check), outlier=False)]),ignore_index=True)
+        pile_id = pile_id.sort_values('size', ascending=False)
+        pile_id = pile_id.reset_index(drop=True)
+        if  state:
+            save_show_cluster(index_id, data, distance_c, pile_id, dataset=dataset, level="DEBUG",
+                          level_info="merge pile")
+        i+=1
+        log.debug(pile_id)
+    save_show_cluster(index_id, data, distance_c, pile_id, dataset=dataset, level="DEBUG",
+                      level_info="final merge pile")
+    return pile_id, delta_id
+
+def pile_rho_values(pile,rho_id,rho_id_border,rho_id_border_mean):
+    sort_value=0
+    for l in pile:
+        sort_value=rho_id[l]+rho_id_border[l]*0.8+rho_id_border_mean[l]*0.8*0.8
+    return  sort_value
+
+
+def pile_function(pile_id, id_index, index_id, data, distance, distance_c, next_distance_c, dataset="default",
+                  level="INFO"):
     # 初始化队列
     log.info("staring running pile_function")
     rho_id = rho_function(index_id, distance, distance_c=distance_c)
@@ -548,11 +650,21 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
     temp[np.isnan(temp)] = 0
     stand = np.std(temp)
     temp = distance.copy()
+    cache=temp.ravel()
     temp[np.isnan(temp)] = stand
     # temp=temp.mid(axis=0)
     # next_distance_c=np.std(temp)
     temp = np.min(temp, axis=0)
+    border_mean=np.mean(temp,axis=0)
     border = np.max(temp)
+
+
+    percent = 2.0
+    position = int(index_id.shape[0] * (index_id.shape[0] + 1) / 2 * percent / 100)
+    border_ava = sorted(cache)[position * 2 + index_id.shape[0]]
+
+    rho_id_border=rho_function(index_id, distance, distance_c=border)
+    rho_id_border_mean=rho_function(index_id, distance, distance_c=border_mean)
     # delta_id, data_id = delta_function(id_index, index_id, rho_id, distance)
     # 队列进行重排续
     rho_id = rho_id.sort_values(ascending=False)
@@ -584,14 +696,16 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
     i = index_id[i_id]
     # bug，pile的顺序
     pile = find_pile_member(id_index, distance[i], distance_c)
-    #log.debug((str(len(pile))+"   %%%%%   "+str(pile)))
-    pile.sort(key=lambda v:rho_id[v],reverse=True)
-    delta_id = delta_random_function(rho_id,delta_id, pile, i_id)
+    # log.debug((str(len(pile))+"   %%%%%   "+str(pile)))
+    # pile.sort(key=lambda v:rho_id[v],reverse=True)
+    # pile=sorted(pile,key=lambda v:rho_id[v])
+    delta_id = delta_random_function(rho_id, delta_id, pile, i_id)
     pile, delta_id = pile_children(index_id, id_index, distance, distance_c, pile, rho_id, delta_id)
-    pile.sort(key=lambda v:rho_id[v],reverse=True)
-    #log.debug((str(len(pile))+"   %%%%%   "+str(pile)))
+    # pile.sort(key=lambda v:rho_id[v],reverse=True)
+    # pile=sorted(pile,key=lambda v:rho_id[v])
+    # log.debug((str(len(pile))+"   %%%%%   "+str(pile)))
     # 对data_id和pile_id表，进行处理标识
-    data_id.ix[i_id, 'pile'] = p_id
+    # data_id.ix[i_id, 'pile'] = p_id
     # pile_id.ix[p_id,'state'] = pile
     rho_set_tag(rho_id_tag, pile)
     # m = len(pile)
@@ -606,8 +720,8 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
     # delta_id, data_index = delta_function(id_index, index_id, rho_id, distance)
     static_distance_c = distance_c
     while True:
-        #log.debug(pile_id)
-        p_id = p_id + 1
+        # log.debug(pile_id)
+
         rho_id_tag = rho_id_tag.sort_values(ascending=False)
         pile_id = pile_id.reset_index(drop=True)
         value = rho_id_tag[0]
@@ -617,26 +731,47 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
             log.info("do job on outliers")
             outlier_list = []
             pile_id_size = len(pile_id)
+            outlier_list_temp = []
             for ii in range(pile_id_size):
                 if pile_id.loc[ii, 'size'] >= pile_max or not pile_id.loc[ii, 'outlier']:
                     continue
                 elif pile_id.loc[ii, 'outlier']:
                     pile_id_pile = pile_id.ix[ii, 'pile']
                     pile_id = pile_id.drop(ii)
+                    # if len(pile_id_pile) == 1:
+                    #     outlier_list_temp.extend(pile_id_pile)
+                    # else:
+                    #     outlier_list.append(pile_id_pile)
                     outlier_list.append(pile_id_pile)
 
             pile_id = pile_id.reset_index(drop=True)
             # i=0
             o_o = []
+
+            outlier_list = sorted(outlier_list, key=lambda v: pile_rho_values(v,rho_id,rho_id_border,rho_id_border_mean), reverse=True)
+
+            # for l in outlier_list:
+            #     log.debug(str(l)+"\n"+str(pile_rho_values(l,rho_id,rho_id_border,rho_id_border_mean))+"\t"+str(rho_id_border_mean[l])+"\t"+str(rho_id[l])+"\t"+str(rho_id_border_mean[l]))
+            # exit(1)
+
             for ll in outlier_list:
                 # 以pile_min进行评估收敛性
                 pile_id = outlier_to_pile(ll, index_id, id_index, distance, distance_c, next_distance_c, border,
-                                          pile_id,
-                                          pile_max, pile_min)
+                                          pile_id, rho_id,
+                                          pile_max)
+                if level is "DEBUG":
+                    save_show_cluster(index_id, data, distance_c, pile_id, dataset=dataset, level=level,
+                                      level_info="merge outlier")
 
-                # log.debug(str(len(outlier_list))+"/"+str(i))
                 i = i + 1
             # pile_id = pile_id.append(DataFrame([dict(pile=pile, p_id=-1, size=len(pile), outlier=True)], index=[p_id]))
+            if level is not "INFO":
+                pile_id, delta_id = debug_pile_check(data, dataset, level, index_id, id_index, distance, border_ava,rho_id, delta_id, pile_id, pile_max)
+            else:
+                pile_id, delta_id = pile_check(data, dataset, level, index_id, id_index, distance, border_ava,rho_id, delta_id, pile_id, pile_max)
+
+            save_show_cluster(index_id, data, distance_c, pile_id, dataset=dataset, level=level,
+                                  level_info="merge outlier")
             break
         elif value <= pile_min:
             # rho_set_tag( rho_id_tag, pile)
@@ -644,48 +779,57 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
             rho_id_tag[i_id] = 0
             # 当前是噪声
             pile_id = pile_id.append(
-                DataFrame([dict(pile=[i_id], p_id=p_id, size=1, outlier=True)], index=[p_id]))
+                DataFrame([dict(pile=[i_id], p_id=p_id, size=1, outlier=True)]),ignore_index=True)
+            pile_id = pile_id.reset_index(drop=True)
             continue
 
         i_id = rho_id_tag.index[0]
         i = index_id[i_id]
         pile = find_pile_member(id_index, distance[i], distance_c)
-        pile.sort(key=lambda v:rho_id[v],reverse=True)
-        delta_id = delta_random_function(rho_id,delta_id, pile, i_id)
+        # pile.sort(key=lambda v:rho_id[v],reverse=True)
+        delta_id = delta_random_function(rho_id, delta_id, pile, i_id)
         pile, delta_id = pile_children(index_id, id_index, distance, distance_c, pile, rho_id, delta_id)
-        pile.sort(key=lambda v:rho_id[v],reverse=True)
+        # pile.sort(key=lambda v:rho_id[v],reverse=True)
         rho_set_tag(rho_id_tag, pile)
         next = 0
         # 假设当前是新类
         state = True
         outlier = False
         pile_id = pile_id.sort_values(by='size', ascending=False)
+        if level is "DEBUG":
+            save_show_cluster(index_id, data, distance_c, pile_id, dataset=dataset, level=level,
+                              level_info="before find new cluster")
+        # debug_show_cluster(index_id, data, distance_c, pile_id)
+        # TODO
+        # 合并得不好，合并的次数太少了，没有考虑合并后，可以继续合并的情况，参看debug2017-05-02-10-22-08信息
         while len(pile_id) > next:
             # 寻找下一个可能的堆的合并
             pre = pile_id.loc[next, 'pile']
-            intersection = pile_intersection(pile, pre)
+            p1, delta_id = pile_children(index_id, id_index, distance, distance_c, pile, rho_id, delta_id)
+            p2, delta_id = pile_children(index_id, id_index, distance, distance_c, pre, rho_id, delta_id)
+            intersection = pile_intersection(p1, p2)
+            # intersection = pile_intersection(pile, pre)
             if len(intersection) <= 0:
                 # 不存在交集的情况
                 next += 1
                 continue
-            elif len(intersection) > 0:
+            elif len(intersection) > pile_min:
                 # inter=pile_intersection(pile,pre)
                 # if len(pile_brother(index_id, id_index, distance, distance_c, inter, pile_max)) < pile_max:
                 # 存在交集，而且交集数量已经达到，聚类数
-                #log.warning(pile_brother(index_id, id_index, distance, distance_c, intersection, pile_min, state=True))
-                #log.fatal(str(len(pile_brother(index_id, id_index, distance, distance_c, intersection, pile_min, state=True)))+"\t"+str(len(intersection)))
-                if(len(pile_brother(index_id, id_index, distance, distance_c, intersection, pile_min, state=True))>len(intersection)):
-                    pile = list(set(pile_sub(pile, intersection)))
-                    next += 1
-                    # 设置离群点
-                    # if len(pile) <= 1:
-                    if len(pile) <= pile_min:
-                        # 离群点的发现
-                        outlier = True
-                        break
-                    continue
+                # log.warning(pile_brother(index_id, id_index, distance, distance_c, intersection, pile_min, state=True))
+                # log.fatal(str(len(pile_brother(index_id, id_index, distance, distance_c, intersection, pile_min, state=True)))+"\t"+str(len(intersection)))
+                # if(len(pile_brother(index_id, id_index, distance, distance_c, intersection, pile_min, state=True))>len(intersection)):
+                # pile = list(set(pile_sub(pile, intersection)))
+                # next += 1
+                # # 设置离群点
+                # # if len(pile) <= 1:
+                # if len(pile) <= pile_min:
+                #     # 离群点的发现
+                #     outlier = True
+                #     break
+                # continue
                 state = False
-                p_id = pile_id.loc[next, 'p_id']
                 pile = list(set(pile_union(pile, pre)))
                 # log.debug(pile_id)
                 pile_id = pile_id.drop(next)
@@ -707,20 +851,36 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
                     # 离群点的发现
                     outlier = True
                     break
+
+
         if state == True:
             # 对data_id和pile_id表，进行处理标识
             # data_id.ix[i_id, 'pile'] = p_id
             # m = m + len(pile)
             rho_set_tag(rho_id_tag, pile)
             pile_id = pile_id.append(
-                DataFrame([dict(pile=pile, p_id=p_id, size=len(pile), outlier=outlier)], index=[p_id]))
+                DataFrame([dict(pile=pile, p_id=p_id, size=len(pile), outlier=outlier)]),ignore_index=True)
         else:
             rho_set_tag(rho_id_tag, pile)
             pile_id = pile_id.append(
-                DataFrame([dict(p_id=p_id, pile=pile, size=len(pile), outlier=False)], index=[p_id]))
-        pile_id = pile_id.sort_values('size', ascending=False)
-        pile_id = pile_id.reset_index(drop=True)
+                DataFrame([dict(p_id=p_id, pile=pile, size=len(pile), outlier=False)]),ignore_index=True)
 
+        pile_id = pile_id.reset_index(drop=True)
+        pile_id = pile_id.sort_values('size', ascending=False)
+
+
+
+
+        if level is "DEBUG":
+            save_show_cluster(index_id, data, distance_c, pile_id, dataset=dataset, level=level,
+                              level_info=str("after find new cluster:" + str(len(pile_id))))
+        #     pile_id, delta_id = debug_pile_check(data, dataset, level, index_id, id_index, distance, distance_c, rho_id,
+        #                                          delta_id, pile_id, pile_min)
+        #     if len(pile_id)>3:
+        #          exit()
+        # else:
+        #     pile_id, delta_id = pile_check(index_id, id_index, distance, distance_c, rho_id, delta_id, pile_id,
+        #                                    pile_min)
         """
         if pile is None:
             pile_id.ix[p_id, 'size']=0
@@ -730,13 +890,12 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
 
         k = pile_id['size'].sum()
         kk = (rho_id_tag > 0).sum()
-
-
         # log.debug("this is "+str(k)+" times, there has "+str(n-m)+" element has not clustering.")
 
-    log.info("staring computing pile, in distance_c:" + str(static_distance_c) + ". pile count about:" + str(
+    log.info("end computing pile, in distance_c:" + str(static_distance_c) + ". pile count about:" + str(
         pile_id.shape[0]) + " pile_max:" + str(pile_max) + " pile_min:" + str(pile_min))
     return pile_id
+
 
 def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_c, dataset='none'):
     """
@@ -750,6 +909,7 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
     """
     # TODO modify the clustering without outlier
     i = 0
+    level = "INFO"
     N = int(index_id.shape[0])
     # next_distance_c=get_next_distance_c(distance,distance_c)
     max_distance_c = max_distance(distance, distance_c)
@@ -764,7 +924,9 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
     temp[np.isnan(temp)] = 0
     stand = np.std(temp)
     temp = distance.copy()
+
     temp[np.isnan(temp)] = stand
+
     temp = temp.min(axis=0)
     next_distance_c = np.std(temp)
 
@@ -796,11 +958,22 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
         # data = DataFrame([], columns=['gamma', 'rho', 'delta', 'pile'], index=index_id.index)
         data_id = DataFrame([], columns=['i_id', 'j_id', 'rho', 'delta', 'gamma', 'i', 'j', 'pile'],
                             index=id_index.values)
-        pile_id = pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, next_distance_c)
+        pile_id = pile_function(pile_id, id_index, index_id, data, distance, distance_c, next_distance_c, dataset)
         pile_size = pile_id['size']
         pile = pile_id.shape[0] - np.sum(pile_id['outlier'])
         # id_index, index_id
-        e = _calc_ent(pile_size.values / N)
+
+        e=[]
+        e_outlier=0
+        for x in pile_size.values:
+            if x>1:
+                e.append(x)
+            else:
+                e_outlier+=1
+        e.append(e_outlier)
+        e=np.array(e)
+        e = _calc_ent(e / N)
+
         merge = list([e, distance_c, pile])
         threshold = add_row(threshold, merge)
         jarge_now = pre - e
@@ -818,7 +991,7 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
             clusterRecorder.setValue(str(cr_j), 'note', '发现新下降时间')
             clusterRecorder.setValue(str(cr_j), 'end', Properties.name_str_HMS())
 
-            save_show_cluster(index_id, data, distance_c, pile_id)
+            save_show_cluster(index_id, data, distance_c, pile_id, dataset)
 
             cr_j = str(Properties.name_str_static() + "#" + str(i))
             # DataFrame([], columns=['id', 'start', 'end', 'd_c', 'max_distanc', 'dataset', 'pile_size', 'H','note'])
@@ -831,9 +1004,13 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
             clusterRecorder.setValue(str(cr_j), 'H', e)
             clusterRecorder.setValue(str(cr_j), 'note', '发现新下降时间')
             clusterRecorder.setValue(str(cr_j), 'end', Properties.name_str_HMS())
-            save_show_cluster(index_id, data, distance_c, pile_id)
+            save_show_cluster(index_id, data, distance_c, pile_id, dataset)
             start_time = Properties.name_str_HMS()
             clusterRecorder.save()
+            if level is "DEBUG":
+                pile_id = pile_function(pile_id, id_index, index_id, data, distance, distance_c - next_distance_c,
+                                        next_distance_c, dataset, level="DEBUG")
+                save_show_cluster(index_id, data, distance_c, pile_id, dataset, level="DEBUG")
         pre = e
         # jarge_now = jarge_now + 1
         # jarge_pre = jarge_now
@@ -866,7 +1043,7 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
     return threshold
 
 
-def show_threshold(id_index, index_id, distance, distance_c, next_distance_c, dataset='none'):
+def debug_cluster(id_index, index_id, data, distance, distance_c, next_distance_c, dataset='none',level="DEBUG"):
     i = 0
     N = int(index_id.shape[0])
     log.debug("init the distance_c:" + str(distance_c))
@@ -874,12 +1051,13 @@ def show_threshold(id_index, index_id, distance, distance_c, next_distance_c, da
     pile_id = DataFrame([], columns=['p_id', 'pile', 'size', 'outlier'])
     # delta_id, data_id = delta_function(id_index, index_id, rho_id, distance)
     # data = DataFrame([], columns=['gamma', 'rho', 'delta', 'pile'], index=index_id.index)
-    data_id = DataFrame([], columns=['j_id', 'rho', 'delta', 'gamma', 'i', 'j', 'pile'], index=id_index.values)
-    pile_id = pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, next_distance_c)
+    pile_id = pile_function(pile_id, id_index, index_id, data, distance, distance_c, next_distance_c, dataset,
+                            level=level)
     pile_size = pile_id['size']
     # pile = pile_id.shape[0] - np.sum(pile_id['outlier'])
     # id_index, index_id
     e = _calc_ent(pile_size.values / N)
+    save_show_cluster(index_id, data, distance_c, pile_id, dataset)
     log.warn(" record the data status: " + str(distance.shape) + " distance_c:" + str(
         distance_c) + " threshold:" + str(e))
 
@@ -922,15 +1100,19 @@ def _calc_ent(probs):
     return ent
 
 
-def save_show_cluster(index_id, data, distance_c, pile_id):
+def save_show_cluster(index_id, data, distance_c, pile_id, dataset="/", level="INFO", level_info='scatter figure'):
     from view import plot_utils
     from context import resource_manager
-    path = resource_manager.Properties.getDefaultDataFold() + "result" + resource_manager.getSeparator() + "temp" + resource_manager.getSeparator() + resource_manager.Properties.name_str_static() + resource_manager.getSeparator() + str(
-        distance_c) + ".png"
-    if not os.path.exists(
-                                                            resource_manager.Properties.getDefaultDataFold() + "result" + resource_manager.getSeparator() + "temp" + resource_manager.getSeparator() + resource_manager.Properties.name_str_static() + resource_manager.getSeparator()):
-        os.makedirs(
-            resource_manager.Properties.getDefaultDataFold() + "result" + resource_manager.getSeparator() + "temp" + resource_manager.getSeparator() + resource_manager.Properties.name_str_static() + resource_manager.getSeparator())
+    path = resource_manager.Properties.getDefaultDataFold() + "result" + resource_manager.getSeparator() + "temp/" + dataset + "/" + resource_manager.Properties.name_str_static() + "/"
+
+    level_path = resource_manager.Properties.getDefaultDataFold() + "result" + resource_manager.getSeparator() + "temp/" + level + "/" + resource_manager.Properties.name_str_static() + "/" + str(
+        distance_c) + "/"
+
+    if not os.path.exists(path[:path.rfind('/')]):
+        os.makedirs(path[:path.rfind('/')])
+    if not os.path.exists(level_path[:level_path.rfind('/')]):
+        os.makedirs(level_path[:level_path.rfind('/')])
+
     pile_id = pile_id.sort_values('size', ascending=False)
     x = []
     y = []
@@ -941,7 +1123,8 @@ def save_show_cluster(index_id, data, distance_c, pile_id):
         l = pile_id.iloc[m]['pile']
         # size=pile_id.irow(m)['size']
         size = pile_id.iloc[m]['size']
-        if size > 1:
+
+        if pile_id.loc[m]['outlier'] is False:
             for node in l:
                 index = index_id[node]
                 x.append(data[index][0])
@@ -954,54 +1137,65 @@ def save_show_cluster(index_id, data, distance_c, pile_id):
                 x.append(data[index][0])
                 y.append(data[index][1])
                 label.append(0)
-    plot_utils.save_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label,
-                                    path=path)
-    plot_utils.save_all_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label,
-                                    path=path)
+    if level is "SEE":
+        plot_utils.plot_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title=level_info, label=label)
+    if level is "DEBUG":
+        # plot_utils.save_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label,path=level_path+resource_manager.Properties.name_str_FULL()+".png")
+
+        plot_utils.save_all_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title=level_info, label=label,
+                                            path=level_path + resource_manager.Properties.name_str_FULL() + ".png")
+    else:
+        plot_utils.save_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label,
+                                        path=path + str(
+                                            distance_c) + ".png")
+        plot_utils.save_all_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure',
+                                            label=label,
+                                            path=path + str(
+                                                distance_c) + ".png")
 
     # plot_utils.plot_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label)
-    log.debug(pile_id)
+    log.debug(("\n") + str(pile_id))
     try:
-        p = Properties.getDefaultDataFold() + "/csv/" + resource_manager.Properties.name_str_static() + "/" + str(
+        p = Properties.getDefaultDataFold() + "/csv/" + dataset + "/" + resource_manager.Properties.name_str_static() + "/" + str(
             distance_c) + ".csv"
         pile_id.to_csv(p)
     except:
-        if not os.path.exists(p):
+        if not os.path.exists(p[:p.rfind('/')]):
             pp = p.rfind('/')
             os.makedirs(p[:pp])
         os.mknod(p)
         pile_id.to_csv(p)
 
 
-def show_cluster(index_id, data, distance_c, pile_id):
-    from view import plot_utils
-    pile_id = pile_id.sort_values('size', ascending=False)
-    x = []
-    y = []
-    label = []
-    i = 1
-    for m in range(len(pile_id)):
-        # l=pile_id.irow(m)['pile']
-        l = pile_id.iloc[m]['pile']
-        # size=pile_id.irow(m)['size']
-        size = pile_id.iloc[m]['size']
-        if size > 1:
-            for node in l:
-                index = index_id[node]
-                x.append(data[index][0])
-                y.append(data[index][1])
-                label.append(i)
-            i = i + 1
-        else:
-            for node in l:
-                index = index_id[node]
-                x.append(data[index][0])
-                y.append(data[index][1])
-                label.append(0)
-
-    plot_utils.plot_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label)
-
-    log.debug(label)
+# def show_cluster(index_id, data, distance_c, pile_id):
+#     from view import plot_utils
+#     pile_id = pile_id.sort_values('size', ascending=False)
+#     x = []
+#     y = []
+#     label = []
+#     i = 1
+#     for m in range(len(pile_id)):
+#         # l=pile_id.irow(m)['pile']
+#         l = pile_id.iloc[m]['pile']
+#         # size=pile_id.irow(m)['size']
+#         size = pile_id.iloc[m]['size']
+#         if size > 1:
+#             for node in l:
+#                 index = index_id[node]
+#                 x.append(data[index][0])
+#                 y.append(data[index][1])
+#                 label.append(i)
+#             i = i + 1
+#         else:
+#             for node in l:
+#                 index = index_id[node]
+#                 x.append(data[index][0])
+#                 y.append(data[index][1])
+#                 label.append(0)
+#
+#     plot_utils.plot_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label)
+#
+#     log.debug(label)
 
 
 def binary_array(data):
@@ -1029,7 +1223,8 @@ def cluster(id, data, dataset):
     # delta_id, data_id = delta_function(id_index, index_id, rho_id, distance)
     # gamma=rho*delta
     threshold = DataFrame([], columns=['H', 'd_c', 'cluster'])
-    threshold = ent_dc_step_by_step(id_index, index_id, data, threshold=threshold, distance=distance, distance_c=distance_c, dataset=dataset)
+    threshold = ent_dc_step_by_step(id_index, index_id, data, threshold=threshold, distance=distance,
+                                    distance_c=distance_c, dataset=dataset)
     r = threshold
     # log.debug("rho:\n" + str(rho))
     log.debug("threshold\n" + str(DataFrame(threshold)))
@@ -1046,7 +1241,7 @@ class ClusterRecorder:
         self.dataset = dataset
         try:
             self.recorder_csv = pandas.read_csv(
-                Properties.getDefaultDataFold() + "/csv/recorder_csv_" + self.dataset + ".csv",index_col=0)
+                Properties.getDefaultDataFold() + "/csv/recorder_csv_" + self.dataset + ".csv", index_col=0)
         except:
             self.recorder_csv = DataFrame([], columns=['id', 'start', 'end', 'd_c', 'max_distance_c', 'dataset',
                                                        'pile_size', 'H', 'note'])

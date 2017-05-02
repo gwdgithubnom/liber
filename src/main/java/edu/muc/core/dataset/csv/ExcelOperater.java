@@ -38,7 +38,7 @@ public class ExcelOperater
   
             //直接从本地文件创建Workbook   
   
-            InputStream instream = new FileInputStream("C:\\Users\\齐析屿\\Desktop\\gwd-accuracy rate\\2017-04-13-16-28\\0.005.xlsx");   
+            InputStream instream = new FileInputStream("path");
   
             readwb = Workbook.getWorkbook(instream);   
   
@@ -84,7 +84,7 @@ public class ExcelOperater
   
             jxl.write.WritableWorkbook wwb = Workbook.createWorkbook(new File(   
   
-                    "C:\\Users\\齐析屿\\Desktop\\gwd-accuracy rate\\test1.csv"), readwb);   
+                    "test1.csv"), readwb);
   
             //读取第一张工作表   
   
