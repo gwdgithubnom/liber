@@ -207,10 +207,11 @@ def distance_view(d,m, index_id, id_index, distance):
 
 
 if __name__ == '__main__':
-    v1=['path','aggregation']
-    v2=[2.9,0.958230113506]
-    name='path'
-    distance_c = 0.274396345105
+    v1=['path','aggregation','path']
+    v2=[2.9,0.958230113506,7.73879269021]
+    name='pathbased'
+    distance_c =7.25
+
     #0.678127257571#0.97884090805 #4.45939381309 #12.3972318748 #4.5155
 
     from cluster import density_cluster
@@ -244,7 +245,7 @@ if __name__ == '__main__':
     temp[np.isnan(temp)] = stand
     temp = temp.min(axis=0)
     next_distance_c = np.std(temp)
-    pile_id = density_cluster.debug_cluster(id_index, index_id, data,distance, distance_c, next_distance_c,dataset=name,level="SEE")
+    pile_id = density_cluster.debug_cluster(id_index, index_id, data,distance, distance_c, next_distance_c,dataset=name,level="DEBUG")
     log.debug(pile_id)
     # density_cluster.show_cluster(index_id, data, distance_c, pile_id)
     rho_id = density_cluster.rho_function(index_id, distance, distance_c=distance_c)

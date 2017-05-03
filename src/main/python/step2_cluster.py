@@ -30,6 +30,6 @@ def run(data, density_threshold, distance_threshold, auto_select_dc=False,filety
 if __name__ == '__main__':
     # plot('./data/data_in_paper/example_distances.dat', 20, 0.1)
     #run(resource_manager.Properties.getDefaultDataFold()+'txt/iris.data.tmp.txt', 4, 1.3, auto_select_dc=True)
-    #run(resource_manager.Properties.getDefaultDataFold()+'xml/iris.data.xml', 4, 1.3, auto_select_dc=True,filetype="xml")
+    #run(resource_manager.Properties.getDefaultDataFold()+'xml/iris.xml', 4, 1.3, auto_select_dc=True,filetype="xml")
     run(resource_manager.Properties.getDefaultDataFold()+'xml/flame.xml', 2, 2, auto_select_dc=True,filetype="xml")
-    #run(resource_manager.Properties.getDefaultDataFold()+'xml/iris.data.xml', auto_select_dc=True,filetype="xml")
+    #run(resource_manager.Properties.getDefaultDataFold()+'xml/iris.xml', auto_select_dc=True,filetype="xml")

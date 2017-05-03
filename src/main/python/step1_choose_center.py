@@ -25,6 +25,6 @@ def run(data, auto_select_dc=False,filetype="txt"):
 
 if __name__ == '__main__':
     # plot('./data/data_in_paper/example_distances.dat')
-    #run(resource_manager.Properties.getDefaultDataFold()+'xml/iris.data.xml', auto_select_dc=True,filetype="xml")
+    #run(resource_manager.Properties.getDefaultDataFold()+'xml/iris.xml', auto_select_dc=True,filetype="xml")
     #run(resource_manager.Properties.getDefaultDataFold()+'txt/iris.data.tmp.txt', auto_select_dc=True)
     run(resource_manager.Properties.getDefaultDataFold()+'xml/flame.xml', auto_select_dc=True,filetype="xml")

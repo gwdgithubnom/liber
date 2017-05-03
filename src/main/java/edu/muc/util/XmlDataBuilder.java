@@ -39,7 +39,7 @@ public class XmlDataBuilder {
     @Test
     public void test() {
         try {
-            XmlDataBuilder.builderFromTxtToClusterXml("iris.data");
+            XmlDataBuilder.builderFromTxtToClusterXml("iris");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -125,6 +125,7 @@ public class XmlDataBuilder {
         double distance=0;
 
         FileOutputStream fileOutputStream=new FileOutputStream(f);
+        String[] label={"setosa","versicolor","virginica"};
         for(int i=0;i<string.size();i++){
             line=string.get(i);
 
@@ -142,7 +143,7 @@ public class XmlDataBuilder {
             //stringList=new ArrayList<>(stringList);
             //String type=stringList.get(stringList.size()-1);
             //stringList.remove(stringList.size()-1);
-            imageItemXmlElement.setId(""+i);
+            imageItemXmlElement.setId(label[i/50]+"_"+i);
             imageItemXmlElement.setData(stringList.toString());
             imageItemXmlElementList.add(imageItemXmlElement);
 

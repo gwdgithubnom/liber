@@ -104,15 +104,18 @@ def record_expriment(name='path',save_name='default'):
     log.warn("finished")
 
 
-def save_plot(name,threshold,save_name='default'):
+def save_plot(name,threshold,save_name='default',level="INFO"):
     from view import plot_utils
     path=resource_manager.Properties.getDefaultDataFold()+"result/temp/"+name+"/"+save_name +"/""threshold.png"
 
     plot_utils.save_scatter_diagram(None,x=threshold['d_c'].values,y=threshold['H'].values,x_label='delta',y_label='H',title='threshold scatter figure',path=path)
-    plot_utils.plot_scatter_diagram(None,x=threshold['d_c'].values,y=threshold['H'].values,x_label='delta',y_label='H',title='threshold scatter figure')
-    plot_utils.plot_scatter_diagram(None, x=threshold['H'].values, y=threshold['d_c'].values, x_label='delta',
-                                    y_label='H', title='threshold scatter figure')
     plot_utils.save_scatter_diagram(None,x=threshold['d_c'].values,y=threshold['H'].values,x_label='delta',y_label='H',title='threshold scatter figure',path=path)
+
+    if level=="DEBUG":
+        plot_utils.plot_scatter_diagram(None,x=threshold['d_c'].values,y=threshold['H'].values,x_label='delta',y_label='H',title='threshold scatter figure')
+        plot_utils.plot_scatter_diagram(None, x=threshold['H'].values, y=threshold['d_c'].values, x_label='delta',
+                                        y_label='H', title='threshold scatter figure')
+
 
 if __name__ == '__main__':
     experiment('path')
