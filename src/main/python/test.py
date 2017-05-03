@@ -205,59 +205,57 @@ def distance_view(d,m, index_id, id_index, distance):
     log.debug("the thread "+str(number)+" is finished."+" from "+str(m)+" to "+str(n))
     return d
 
-if __name__ == '__main__':
-    """
-    from cluster import density_cluster
-   from pandas import Series,DataFrame
-   from context.resource_manager import Properties
-   from view import shape_view
-   from cluster import density_cluster
-   id=np.load(Properties.getRootPath()+"/data/cache/id.npy")
-   data=np.load(Properties.getRootPath()+"/data/cache/data.npy")
-   id_index=Series(id.tolist())
-   from cluster.density_cluster import *
-   N=id_index.count()
-   distance=compute_distance(data)
-   distance_c=init_distance_c(distance)
-   shape_view.pandas_view_record(list(distance))
-   # id.values -> 对应的key
-   index_id=Series(id_index.index,index=id_index.values)
-   log.warn("the init distance_c is: "+str(distance_c))
-   log.debug(distance_c)
-   # to creat the base index table
-   # 生成对应的索引，用于控制rho，delta，index的内容
-   log.debug(distance)
-   rho=rho_function(distance,distance_c=3021276)
 
-   rho_id=Series(rho,index=id)
-   log.critical(rho)
-   """
+if __name__ == '__main__':
+    v1=['path','aggregation','path']
+    v2=[2.9,0.958230113506,7.73879269021]
+    name='pathbased'
+    distance_c =7.25
+
+    #0.678127257571#0.97884090805 #4.45939381309 #12.3972318748 #4.5155
+
     from cluster import density_cluster
     from pandas import Series
     from pandas import Series, DataFrame
     from context.resource_manager import Properties
     from view import shape_view
     from cluster import density_cluster
-    distance_c = 0.6825
+
     from context.resource_manager import Properties
     from context import resource_manager
     from view import shape_view
     from view import plot_utils
     from cluster import density_cluster
-    if os.path.exists(resource_manager.Properties.getDefaultDataFold()+"result/temp"):
-        shutil.rmtree(resource_manager.Properties.getDefaultDataFold()+"result/temp")
-    id = np.load(Properties.getRootPath() + "/data/cache/flame/id.npy")
-    data = np.load(Properties.getRootPath() + "/data/cache/flame/data.npy")
+    from cluster import  density_cluster_dpc
+    if os.path.exists(resource_manager.Properties.getDefaultDataFold()+"result/test"):
+        shutil.rmtree(resource_manager.Properties.getDefaultDataFold()+"result/test")
+    id = np.load(Properties.getRootPath() + "/data/cache/"+name+"/id.npy")
+    data = np.load(Properties.getRootPath() + "/data/cache/"+name+"/data.npy")
     from pandas import Series, DataFrame
     id_index = Series(id.tolist())
     from cluster import density_cluster
-
     index_id = Series(id_index.index, index=id_index.values)
     distance = density_cluster.compute_distance(data)
-    path=resource_manager.Properties.getDefaultDataFold()+resource_manager.getSeparator()+"result"+resource_manager.getSeparator()+str(distance_c)+".png"
-    pile_id=density_cluster.show_threshold(id_index, index_id, distance, distance_c)
-    density_cluster.show_cluster(index_id, data, distance_c, pile_id)
+    #np.save(Properties.getRootPath() + "/data/cache/distance/data.npy", distance)
+    path=resource_manager.Properties.getDefaultDataFold()+resource_manager.getSeparator()+"result"+resource_manager.getSeparator()+"name"+resource_manager.getSeparator()+str(distance_c)+".png"
+    temp = distance.copy()
+    temp[np.isnan(temp)] = 0
+    stand = np.std(temp)
+    temp = distance.copy()
+    temp[np.isnan(temp)] = stand
+    temp = temp.min(axis=0)
+    next_distance_c = np.std(temp)
+    pile_id = density_cluster.debug_cluster(id_index, index_id, data,distance, distance_c, next_distance_c,dataset=name,level="DEBUG")
     log.debug(pile_id)
+    # density_cluster.show_cluster(index_id, data, distance_c, pile_id)
+    rho_id = density_cluster.rho_function(index_id, distance, distance_c=distance_c)
+    rho_id = Series(rho_id, index=index_id.index)
+    rho_id = rho_id.sort_values(ascending=False)
+    # delta_id, data_id = density_cluster.delta_function(id_index, index_id, rho_id, distance)
+    # plot_utils.plot_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label)
+
+    # for ii in range(len(pile_id)):
+    #   log.debug(pile_id.loc[ii, 'pile'])
 
     """
     import numpy
@@ -309,3 +307,31 @@ if __name__ == '__main__':
     plot_utils.save_scatter_diagram(None,x=x,y=y,x_label='x',y_label='y',title='scatter figure',label=label,path=path)
     plot_utils.plot_scatter_diagram(None,x=x,y=y,x_label='x',y_label='y',title='scatter figure',label=label)
     """
+    """
+     from cluster import density_cluster
+    from pandas import Series,DataFrame
+    from context.resource_manager import Properties
+    from view import shape_view
+    from cluster import density_cluster
+    id=np.load(Properties.getRootPath()+"/data/cache/id.npy")
+    data=np.load(Properties.getRootPath()+"/data/cache/data.npy")
+    id_index=Series(id.tolist())
+    from cluster.density_cluster import *
+    N=id_index.count()
+    distance=compute_distance(data)
+    distance_c=init_distance_c(distance)
+    shape_view.pandas_view_record(list(distance))
+    # id.values -> 对应的key
+    index_id=Series(id_index.index,index=id_index.values)
+    log.warn("the init distance_c is: "+str(distance_c))
+    log.debug(distance_c)
+    # to creat the base index table
+    # 生成对应的索引，用于控制rho，delta，index的内容
+    log.debug(distance)
+    rho=rho_function(distance,distance_c=3021276)
+
+    rho_id=Series(rho,index=id)
+    log.critical(rho)
+    """
+
+

@@ -44096,3 +44096,3397 @@ Index: []
 [2017-03-31 10:56:10] density_cluster.py [line:635] CRITICAL 6781 240
 [2017-03-31 10:56:12] density_cluster.py [line:635] CRITICAL 6781 240
 [2017-03-31 10:56:12] density_cluster.py [line:635] CRITICAL 6781 240
+[2017-04-09 14:22:11] density_cluster.py [line:449] CRITICAL 28833 1_1
+[2017-04-09 14:22:11] density_cluster.py [line:449] CRITICAL 28833 1_0
+[2017-04-09 14:22:11] density_cluster.py [line:449] CRITICAL 28833 2_7
+[2017-04-09 14:22:11] density_cluster.py [line:449] CRITICAL 28833 2_2
+[2017-04-09 14:22:11] density_cluster.py [line:449] CRITICAL 28833 4
+[2017-04-09 14:22:27] density_cluster.py [line:449] CRITICAL 29019 1_1
+[2017-04-09 14:22:27] density_cluster.py [line:449] CRITICAL 29019 1_0
+[2017-04-09 14:22:27] density_cluster.py [line:449] CRITICAL 29019 2_7
+[2017-04-09 14:22:27] density_cluster.py [line:449] CRITICAL 29019 2_2
+[2017-04-09 14:22:27] density_cluster.py [line:449] CRITICAL 29019 4
+[2017-04-09 14:23:06] density_cluster.py [line:449] CRITICAL 29218 1_1
+[2017-04-09 14:23:06] density_cluster.py [line:449] CRITICAL 29218 1_0
+[2017-04-09 14:23:06] density_cluster.py [line:449] CRITICAL 29218 2_7
+[2017-04-09 14:23:06] density_cluster.py [line:449] CRITICAL 29218 2_2
+[2017-04-09 14:23:06] density_cluster.py [line:449] CRITICAL 29218 4
+[2017-04-09 14:24:33] density_cluster.py [line:450] CRITICAL 29715 1_1
+[2017-04-09 14:24:33] density_cluster.py [line:450] CRITICAL 29715 1_0
+[2017-04-09 14:24:33] density_cluster.py [line:450] CRITICAL 29715 2_7
+[2017-04-09 14:24:33] density_cluster.py [line:450] CRITICAL 29715 2_2
+[2017-04-09 14:24:33] density_cluster.py [line:450] CRITICAL 29715 4
+[2017-04-09 14:24:52] density_cluster.py [line:450] CRITICAL 29817 1_1
+[2017-04-09 14:24:52] density_cluster.py [line:450] CRITICAL 29817 1_0
+[2017-04-09 14:24:52] density_cluster.py [line:450] CRITICAL 29817 2_7
+[2017-04-09 14:24:52] density_cluster.py [line:450] CRITICAL 29817 2_2
+[2017-04-09 14:24:52] density_cluster.py [line:450] CRITICAL 29817 4
+[2017-04-09 14:25:44] density_cluster.py [line:450] CRITICAL 30067 1_1
+[2017-04-09 14:25:44] density_cluster.py [line:450] CRITICAL 30067 1_0
+[2017-04-09 14:25:44] density_cluster.py [line:450] CRITICAL 30067 2_7
+[2017-04-09 14:25:44] density_cluster.py [line:450] CRITICAL 30067 2_2
+[2017-04-09 14:36:00] density_cluster.py [line:451] CRITICAL 591 2_10
+[2017-04-09 14:36:33] density_cluster.py [line:452] CRITICAL 777 2_10
+[2017-04-09 14:37:02] density_cluster.py [line:452] CRITICAL 946 2_10
+[2017-04-09 14:37:53] density_cluster.py [line:452] CRITICAL 1236 2_10
+[2017-04-09 14:39:26] density_cluster.py [line:452] CRITICAL 1710       i_id j_id  rho   delta   gamma   i  j pile parent  son
+2_10  2_10  2_4    1  1.8125  1.8125  10  4  NaN    NaN  NaN
+2_10  2_10  2_4    1  1.8125  1.8125  10  4  NaN    NaN  NaN
+[2017-04-09 14:41:42] density_cluster.py [line:453] CRITICAL 2470       i_id j_id  rho   delta   gamma   i  j pile parent  son
+2_10  2_10  2_4    1  1.8125  1.8125  10  4  NaN    NaN  NaN
+2_10  2_10  2_4    1  1.8125  1.8125  10  4  NaN    NaN  NaN
+[2017-04-09 14:42:14] density_cluster.py [line:453] CRITICAL 2689       i_id j_id  rho   delta   gamma   i  j pile parent  son
+2_10  2_10  2_4    1  1.8125  1.8125  10  4  NaN    NaN  NaN
+2_10  2_10  2_4    1  1.8125  1.8125  10  4  NaN    NaN  NaN
+[2017-04-09 14:50:15] density_cluster.py [line:453] CRITICAL 3536 i_id        2_10
+j_id         2_4
+rho            1
+delta     1.8125
+gamma     1.8125
+i             10
+j              4
+pile         NaN
+parent       NaN
+son          NaN
+Name: 2_10, dtype: object
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:38:53] density_cluster.py [line:594] CRITICAL 6924 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-10 14:40:56] density_cluster.py [line:594] CRITICAL 7662 next is null
+[2017-04-30 10:33:14] plot_utils.py [line:168] CRITICAL 27032 nan
+[2017-04-30 10:33:14] plot_utils.py [line:168] CRITICAL 27032 nan
+[2017-04-30 10:33:14] plot_utils.py [line:168] CRITICAL 27032 nan
+[2017-04-30 10:33:14] plot_utils.py [line:168] CRITICAL 27032 h
+[2017-04-30 10:33:14] plot_utils.py [line:168] CRITICAL 27032 H
+[2017-04-30 10:33:14] plot_utils.py [line:168] CRITICAL 27032 +
+[2017-04-30 10:33:14] plot_utils.py [line:168] CRITICAL 27032 x
+[2017-04-30 10:33:14] plot_utils.py [line:168] CRITICAL 27032 D
+[2017-04-30 10:33:24] plot_utils.py [line:168] CRITICAL 27124 nan
+[2017-04-30 10:33:43] plot_utils.py [line:168] CRITICAL 27258 0        ,
+1        o
+2        v
+3        ^
+4        <
+5        >
+6        1
+7        2
+8        3
+9        4
+10       8
+11       s
+12       p
+13       *
+14       h
+15       H
+16       +
+17       x
+18       D
+19       d
+20       |
+21     NaN
+22     NaN
+23     NaN
+24       .
+25       ,
+26       o
+27       v
+28       ^
+29       <
+      ... 
+82       *
+83       h
+84       H
+85       +
+86       x
+87       D
+88       d
+89       |
+90       .
+91       ,
+92       o
+93       v
+94       ^
+95       <
+96       >
+97       1
+98       2
+99       3
+100      4
+101      8
+102      s
+103      p
+104      *
+105      h
+106      H
+107      +
+108      x
+109      D
+110      d
+111      |
+Name: ., dtype: object
+[2017-04-30 10:35:11] plot_utils.py [line:168] CRITICAL 27878 0      ,
+1      o
+2      v
+3      ^
+4      <
+5      >
+6      1
+7      2
+8      3
+9      4
+10     8
+11     s
+12     p
+13     *
+14     h
+15     H
+16     +
+17     x
+18     D
+19     d
+20     |
+21     E
+22     3
+23     C
+24     .
+25     ,
+26     o
+27     v
+28     ^
+29     <
+      ..
+82     *
+83     h
+84     H
+85     +
+86     x
+87     D
+88     d
+89     |
+90     .
+91     ,
+92     o
+93     v
+94     ^
+95     <
+96     >
+97     1
+98     2
+99     3
+100    4
+101    8
+102    s
+103    p
+104    *
+105    h
+106    H
+107    +
+108    x
+109    D
+110    d
+111    |
+Name: ., dtype: object
+[2017-04-30 10:36:47] plot_utils.py [line:168] CRITICAL 28350 0      ,
+1      o
+2      v
+3      ^
+4      <
+5      >
+6      1
+7      2
+8      3
+9      4
+10     8
+11     s
+12     p
+13     *
+14     h
+15     H
+16     +
+17     x
+18     D
+19     d
+20     |
+21     E
+22     3
+23     C
+24     .
+25     ,
+26     o
+27     v
+28     ^
+29     <
+      ..
+94     d
+95     |
+96     E
+97     3
+98     C
+99     .
+100    ,
+101    o
+102    v
+103    ^
+104    <
+105    >
+106    1
+107    2
+108    3
+109    4
+110    8
+111    s
+112    p
+113    *
+114    h
+115    H
+116    +
+117    x
+118    D
+119    d
+120    |
+121    E
+122    3
+123    C
+Name: ., dtype: object
+[2017-04-30 10:37:10] plot_utils.py [line:168] CRITICAL 28530 0      ,
+1      o
+2      v
+3      ^
+4      <
+5      >
+6      1
+7      2
+8      3
+9      4
+10     8
+11     s
+12     p
+13     *
+14     h
+15     H
+16     +
+17     x
+18     D
+19     d
+20     |
+21     E
+22     3
+23     C
+24     .
+25     ,
+26     o
+27     v
+28     ^
+29     <
+      ..
+94     d
+95     |
+96     E
+97     3
+98     C
+99     .
+100    ,
+101    o
+102    v
+103    ^
+104    <
+105    >
+106    1
+107    2
+108    3
+109    4
+110    8
+111    s
+112    p
+113    *
+114    h
+115    H
+116    +
+117    x
+118    D
+119    d
+120    |
+121    E
+122    3
+123    C
+Name: ., dtype: object
+[2017-04-30 10:37:10] plot_utils.py [line:169] CRITICAL 28530 E
+[2017-04-30 10:46:23] plot_utils.py [line:171] CRITICAL 31804 0              ,
+1              o
+2              v
+3              ^
+4              <
+5              >
+6              1
+7              2
+8              3
+9              4
+10             8
+11             s
+12             p
+13             *
+14             h
+15             H
+16             +
+17             x
+18             D
+19             d
+20             |
+21             _
+22      TICKLEFT
+23     TICKRIGHT
+24        TICKUP
+25     CARETLEFT
+26    CARETRIGHT
+27       CARETUP
+28     CARETDOWN
+29           NaN
+30           NaN
+31           NaN
+32           NaN
+33           NaN
+34           NaN
+35           NaN
+36           NaN
+37           NaN
+38           NaN
+39           NaN
+Name: ., dtype: object
+[2017-04-30 10:46:23] plot_utils.py [line:172] CRITICAL 31804 nan
+[2017-04-30 10:46:54] plot_utils.py [line:171] CRITICAL 32003 0              ,
+1              o
+2              v
+3              ^
+4              <
+5              >
+6              1
+7              2
+8              3
+9              4
+10             8
+11             s
+12             p
+13             *
+14             h
+15             H
+16             +
+17             x
+18             D
+19             d
+20             |
+21             _
+22      TICKLEFT
+23     TICKRIGHT
+24        TICKUP
+25     CARETLEFT
+26    CARETRIGHT
+27       CARETUP
+28     CARETDOWN
+29           NaN
+30           NaN
+31           NaN
+32           NaN
+33           NaN
+34           NaN
+35           NaN
+36           NaN
+37           NaN
+38           NaN
+39           NaN
+Name: ., dtype: object
+[2017-04-30 10:46:54] plot_utils.py [line:172] CRITICAL 32003 nan
+[2017-04-30 10:47:12] plot_utils.py [line:171] CRITICAL 32137 0              ,
+1              o
+2              v
+3              ^
+4              <
+5              >
+6              1
+7              2
+8              3
+9              4
+10             8
+11             s
+12             p
+13             *
+14             h
+15             H
+16             +
+17             x
+18             D
+19             d
+20             |
+21             _
+22      TICKLEFT
+23     TICKRIGHT
+24        TICKUP
+25     CARETLEFT
+26    CARETRIGHT
+27       CARETUP
+28     CARETDOWN
+29           NaN
+30           NaN
+31           NaN
+32           NaN
+33           NaN
+34           NaN
+35           NaN
+36           NaN
+37           NaN
+38           NaN
+39           NaN
+Name: ., dtype: object
+[2017-04-30 10:47:12] plot_utils.py [line:172] CRITICAL 32137 TICKLEFT
+[2017-04-30 10:47:47] plot_utils.py [line:171] CRITICAL 32341 0     ,
+1     o
+2     v
+3     ^
+4     <
+5     >
+6     1
+7     2
+8     3
+9     4
+10    8
+11    s
+12    p
+13    *
+14    h
+15    H
+16    +
+17    x
+18    D
+19    d
+20    |
+21    _
+22    .
+23    ,
+24    o
+25    v
+26    ^
+27    <
+28    >
+29    1
+30    2
+31    3
+32    4
+33    8
+34    s
+35    p
+36    *
+37    h
+38    H
+39    +
+40    x
+41    D
+42    d
+43    |
+44    _
+Name: ., dtype: object
+[2017-04-30 10:47:47] plot_utils.py [line:172] CRITICAL 32341 +
+[2017-04-30 10:48:10] plot_utils.py [line:169] CRITICAL 32505 0     ,
+1     o
+2     v
+3     ^
+4     <
+5     >
+6     1
+7     2
+8     3
+9     4
+10    8
+11    s
+12    p
+13    *
+14    h
+15    H
+16    +
+17    x
+18    D
+19    d
+20    |
+21    _
+22    .
+23    ,
+24    o
+25    v
+26    ^
+27    <
+28    >
+29    1
+30    2
+31    3
+32    4
+33    8
+34    s
+35    p
+36    *
+37    h
+38    H
+39    +
+40    x
+41    D
+42    d
+43    |
+44    _
+Name: ., dtype: object
+[2017-04-30 10:48:10] plot_utils.py [line:170] CRITICAL 32505 +
+[2017-04-30 10:48:33] plot_utils.py [line:171] CRITICAL 32712 0     ,
+1     o
+2     v
+3     ^
+4     <
+5     >
+6     1
+7     2
+8     3
+9     4
+10    8
+11    s
+12    p
+13    *
+14    h
+15    H
+16    +
+17    x
+18    D
+19    d
+20    |
+21    _
+22    .
+23    ,
+24    o
+25    v
+26    ^
+27    <
+28    >
+29    1
+30    2
+31    3
+32    4
+33    8
+34    s
+35    p
+36    *
+37    h
+38    H
+39    +
+40    x
+41    D
+42    d
+43    |
+44    _
+Name: ., dtype: object
+[2017-04-30 10:48:33] plot_utils.py [line:172] CRITICAL 32712 +
+[2017-04-30 10:48:54] plot_utils.py [line:171] CRITICAL 446 0     ,
+1     o
+2     v
+3     ^
+4     <
+5     >
+6     1
+7     2
+8     3
+9     4
+10    8
+11    s
+12    p
+13    *
+14    h
+15    H
+16    +
+17    x
+18    D
+19    d
+20    |
+21    _
+22    .
+23    ,
+24    o
+25    v
+26    ^
+27    <
+28    >
+29    1
+30    2
+31    3
+32    4
+33    8
+34    s
+35    p
+36    *
+37    h
+38    H
+39    +
+40    x
+41    D
+42    d
+43    |
+44    _
+Name: ., dtype: object
+[2017-04-30 10:48:54] plot_utils.py [line:172] CRITICAL 446 +
+[2017-04-30 10:49:16] plot_utils.py [line:171] CRITICAL 606 0     ,
+1     o
+2     v
+3     ^
+4     <
+5     >
+6     1
+7     2
+8     3
+9     4
+10    8
+11    s
+12    p
+13    *
+14    h
+15    H
+16    +
+17    x
+18    D
+19    d
+20    |
+21    _
+22    .
+23    ,
+24    o
+25    v
+26    ^
+27    <
+28    >
+29    1
+30    2
+31    3
+32    4
+33    8
+34    s
+35    p
+36    *
+37    h
+38    H
+39    +
+40    x
+41    D
+42    d
+43    |
+44    _
+Name: ., dtype: object
+[2017-04-30 10:49:16] plot_utils.py [line:172] CRITICAL 606 +
+[2017-04-30 10:49:16] plot_utils.py [line:173] CRITICAL 606 $ 39 $
+[2017-04-30 10:50:32] plot_utils.py [line:171] CRITICAL 1084 0     ,
+1     o
+2     v
+3     ^
+4     <
+5     >
+6     1
+7     2
+8     3
+9     4
+10    8
+11    s
+12    p
+13    *
+14    h
+15    H
+16    +
+17    x
+18    D
+19    d
+20    |
+21    _
+22    .
+23    ,
+24    o
+25    v
+26    ^
+27    <
+28    >
+29    1
+30    2
+31    3
+32    4
+33    8
+34    s
+35    p
+36    *
+37    h
+38    H
+39    +
+40    x
+41    D
+42    d
+43    |
+44    _
+Name: ., dtype: object
+[2017-04-30 10:50:32] plot_utils.py [line:172] CRITICAL 1084 +
+[2017-04-30 10:50:32] plot_utils.py [line:173] CRITICAL 1084 $ 39 $
+[2017-04-30 10:50:57] plot_utils.py [line:171] CRITICAL 1269 0     ,
+1     o
+2     v
+3     ^
+4     <
+5     >
+6     1
+7     2
+8     3
+9     4
+10    8
+11    s
+12    p
+13    *
+14    h
+15    H
+16    +
+17    x
+18    D
+19    d
+20    |
+21    _
+22    .
+23    ,
+24    o
+25    v
+26    ^
+27    <
+28    >
+29    1
+30    2
+31    3
+32    4
+33    8
+34    s
+35    p
+36    *
+37    h
+38    H
+39    +
+40    x
+41    D
+42    d
+43    |
+44    _
+Name: ., dtype: object
+[2017-04-30 10:50:57] plot_utils.py [line:172] CRITICAL 1269 +
+[2017-04-30 10:50:57] plot_utils.py [line:173] CRITICAL 1269 $ 39 $
+[2017-04-30 10:51:48] plot_utils.py [line:171] CRITICAL 1604 0     ,
+1     o
+2     v
+3     ^
+4     <
+5     >
+6     1
+7     2
+8     3
+9     4
+10    8
+11    s
+12    p
+13    *
+14    h
+15    H
+16    +
+17    x
+18    D
+19    d
+20    |
+21    _
+22    .
+23    ,
+24    o
+25    v
+26    ^
+27    <
+28    >
+29    1
+30    2
+31    3
+32    4
+33    8
+34    s
+35    p
+36    *
+37    h
+38    H
+39    +
+40    x
+41    D
+42    d
+43    |
+44    _
+Name: ., dtype: object
+[2017-04-30 10:51:48] plot_utils.py [line:172] CRITICAL 1604 +
+[2017-04-30 10:51:48] plot_utils.py [line:173] CRITICAL 1604 $ 39 $
+[2017-04-30 10:52:18] plot_utils.py [line:171] CRITICAL 1800 0     ,
+1     o
+2     v
+3     ^
+4     <
+5     >
+6     1
+7     2
+8     3
+9     4
+10    8
+11    s
+12    p
+13    *
+14    h
+15    H
+16    +
+17    x
+18    D
+19    d
+20    |
+21    _
+22    .
+23    ,
+24    o
+25    v
+26    ^
+27    <
+28    >
+29    1
+30    2
+31    3
+32    4
+33    8
+34    s
+35    p
+36    *
+37    h
+38    H
+39    +
+40    x
+41    D
+42    d
+43    |
+44    _
+Name: ., dtype: object
+[2017-04-30 10:52:18] plot_utils.py [line:172] CRITICAL 1800 +
+[2017-04-30 10:52:18] plot_utils.py [line:173] CRITICAL 1800 39
+[2017-04-30 10:52:47] plot_utils.py [line:171] CRITICAL 1986 0     ,
+1     o
+2     v
+3     ^
+4     <
+5     >
+6     1
+7     2
+8     3
+9     4
+10    8
+11    s
+12    p
+13    *
+14    h
+15    H
+16    +
+17    x
+18    D
+19    d
+20    |
+21    _
+22    .
+23    ,
+24    o
+25    v
+26    ^
+27    <
+28    >
+29    1
+30    2
+31    3
+32    4
+33    8
+34    s
+35    p
+36    *
+37    h
+38    H
+39    +
+40    x
+41    D
+42    d
+43    |
+44    _
+Name: ., dtype: object
+[2017-04-30 10:52:47] plot_utils.py [line:172] CRITICAL 1986 +
+[2017-04-30 10:52:47] plot_utils.py [line:173] CRITICAL 1986 nan
+[2017-04-30 10:53:20] plot_utils.py [line:171] CRITICAL 2201 0     ,
+1     o
+2     v
+3     ^
+4     <
+5     >
+6     1
+7     2
+8     3
+9     4
+10    8
+11    s
+12    p
+13    *
+14    h
+15    H
+16    +
+17    x
+18    D
+19    d
+20    |
+21    _
+22    .
+23    ,
+24    o
+25    v
+26    ^
+27    <
+28    >
+29    1
+30    2
+31    3
+32    4
+33    8
+34    s
+35    p
+36    *
+37    h
+38    H
+39    +
+40    x
+41    D
+42    d
+43    |
+44    _
+Name: ., dtype: object
+[2017-04-30 10:53:20] plot_utils.py [line:172] CRITICAL 2201 0        green
+1     #FF0000 
+2     #00FFFF 
+3      magenta
+4       yellow
+5     #000000 
+6     #00008B 
+7     #008000 
+8     #008B8B 
+9     #00BFFF 
+10    #228B22 
+11    #40E0D0 
+12    #4169E1 
+13    #4682B4 
+14    #5F9EA0 
+15    #778899 
+16    #800080 
+17    #87CEEB 
+18    #8B0000 
+19    #ADFF2F 
+20    #AFEEEE 
+21    #B0C4DE 
+22    #D3D3D3 
+23    #DC143C 
+24    #E1FFFF 
+25    #EE82EE 
+26    #EEE8AA 
+27    #F0E68C 
+28    #F0F8FF 
+29    #F0FFF0 
+30    #FF00FF 
+31    #FF1493 
+32    #FF4500 
+33    #FF7F50 
+34    #FFA500 
+35    #FFB6C1 
+36    #FFC0CB 
+37    #FFD700 
+38    #FFFF00 
+39         NaN
+40         NaN
+41         NaN
+42         NaN
+43         NaN
+44         NaN
+Name: blue.1, dtype: object
+[2017-04-30 10:53:20] plot_utils.py [line:173] CRITICAL 2201 +
+[2017-04-30 10:53:20] plot_utils.py [line:174] CRITICAL 2201 nan
+[2017-04-30 10:54:51] plot_utils.py [line:171] CRITICAL 2689 0     ,
+1     o
+2     v
+3     ^
+4     <
+5     >
+6     1
+7     2
+8     3
+9     4
+10    8
+11    s
+12    p
+13    *
+14    h
+15    H
+16    +
+17    x
+18    D
+19    d
+20    |
+21    _
+22    .
+23    ,
+24    o
+25    v
+26    ^
+27    <
+28    >
+29    1
+30    2
+31    3
+32    4
+33    8
+34    s
+35    p
+36    *
+37    h
+38    H
+39    +
+40    x
+41    D
+42    d
+43    |
+44    _
+Name: ., dtype: object
+[2017-04-30 10:54:51] plot_utils.py [line:172] CRITICAL 2689 0        green
+1     #FF0000 
+2     #00FFFF 
+3      magenta
+4       yellow
+5     #000000 
+6     #00008B 
+7     #008000 
+8     #008B8B 
+9     #00BFFF 
+10    #228B22 
+11    #40E0D0 
+12    #4169E1 
+13    #4682B4 
+14    #5F9EA0 
+15    #778899 
+16    #800080 
+17    #87CEEB 
+18    #8B0000 
+19    #ADFF2F 
+20    #AFEEEE 
+21    #B0C4DE 
+22    #D3D3D3 
+23    #DC143C 
+24    #E1FFFF 
+25    #EE82EE 
+26    #EEE8AA 
+27    #F0E68C 
+28    #F0F8FF 
+29    #F0FFF0 
+30    #FF00FF 
+31    #FF1493 
+32    #FF4500 
+33    #FF7F50 
+34    #FFA500 
+35    #FFB6C1 
+36    #FFC0CB 
+37    #FFD700 
+38    #FFFF00 
+39         NaN
+40         NaN
+41         NaN
+42         NaN
+43         NaN
+44         NaN
+Name: blue.1, dtype: object
+[2017-04-30 10:54:51] plot_utils.py [line:173] CRITICAL 2689 +
+[2017-04-30 10:54:51] plot_utils.py [line:174] CRITICAL 2689 nan
+[2017-04-30 10:55:19] plot_utils.py [line:171] CRITICAL 2874 0     ,
+1     o
+2     v
+3     ^
+4     <
+5     >
+6     1
+7     2
+8     3
+9     4
+10    8
+11    s
+12    p
+13    *
+14    h
+15    H
+16    +
+17    x
+18    D
+19    d
+20    |
+21    _
+22    .
+23    ,
+24    o
+25    v
+26    ^
+27    <
+28    >
+29    1
+30    2
+31    3
+32    4
+33    8
+34    s
+35    p
+36    *
+37    h
+38    H
+39    +
+40    x
+41    D
+42    d
+43    |
+44    _
+Name: ., dtype: object
+[2017-04-30 10:55:19] plot_utils.py [line:172] CRITICAL 2874 0        green
+1     #FF0000 
+2     #00FFFF 
+3      magenta
+4       yellow
+5     #000000 
+6     #00008B 
+7     #008000 
+8     #008B8B 
+9     #00BFFF 
+10    #228B22 
+11    #40E0D0 
+12    #4169E1 
+13    #4682B4 
+14    #5F9EA0 
+15    #778899 
+16    #800080 
+17    #87CEEB 
+18    #8B0000 
+19    #ADFF2F 
+20    #AFEEEE 
+21    #B0C4DE 
+22    #D3D3D3 
+23    #DC143C 
+24    #E1FFFF 
+25    #EE82EE 
+26    #EEE8AA 
+27    #F0E68C 
+28    #F0F8FF 
+29    #F0FFF0 
+30    #FF00FF 
+31    #FF1493 
+32    #FF4500 
+33    #FF7F50 
+34    #FFA500 
+35    #FFB6C1 
+36    #FFC0CB 
+37    #FFD700 
+38    #FFFF00 
+39         NaN
+40         NaN
+41         NaN
+42         NaN
+43         NaN
+44         NaN
+Name: blue.1, dtype: object
+[2017-04-30 10:55:19] plot_utils.py [line:173] CRITICAL 2874 +
+[2017-04-30 10:55:19] plot_utils.py [line:174] CRITICAL 2874 nan
+[2017-04-30 11:07:49] plot_utils.py [line:235] CRITICAL 6991 0        ,
+1        o
+2        v
+3        ^
+4        <
+5        >
+6        1
+7        2
+8        3
+9        4
+10       8
+11       s
+12       p
+13       *
+14       h
+15       H
+16       +
+17       x
+18       D
+19       d
+20       |
+21       _
+22       .
+23       ,
+24       o
+25       v
+26       ^
+27       <
+28       >
+29       1
+      ... 
+144    NaN
+145    NaN
+146    NaN
+147    NaN
+148    NaN
+149    NaN
+150    NaN
+151    NaN
+152    NaN
+153    NaN
+154    NaN
+155    NaN
+156    NaN
+157    NaN
+158    NaN
+159    NaN
+160    NaN
+161    NaN
+162    NaN
+163    NaN
+164    NaN
+165    NaN
+166    NaN
+167    NaN
+168    NaN
+169    NaN
+170    NaN
+171    NaN
+172    NaN
+173    NaN
+Name: ., dtype: object
+[2017-04-30 11:07:49] plot_utils.py [line:236] CRITICAL 6991 0         green
+1      #FF0000 
+2      #00FFFF 
+3       magenta
+4        yellow
+5      #000000 
+6      #00008B 
+7      #008000 
+8      #008B8B 
+9      #00BFFF 
+10     #228B22 
+11     #40E0D0 
+12     #4169E1 
+13     #4682B4 
+14     #5F9EA0 
+15     #778899 
+16     #800080 
+17     #87CEEB 
+18     #8B0000 
+19     #ADFF2F 
+20     #AFEEEE 
+21     #B0C4DE 
+22     #D3D3D3 
+23     #DC143C 
+24     #E1FFFF 
+25     #EE82EE 
+26     #EEE8AA 
+27     #F0E68C 
+28     #F0F8FF 
+29     #F0FFF0 
+         ...   
+144    #FFDAB9 
+145    #F4A460 
+146    #D2691E 
+147    #8B4513 
+148    #FFF5EE 
+149    #A0522D 
+150    #FFA07A 
+151    #FF7F50 
+152    #FF4500 
+153    #E9967A 
+154    #FF6347 
+155    #FFE4E1 
+156    #FA8072 
+157    #FFFAFA 
+158    #F08080 
+159    #BC8F8F 
+160    #CD5C5C 
+161    #FF0000 
+162    #A52A2A 
+163    #B22222 
+164    #8B0000 
+165    #800000 
+166    #FFFFFF 
+167    #F5F5F5 
+168    #DCDCDC 
+169    #D3D3D3 
+170    #C0C0C0 
+171    #A9A9A9 
+172    #808080 
+173    #696969 
+Name: blue.1, dtype: object
+[2017-04-30 11:10:08] plot_utils.py [line:235] CRITICAL 7463 0        ,
+1        o
+2        v
+3        ^
+4        <
+5        >
+6        1
+7        2
+8        3
+9        4
+10       8
+11       s
+12       p
+13       *
+14       h
+15       H
+16       +
+17       x
+18       D
+19       d
+20       |
+21       _
+22       .
+23       ,
+24       o
+25       v
+26       ^
+27       <
+28       >
+29       1
+      ... 
+144    NaN
+145    NaN
+146    NaN
+147    NaN
+148    NaN
+149    NaN
+150    NaN
+151    NaN
+152    NaN
+153    NaN
+154    NaN
+155    NaN
+156    NaN
+157    NaN
+158    NaN
+159    NaN
+160    NaN
+161    NaN
+162    NaN
+163    NaN
+164    NaN
+165    NaN
+166    NaN
+167    NaN
+168    NaN
+169    NaN
+170    NaN
+171    NaN
+172    NaN
+173    NaN
+Name: ., dtype: object
+[2017-04-30 11:10:08] plot_utils.py [line:236] CRITICAL 7463 0         green
+1      #FF0000 
+2      #00FFFF 
+3       magenta
+4        yellow
+5      #000000 
+6      #00008B 
+7      #008000 
+8      #008B8B 
+9      #00BFFF 
+10     #228B22 
+11     #40E0D0 
+12     #4169E1 
+13     #4682B4 
+14     #5F9EA0 
+15     #778899 
+16     #800080 
+17     #87CEEB 
+18     #8B0000 
+19     #ADFF2F 
+20     #AFEEEE 
+21     #B0C4DE 
+22     #D3D3D3 
+23     #DC143C 
+24     #E1FFFF 
+25     #EE82EE 
+26     #EEE8AA 
+27     #F0E68C 
+28     #F0F8FF 
+29     #F0FFF0 
+         ...   
+144    #FFDAB9 
+145    #F4A460 
+146    #D2691E 
+147    #8B4513 
+148    #FFF5EE 
+149    #A0522D 
+150    #FFA07A 
+151    #FF7F50 
+152    #FF4500 
+153    #E9967A 
+154    #FF6347 
+155    #FFE4E1 
+156    #FA8072 
+157    #FFFAFA 
+158    #F08080 
+159    #BC8F8F 
+160    #CD5C5C 
+161    #FF0000 
+162    #A52A2A 
+163    #B22222 
+164    #8B0000 
+165    #800000 
+166    #FFFFFF 
+167    #F5F5F5 
+168    #DCDCDC 
+169    #D3D3D3 
+170    #C0C0C0 
+171    #A9A9A9 
+172    #808080 
+173    #696969 
+Name: blue.1, dtype: object
+[2017-04-30 11:10:08] plot_utils.py [line:237] CRITICAL 7463 nan
+[2017-04-30 11:10:08] plot_utils.py [line:238] CRITICAL 7463 #9400D3 
+[2017-04-30 11:46:17] plot_utils.py [line:232] CRITICAL 18828 0        ,
+1        o
+2        v
+3        ^
+4        <
+5        >
+6        1
+7        2
+8        3
+9        4
+10       8
+11       s
+12       p
+13       *
+14       h
+15       H
+16       +
+17       x
+18       D
+19       d
+20       |
+21       _
+22       .
+23       ,
+24       o
+25       v
+26       ^
+27       <
+28       >
+29       1
+      ... 
+144    NaN
+145    NaN
+146    NaN
+147    NaN
+148    NaN
+149    NaN
+150    NaN
+151    NaN
+152    NaN
+153    NaN
+154    NaN
+155    NaN
+156    NaN
+157    NaN
+158    NaN
+159    NaN
+160    NaN
+161    NaN
+162    NaN
+163    NaN
+164    NaN
+165    NaN
+166    NaN
+167    NaN
+168    NaN
+169    NaN
+170    NaN
+171    NaN
+172    NaN
+173    NaN
+Name: ., dtype: object
+[2017-04-30 11:46:17] plot_utils.py [line:233] CRITICAL 18828 0         green
+1      #FF0000 
+2      #00FFFF 
+3       magenta
+4        yellow
+5      #000000 
+6      #00008B 
+7      #008000 
+8      #008B8B 
+9      #00BFFF 
+10     #228B22 
+11     #40E0D0 
+12     #4169E1 
+13     #4682B4 
+14     #5F9EA0 
+15     #778899 
+16     #800080 
+17     #87CEEB 
+18     #8B0000 
+19     #ADFF2F 
+20     #AFEEEE 
+21     #B0C4DE 
+22     #D3D3D3 
+23     #DC143C 
+24     #E1FFFF 
+25     #EE82EE 
+26     #EEE8AA 
+27     #F0E68C 
+28     #F0F8FF 
+29     #F0FFF0 
+         ...   
+144    #FFDAB9 
+145    #F4A460 
+146    #D2691E 
+147    #8B4513 
+148    #FFF5EE 
+149    #A0522D 
+150    #FFA07A 
+151    #FF7F50 
+152    #FF4500 
+153    #E9967A 
+154    #FF6347 
+155    #FFE4E1 
+156    #FA8072 
+157    #FFFAFA 
+158    #F08080 
+159    #BC8F8F 
+160    #CD5C5C 
+161    #FF0000 
+162    #A52A2A 
+163    #B22222 
+164    #8B0000 
+165    #800000 
+166    #FFFFFF 
+167    #F5F5F5 
+168    #DCDCDC 
+169    #D3D3D3 
+170    #C0C0C0 
+171    #A9A9A9 
+172    #808080 
+173    #696969 
+Name: blue.1, dtype: object
+[2017-04-30 11:46:17] plot_utils.py [line:234] CRITICAL 18828 o
+[2017-04-30 11:46:17] plot_utils.py [line:235] CRITICAL 18828 #FF0000 
+[2017-04-30 13:16:07] density_cluster.py [line:675] CRITICAL 17752 ['4_421', '4_424', '4_381', '4_279', '4_257', '4_380', '4_379', '4_352', '4_382', '4_378', '4_419']
+[2017-04-30 13:16:07] density_cluster.py [line:675] CRITICAL 17752 ['4_340', '4_339', '4_335', '4_329', '4_353']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['4_358', '4_406', '4_354', '4_337', '4_474', '4_338', '4_396', '4_360', '4_355', '4_402', '4_357', '4_359', '4_353']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['6_652', '6_655', '6_651', '6_639']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['6_677', '6_678']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['7_197', '7_199', '7_193', '7_191', '7_196', '7_201', '7_198', '7_202', '7_195']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['2_57', '2_81', '2_83']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['4_301', '4_275', '4_306', '4_317', '4_350', '4_321', '4_316', '4_315', '4_324', '4_274', '4_268', '4_280', '4_286', '4_318', '4_294', '4_319', '4_299', '4_305', '4_263', '4_278', '4_312', '4_279', '4_308', '4_322', '4_264', '4_276', '4_314', '4_291', '4_307', '4_320', '4_304', '4_267', '4_285', '4_266', '4_309', '4_290', '4_273', '4_300']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['6_665', '6_667', '6_670']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['2_99', '2_98', '2_124', '2_125', '2_97']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['3_527', '3_528', '3_496']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['3_566', '3_539', '3_565']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['2_141', '2_111', '2_140']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['6_620', '6_619', '6_597']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['2_60', '2_58', '2_65', '2_66', '2_81']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['3_520', '3_519', '3_546', '3_515', '3_521']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['3_487', '3_485', '3_488']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['1_717', '1_718', '1_710', '1_716']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['2_52', '2_125', '2_131', '2_142']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['6_681', '6_633', '6_680', '6_679']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['6_665', '6_655']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['4_280', '4_281', '4_272', '4_241', '4_283']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['3_529', '3_530', '3_531', '3_532']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['4_235', '4_230', '4_239', '4_229']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['7_203', '7_202', '7_200']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['2_23', '2_21', '2_20', '2_19', '2_24']
+[2017-04-30 13:16:08] density_cluster.py [line:675] CRITICAL 17752 ['2_152', '2_151']
+[2017-04-30 13:16:09] density_cluster.py [line:675] CRITICAL 17752 ['3_510', '3_527', '3_526']
+[2017-04-30 13:16:09] density_cluster.py [line:675] CRITICAL 17752 ['3_566', '3_564', '3_572', '3_565']
+[2017-04-30 13:16:09] density_cluster.py [line:675] CRITICAL 17752 ['6_700', '6_708', '6_701', '6_675', '6_674', '6_702']
+[2017-04-30 13:16:09] density_cluster.py [line:675] CRITICAL 17752 ['6_687', '6_688', '6_684', '6_686']
+[2017-04-30 13:16:09] density_cluster.py [line:675] CRITICAL 17752 ['1_749', '1_751', '1_750']
+[2017-04-30 13:16:09] density_cluster.py [line:675] CRITICAL 17752 ['3_484', '3_485']
+[2017-04-30 13:16:09] density_cluster.py [line:675] CRITICAL 17752 ['4_475', '4_474', '4_476']
+[2017-04-30 13:18:03] density_cluster.py [line:676] CRITICAL 18421 1111
+[2017-04-30 13:18:03] density_cluster.py [line:676] CRITICAL 18421 66
+[2017-04-30 13:18:03] density_cluster.py [line:676] CRITICAL 18421 1010
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 44
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 21
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 98
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 31
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 3838
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 33
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 33
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 22
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 33
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 32
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 41
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 44
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 33
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 32
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 33
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 64
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 22
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 33
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 22
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 31
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 64
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 43
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 32
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 73
+[2017-04-30 13:18:04] density_cluster.py [line:676] CRITICAL 18421 86
+[2017-04-30 13:18:05] density_cluster.py [line:676] CRITICAL 18421 11
+[2017-04-30 13:18:05] density_cluster.py [line:676] CRITICAL 18421 66
+[2017-04-30 13:18:05] density_cluster.py [line:676] CRITICAL 18421 32
+[2017-04-30 13:18:05] density_cluster.py [line:676] CRITICAL 18421 33
+[2017-04-30 13:18:05] density_cluster.py [line:676] CRITICAL 18421 33
+[2017-04-30 13:18:05] density_cluster.py [line:676] CRITICAL 18421 43
+[2017-04-30 13:18:05] density_cluster.py [line:676] CRITICAL 18421 31
+[2017-04-30 13:18:05] density_cluster.py [line:676] CRITICAL 18421 21
+[2017-04-30 13:18:05] density_cluster.py [line:676] CRITICAL 18421 31
+[2017-04-30 13:18:28] density_cluster.py [line:676] CRITICAL 18604 13	11
+[2017-04-30 13:18:28] density_cluster.py [line:676] CRITICAL 18604 5	5
+[2017-04-30 13:18:28] density_cluster.py [line:676] CRITICAL 18604 16	13
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 4	4
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 2	1
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 9	8
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 3	1
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 39	38
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 5	3
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 3	3
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 3	2
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 3	3
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 4	2
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 4	1
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 4	4
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 3	3
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 3	2
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 3	3
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 5	4
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 2	2
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 5	3
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 2	2
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 4	1
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 6	4
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 5	3
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 2	2
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 3	3
+[2017-04-30 13:18:29] density_cluster.py [line:676] CRITICAL 18604 7	6
+[2017-04-30 13:18:30] density_cluster.py [line:676] CRITICAL 18604 1	1
+[2017-04-30 13:18:30] density_cluster.py [line:676] CRITICAL 18604 6	6
+[2017-04-30 13:18:30] density_cluster.py [line:676] CRITICAL 18604 3	2
+[2017-04-30 13:18:30] density_cluster.py [line:676] CRITICAL 18604 3	3
+[2017-04-30 13:18:30] density_cluster.py [line:676] CRITICAL 18604 4	3
+[2017-04-30 13:18:30] density_cluster.py [line:676] CRITICAL 18604 4	3
+[2017-04-30 13:18:30] density_cluster.py [line:676] CRITICAL 18604 3	1
+[2017-04-30 13:18:30] density_cluster.py [line:676] CRITICAL 18604 2	1
+[2017-04-30 13:18:30] density_cluster.py [line:676] CRITICAL 18604 3	1
+[2017-04-30 13:20:17] density_cluster.py [line:676] CRITICAL 19212 15	14
+[2017-04-30 13:20:17] density_cluster.py [line:676] CRITICAL 19212 7	6
+[2017-04-30 13:20:17] density_cluster.py [line:676] CRITICAL 19212 8	5
+[2017-04-30 13:20:17] density_cluster.py [line:676] CRITICAL 19212 9	6
+[2017-04-30 13:20:17] density_cluster.py [line:676] CRITICAL 19212 4	4
+[2017-04-30 13:20:17] density_cluster.py [line:676] CRITICAL 19212 2	1
+[2017-04-30 13:20:17] density_cluster.py [line:676] CRITICAL 19212 8	8
+[2017-04-30 13:20:17] density_cluster.py [line:676] CRITICAL 19212 3	1
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 24	24
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 26	23
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 7	6
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 8	5
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	3
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 2	1
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 1	1
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 5	3
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 2	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	1
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 2	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 4	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 4	1
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 4	4
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 5	3
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 5	3
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	3
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 5	3
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 4	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 2	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	3
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 5	3
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 5	3
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 4	1
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 4	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	1
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	1
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	1
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 7	3
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 7	6
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 2	1
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 1	1
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 5	3
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 5	3
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 7	6
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 2	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 8	6
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	2
+[2017-04-30 13:20:18] density_cluster.py [line:676] CRITICAL 19212 3	3
+[2017-04-30 13:20:19] density_cluster.py [line:676] CRITICAL 19212 8	6
+[2017-04-30 13:20:19] density_cluster.py [line:676] CRITICAL 19212 2	2
+[2017-04-30 13:20:19] density_cluster.py [line:676] CRITICAL 19212 4	1
+[2017-04-30 13:20:19] density_cluster.py [line:676] CRITICAL 19212 3	2
+[2017-04-30 13:20:19] density_cluster.py [line:676] CRITICAL 19212 5	2
+[2017-04-30 13:20:19] density_cluster.py [line:676] CRITICAL 19212 6	2
+[2017-04-30 13:20:19] density_cluster.py [line:676] CRITICAL 19212 4	2
+[2017-04-30 13:20:19] density_cluster.py [line:676] CRITICAL 19212 5	1
+[2017-04-30 13:20:19] density_cluster.py [line:676] CRITICAL 19212 3	1
+[2017-04-30 13:20:19] density_cluster.py [line:676] CRITICAL 19212 2	1
+[2017-04-30 13:20:19] density_cluster.py [line:676] CRITICAL 19212 2	1
+[2017-04-30 13:20:19] density_cluster.py [line:676] CRITICAL 19212 3	1
+[2017-04-30 13:20:19] density_cluster.py [line:676] CRITICAL 19212 3	1
+[2017-04-30 13:21:03] density_cluster.py [line:676] CRITICAL 19485 1	1
+[2017-04-30 13:21:03] density_cluster.py [line:676] CRITICAL 19485 2	1
+[2017-04-30 13:21:16] density_cluster.py [line:676] CRITICAL 19485 3	1
+[2017-04-30 13:21:16] density_cluster.py [line:676] CRITICAL 19485 3	1
+[2017-04-30 13:21:16] density_cluster.py [line:676] CRITICAL 19485 2	1
+[2017-04-30 13:21:24] density_cluster.py [line:676] CRITICAL 19485 2	1
+[2017-04-30 13:21:24] density_cluster.py [line:676] CRITICAL 19485 1	1
+[2017-04-30 13:21:35] density_cluster.py [line:676] CRITICAL 19485 3	1
+[2017-04-30 13:21:42] density_cluster.py [line:676] CRITICAL 19485 1	1
+[2017-04-30 13:21:42] density_cluster.py [line:676] CRITICAL 19485 4	1
+[2017-04-30 13:21:42] density_cluster.py [line:676] CRITICAL 19485 2	1
+[2017-04-30 13:22:07] density_cluster.py [line:676] CRITICAL 19485 4	1
+[2017-04-30 13:22:07] density_cluster.py [line:676] CRITICAL 19485 3	1
+[2017-04-30 13:22:36] density_cluster.py [line:676] CRITICAL 19485 1	1
+[2017-04-30 13:22:36] density_cluster.py [line:676] CRITICAL 19485 1	1
+[2017-04-30 13:22:36] density_cluster.py [line:676] CRITICAL 19485 3	1
+[2017-04-30 13:23:04] density_cluster.py [line:676] CRITICAL 19485 1	1
+[2017-04-30 13:23:38] density_cluster.py [line:676] CRITICAL 19485 1	1
+[2017-04-30 13:23:38] density_cluster.py [line:676] CRITICAL 19485 1	1
+[2017-04-30 13:23:38] density_cluster.py [line:676] CRITICAL 19485 4	1
+[2017-04-30 13:23:46] density_cluster.py [line:676] CRITICAL 19485 3	3
+[2017-04-30 13:23:46] density_cluster.py [line:676] CRITICAL 19485 1	1
+[2017-04-30 13:23:46] density_cluster.py [line:676] CRITICAL 19485 1	1
+[2017-04-30 13:24:07] density_cluster.py [line:676] CRITICAL 19485 1	1
+[2017-04-30 13:24:07] density_cluster.py [line:676] CRITICAL 19485 1	1
+[2017-04-30 13:24:07] density_cluster.py [line:676] CRITICAL 19485 4	2
+[2017-04-30 13:24:07] density_cluster.py [line:676] CRITICAL 19485 1	1
+[2017-04-30 13:24:07] density_cluster.py [line:676] CRITICAL 19485 4	2
+[2017-04-30 13:24:11] density_cluster.py [line:676] CRITICAL 20651 3	1
+[2017-04-30 13:24:36] density_cluster.py [line:676] CRITICAL 20782 3	3
+[2017-04-30 13:24:36] density_cluster.py [line:676] CRITICAL 20782 1	1
+[2017-04-30 13:24:36] density_cluster.py [line:676] CRITICAL 20782 1	1
+[2017-04-30 13:25:33] density_cluster.py [line:676] CRITICAL 19485 1	1
+[2017-04-30 13:25:58] density_cluster.py [line:676] CRITICAL 19485 2	2
+[2017-04-30 13:25:59] density_cluster.py [line:676] CRITICAL 21246 3	1
+[2017-04-30 13:25:59] density_cluster.py [line:676] CRITICAL 21246 2	1
+[2017-04-30 13:25:59] density_cluster.py [line:676] CRITICAL 21246 3	1
+[2017-04-30 13:25:59] density_cluster.py [line:676] CRITICAL 21246 3	1
+[2017-04-30 13:25:59] density_cluster.py [line:676] CRITICAL 21246 2	1
+[2017-04-30 13:25:59] density_cluster.py [line:676] CRITICAL 21246 2	1
+[2017-04-30 13:26:09] density_cluster.py [line:676] CRITICAL 21246 6	1
+[2017-04-30 13:26:09] density_cluster.py [line:676] CRITICAL 21246 1	1
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 3	1
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 9	8
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 1	1
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 9	8
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 1	1
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 3	1
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 4	2
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 1	1
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 4	2
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 3	1
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 3	1
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 3	1
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 1	1
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 3	1
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 3	1
+[2017-04-30 13:26:10] density_cluster.py [line:676] CRITICAL 21246 3	1
+[2017-04-30 13:26:16] density_cluster.py [line:676] CRITICAL 21246 1	1
+[2017-04-30 13:26:17] density_cluster.py [line:676] CRITICAL 21246 6	6
+[2017-04-30 13:26:17] density_cluster.py [line:676] CRITICAL 21246 4	4
+[2017-04-30 13:26:23] density_cluster.py [line:676] CRITICAL 21246 12	12
+[2017-04-30 13:26:23] density_cluster.py [line:676] CRITICAL 21246 5	1
+[2017-04-30 13:26:23] density_cluster.py [line:676] CRITICAL 21246 1	1
+[2017-04-30 13:26:23] density_cluster.py [line:676] CRITICAL 21246 7	6
+[2017-04-30 13:26:23] density_cluster.py [line:676] CRITICAL 21246 5	1
+[2017-04-30 13:26:23] density_cluster.py [line:676] CRITICAL 21246 10	10
+[2017-04-30 13:26:23] density_cluster.py [line:676] CRITICAL 21246 7	6
+[2017-04-30 13:26:23] density_cluster.py [line:676] CRITICAL 21246 6	3
+[2017-04-30 13:26:23] density_cluster.py [line:676] CRITICAL 21246 3	3
+[2017-04-30 13:26:23] density_cluster.py [line:676] CRITICAL 21246 7	6
+[2017-04-30 13:26:23] density_cluster.py [line:676] CRITICAL 21246 4	2
+[2017-04-30 13:26:23] density_cluster.py [line:676] CRITICAL 21246 4	1
+[2017-04-30 13:26:24] density_cluster.py [line:676] CRITICAL 21246 4	3
+[2017-04-30 13:26:24] density_cluster.py [line:676] CRITICAL 21246 8	8
+[2017-04-30 13:26:24] density_cluster.py [line:676] CRITICAL 21246 4	3
+[2017-04-30 13:26:24] density_cluster.py [line:676] CRITICAL 21246 15	15
+[2017-04-30 13:26:24] density_cluster.py [line:676] CRITICAL 21246 4	3
+[2017-04-30 13:26:24] density_cluster.py [line:676] CRITICAL 21246 3	3
+[2017-04-30 13:26:24] density_cluster.py [line:676] CRITICAL 21246 4	3
+[2017-04-30 13:26:24] density_cluster.py [line:676] CRITICAL 21246 4	1
+[2017-04-30 13:26:24] density_cluster.py [line:676] CRITICAL 21246 5	4
+[2017-04-30 13:26:30] density_cluster.py [line:676] CRITICAL 21246 4	4
+[2017-04-30 13:26:30] density_cluster.py [line:676] CRITICAL 21246 18	16
+[2017-04-30 13:26:30] density_cluster.py [line:676] CRITICAL 21246 26	26
+[2017-04-30 13:26:30] density_cluster.py [line:676] CRITICAL 21246 18	16
+[2017-04-30 13:26:30] density_cluster.py [line:676] CRITICAL 21246 11	11
+[2017-04-30 13:26:30] density_cluster.py [line:676] CRITICAL 21246 18	16
+[2017-04-30 13:26:39] density_cluster.py [line:676] CRITICAL 21246 76	76
+[2017-04-30 13:26:39] density_cluster.py [line:676] CRITICAL 21246 13	11
+[2017-04-30 13:26:39] density_cluster.py [line:676] CRITICAL 21246 1	1
+[2017-04-30 13:26:39] density_cluster.py [line:676] CRITICAL 21246 15	13
+[2017-04-30 13:26:46] density_cluster.py [line:676] CRITICAL 21246 16	16
+[2017-04-30 13:26:46] density_cluster.py [line:676] CRITICAL 21246 70	70
+[2017-04-30 13:26:52] density_cluster.py [line:676] CRITICAL 21246 3	3
+[2017-04-30 13:26:53] density_cluster.py [line:676] CRITICAL 21246 10	10
+[2017-04-30 13:26:53] density_cluster.py [line:676] CRITICAL 21246 49	49
+[2017-04-30 13:26:54] density_cluster.py [line:676] CRITICAL 21246 5	2
+[2017-04-30 13:26:54] density_cluster.py [line:676] CRITICAL 21246 17	17
+[2017-04-30 13:26:54] density_cluster.py [line:676] CRITICAL 21246 5	2
+[2017-04-30 13:26:54] density_cluster.py [line:676] CRITICAL 21246 26	26
+[2017-04-30 13:26:54] density_cluster.py [line:676] CRITICAL 21246 17	17
+[2017-04-30 13:26:56] density_cluster.py [line:676] CRITICAL 21246 9	7
+[2017-04-30 13:27:00] density_cluster.py [line:676] CRITICAL 21246 134	134
+[2017-04-30 13:27:00] density_cluster.py [line:676] CRITICAL 21246 9	7
+[2017-04-30 13:27:19] density_cluster.py [line:676] CRITICAL 21246 196	196
+[2017-04-30 13:27:26] density_cluster.py [line:676] CRITICAL 21246 15	15
+[2017-04-30 13:27:27] density_cluster.py [line:676] CRITICAL 21246 99	99
+[2017-04-30 13:27:47] density_cluster.py [line:676] CRITICAL 21485 6	1
+[2017-04-30 13:27:47] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:27:48] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:27:48] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:27:58] density_cluster.py [line:676] CRITICAL 22087 5	4
+[2017-04-30 13:27:58] density_cluster.py [line:676] CRITICAL 22087 10	10
+[2017-04-30 13:27:58] density_cluster.py [line:676] CRITICAL 22087 5	4
+[2017-04-30 13:27:58] density_cluster.py [line:676] CRITICAL 22087 26	26
+[2017-04-30 13:27:58] density_cluster.py [line:676] CRITICAL 22087 5	4
+[2017-04-30 13:27:58] density_cluster.py [line:676] CRITICAL 22087 15	11
+[2017-04-30 13:28:23] density_cluster.py [line:676] CRITICAL 19485 3	3
+[2017-04-30 13:28:26] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 5	2
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 5	4
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 2	2
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:27] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 5	1
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 5	1
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 5	1
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:28] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:28:29] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 2	2
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 7	4
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 3	3
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 12	12
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 6	5
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 10	9
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 4	3
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 6	5
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:43] density_cluster.py [line:676] CRITICAL 21485 10	9
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 5	5
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 6	5
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 4	3
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 6	5
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 7	4
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 4	2
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 4	2
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 5	4
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 6	2
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 6	2
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 6	4
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 4	2
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 6	6
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 6	5
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 4	3
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 9	6
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 7	5
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 7	4
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:44] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 4	2
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 4	2
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 2	2
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 5	4
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 5	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 6	4
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 6	5
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 4	3
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 9	6
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 7	5
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 7	4
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 5	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21485 5	1
+[2017-04-30 13:28:45] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:28:46] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:28:56] density_cluster.py [line:676] CRITICAL 21485 13	11
+[2017-04-30 13:28:56] density_cluster.py [line:676] CRITICAL 21485 7	6
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 9	6
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 9	9
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 11	10
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 5	4
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 11	8
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 25	24
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 10	10
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 35	34
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 3	3
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 5	4
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 2	2
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 4	2
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:57] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 6	4
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 3	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 3	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 5	4
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 4	2
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 6	5
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 2	2
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 6	4
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 7	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 7	6
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 6	4
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 7	6
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 6	4
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 6	6
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 6	6
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 2	2
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 6	4
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 7	6
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 5	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 4	3
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 5	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:58] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:28:59] density_cluster.py [line:676] CRITICAL 22427 4	4
+[2017-04-30 13:28:59] density_cluster.py [line:676] CRITICAL 22427 17	16
+[2017-04-30 13:28:59] density_cluster.py [line:676] CRITICAL 22427 27	26
+[2017-04-30 13:28:59] density_cluster.py [line:676] CRITICAL 22427 11	11
+[2017-04-30 13:28:59] density_cluster.py [line:676] CRITICAL 22427 17	16
+[2017-04-30 13:29:07] density_cluster.py [line:676] CRITICAL 21485 6	5
+[2017-04-30 13:29:07] density_cluster.py [line:676] CRITICAL 21485 19	16
+[2017-04-30 13:29:07] density_cluster.py [line:676] CRITICAL 21485 14	13
+[2017-04-30 13:29:07] density_cluster.py [line:676] CRITICAL 21485 29	27
+[2017-04-30 13:29:07] density_cluster.py [line:676] CRITICAL 21485 19	18
+[2017-04-30 13:29:07] density_cluster.py [line:676] CRITICAL 21485 5	5
+[2017-04-30 13:29:07] density_cluster.py [line:676] CRITICAL 21485 23	23
+[2017-04-30 13:29:07] density_cluster.py [line:676] CRITICAL 21485 29	27
+[2017-04-30 13:29:07] density_cluster.py [line:676] CRITICAL 21485 19	18
+[2017-04-30 13:29:07] density_cluster.py [line:676] CRITICAL 22520 6	4
+[2017-04-30 13:29:07] density_cluster.py [line:676] CRITICAL 22520 17	16
+[2017-04-30 13:29:08] density_cluster.py [line:676] CRITICAL 22520 26	26
+[2017-04-30 13:29:08] density_cluster.py [line:676] CRITICAL 22520 17	16
+[2017-04-30 13:29:08] density_cluster.py [line:676] CRITICAL 22520 11	11
+[2017-04-30 13:29:08] density_cluster.py [line:676] CRITICAL 22520 6	4
+[2017-04-30 13:29:08] density_cluster.py [line:676] CRITICAL 22520 17	16
+[2017-04-30 13:29:08] density_cluster.py [line:676] CRITICAL 21485 4	3
+[2017-04-30 13:29:08] density_cluster.py [line:676] CRITICAL 21485 15	15
+[2017-04-30 13:29:08] density_cluster.py [line:676] CRITICAL 21485 2	2
+[2017-04-30 13:29:08] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:29:08] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:29:08] density_cluster.py [line:676] CRITICAL 21485 2	2
+[2017-04-30 13:29:08] density_cluster.py [line:676] CRITICAL 21485 6	3
+[2017-04-30 13:29:08] density_cluster.py [line:676] CRITICAL 21485 2	2
+[2017-04-30 13:29:08] density_cluster.py [line:676] CRITICAL 21485 6	3
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 8	8
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 6	5
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 11	10
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 7	5
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 3	3
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 4	3
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 4	3
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 16	16
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 6	5
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 7	5
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 4	3
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 16	15
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 7	7
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 38	38
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 31	31
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 11	10
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 4	3
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 3	1
+[2017-04-30 13:29:09] density_cluster.py [line:676] CRITICAL 21485 5	2
+[2017-04-30 13:29:12] density_cluster.py [line:676] CRITICAL 21246 100	100
+[2017-04-30 13:29:14] density_cluster.py [line:676] CRITICAL 22608 7	4
+[2017-04-30 13:29:15] density_cluster.py [line:676] CRITICAL 22608 16	16
+[2017-04-30 13:29:15] density_cluster.py [line:676] CRITICAL 22608 7	4
+[2017-04-30 13:29:15] density_cluster.py [line:676] CRITICAL 22608 27	26
+[2017-04-30 13:29:15] density_cluster.py [line:676] CRITICAL 22608 11	11
+[2017-04-30 13:29:15] density_cluster.py [line:676] CRITICAL 22608 7	4
+[2017-04-30 13:29:15] density_cluster.py [line:676] CRITICAL 22608 27	26
+[2017-04-30 13:29:17] density_cluster.py [line:676] CRITICAL 21485 59	57
+[2017-04-30 13:29:17] density_cluster.py [line:676] CRITICAL 21485 5	5
+[2017-04-30 13:29:17] density_cluster.py [line:676] CRITICAL 21485 63	61
+[2017-04-30 13:29:18] density_cluster.py [line:676] CRITICAL 21485 2	2
+[2017-04-30 13:29:18] density_cluster.py [line:676] CRITICAL 21485 18	17
+[2017-04-30 13:29:19] density_cluster.py [line:676] CRITICAL 21485 28	27
+[2017-04-30 13:29:19] density_cluster.py [line:676] CRITICAL 21485 9	9
+[2017-04-30 13:29:19] density_cluster.py [line:676] CRITICAL 21485 18	17
+[2017-04-30 13:29:19] density_cluster.py [line:676] CRITICAL 21485 7	5
+[2017-04-30 13:29:19] density_cluster.py [line:676] CRITICAL 21485 3	3
+[2017-04-30 13:29:19] density_cluster.py [line:676] CRITICAL 21485 7	5
+[2017-04-30 13:29:19] density_cluster.py [line:676] CRITICAL 21485 20	20
+[2017-04-30 13:29:19] density_cluster.py [line:676] CRITICAL 21485 7	5
+[2017-04-30 13:29:19] density_cluster.py [line:676] CRITICAL 21485 4	2
+[2017-04-30 13:29:19] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:29:24] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:24] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 6	2
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 5	4
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 2	2
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 4	2
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 1	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21246 199	199
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:25] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:29:26] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:28] density_cluster.py [line:676] CRITICAL 21485 85	83
+[2017-04-30 13:29:29] density_cluster.py [line:676] CRITICAL 21485 4	2
+[2017-04-30 13:29:30] density_cluster.py [line:676] CRITICAL 21485 12	12
+[2017-04-30 13:29:30] density_cluster.py [line:676] CRITICAL 21485 7	6
+[2017-04-30 13:29:31] density_cluster.py [line:676] CRITICAL 21485 12	12
+[2017-04-30 13:29:31] density_cluster.py [line:676] CRITICAL 21485 7	6
+[2017-04-30 13:29:31] density_cluster.py [line:676] CRITICAL 21485 10	6
+[2017-04-30 13:29:31] density_cluster.py [line:676] CRITICAL 21485 11	11
+[2017-04-30 13:29:31] density_cluster.py [line:676] CRITICAL 21485 14	10
+[2017-04-30 13:29:31] density_cluster.py [line:676] CRITICAL 21485 6	6
+[2017-04-30 13:29:31] density_cluster.py [line:676] CRITICAL 21485 6	6
+[2017-04-30 13:29:31] density_cluster.py [line:676] CRITICAL 21485 1	1
+[2017-04-30 13:29:31] density_cluster.py [line:676] CRITICAL 21485 3	3
+[2017-04-30 13:29:31] density_cluster.py [line:676] CRITICAL 21485 6	5
+[2017-04-30 13:29:31] density_cluster.py [line:676] CRITICAL 21485 4	1
+[2017-04-30 13:29:31] density_cluster.py [line:676] CRITICAL 21485 5	2
+[2017-04-30 13:29:31] density_cluster.py [line:676] CRITICAL 21485 6	2
+[2017-04-30 13:29:31] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:29:38] density_cluster.py [line:676] CRITICAL 19485 5	2
+[2017-04-30 13:29:40] density_cluster.py [line:676] CRITICAL 21878 6	5
+[2017-04-30 13:29:40] density_cluster.py [line:676] CRITICAL 21878 3	3
+[2017-04-30 13:29:40] density_cluster.py [line:676] CRITICAL 21878 8	7
+[2017-04-30 13:29:40] density_cluster.py [line:676] CRITICAL 21878 6	3
+[2017-04-30 13:29:40] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 5	4
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 5	4
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 1	1
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 8	7
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 9	6
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 1	1
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 1	1
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 5	3
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 6	6
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 8	7
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 6	3
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 5	1
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:41] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 1	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 5	4
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 1	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 5	3
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 4	2
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 1	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 7	5
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 1	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 4	2
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 1	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 4	2
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 1	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 1	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 8	7
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 6	3
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 2	2
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 5	3
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 7	5
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 1	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 6	4
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:42] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:43] density_cluster.py [line:676] CRITICAL 21485 33	33
+[2017-04-30 13:29:44] density_cluster.py [line:676] CRITICAL 21485 65	65
+[2017-04-30 13:29:44] density_cluster.py [line:676] CRITICAL 21485 37	37
+[2017-04-30 13:29:44] density_cluster.py [line:676] CRITICAL 21485 10	9
+[2017-04-30 13:29:44] density_cluster.py [line:676] CRITICAL 21485 4	3
+[2017-04-30 13:29:53] density_cluster.py [line:676] CRITICAL 21878 16	15
+[2017-04-30 13:29:54] density_cluster.py [line:676] CRITICAL 21878 7	6
+[2017-04-30 13:29:54] density_cluster.py [line:676] CRITICAL 21878 1	1
+[2017-04-30 13:29:54] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:29:54] density_cluster.py [line:676] CRITICAL 21878 33	32
+[2017-04-30 13:29:54] density_cluster.py [line:676] CRITICAL 21878 12	12
+[2017-04-30 13:29:54] density_cluster.py [line:676] CRITICAL 21878 46	45
+[2017-04-30 13:29:54] density_cluster.py [line:676] CRITICAL 21878 7	4
+[2017-04-30 13:29:54] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:54] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:54] density_cluster.py [line:676] CRITICAL 21878 11	9
+[2017-04-30 13:29:54] density_cluster.py [line:676] CRITICAL 21878 9	8
+[2017-04-30 13:29:54] density_cluster.py [line:676] CRITICAL 21878 2	2
+[2017-04-30 13:29:54] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:29:54] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 2	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	3
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 2	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 11	9
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	4
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 1	1
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 5	3
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	3
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 2	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 5	3
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 5	1
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	3
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	2
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 4	4
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 5	4
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:55] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:29:56] density_cluster.py [line:676] CRITICAL 21485 28	27
+[2017-04-30 13:29:58] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:29:58] density_cluster.py [line:676] CRITICAL 21485 26	26
+[2017-04-30 13:29:58] density_cluster.py [line:676] CRITICAL 21485 30	29
+[2017-04-30 13:29:58] density_cluster.py [line:676] CRITICAL 21485 2	1
+[2017-04-30 13:29:59] density_cluster.py [line:676] CRITICAL 21485 69	67
+[2017-04-30 13:29:59] density_cluster.py [line:676] CRITICAL 21485 8	6
+[2017-04-30 13:30:00] density_cluster.py [line:676] CRITICAL 21485 101	101
+[2017-04-30 13:30:00] density_cluster.py [line:676] CRITICAL 21485 51	51
+[2017-04-30 13:30:00] density_cluster.py [line:676] CRITICAL 21485 11	11
+[2017-04-30 13:30:03] density_cluster.py [line:676] CRITICAL 19485 2	2
+[2017-04-30 13:30:04] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:30:04] density_cluster.py [line:676] CRITICAL 21878 5	5
+[2017-04-30 13:30:04] density_cluster.py [line:676] CRITICAL 21878 16	16
+[2017-04-30 13:30:04] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:30:04] density_cluster.py [line:676] CRITICAL 21878 37	36
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 17	17
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 5	5
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 5	4
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 5	4
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 10	10
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 5	4
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 18	18
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 37	36
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 6	6
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 38	37
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 4	1
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 2	2
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 2	2
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:30:05] density_cluster.py [line:676] CRITICAL 21878 6	5
+[2017-04-30 13:30:06] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:30:06] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:30:06] density_cluster.py [line:676] CRITICAL 21878 2	2
+[2017-04-30 13:30:06] density_cluster.py [line:676] CRITICAL 21878 5	4
+[2017-04-30 13:30:06] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:30:06] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:30:06] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:30:06] density_cluster.py [line:676] CRITICAL 21878 1	1
+[2017-04-30 13:30:06] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:30:06] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:30:06] density_cluster.py [line:676] CRITICAL 21878 5	2
+[2017-04-30 13:30:06] density_cluster.py [line:676] CRITICAL 21878 3	1
+[2017-04-30 13:30:16] density_cluster.py [line:676] CRITICAL 21878 129	129
+[2017-04-30 13:30:16] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:30:17] density_cluster.py [line:676] CRITICAL 21878 14	14
+[2017-04-30 13:30:17] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:30:17] density_cluster.py [line:676] CRITICAL 21485 174	174
+[2017-04-30 13:30:17] density_cluster.py [line:676] CRITICAL 21485 26	26
+[2017-04-30 13:30:17] density_cluster.py [line:676] CRITICAL 21878 18	18
+[2017-04-30 13:30:17] density_cluster.py [line:676] CRITICAL 21878 9	9
+[2017-04-30 13:30:17] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:30:17] density_cluster.py [line:676] CRITICAL 21878 5	5
+[2017-04-30 13:30:17] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:30:17] density_cluster.py [line:676] CRITICAL 21878 7	6
+[2017-04-30 13:30:17] density_cluster.py [line:676] CRITICAL 21878 6	4
+[2017-04-30 13:30:17] density_cluster.py [line:676] CRITICAL 21878 5	5
+[2017-04-30 13:30:17] density_cluster.py [line:676] CRITICAL 21878 3	3
+[2017-04-30 13:30:17] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:30:19] density_cluster.py [line:676] CRITICAL 21485 41	41
+[2017-04-30 13:30:20] density_cluster.py [line:676] CRITICAL 21485 95	95
+[2017-04-30 13:30:20] density_cluster.py [line:676] CRITICAL 21485 51	51
+[2017-04-30 13:30:20] density_cluster.py [line:676] CRITICAL 21485 13	13
+[2017-04-30 13:30:26] density_cluster.py [line:676] CRITICAL 21878 83	83
+[2017-04-30 13:30:27] density_cluster.py [line:676] CRITICAL 21878 4	2
+[2017-04-30 13:30:28] density_cluster.py [line:676] CRITICAL 21878 13	12
+[2017-04-30 13:30:28] density_cluster.py [line:676] CRITICAL 21878 4	4
+[2017-04-30 13:30:28] density_cluster.py [line:676] CRITICAL 21878 12	12
+[2017-04-30 13:30:29] density_cluster.py [line:676] CRITICAL 21878 19	19
+[2017-04-30 13:30:29] density_cluster.py [line:676] CRITICAL 21878 6	6
+[2017-04-30 13:30:29] density_cluster.py [line:676] CRITICAL 21878 17	17
+[2017-04-30 13:30:29] density_cluster.py [line:676] CRITICAL 21878 6	6
+[2017-04-30 13:30:29] density_cluster.py [line:676] CRITICAL 21878 3	3
+[2017-04-30 13:30:29] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:30:29] density_cluster.py [line:676] CRITICAL 21878 2	2
+[2017-04-30 13:30:29] density_cluster.py [line:676] CRITICAL 21878 3	2
+[2017-04-30 13:30:32] density_cluster.py [line:676] CRITICAL 21485 12	12
+[2017-04-30 13:30:34] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:30:35] density_cluster.py [line:676] CRITICAL 21485 3	3
+[2017-04-30 13:30:36] density_cluster.py [line:676] CRITICAL 21485 112	112
+[2017-04-30 13:30:36] density_cluster.py [line:676] CRITICAL 21878 35	34
+[2017-04-30 13:30:36] density_cluster.py [line:676] CRITICAL 21485 46	46
+[2017-04-30 13:30:36] density_cluster.py [line:676] CRITICAL 21878 52	52
+[2017-04-30 13:30:36] density_cluster.py [line:676] CRITICAL 21878 37	37
+[2017-04-30 13:30:36] density_cluster.py [line:676] CRITICAL 21878 10	9
+[2017-04-30 13:30:36] density_cluster.py [line:676] CRITICAL 21878 4	3
+[2017-04-30 13:30:43] density_cluster.py [line:676] CRITICAL 21878 28	28
+[2017-04-30 13:30:45] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:30:45] density_cluster.py [line:676] CRITICAL 21878 28	28
+[2017-04-30 13:30:45] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:30:46] density_cluster.py [line:676] CRITICAL 21878 67	67
+[2017-04-30 13:30:46] density_cluster.py [line:676] CRITICAL 21878 2	1
+[2017-04-30 13:30:46] density_cluster.py [line:676] CRITICAL 21878 101	101
+[2017-04-30 13:30:47] density_cluster.py [line:676] CRITICAL 21878 39	39
+[2017-04-30 13:30:47] density_cluster.py [line:676] CRITICAL 21878 13	11
+[2017-04-30 13:30:47] density_cluster.py [line:676] CRITICAL 21485 8	7
+[2017-04-30 13:30:53] density_cluster.py [line:676] CRITICAL 21485 3	2
+[2017-04-30 13:30:53] density_cluster.py [line:676] CRITICAL 21485 5	4
+[2017-04-30 13:31:02] density_cluster.py [line:676] CRITICAL 21485 103	103
+[2017-04-30 13:31:04] density_cluster.py [line:676] CRITICAL 21485 3	3
+[2017-04-30 13:31:07] density_cluster.py [line:676] CRITICAL 21485 51	51
+[2017-04-30 13:31:07] density_cluster.py [line:676] CRITICAL 21485 89	89
+[2017-04-30 13:31:11] density_cluster.py [line:676] CRITICAL 21878 234	234
+[2017-04-30 13:31:11] density_cluster.py [line:676] CRITICAL 21878 29	29
+[2017-05-02 10:13:14] plot_utils.py [line:232] CRITICAL 18034 0        ,
+1        o
+2        v
+3        ^
+4        <
+5        >
+6        1
+7        2
+8        3
+9        4
+10       8
+11       s
+12       p
+13       *
+14       h
+15       H
+16       +
+17       x
+18       D
+19       d
+20       |
+21       _
+22       .
+23       ,
+24       o
+25       v
+26       ^
+27       <
+28       >
+29       1
+      ... 
+144    NaN
+145    NaN
+146    NaN
+147    NaN
+148    NaN
+149    NaN
+150    NaN
+151    NaN
+152    NaN
+153    NaN
+154    NaN
+155    NaN
+156    NaN
+157    NaN
+158    NaN
+159    NaN
+160    NaN
+161    NaN
+162    NaN
+163    NaN
+164    NaN
+165    NaN
+166    NaN
+167    NaN
+168    NaN
+169    NaN
+170    NaN
+171    NaN
+172    NaN
+173    NaN
+Name: ., dtype: object
+[2017-05-02 10:13:14] plot_utils.py [line:233] CRITICAL 18034 0         green
+1      #FF0000 
+2      #00FFFF 
+3       magenta
+4        yellow
+5      #000000 
+6      #00008B 
+7      #008000 
+8      #008B8B 
+9      #00BFFF 
+10     #228B22 
+11     #40E0D0 
+12     #4169E1 
+13     #4682B4 
+14     #5F9EA0 
+15     #778899 
+16     #800080 
+17     #87CEEB 
+18     #8B0000 
+19     #ADFF2F 
+20     #AFEEEE 
+21     #B0C4DE 
+22     #D3D3D3 
+23     #DC143C 
+24     #E1FFFF 
+25     #EE82EE 
+26     #EEE8AA 
+27     #F0E68C 
+28     #F0F8FF 
+29     #F0FFF0 
+         ...   
+144    #FFDAB9 
+145    #F4A460 
+146    #D2691E 
+147    #8B4513 
+148    #FFF5EE 
+149    #A0522D 
+150    #FFA07A 
+151    #FF7F50 
+152    #FF4500 
+153    #E9967A 
+154    #FF6347 
+155    #FFE4E1 
+156    #FA8072 
+157    #FFFAFA 
+158    #F08080 
+159    #BC8F8F 
+160    #CD5C5C 
+161    #FF0000 
+162    #A52A2A 
+163    #B22222 
+164    #8B0000 
+165    #800000 
+166    #FFFFFF 
+167    #F5F5F5 
+168    #DCDCDC 
+169    #D3D3D3 
+170    #C0C0C0 
+171    #A9A9A9 
+172    #808080 
+173    #696969 
+Name: blue.1, dtype: object
+[2017-05-02 10:13:14] plot_utils.py [line:234] CRITICAL 18034 o
+[2017-05-02 10:13:14] plot_utils.py [line:235] CRITICAL 18034 #FF0000 
+[2017-05-02 11:37:12] plot_utils.py [line:295] CRITICAL 13509 0        ,
+1        o
+2        v
+3        ^
+4        <
+5        >
+6        1
+7        2
+8        3
+9        4
+10       8
+11       s
+12       p
+13       *
+14       h
+15       H
+16       +
+17       x
+18       D
+19       d
+20       |
+21       _
+22       .
+23       ,
+24       o
+25       v
+26       ^
+27       <
+28       >
+29       1
+      ... 
+144    NaN
+145    NaN
+146    NaN
+147    NaN
+148    NaN
+149    NaN
+150    NaN
+151    NaN
+152    NaN
+153    NaN
+154    NaN
+155    NaN
+156    NaN
+157    NaN
+158    NaN
+159    NaN
+160    NaN
+161    NaN
+162    NaN
+163    NaN
+164    NaN
+165    NaN
+166    NaN
+167    NaN
+168    NaN
+169    NaN
+170    NaN
+171    NaN
+172    NaN
+173    NaN
+Name: ., dtype: object
+[2017-05-02 11:37:12] plot_utils.py [line:296] CRITICAL 13509 0         green
+1      #FF0000 
+2      #00FFFF 
+3       magenta
+4        yellow
+5      #000000 
+6      #00008B 
+7      #008000 
+8      #008B8B 
+9      #00BFFF 
+10     #228B22 
+11     #40E0D0 
+12     #4169E1 
+13     #4682B4 
+14     #5F9EA0 
+15     #778899 
+16     #800080 
+17     #87CEEB 
+18     #8B0000 
+19     #ADFF2F 
+20     #AFEEEE 
+21     #B0C4DE 
+22     #D3D3D3 
+23     #DC143C 
+24     #E1FFFF 
+25     #EE82EE 
+26     #EEE8AA 
+27     #F0E68C 
+28     #F0F8FF 
+29     #F0FFF0 
+         ...   
+144    #FFDAB9 
+145    #F4A460 
+146    #D2691E 
+147    #8B4513 
+148    #FFF5EE 
+149    #A0522D 
+150    #FFA07A 
+151    #FF7F50 
+152    #FF4500 
+153    #E9967A 
+154    #FF6347 
+155    #FFE4E1 
+156    #FA8072 
+157    #FFFAFA 
+158    #F08080 
+159    #BC8F8F 
+160    #CD5C5C 
+161    #FF0000 
+162    #A52A2A 
+163    #B22222 
+164    #8B0000 
+165    #800000 
+166    #FFFFFF 
+167    #F5F5F5 
+168    #DCDCDC 
+169    #D3D3D3 
+170    #C0C0C0 
+171    #A9A9A9 
+172    #808080 
+173    #696969 
+Name: blue.1, dtype: object
+[2017-05-02 11:37:12] plot_utils.py [line:297] CRITICAL 13509 o
+[2017-05-02 11:37:12] plot_utils.py [line:298] CRITICAL 13509 #FF0000 
+[2017-05-02 12:51:54] density_cluster.py [line:410] CRITICAL 1311 3_3
+[2017-05-02 12:53:43] density_cluster.py [line:410] CRITICAL 1882 <class 'str'>
+[2017-05-02 13:12:34] density_cluster.py [line:709] CRITICAL 8013 test
+[2017-05-02 13:14:13] density_cluster.py [line:697] CRITICAL 8557 test
+[2017-05-02 13:20:15] density_cluster.py [line:697] CRITICAL 10208 test
+[2017-05-02 13:21:18] density_cluster.py [line:695] CRITICAL 10627 test
+[2017-05-02 13:22:15] density_cluster.py [line:695] CRITICAL 10963 test
+[2017-05-02 13:23:01] density_cluster.py [line:699] CRITICAL 11252 test
+[2017-05-02 17:15:26] plot_utils.py [line:295] CRITICAL 15137 0        ,
+1        o
+2        v
+3        ^
+4        <
+5        >
+6        1
+7        2
+8        3
+9        4
+10       8
+11       s
+12       p
+13       *
+14       h
+15       H
+16       +
+17       x
+18       D
+19       d
+20       |
+21       _
+22       .
+23       ,
+24       o
+25       v
+26       ^
+27       <
+28       >
+29       1
+      ... 
+144    NaN
+145    NaN
+146    NaN
+147    NaN
+148    NaN
+149    NaN
+150    NaN
+151    NaN
+152    NaN
+153    NaN
+154    NaN
+155    NaN
+156    NaN
+157    NaN
+158    NaN
+159    NaN
+160    NaN
+161    NaN
+162    NaN
+163    NaN
+164    NaN
+165    NaN
+166    NaN
+167    NaN
+168    NaN
+169    NaN
+170    NaN
+171    NaN
+172    NaN
+173    NaN
+Name: ., dtype: object
+[2017-05-02 17:15:26] plot_utils.py [line:296] CRITICAL 15137 0         green
+1      #FF0000 
+2      #00FFFF 
+3       magenta
+4        yellow
+5      #000000 
+6      #00008B 
+7      #008000 
+8      #008B8B 
+9      #00BFFF 
+10     #228B22 
+11     #40E0D0 
+12     #4169E1 
+13     #4682B4 
+14     #5F9EA0 
+15     #778899 
+16     #800080 
+17     #87CEEB 
+18     #8B0000 
+19     #ADFF2F 
+20     #AFEEEE 
+21     #B0C4DE 
+22     #D3D3D3 
+23     #DC143C 
+24     #E1FFFF 
+25     #EE82EE 
+26     #EEE8AA 
+27     #F0E68C 
+28     #F0F8FF 
+29     #F0FFF0 
+         ...   
+144    #FFDAB9 
+145    #F4A460 
+146    #D2691E 
+147    #8B4513 
+148    #FFF5EE 
+149    #A0522D 
+150    #FFA07A 
+151    #FF7F50 
+152    #FF4500 
+153    #E9967A 
+154    #FF6347 
+155    #FFE4E1 
+156    #FA8072 
+157    #FFFAFA 
+158    #F08080 
+159    #BC8F8F 
+160    #CD5C5C 
+161    #FF0000 
+162    #A52A2A 
+163    #B22222 
+164    #8B0000 
+165    #800000 
+166    #FFFFFF 
+167    #F5F5F5 
+168    #DCDCDC 
+169    #D3D3D3 
+170    #C0C0C0 
+171    #A9A9A9 
+172    #808080 
+173    #696969 
+Name: blue.1, dtype: object
+[2017-05-02 17:15:26] plot_utils.py [line:297] CRITICAL 15137 o
+[2017-05-02 17:15:26] plot_utils.py [line:298] CRITICAL 15137 #FF0000 
+[2017-05-02 22:10:04] plot_utils.py [line:295] CRITICAL 4789 0        ,
+1        o
+2        v
+3        ^
+4        <
+5        >
+6        1
+7        2
+8        3
+9        4
+10       8
+11       s
+12       p
+13       *
+14       h
+15       H
+16       +
+17       x
+18       D
+19       d
+20       |
+21       _
+22       .
+23       ,
+24       o
+25       v
+26       ^
+27       <
+28       >
+29       1
+      ... 
+144    NaN
+145    NaN
+146    NaN
+147    NaN
+148    NaN
+149    NaN
+150    NaN
+151    NaN
+152    NaN
+153    NaN
+154    NaN
+155    NaN
+156    NaN
+157    NaN
+158    NaN
+159    NaN
+160    NaN
+161    NaN
+162    NaN
+163    NaN
+164    NaN
+165    NaN
+166    NaN
+167    NaN
+168    NaN
+169    NaN
+170    NaN
+171    NaN
+172    NaN
+173    NaN
+Name: ., dtype: object
+[2017-05-02 22:10:04] plot_utils.py [line:296] CRITICAL 4789 0         green
+1      #FF0000 
+2      #00FFFF 
+3       magenta
+4        yellow
+5      #000000 
+6      #00008B 
+7      #008000 
+8      #008B8B 
+9      #00BFFF 
+10     #228B22 
+11     #40E0D0 
+12     #4169E1 
+13     #4682B4 
+14     #5F9EA0 
+15     #778899 
+16     #800080 
+17     #87CEEB 
+18     #8B0000 
+19     #ADFF2F 
+20     #AFEEEE 
+21     #B0C4DE 
+22     #D3D3D3 
+23     #DC143C 
+24     #E1FFFF 
+25     #EE82EE 
+26     #EEE8AA 
+27     #F0E68C 
+28     #F0F8FF 
+29     #F0FFF0 
+         ...   
+144    #FFDAB9 
+145    #F4A460 
+146    #D2691E 
+147    #8B4513 
+148    #FFF5EE 
+149    #A0522D 
+150    #FFA07A 
+151    #FF7F50 
+152    #FF4500 
+153    #E9967A 
+154    #FF6347 
+155    #FFE4E1 
+156    #FA8072 
+157    #FFFAFA 
+158    #F08080 
+159    #BC8F8F 
+160    #CD5C5C 
+161    #FF0000 
+162    #A52A2A 
+163    #B22222 
+164    #8B0000 
+165    #800000 
+166    #FFFFFF 
+167    #F5F5F5 
+168    #DCDCDC 
+169    #D3D3D3 
+170    #C0C0C0 
+171    #A9A9A9 
+172    #808080 
+173    #696969 
+Name: blue.1, dtype: object
+[2017-05-02 22:10:04] plot_utils.py [line:297] CRITICAL 4789 o
+[2017-05-02 22:10:04] plot_utils.py [line:298] CRITICAL 4789 #FF0000 
+[2017-05-02 23:16:15] plot_utils.py [line:295] CRITICAL 25796 0        ,
+1        o
+2        v
+3        ^
+4        <
+5        >
+6        1
+7        2
+8        3
+9        4
+10       8
+11       s
+12       p
+13       *
+14       h
+15       H
+16       +
+17       x
+18       D
+19       d
+20       |
+21       _
+22       .
+23       ,
+24       o
+25       v
+26       ^
+27       <
+28       >
+29       1
+      ... 
+144    NaN
+145    NaN
+146    NaN
+147    NaN
+148    NaN
+149    NaN
+150    NaN
+151    NaN
+152    NaN
+153    NaN
+154    NaN
+155    NaN
+156    NaN
+157    NaN
+158    NaN
+159    NaN
+160    NaN
+161    NaN
+162    NaN
+163    NaN
+164    NaN
+165    NaN
+166    NaN
+167    NaN
+168    NaN
+169    NaN
+170    NaN
+171    NaN
+172    NaN
+173    NaN
+Name: ., dtype: object
+[2017-05-02 23:16:15] plot_utils.py [line:296] CRITICAL 25796 0         green
+1      #FF0000 
+2      #00FFFF 
+3       magenta
+4        yellow
+5      #000000 
+6      #00008B 
+7      #008000 
+8      #008B8B 
+9      #00BFFF 
+10     #228B22 
+11     #40E0D0 
+12     #4169E1 
+13     #4682B4 
+14     #5F9EA0 
+15     #778899 
+16     #800080 
+17     #87CEEB 
+18     #8B0000 
+19     #ADFF2F 
+20     #AFEEEE 
+21     #B0C4DE 
+22     #D3D3D3 
+23     #DC143C 
+24     #E1FFFF 
+25     #EE82EE 
+26     #EEE8AA 
+27     #F0E68C 
+28     #F0F8FF 
+29     #F0FFF0 
+         ...   
+144    #FFDAB9 
+145    #F4A460 
+146    #D2691E 
+147    #8B4513 
+148    #FFF5EE 
+149    #A0522D 
+150    #FFA07A 
+151    #FF7F50 
+152    #FF4500 
+153    #E9967A 
+154    #FF6347 
+155    #FFE4E1 
+156    #FA8072 
+157    #FFFAFA 
+158    #F08080 
+159    #BC8F8F 
+160    #CD5C5C 
+161    #FF0000 
+162    #A52A2A 
+163    #B22222 
+164    #8B0000 
+165    #800000 
+166    #FFFFFF 
+167    #F5F5F5 
+168    #DCDCDC 
+169    #D3D3D3 
+170    #C0C0C0 
+171    #A9A9A9 
+172    #808080 
+173    #696969 
+Name: blue.1, dtype: object
+[2017-05-02 23:16:15] plot_utils.py [line:297] CRITICAL 25796 nan
+[2017-05-02 23:16:15] plot_utils.py [line:298] CRITICAL 25796 #0000CD 
+[2017-05-02 23:20:05] plot_utils.py [line:232] CRITICAL 27102 0        ,
+1        o
+2        v
+3        ^
+4        <
+5        >
+6        1
+7        2
+8        3
+9        4
+10       8
+11       s
+12       p
+13       *
+14       h
+15       H
+16       +
+17       x
+18       D
+19       d
+20       |
+21       _
+22       .
+23       ,
+24       o
+25       v
+26       ^
+27       <
+28       >
+29       1
+      ... 
+144    NaN
+145    NaN
+146    NaN
+147    NaN
+148    NaN
+149    NaN
+150    NaN
+151    NaN
+152    NaN
+153    NaN
+154    NaN
+155    NaN
+156    NaN
+157    NaN
+158    NaN
+159    NaN
+160    NaN
+161    NaN
+162    NaN
+163    NaN
+164    NaN
+165    NaN
+166    NaN
+167    NaN
+168    NaN
+169    NaN
+170    NaN
+171    NaN
+172    NaN
+173    NaN
+Name: ., dtype: object
+[2017-05-02 23:20:05] plot_utils.py [line:233] CRITICAL 27102 0         green
+1      #FF0000 
+2      #00FFFF 
+3       magenta
+4        yellow
+5      #000000 
+6      #00008B 
+7      #008000 
+8      #008B8B 
+9      #00BFFF 
+10     #228B22 
+11     #40E0D0 
+12     #4169E1 
+13     #4682B4 
+14     #5F9EA0 
+15     #778899 
+16     #800080 
+17     #87CEEB 
+18     #8B0000 
+19     #ADFF2F 
+20     #AFEEEE 
+21     #B0C4DE 
+22     #D3D3D3 
+23     #DC143C 
+24     #E1FFFF 
+25     #EE82EE 
+26     #EEE8AA 
+27     #F0E68C 
+28     #F0F8FF 
+29     #F0FFF0 
+         ...   
+144    #FFDAB9 
+145    #F4A460 
+146    #D2691E 
+147    #8B4513 
+148    #FFF5EE 
+149    #A0522D 
+150    #FFA07A 
+151    #FF7F50 
+152    #FF4500 
+153    #E9967A 
+154    #FF6347 
+155    #FFE4E1 
+156    #FA8072 
+157    #FFFAFA 
+158    #F08080 
+159    #BC8F8F 
+160    #CD5C5C 
+161    #FF0000 
+162    #A52A2A 
+163    #B22222 
+164    #8B0000 
+165    #800000 
+166    #FFFFFF 
+167    #F5F5F5 
+168    #DCDCDC 
+169    #D3D3D3 
+170    #C0C0C0 
+171    #A9A9A9 
+172    #808080 
+173    #696969 
+Name: blue.1, dtype: object
+[2017-05-02 23:30:57] plot_utils.py [line:232] CRITICAL 30398 0        ,
+1        o
+2        v
+3        ^
+4        <
+5        >
+6        1
+7        2
+8        3
+9        4
+10       8
+11       s
+12       p
+13       *
+14       h
+15       H
+16       +
+17       x
+18       D
+19       d
+20       |
+21       _
+22       .
+23       ,
+24       o
+25       v
+26       ^
+27       <
+28       >
+29       1
+      ... 
+144    NaN
+145    NaN
+146    NaN
+147    NaN
+148    NaN
+149    NaN
+150    NaN
+151    NaN
+152    NaN
+153    NaN
+154    NaN
+155    NaN
+156    NaN
+157    NaN
+158    NaN
+159    NaN
+160    NaN
+161    NaN
+162    NaN
+163    NaN
+164    NaN
+165    NaN
+166    NaN
+167    NaN
+168    NaN
+169    NaN
+170    NaN
+171    NaN
+172    NaN
+173    NaN
+Name: ., dtype: object
+[2017-05-02 23:30:57] plot_utils.py [line:233] CRITICAL 30398 0         green
+1      #FF0000 
+2      #00FFFF 
+3       magenta
+4        yellow
+5      #000000 
+6      #00008B 
+7      #008000 
+8      #008B8B 
+9      #00BFFF 
+10     #228B22 
+11     #40E0D0 
+12     #4169E1 
+13     #4682B4 
+14     #5F9EA0 
+15     #778899 
+16     #800080 
+17     #87CEEB 
+18     #8B0000 
+19     #ADFF2F 
+20     #AFEEEE 
+21     #B0C4DE 
+22     #D3D3D3 
+23     #DC143C 
+24     #E1FFFF 
+25     #EE82EE 
+26     #EEE8AA 
+27     #F0E68C 
+28     #F0F8FF 
+29     #F0FFF0 
+         ...   
+144    #FFDAB9 
+145    #F4A460 
+146    #D2691E 
+147    #8B4513 
+148    #FFF5EE 
+149    #A0522D 
+150    #FFA07A 
+151    #FF7F50 
+152    #FF4500 
+153    #E9967A 
+154    #FF6347 
+155    #FFE4E1 
+156    #FA8072 
+157    #FFFAFA 
+158    #F08080 
+159    #BC8F8F 
+160    #CD5C5C 
+161    #FF0000 
+162    #A52A2A 
+163    #B22222 
+164    #8B0000 
+165    #800000 
+166    #FFFFFF 
+167    #F5F5F5 
+168    #DCDCDC 
+169    #D3D3D3 
+170    #C0C0C0 
+171    #A9A9A9 
+172    #808080 
+173    #696969 
+Name: blue.1, dtype: object
+[2017-05-03 10:29:08] density_cluster.py [line:855] CRITICAL 16107 9696

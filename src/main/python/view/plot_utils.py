@@ -117,6 +117,7 @@ def plot_dataframe_scatter_diagram(which_fig, data, x_label='x', y_label='y', ti
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     plt.ylim(bottom=0)
+    plt.legend(loc='upper left')
     plt.show()
 
 
@@ -144,7 +145,7 @@ def plot_scatter_diagram(which_fig, x, y, x_label='x', y_label='y', title='title
 
     assert len(x) == len(y)
     if label != None:
-        assert len(x) == len(label) and len(stylesMarker) >= len(set(label))
+        assert len(x) == len(label) # and len(stylesMarker) >= len(set(label))
     plt.figure(which_fig)
     plt.clf()
     if label == None:
@@ -161,12 +162,21 @@ def plot_scatter_diagram(which_fig, x, y, x_label='x', y_label='y', title='title
                     xs.append(x[j])
                     ys.append(y[j])
             k = k + 1
-            plt.scatter(xs, ys, c=stylesColors[k].strip(), marker=stylesMarker[k])
+            try:
+                   plt.scatter(xs, ys, c=stylesColors[k].strip(), marker=r"$ {} $".format(str(i)),label=i)
+            except:
+                log.fatal(stylesMarker)
+                log.fatal(stylesColors)
+                log.fatal(stylesMarker[k])
+                log.fatal(stylesColors[k])
+                plt.scatter(xs, ys, c=stylesColors[k].strip(), marker=r"$ {} $".format(str(i)),label=i)
+                exit()
 
     plt.title(title)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     plt.ylim(bottom=0)
+    # plt.legend(loc='upper left')
     plt.show()
 
 
@@ -196,7 +206,7 @@ def save_scatter_diagram(which_fig, x, y, x_label='x', y_label='y', title='title
 
     assert len(x) == len(y)
     if label != None:
-        assert len(x) == len(label) and len(stylesMarker) >= len(set(label))
+        assert len(x) == len(label) # and len(stylesMarker) >= len(set(label))
     plt.figure(which_fig)
     plt.clf()
     if label == None:
@@ -213,12 +223,88 @@ def save_scatter_diagram(which_fig, x, y, x_label='x', y_label='y', title='title
                     xs.append(x[j])
                     ys.append(y[j])
             k = k + 1
-            plt.scatter(xs, ys, c=stylesColors[k].strip(), marker=stylesMarker[k].strip())
+            try:
+                if k<=7:
+                    plt.scatter(xs, ys, c=stylesColors[k].strip(), marker=stylesMarker[k],label=i)
+                else:
+                    plt.scatter(xs, ys, c=stylesColors[k%100].strip(), marker=r"$ {} $".format(str(i)),label=i)
+            except:
+                log.fatal(stylesMarker)
+                log.fatal(stylesColors)
+                log.fatal(stylesMarker[k])
+                log.fatal(stylesColors[k])
+                plt.scatter(xs, ys, c=stylesColors[k].strip(), marker=r"$ {} $".format(str(i)),label=i)
+                exit()
     plt.title(title)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
     plt.ylim(bottom=0)
-    plt.savefig(path)
+    plt.savefig(path,dpi=900)
+    #plt.savefig(path)
+    plt.close()
+
+
+def save_all_scatter_diagram(which_fig, x, y, x_label='x', y_label='y', title='title', label=None,
+                         path=resource_manager.Properties.getDefaultDataFold() + "result" + resource_manager.getSeparator() + "result.png"):
+    '''
+    Plot scatter diagram
+
+    Args:
+        which_fig  : which sub plot
+        x          : x array
+        y          : y array
+        x_label    : label of x pixel
+        y_label    : label of y pixel
+        title      : title of the plot
+    '''
+    styles = ['k.', 'g.', 'r.', 'c.', 'm.', 'y.', 'b.']
+    linestyles = ['-.', '--', 'None', '-', ':']
+    stylesMarker = pandas.read_csv(
+        resource_manager.Properties.getDefaultDataFold() + "view" + resource_manager.getSeparator() + "style.csv").ix[:,
+                   3]
+
+    stylesColors = pandas.read_csv(
+        resource_manager.Properties.getDefaultDataFold() + "view" + resource_manager.getSeparator() + "style.csv").ix[:,
+                   2]
+
+    assert len(x) == len(y)
+    if label != None:
+        assert len(x) == len(label) # and len(stylesMarker) >= len(set(label))
+    plt.figure(which_fig)
+    plt.clf()
+    if label == None:
+        plt.plot(x, y, styles[0])
+    else:
+        l = len(label)
+        labelSet = set(label)
+        k = 0
+        for i in labelSet:
+            xs = []
+            ys = []
+            for j in range(l):
+                if i == label[j]:
+                    xs.append(x[j])
+                    ys.append(y[j])
+            k = k + 1
+            try:
+                # if k<=7:
+                #     plt.scatter(xs, ys, c=stylesColors[k].strip(), marker=stylesMarker[k],label=i)
+                # else:
+                plt.scatter(xs, ys, c=stylesColors[k%100].strip(), marker=r"$ {} $".format(str(i)),label=i)
+            except:
+                log.fatal(stylesMarker)
+                log.fatal(stylesColors)
+                log.fatal(stylesMarker[k])
+                log.fatal(stylesColors[k])
+                plt.scatter(xs, ys, c=stylesColors[k].strip(), marker=r"$ {} $".format(str(i)),label=i)
+                exit()
+    plt.title(title)
+    plt.xlabel(x_label)
+    plt.ylabel(y_label)
+    plt.ylim(bottom=0)
+    # plt.legend(loc='upper left')
+    plt.savefig(path+".jpg",dpi=900)
+    #plt.savefig(path+".jpg")
     plt.close()
 
 

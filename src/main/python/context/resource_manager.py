@@ -1,5 +1,6 @@
 import os
 import platform
+import  time
 """
 用于配置常用的初始化信息类
 """
@@ -33,6 +34,23 @@ def findPath(file):
 
 class Properties:
 
+    timename=time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
+
+    @classmethod
+    def name_str_YMD(cls):
+        return time.strftime("%Y-%m-%d", time.localtime())
+
+    @classmethod
+    def name_str_FULL(cls):
+        return time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())
+
+    @classmethod
+    def name_str_static(cls):
+        return cls.timename
+
+    @classmethod
+    def name_str_HMS(cls):
+        return time.strftime("%H:%M:%S", time.localtime())
 
     @classmethod
     def getImageXmlResource(cls):
@@ -88,6 +106,7 @@ class Properties:
         :return:
         """
         s=Properties.getRootPath()
+        print("Using Out Side Work Directory.")
         s="/home/gwd/Projects/"
         file="data/work/"
         path=os.path.join(s,file)

@@ -411,7 +411,9 @@ def renamefiles(src=resource_manager.Properties.getDefaultOperationFold()):
 
 
 if __name__=="__main__":
-    path=resource_manager.Properties.getDefaultDataFold()
-    rename_dir(path+"finalclusters/Finalclusters/")
+    #path=resource_manager.Properties.getDefaultDataFold()
+    #rename_dir(path+"finalclusters/Finalclusters/")
+    path=resource_manager.Properties.getDefaultWorkFold()
+    rename_files(path)
 
     #rename_files(url= path + "cache")
