@@ -567,6 +567,7 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
     if pile_min > pile_max:
         pile_min = math.floor(pile_max)
     pile_max = math.ceil(pile_max)
+    threshold=3
     # pile_min = 3
     # 初始化二级队列
     inlier_list = []
@@ -579,8 +580,9 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
     # 第i个数据点
     i = index_id[i_id]
     pile = find_pile_member(id_index, distance[i], distance_c)
-    delta_id = delta_random_function(rho_id,delta_id, pile, i_id)
-    pile, delta_id = pile_children(index_id, id_index, distance, distance_c, pile, rho_id, delta_id)
+    pile = pile_brother(index_id, id_index, distance, temp, pile, threshold, state=False)
+    # delta_id = delta_random_function(rho_id,delta_id, pile, i_id)
+    # pile, delta_id = pile_children(index_id, id_index, distance, distance_c, pile, rho_id, delta_id)
     # 对data_id和pile_id表，进行处理标识
     data_id.ix[i_id, 'pile'] = p_id
     # pile_id.ix[p_id,'state'] = pile
@@ -630,18 +632,24 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
             break
         elif value <= pile_min:
             # rho_set_tag( rho_id_tag, pile)
-            i_id = rho_id.index[0]
+            i_id = rho_id_tag.index[0]
             rho_id_tag[i_id] = 0
             # 当前是噪声
-            pile_id = pile_id.append(
-                DataFrame([dict(pile=[i_id], p_id=p_id, size=1, outlier=True)], index=[p_id]))
+
+            if value==pile_max:
+                pile_id = pile_id.append(DataFrame([dict(pile=[i_id], p_id=p_id, size=len(pile), outlier=False)], index=[len(pile_id)]))
+            else:
+                pile_id = pile_id.append(DataFrame([dict(pile=[i_id], p_id=p_id, size=len(pile), outlier=True)], index=[len(pile_id)]))
+
+            pile_id = pile_id.reset_index(drop=True)
             continue
 
         i_id = rho_id_tag.index[0]
         i = index_id[i_id]
         pile = find_pile_member(id_index, distance[i], distance_c)
-        delta_id = delta_random_function(rho_id,delta_id, pile, i_id)
-        pile, delta_id = pile_children(index_id, id_index, distance, distance_c, pile, rho_id, delta_id)
+        # delta_id = delta_random_function(rho_id,delta_id, pile, i_id)
+        # pile, delta_id = pile_children(index_id, id_index, distance, distance_c, pile, rho_id, delta_id)
+        pile = pile_brother(index_id, id_index, distance, temp, pile, threshold, state=False)
         rho_set_tag(rho_id_tag, pile)
         next = 0
         # 假设当前是新类
@@ -650,13 +658,10 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
         pile_id = pile_id.sort_values(by='size', ascending=False)
         while len(pile_id) > next:
             # 寻找下一个可能的堆的合并
+            log.debug("compile..."+str(next))
             pre = pile_id.loc[next, 'pile']
             intersection = pile_intersection(pile, pre)
-            if len(intersection) <= 0:
-                # 不存在交集的情况
-                next += 1
-                continue
-            elif len(intersection) > pile_min:
+            if len(intersection) > threshold:
                 # inter=pile_intersection(pile,pre)
                 # if len(pile_brother(index_id, id_index, distance, distance_c, inter, pile_max)) < pile_max:
                 # 存在交集，而且交集数量已经达到，聚类数
@@ -673,16 +678,11 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
                 rho_set_tag(rho_id_tag, pile)
                 # log.critical(rho_id)
                 # next += 1
-            else:
-                # 存在交集，但数量小于最小聚类数
-                pile = list(set(pile_sub(pile, intersection)))
+            else :
+                # 不存在交集的情况
                 next += 1
-                # 设置离群点
-                # if len(pile) <= 1:
-                if len(pile) <= pile_min:
-                    # 离群点的发现
-                    outlier = True
-                    break
+                continue
+
         if state == True:
             # 对data_id和pile_id表，进行处理标识
             # data_id.ix[i_id, 'pile'] = p_id
@@ -704,13 +704,11 @@ def pile_function(pile_id, id_index, index_id, data_id, distance, distance_c, ne
             pile_id.ix[p_id, 'size'] = len(pile)
         """
 
-        k = pile_id['size'].sum()
-        kk = (rho_id_tag > 0).sum()
 
 
         # log.debug("this is "+str(k)+" times, there has "+str(n-m)+" element has not clustering.")
 
-    log.info("staring computing pile, in distance_c:" + str(static_distance_c) + ". pile count about:" + str(
+    log.info("end computing pile, in distance_c:" + str(static_distance_c) + ". pile count about:" + str(
         pile_id.shape[0]) + " pile_max:" + str(pile_max) + " pile_min:" + str(pile_min))
     return pile_id
 
@@ -762,12 +760,28 @@ def ent_dc_step_by_step(id_index, index_id, data, threshold, distance, distance_
         pile_size = pile_id['size']
         pile = pile_id.shape[0] - np.sum(pile_id['outlier'])
         # id_index, index_id
-        e = _calc_ent(pile_size.values / N)
+        e=[]
+        e_outlier=0
+
+        pile_id = pile_id.sort_values('size', ascending=False)
+        pile_id = pile_id.reset_index(drop=True)
+        for i in range(0,len(pile_id)):
+            if not pile_id.loc[i,'outlier']:
+                e.append(pile_id.loc[i,'size'])
+            else:
+                e_outlier+=pile_id.loc[i,'size']
+            if e_outlier>0:
+                e.append(e_outlier)
+
+        ee=np.array(e)
+        e = _calc_ent(ee / N)
+
         merge = list([e, distance_c, pile])
         threshold = add_row(threshold, merge)
         jarge_now = pre - e
         # if jarge_now > jarge_pre:
         if jarge_now > 0:
+            log.debug(str("\n")+str(pile_id))
             save_show_cluster(index_id, data, distance_c, pile_id)
         pre = e
         # jarge_now = jarge_now + 1
@@ -874,7 +888,7 @@ def save_show_cluster(index_id, data, distance_c, pile_id):
         l = pile_id.iloc[m]['pile']
         # size=pile_id.irow(m)['size']
         size = pile_id.iloc[m]['size']
-        if size >= 1 and i < 15:
+        if size >= 1 :
             for node in l:
                 index = index_id[node]
                 x.append(data[index][0])
@@ -956,7 +970,7 @@ def cluster(id, data):
     # to creat the base index table
     # 生成对应的索引，用于控制rho，delta，index的内容
     rho_id = rho_function(index_id, distance, distance_c=distance_c)
-    delta_id, data_id = delta_function(id_index, index_id, rho_id, distance)
+
     # gamma=rho*delta
     threshold = DataFrame([], columns=['H', 'd_c', 'cluster'])
     threshold = ent_dc_step_by_step(id_index, index_id, data, threshold=threshold, distance=distance,

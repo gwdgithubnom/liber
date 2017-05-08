@@ -38,63 +38,25 @@ public class CSVFileUtil {
 			CSVPrinter csvPrint = new CSVPrinter(new FileWriter(
 					"0.005-解析.csv", false));
 			while (csvReader.readRecord()) {
-
-				// 读一整行
-				// System.out.println(csvReader.getRawRecord());
-				// 读这行的某一列
-				// System.out.println(csvReader.get("pile"));
 				String p_id = csvReader.get("p_id");
 				String line = "";
 				line = csvReader.get("pile");
-				// System.out.println("zksk"+line);
-				// line.replaceAll("'","");
 				line = line.replaceAll("(\')|(\\[)|(\\])", "");
-
-				// System.out.println(line);
-
 				n++;
 				HashMap<String, String> clusterSizes = new HashMap<>();
 				for (String pile : line.split(",")) {
 					int m = 0;
-					// System.out.print(pile+n);
-					// int a=0,b=0,c=0;
 					for (String num : pile.split("_")) {
 						if (m % 2 == 0) {
-							// System.out.print("___"+num+" ");
-							// map.put(p_id, num);
 							if (typeSizes.containsKey(num)) {
-								// System.out.println("Find the old
-								// one:"+map.get(p_id)+" old
-								// number:"+map2.get(map.get(p_id)));
 								int number = Integer.parseInt(typeSizes.get(num));
 								number++;
 								Integer newvalue = new Integer(number);
 								String new2 = newvalue.toString();
 								typeSizes.replace(num, typeSizes.get(num), new2);
-								// System.out.println("Find the old
-								// one:"+map.get(p_id)+" total number:"+new2);
 							} else {
 								typeSizes.put(num, "1");
-								// if(head.)
-								// System.out.println("Add the new
-								// one:"+map.get(p_id)+" "+"1");
 							}
-							// if(map3.containsKey(map.get(p_id))){
-							// int
-							// number3=Integer.parseInt(map3.get(map.get(p_id)));
-							// number3++;
-							// Integer newvalue3= new Integer(number3);
-							// String new3=newvalue3.toString();
-							// map3.replace(map.get(p_id),map3.get(map.get(p_id)),
-							// new3);
-							//// System.out.println("Find the old
-							// one:"+map.get(p_id)+" total number:"+new3);
-							// }else{
-							// map3.put(map.get(p_id), "1");
-							//// System.out.println("Add the new
-							// one:"+map.get(p_id)+" "+"1");
-							// }
-							// System.out.println(map3.keySet());
 						}
 						m++;
 					}
@@ -116,7 +78,6 @@ public class CSVFileUtil {
 				String line1 = "";
 				line1 = csvReader1.get("pile");
 				line1 = line1.replaceAll("(\')|(\\[)|(\\])", "");
-				// System.out.println(line);
 				n++;
 
 				HashMap<String, String> map3 = new HashMap<>();
@@ -124,8 +85,6 @@ public class CSVFileUtil {
 					int m = 0;
 					for (String num : pile.split("_")) {
 						if (m % 2 == 0) {
-							// for(String header:map2.keySet()){
-							// String string = header.split("'")[1];
 							if (map3.containsKey(num)) {
 								int number3 = Integer.parseInt(map3.get(num));
 								number3++;

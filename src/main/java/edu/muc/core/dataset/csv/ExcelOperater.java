@@ -1,4 +1,4 @@
-//in ExcelOperater   
+package edu.muc.core.dataset.csv;//in ExcelOperater
   
 import java.io.File;   
   
@@ -28,7 +28,7 @@ public class ExcelOperater
   
     {   
   
-        jxl.Workbook readwb = null;   
+        Workbook readwb = null;
   
         try    
   

@@ -143,7 +143,7 @@ public class JSONTool {
     public static List<?> jsonToList(String jsonStr) {  
         List<?> objList = null;  
         if (gson != null) {  
-            java.lang.reflect.Type type = new com.google.gson.reflect.TypeToken<List<?>>() {
+            Type type = new com.google.gson.reflect.TypeToken<List<?>>() {
             }.getType();
             objList = gson.fromJson(jsonStr, type);
         }
@@ -154,7 +154,7 @@ public class JSONTool {
     public static Set<?> jsonToSet(String jsonStr){
     	Set<?> objSet=null;
     	if (gson != null) {
-            java.lang.reflect.Type type = new com.google.gson.reflect.TypeToken<Set<?>>() {
+            Type type = new com.google.gson.reflect.TypeToken<Set<?>>() {
             }.getType();
             objSet = gson.fromJson(jsonStr, type);
         }
@@ -168,7 +168,7 @@ public class JSONTool {
      * @param type
      * @return
      */
-    public static List<?> jsonToList(String jsonStr, java.lang.reflect.Type type) {
+    public static List<?> jsonToList(String jsonStr, Type type) {
         List<?> objList = null;
         if (gson != null) {
             objList = gson.fromJson(jsonStr, type);
@@ -182,7 +182,7 @@ public class JSONTool {
      * @param type
      * @return
      */
-    public static Set<?> jsonToSet(String jsonStr, java.lang.reflect.Type type) {
+    public static Set<?> jsonToSet(String jsonStr, Type type) {
     	Set<?> objSet = null;
         if (gson != null) {
             objSet = gson.fromJson(jsonStr, type);
@@ -200,7 +200,7 @@ public class JSONTool {
     public static Map<?, ?> jsonToMap(String jsonStr) {
         Map<?, ?> objMap = null;
         if (gson != null) {
-            java.lang.reflect.Type type = new com.google.gson.reflect.TypeToken<Map<?, ?>>() {
+            Type type = new com.google.gson.reflect.TypeToken<Map<?, ?>>() {
             }.getType();  
             objMap = gson.fromJson(jsonStr, type);  
         }  

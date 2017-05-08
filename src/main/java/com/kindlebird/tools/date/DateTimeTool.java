@@ -42,7 +42,7 @@ public class DateTimeTool {
 	 * @return
 	 */
 	public static Timestamp getSqlTimestamp(long time){
-		return new java.sql.Timestamp(time);
+		return new Timestamp(time);
 	}
 	
 	/**

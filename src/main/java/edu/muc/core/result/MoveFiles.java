@@ -10,10 +10,10 @@ import java.io.IOException;
  *
  */
 public class MoveFiles {
-	public static String rootPath = "E:\\project\\cluster\\AllDataSet";
+	public static String rootPath = "AllDataSet";
 
 	public static void main(String[] args) {
-		String baseDir = "E:\\project\\cluster\\DataSet\\全部的-未合并\\全部的";
+		String baseDir = "DataSet全部的-未合并全部的";
 		File dir = new File(baseDir);
 		MoveFiles.moveFiles(dir, rootPath);
 	}

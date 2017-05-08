@@ -116,8 +116,8 @@ def _test():
     b = misc.imread("tools/1.jpg", mode="L")
     a = np.array(a, np.float64)
     b = np.array(b, np.float64)
-    from cluster import density_cluster
-    c = density_cluster.compute_point_distance(a, b)
+    from cluster import density_cluster_demo
+    c = density_cluster_demo.compute_point_distance(a, b)
     from view import shape_view
     shape_view.numpy_view(c, state="record")
     log.debug(np.sum(c))
@@ -208,27 +208,28 @@ def distance_view(d,m, index_id, id_index, distance):
 
 if __name__ == '__main__':
     name='aggregation'
-    from cluster import density_cluster
+    from cluster import density_cluster_demo
     from pandas import Series
     from pandas import Series, DataFrame
     from context.resource_manager import Properties
     from view import shape_view
-    from cluster import density_cluster
-    distance_c =1.299084090805 #4.45939381309 #12.3972318748 #4.5155
+    from cluster import density_cluster_demo
+    distance_c =4.362858522
+    #4.45939381309 #12.3972318748 #4.5155
     from context.resource_manager import Properties
     from context import resource_manager
     from view import shape_view
     from view import plot_utils
-    from cluster import density_cluster
+    from cluster import density_cluster_demo
     if os.path.exists(resource_manager.Properties.getDefaultDataFold()+"result/test"):
         shutil.rmtree(resource_manager.Properties.getDefaultDataFold()+"result/test")
     id = np.load(Properties.getRootPath() + "/data/cache/"+name+"/id.npy")
     data = np.load(Properties.getRootPath() + "/data/cache/"+name+"/data.npy")
     from pandas import Series, DataFrame
     id_index = Series(id.tolist())
-    from cluster import density_cluster
+    from cluster import density_cluster_demo
     index_id = Series(id_index.index, index=id_index.values)
-    distance = density_cluster.compute_distance(data)
+    distance = density_cluster_demo.compute_distance(data)
     #np.save(Properties.getRootPath() + "/data/cache/distance/data.npy", distance)
     path=resource_manager.Properties.getDefaultDataFold()+resource_manager.getSeparator()+"result"+resource_manager.getSeparator()+"name"+resource_manager.getSeparator()+str(distance_c)+".png"
     temp = distance.copy()
@@ -238,13 +239,13 @@ if __name__ == '__main__':
     temp[np.isnan(temp)] = stand
     temp = temp.min(axis=0)
     next_distance_c = np.std(temp)
-    pile_id = density_cluster.show_threshold(id_index, index_id, distance, distance_c, next_distance_c)
-    log.debug(pile_id)
-    density_cluster.show_cluster(index_id, data, distance_c, pile_id)
-    rho_id = density_cluster.rho_function(index_id, distance, distance_c=distance_c)
-    rho_id = Series(rho_id, index=index_id.index)
-    rho_id = rho_id.sort_values(ascending=False)
-    # delta_id, data_id = density_cluster.delta_function(id_index, index_id, rho_id, distance)
+    # pile_id = density_cluster_demo.show_threshold(id_index, index_id, distance, distance_c, next_distance_c)
+    # log.debug(pile_id)
+    density_cluster_demo.debug_cluster(id_index, index_id, data, distance, distance_c, next_distance_c, dataset="INFO",level="DEBUG")
+    # rho_id = density_cluster_demo.rho_function(index_id, distance, distance_c=distance_c)
+    # rho_id = Series(rho_id, index=index_id.index)
+    # rho_id = rho_id.sort_values(ascending=False)
+    # delta_id, data_id = density_cluster_demo.delta_function(id_index, index_id, rho_id, distance)
     # plot_utils.plot_scatter_diagram(None, x=x, y=y, x_label='x', y_label='y', title='scatter figure', label=label)
 
     # for ii in range(len(pile_id)):
@@ -265,10 +266,10 @@ if __name__ == '__main__':
     log.debug(d)
 
 
-    rho_id = density_cluster.rho_function(index_id,distance, distance_c=distance_c)
+    rho_id = density_cluster_demo.rho_function(index_id,distance, distance_c=distance_c)
     data = DataFrame([], columns=['gamma','rho','delta','pile'],index=index_id.index)
-    delta_id, data_index = density_cluster.delta_function(id_index, index_id, rho_id, distance)
-    density_cluster.pile_function(pile_id,id_index,index_id,rho_id,distance)
+    delta_id, data_index = density_cluster_demo.delta_function(id_index, index_id, rho_id, distance)
+    density_cluster_demo.pile_function(pile_id,id_index,index_id,rho_id,distance)
     #TODO
     #id_index, index_id
     log.critical(str(pile_id)+"\npile:"+pile)
@@ -301,15 +302,15 @@ if __name__ == '__main__':
     plot_utils.plot_scatter_diagram(None,x=x,y=y,x_label='x',y_label='y',title='scatter figure',label=label)
     """
     """
-     from cluster import density_cluster
+     from cluster import density_cluster_demo
     from pandas import Series,DataFrame
     from context.resource_manager import Properties
     from view import shape_view
-    from cluster import density_cluster
+    from cluster import density_cluster_demo
     id=np.load(Properties.getRootPath()+"/data/cache/id.npy")
     data=np.load(Properties.getRootPath()+"/data/cache/data.npy")
     id_index=Series(id.tolist())
-    from cluster.density_cluster import *
+    from cluster.density_cluster_demo import *
     N=id_index.count()
     distance=compute_distance(data)
     distance_c=init_distance_c(distance)
