@@ -37,7 +37,7 @@ public class ClusterMain {
         public  void runSplit() throws IOException {
             CsvPileUtil csvPileUtil=new CsvPileUtil();
             logger.debug(PathKit.getCanonicalPath());
-            File file=new File("/home/gwd/Projects/liber/src/main/python/data/result/aggregation/2017-05-05-22-53-32/2017-05-05-22-53-32/");
+            File file=new File("/home/gwd/Projects/liber/src/main/python/data/result/aggregation/2017-05-08-14-36-58/2017-05-08-14-36-58/");
             File evalutionFile=new File(file.getParent()+"/evalution.csv");
             if(!evalutionFile.exists()){
                 try {

@@ -6,3 +6,9 @@ target/
 *.iml
 
 src/main/python/__pycache__/
+
+src/main/python/logs/
+
+*.pyc
+
+*.log

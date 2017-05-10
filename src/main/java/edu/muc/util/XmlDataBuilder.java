@@ -38,11 +38,10 @@ public class XmlDataBuilder {
 
     @Test
     public void test() {
-        try {
-            XmlDataBuilder.builderFromTxtToClusterXml("iris");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
+           // XmlDataBuilder.builderFromTxtToClusterXml("iris");
+            XmlDataBuilder.testBuildUnbalanceXml();
+
     }
 
     public void cache(){
@@ -191,7 +190,7 @@ public class XmlDataBuilder {
 
 
     public static void testBuildUnbalanceXml(){
-        File file= new File(PathKit.getCanonicalPath()+"src/main/python/data/txt/unbalance.txt");
+        File file= new File(PathKit.getCanonicalPath()+"src/main/python/data/txt/panel2.txt");
         Scanner scanner=null;
         ImageItemXml imageItemXml=new ImageItemXml();
         List<ImageItemXmlElement> imageItemXmlElementList=new ArrayList<>();
@@ -200,11 +199,11 @@ public class XmlDataBuilder {
             scanner=new Scanner(file,"UTF-8");
             int i=0;
             while (scanner.hasNext()){
-                int a=scanner.nextInt();
-                int b=scanner.nextInt();
+                double a=scanner.nextDouble();
+                double b=scanner.nextDouble();
                 ImageItemXmlElement imageItemXmlElement=new ImageItemXmlElement();
-                int[] l={a,b};
-                imageItemXmlElement.setId("_"+i);
+                double[] l={a,b};
+                imageItemXmlElement.setId("tag"+"_"+i);
                 imageItemXmlElement.setData(Arrays.toString(l));
                 imageItemXmlElementList.add(imageItemXmlElement);
                 i++;
@@ -213,7 +212,7 @@ public class XmlDataBuilder {
             e.printStackTrace();
         }
         imageItemXml.setImage(imageItemXmlElementList);
-        XmlUtil.convertToXml(imageItemXml,PathKit.getCanonicalPath()+"src/main/python/data/xml/unbalance.xml");
+        XmlUtil.convertToXml(imageItemXml,PathKit.getCanonicalPath()+"src/main/python/data/xml/panel2.xml");
     }
 }
 
