@@ -9,3 +9,15 @@ ipython
 pyqtgraph
 mypy
 nose
+#json
+moviepy
+#cv2
+pillow
+tensorflow
+pytest
+requests
+opencv-python
+numpy
+Cython
+codecov
+pytest-cov

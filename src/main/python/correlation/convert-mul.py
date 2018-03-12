@@ -1,35 +1,34 @@
 from PIL import Image
-filename='test-50x50.jpg'
+filename='test.jpg'
 im = Image.open(filename)
 import numpy
+import os
 from pandas import DataFrame
-# pixels = list(im.getdata())
-width, height = im.size
-#imgarray=numpy.array(img)
-# pixels = [pixels[i * width:(i + 1) * width] for i in range(height)]
-# pixels = numpy.asarray(im)
-img = Image.open(filename)
-# img = img.convert("LA")
-img = img.convert("RGB")
-pixdata = img.load()
-rows=img.size[0];
-cols=img.size[1];
-#scan by cols
-"""
-for y in range(cols):
-    for x in range(rows):
-        pixdata[x,y]=0  if pixdata[x,y]>=128 else 255
-"""
+
 x_variable=[]
 y_variable=[]
-
-for i in os.walk(path, False):
-    for f in i[2]:
-        BinAndCrop.preOp(os.path.join(path, f));
-
-pixels=numpy.zeros((rows,cols))
-tag=0
-for i in range():
+path='.'
+p=[]
+for i in os.walk(path,False):
+    p=i
+    break;
+files=p[2]
+file_count=len(files)
+width, height = im.size
+img = Image.open(filename)
+img = img.convert("RGB")
+pixdata = img.load()
+rows=img.size[0]
+cols=img.size[1]
+pixels=numpy.zeros((file_count+1,rows))
+i=0
+id=[]
+for filename in files:
+    img = Image.open(os.path.join('1024',filename))
+    img = img.convert("RGB")
+    pixdata = img.load()
+    rows=img.size[0]
+    cols=img.size[1]
     for width_x in range(img.size[0]):
         count=0
         for height_y in range(img.size[1]):
@@ -40,7 +39,12 @@ for i in range():
                 # pixels[height_y][width_x]=1
                 count=count+1
                 # z = (255 - z) / 255 * 255
-        pixels[tag][width_x]=count
-pixels=DataFrame(pixels)
-pixels.to_csv('pixel_data-01.csv')
+        if count%2==0:
+            count=count+1
+        pixels[i][width_x]=count
+    id.append(filename)
+    i=i+1
+id.append('demo')
+pixels=DataFrame(pixels,index=id)
+pixels.to_csv('pixel_data-row.csv')
 # numpy.savetxt("pixel_data.csv", pixels, delimiter=",")

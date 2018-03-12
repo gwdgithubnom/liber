@@ -466,9 +466,11 @@ def outlier_to_pile(outlier, index_id, id_index, distance, distance_c, next_dist
         jarge_point_next = []
         jarge_size = threshold
         jarge_state = True
+        # 初始化判断边界变量
         for ii in range(pile_id_size):
             jarge_pile = pile_id.ix[ii, 'pile']
             jarge = pile_intersection(jarge_pile, pile)
+            # 判断扩展集合和原集合的相似性，决定是否接受扩展的新集合
             if len(jarge) >= jarge_size:
                 jarge_point.append(ii)
                 jarge_size = len(jarge)

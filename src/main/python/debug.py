@@ -81,7 +81,7 @@ def _test():
     cols = img.size[1]
     logging.debug("abc")
     f=misc.face()
-    misc.imsave("tools/3.jpg",f)
+    misc.imsave("tools/test.jpg",f)
     s=misc.imread("tools/0.jpg")
     from scipy import linalg
     print(linalg.det(s))

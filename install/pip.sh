@@ -1,1 +1,1 @@
-pip install -r install/requirements.txt -i https://pypi.douban.com/simple
+pip install -r requirements.txt -i https://pypi.douban.com/simple
