@@ -7,7 +7,7 @@ from pandas import DataFrame
 
 x_variable=[]
 y_variable=[]
-path='.'
+path='./50x50'
 p=[]
 for i in os.walk(path,False):
     p=i
@@ -24,7 +24,7 @@ pixels=numpy.zeros((file_count+1,rows))
 i=0
 id=[]
 for filename in files:
-    img = Image.open(os.path.join('1024',filename))
+    img = Image.open(os.path.join(path,filename))
     img = img.convert("RGB")
     pixdata = img.load()
     rows=img.size[0]
@@ -46,5 +46,5 @@ for filename in files:
     i=i+1
 id.append('demo')
 pixels=DataFrame(pixels,index=id)
-pixels.to_csv('pixel_data-row.csv')
+pixels.to_csv('pixel_data-row-20x20.csv')
 # numpy.savetxt("pixel_data.csv", pixels, delimiter=",")
