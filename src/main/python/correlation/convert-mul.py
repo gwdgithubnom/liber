@@ -7,7 +7,7 @@ from pandas import DataFrame
 
 x_variable=[]
 y_variable=[]
-path='./50x50'
+path='./20x20'
 p=[]
 for i in os.walk(path,False):
     p=i
