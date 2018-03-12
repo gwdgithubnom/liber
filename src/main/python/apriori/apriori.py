@@ -8,7 +8,6 @@ Usage:
 """
 
 import sys
-
 from itertools import chain, combinations
 from collections import defaultdict
 from optparse import OptionParser
@@ -123,6 +122,15 @@ def printResults(items, rules):
         print "Rule: %s ==> %s , %.3f" % (str(pre), str(post), confidence)
 
 
+def printResultsToFile(filename,items, rules):
+    """prints the generated itemsets sorted by support and the confidence rules sorted by confidence"""
+    for item, support in sorted(items, key=lambda (item, support): support):
+        print >> filename, "item: %s , %.3f" % (str(item), support)
+    print "\n------------------------ RULES:"
+    for rule, confidence in sorted(rules, key=lambda (rule, confidence): confidence):
+        pre, post = rule
+        print >> filename, "Rule: %s ==> %s , %.3f" % (str(pre), str(post), confidence)
+
 def dataFromFile(fname):
         """Function which reads from the file and yields a generator"""
         file_iter = open(fname, 'rU')
@@ -151,7 +159,7 @@ if __name__ == "__main__":
                          type='float')
 
     (options, args) = optparser.parse_args()
-
+    
     inFile = None
     if options.input is None:
             inFile = sys.stdin
@@ -165,5 +173,8 @@ if __name__ == "__main__":
     minConfidence = options.minC
 
     items, rules = runApriori(inFile, minSupport, minConfidence)
-
+    print inFile
+    filename=str(minSupport)+"-"+str(minConfidence)+".txt"
+    filename=open(filename,"w")
     printResults(items, rules)
+    printResultsToFile(filename,items, rules)
